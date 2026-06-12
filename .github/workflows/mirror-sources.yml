@@ -1,0 +1,64 @@
+name: Mirror banner data sources
+
+# Fetches the P5X/GFL2 sources that the Claude cloud routine cannot reach
+# (its sandbox blocks outbound fetches) and commits them into mirrors/ so the
+# routine can read them from the repo itself.
+# Runs Mondays 00:30 UTC (08:30 GMT+8) — 30 min before the 09:00 refresh routine.
+
+on:
+  schedule:
+    - cron: '30 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch sources
+        run: |
+          mkdir -p mirrors
+          rm -f mirrors/status.partial
+
+          fetch () { # $1=key $2=url $3=outfile
+            code=$(curl -sS -L --max-time 30 \
+              -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) gacha-tracker-mirror" \
+              -o "mirrors/$3.tmp" -w "%{http_code}" "$2" || echo "000")
+            if [ "$code" = "200" ] && [ -s "mirrors/$3.tmp" ]; then
+              mv "mirrors/$3.tmp" "mirrors/$3"
+              echo "$1: 200 OK"
+            else
+              rm -f "mirrors/$3.tmp"
+              echo "$1: HTTP $code - keeping previous mirror (if any)"
+            fi
+            echo "  \"$1\": {\"http\": \"$code\", \"fetched\": \"$(date -u +%FT%TZ)\"}," >> mirrors/status.partial
+          }
+
+          fetch p5x_steam  "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3061570&count=10" p5x-steam-news.json
+          fetch gfl2_steam "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3347400&count=10" gfl2-steam-news.json
+          fetch p5x_lufel  "https://lufel.net/apps/schedule/data.js" p5x-lufel-data.js
+          fetch gfl2_help  "https://gfl2.help/en/banners" gfl2-help-banners.html
+
+          {
+            echo "{"
+            sed '$ s/,$//' mirrors/status.partial
+            echo "}"
+          } > mirrors/status.json
+          rm -f mirrors/status.partial
+          cat mirrors/status.json
+
+      - name: Commit mirrors
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mirrors
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Mirror source data (automated)"
+            git push
+          fi

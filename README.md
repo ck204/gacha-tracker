@@ -91,10 +91,20 @@ Claude should then, for each game in `data.js`:
 | Genshin Impact | game8.co/games/Genshin-Impact/archives/305012 |
 | Honkai: Star Rail | game8.co/games/Honkai-Star-Rail/archives/408381 |
 | Zenless Zone Zero | game8.co/games/Zenless-Zone-Zero/archives/435687 |
-| Persona 5: The Phantom X | **Direct data feed:** `https://lufel.net/apps/schedule/data.js` (plain JS, fetchable — see below). **403-blocked from cloud/datacenter IPs** — cloud runs use the Steam news API instead: `https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3061570&count=5` (official update posts on release day, with banner character + exact end datetime in UTC; no future schedule though — leave `upcoming` as-is on cloud runs if it can't be confirmed by search). |
+| Persona 5: The Phantom X | **Direct data feed:** `https://lufel.net/apps/schedule/data.js` (plain JS, fetchable — see below). **Cloud runs CANNOT fetch this (sandbox blocks all outbound fetches — WebFetch and shell curl both 403). Read the repo mirrors instead:** `mirrors/p5x-lufel-data.js` (same format as the live feed) and `mirrors/gfl2-steam-news.json` / `mirrors/p5x-steam-news.json` (official Steam update posts: banner character + exact end datetime in UTC, posted on release day; no future schedule). Check `mirrors/status.json` for each mirror's HTTP code + fetch timestamp — if stale (>8 days) or non-200, fall back to web search, then keep-and-flag. |
 | Neverness to Everness | game8.co/games/Neverness-to-Everness/archives/597944 |
 | Arknights: Endfield | game8.co/games/Arknights-Endfield/archives/524215 |
-| Girls' Frontline 2: Exilium | gfl2.help/en/banners (primary — fetchable via WebFetch with a verbatim-quote prompt; direct Invoke-WebRequest gets 403-blocked after one request). **CAUTION:** the page lists Global AND CN sections and WebFetch summaries have swapped the server headings before — always ask for the verbatim heading-to-content pairing and sanity-check (user plays GLOBAL; Global dates use UTC-4). Global does NOT follow CN's banner order/timeline (confirmed by user) — never infer a Global `upcoming` entry from CN banners; CN info belongs in `notes` only. Do NOT use Dexerto or IOP Wiki — confirmed unreliable for this game. exilium.xyz is JS-rendered — needs a real browser (Chrome connector). No Game8 page. **gfl2.help is also 403-blocked from cloud/datacenter IPs** — cloud runs use the Steam news API instead: `https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3347400&count=5` (official "Update Contents" posts list the Rate Up Event lineup, e.g. "drop rate for Elite Doll [Basti] ... [Voymastina] ... increased", with start datetime in UTC-4; banners run ~3 weeks — confirm end via the next update post or search). |
+| Girls' Frontline 2: Exilium | gfl2.help/en/banners (primary — fetchable via WebFetch with a verbatim-quote prompt; direct Invoke-WebRequest gets 403-blocked after one request). **CAUTION:** the page lists Global AND CN sections and WebFetch summaries have swapped the server headings before — always ask for the verbatim heading-to-content pairing and sanity-check (user plays GLOBAL; Global dates use UTC-4). Global does NOT follow CN's banner order/timeline (confirmed by user) — never infer a Global `upcoming` entry from CN banners; CN info belongs in `notes` only. Do NOT use Dexerto or IOP Wiki — confirmed unreliable for this game. exilium.xyz is JS-rendered — needs a real browser (Chrome connector). No Game8 page. **Cloud runs: read the repo mirrors** (see P5X row): `mirrors/gfl2-help-banners.html` if its status is 200, else `mirrors/gfl2-steam-news.json` (official "Update Contents" posts list the Rate Up Event lineup, e.g. "drop rate for Elite Doll [Basti] ... [Voymastina] ... increased", with start datetime in UTC-4; banners run ~3 weeks — confirm end via the next update post or search). |
+
+### Source mirrors (GitHub Actions)
+
+`.github/workflows/mirror-sources.yml` runs on GitHub's runners every Monday
+00:30 UTC (08:30 GMT+8, 30 min before the cloud refresh routine) and commits
+fresh copies of the P5X/GFL2 sources into `mirrors/` — because the Claude
+cloud sandbox cannot fetch them directly. `mirrors/status.json` records each
+fetch's HTTP code and timestamp. The workflow can also be triggered manually
+(`gh workflow run mirror-sources.yml` or the Actions tab). A failed fetch
+keeps the previous mirror file; status.json shows the failure code.
 
 ### P5X data feed notes
 
