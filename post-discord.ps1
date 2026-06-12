@@ -149,7 +149,7 @@ $embeds += [ordered]@{
 }
 
 $payload = [ordered]@{
-    content     = ":slot_machine: **Gacha Banner Tracker**  -  data refreshed $($data.lastUpdated)"
+    content     = ":slot_machine: **Gacha Banner Tracker**  -  data refreshed $($data.lastUpdated)  -  <https://ck204.github.io/gacha-tracker/>"
     embeds      = $embeds
     attachments = @(@{ id = 0; filename = 'calendar.png' })
 }

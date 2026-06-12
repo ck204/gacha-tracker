@@ -2,6 +2,11 @@
 
 One-glance dashboard for current and upcoming banners across the games I play.
 
+**Live site:** https://ck204.github.io/gacha-tracker/ (GitHub Pages, repo
+`ck204/gacha-tracker`). Updates go live ~a minute after `git push`.
+`discord.config.json` (webhook secret) and `calendar.png` are git-ignored —
+keep it that way.
+
 ## Usage
 
 Open `index.html` in a browser (double-click works — no server needed).
@@ -94,6 +99,8 @@ Claude should then, for each game in `data.js`:
 2. Update only `data.js`: banner titles, `start`/`end` dates (YYYY-MM-DD),
    `version`, `upcoming` list, `notes`, and set `lastUpdated` to today.
 3. Do **not** edit `index.html` — it renders whatever is in `data.js`.
+4. Run `post-discord.ps1` (updates the pinned Discord message), then
+   `git commit` data.js and `git push` (updates the live site).
 
 ### Games tracked & primary sources
 
