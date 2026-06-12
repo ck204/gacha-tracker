@@ -68,6 +68,27 @@ gone. If it's ever wanted again, see git history before commit removing
 need to be created in Discord (the old one lived only in the deleted
 `discord.config.json`).
 
+## Automated weekly refresh (Claude cloud routine)
+
+A scheduled Claude cloud agent (configured on claude.ai/code under the user's
+account — not stored in this repo) refreshes the data **every Monday 09:00
+GMT+8**, fully independent of the user's PC:
+
+1. **08:30** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/`
+   (see "Source mirrors" below).
+2. **09:00** — the routine runs: it reads this README and follows the
+   "Refreshing the data" procedure and source rules, updates `data.js`,
+   sanity-checks, then commits via PR and **merges it itself**. Its pushes are
+   pre-authorized; the ask-before-push rule below applies to interactive
+   sessions only. The repo has `delete_branch_on_merge` enabled, so its
+   working branches clean up automatically.
+3. **~09:05** — GitHub Pages rebuilds the live site.
+
+A healthy Monday leaves two commits: "Mirror source data (automated)" then
+"Weekly banner data refresh (automated)". Note for cloud runs: the sandbox
+cannot fetch arbitrary URLs (403 on WebFetch *and* shell curl) — use web
+search and the `mirrors/` files only.
+
 ## Refreshing the data
 
 Open Claude Code in this folder and say:
