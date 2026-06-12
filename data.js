@@ -30,13 +30,13 @@ window.GACHA_DATA =
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "banners": [
-        { "title": "Mortenax Blade (Fire) + Yao Guang (new 5★)", "start": "2026-06-01", "end": "2026-06-24" }
+        { "title": "Mortenax Blade (new 5★ Fire) + Yao Guang (rerun)", "start": "2026-06-01", "end": "2026-06-24" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Phainon + Cyrene", "date": "2026-06-24" },
-        { "title": "v4.4 — Himeko-Nova + Fate collab (Rin, Gilgamesh)", "date": "2026-07-24", "approx": true }
+        { "title": "Phase 2 — Phainon + Cyrene (reruns; ends Jul 14)", "date": "2026-06-24" },
+        { "title": "v4.4 Phase 1 — Himeko-Nova + Fate/Stay Night collab (Rin Tohsaka, Gilgamesh)", "date": "2026-07-14" }
       ],
-      "notes": "",
+      "notes": "4★ boosted on Mortenax Blade banner: Sampo, Luka, Tingyun.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -49,12 +49,13 @@ window.GACHA_DATA =
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "banners": [
-        { "title": "Starlight Billy (debut)", "start": "2026-05-27", "end": "2026-06-16" }
+        { "title": "Starlight Billy (debut) + Orphie (rerun)", "start": "2026-05-27", "end": "2026-06-16" }
       ],
       "upcoming": [
-        { "title": "v3.0 — Velina (Wind Anomaly); 2nd banner unconfirmed (Ye Shunguang / Norma reported)", "date": "2026-06-16", "approx": true }
+        { "title": "v3.0 Phase 1 — Velina (debut) + Ye Shunguang (rerun)", "date": "2026-06-17" },
+        { "title": "v3.0 Phase 2 — Norma (debut) + Sunna (rerun)", "date": "2026-07-08" }
       ],
-      "notes": "Sources disagree on the 3.0 lineup — verify near June 16.",
+      "notes": "v3.0 launches Jun 17; Pyrois available as free S-Rank.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -73,7 +74,7 @@ window.GACHA_DATA =
         { "title": "1st Anniversary + anniversary unit (unconfirmed)", "date": "2026-06-25", "approx": true },
         { "title": "Ichigo + main story 5-2", "date": "2026-07-09" }
       ],
-      "notes": "End dates estimated from release cadence.",
+      "notes": "lufel.net 403-blocked this cloud run — upcoming entries unverified from primary source.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -89,9 +90,9 @@ window.GACHA_DATA =
         { "title": "Lacrimosa “Fading Reverie” (S-class, Chaos)", "start": "2026-06-03", "end": "2026-06-24" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana)", "date": "2026-06-24" }
+        { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana); ends Jul 8", "date": "2026-06-24" }
       ],
-      "notes": "Bright Moon Arc Research banner ended Jun 3 — check current arc banner in-game.",
+      "notes": "",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
@@ -107,7 +108,7 @@ window.GACHA_DATA =
         { "title": "Mi Fu “Fists of No Regrets” (+ Scarlet Knot weapon banner)", "start": "2026-06-04", "end": "2026-06-26" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Camille", "date": "2026-06-26" }
+        { "title": "Phase 2 — Camille “Expunger of Sin” (+ Crimson Hued weapon banner)", "date": "2026-06-26" }
       ],
       "notes": "",
       "links": [
@@ -125,7 +126,7 @@ window.GACHA_DATA =
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
       "upcoming": [],
-      "notes": "Next Global banner not yet announced — Global does NOT follow CN's schedule. (CN currently: Faelynn + Soppo + Lewis.)",
+      "notes": "gfl2.help and Steam API both 403-blocked this cloud run; Basti banner confirmed via official patch notes. Next Global banner not yet announced. (CN: Faelynn + Soppo + Lewis — unverified this run.)",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
