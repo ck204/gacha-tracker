@@ -1,0 +1,135 @@
+// Gacha tracker data — refreshed by Claude. Schema documented in README.md.
+// IMPORTANT: everything after the '=' must stay STRICT JSON (quoted keys, no
+// trailing commas) — post-discord.ps1 parses this same file with ConvertFrom-Json.
+window.GACHA_DATA =
+{
+  "lastUpdated": "2026-06-12",
+  "games": [
+    {
+      "name": "Genshin Impact",
+      "short": "GI",
+      "version": "6.6 (Luna VII) — Phase 2",
+      "accent": "#4fc3f7",
+      "icon": "icons/gi.jpg",
+      "banners": [
+        { "title": "Lohen (new 5★ Cryo Polearm) + Mavuika rerun", "start": "2026-06-09", "end": "2026-06-30" }
+      ],
+      "upcoming": [
+        { "title": "v6.7 — Sandrone (new 5★ Cryo Claymore) + reruns", "date": "2026-07-01" }
+      ],
+      "notes": "4★ boosted: Mika, Xiangling, Bennett.",
+      "links": [
+        { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
+        { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
+      ]
+    },
+    {
+      "name": "Honkai: Star Rail",
+      "short": "HSR",
+      "version": "4.3 — Phase 1",
+      "accent": "#b39ddb",
+      "icon": "icons/hsr.jpg",
+      "banners": [
+        { "title": "Mortenax Blade (Fire) + Yao Guang (new 5★)", "start": "2026-06-01", "end": "2026-06-24" }
+      ],
+      "upcoming": [
+        { "title": "Phase 2 — Phainon + Cyrene", "date": "2026-06-24" },
+        { "title": "v4.4 — Himeko-Nova + Fate collab (Rin, Gilgamesh)", "date": "2026-07-24", "approx": true }
+      ],
+      "notes": "",
+      "links": [
+        { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
+        { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
+      ]
+    },
+    {
+      "name": "Zenless Zone Zero",
+      "short": "ZZZ",
+      "version": "2.8 — Phase 2",
+      "accent": "#f57c00",
+      "icon": "icons/zzz.jpg",
+      "banners": [
+        { "title": "Starlight Billy (debut)", "start": "2026-05-27", "end": "2026-06-16" }
+      ],
+      "upcoming": [
+        { "title": "v3.0 — Velina (Wind Anomaly); 2nd banner unconfirmed (Ye Shunguang / Norma reported)", "date": "2026-06-16", "approx": true }
+      ],
+      "notes": "Sources disagree on the 3.0 lineup — verify near June 16.",
+      "links": [
+        { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
+        { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
+      ]
+    },
+    {
+      "name": "Persona 5: The Phantom X",
+      "short": "P5X",
+      "version": "4.3 (Global)",
+      "accent": "#ef5350",
+      "icon": "icons/p5x.jpg",
+      "banners": [
+        { "title": "Akihiko Sanada (new release)", "start": "2026-06-11", "end": "2026-06-25" }
+      ],
+      "upcoming": [
+        { "title": "1st Anniversary + anniversary unit (unconfirmed)", "date": "2026-06-25", "approx": true },
+        { "title": "Ichigo + main story 5-2", "date": "2026-07-09" }
+      ],
+      "notes": "End dates estimated from release cadence.",
+      "links": [
+        { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
+        { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
+      ]
+    },
+    {
+      "name": "Neverness to Everness",
+      "short": "NTE",
+      "version": "1.1 — Phase 1",
+      "accent": "#66bb6a",
+      "icon": "icons/nte.jpg",
+      "banners": [
+        { "title": "Lacrimosa “Fading Reverie” (S-class, Chaos)", "start": "2026-06-03", "end": "2026-06-24" }
+      ],
+      "upcoming": [
+        { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana)", "date": "2026-06-24" }
+      ],
+      "notes": "Bright Moon Arc Research banner ended Jun 3 — check current arc banner in-game.",
+      "links": [
+        { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
+        { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
+      ]
+    },
+    {
+      "name": "Arknights: Endfield",
+      "short": "AKE",
+      "version": "1.3 — Phase 1",
+      "accent": "#ffd54f",
+      "icon": "icons/ake.jpg",
+      "banners": [
+        { "title": "Mi Fu “Fists of No Regrets” (+ Scarlet Knot weapon banner)", "start": "2026-06-04", "end": "2026-06-26" }
+      ],
+      "upcoming": [
+        { "title": "Phase 2 — Camille", "date": "2026-06-26" }
+      ],
+      "notes": "",
+      "links": [
+        { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
+        { "label": "Official site", "url": "https://endfield.gryphline.com/" }
+      ]
+    },
+    {
+      "name": "Girls' Frontline 2: Exilium",
+      "short": "GFL2",
+      "version": "Global",
+      "accent": "#90a4ae",
+      "icon": "icons/gfl2.jpg",
+      "banners": [
+        { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
+      ],
+      "upcoming": [],
+      "notes": "Next Global banner not yet announced — Global does NOT follow CN's schedule. (CN currently: Faelynn + Soppo + Lewis.)",
+      "links": [
+        { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
+      ]
+    }
+  ]
+}
+;

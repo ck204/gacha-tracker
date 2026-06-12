@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gacha Banner Tracker</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #181c26;
+    --card-border: #262c3a;
+    --text: #e8eaf0;
+    --muted: #8a91a3;
+    --green: #4caf7d;
+    --amber: #e0a93e;
+    --red: #e05c5c;
+    --gray: #5a617a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    padding: 24px;
+    min-height: 100vh;
+  }
+  header {
+    display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  h1 { font-size: 1.4rem; font-weight: 600; }
+  .updated { color: var(--muted); font-size: 0.85rem; }
+  .stale-warn {
+    background: #3a2a1a; color: #f0b860; border: 1px solid #5a4020;
+    padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-top: 3px solid var(--accent, var(--gray));
+  }
+  .card h2 { font-size: 1.05rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .gicon { width: 22px; height: 22px; border-radius: 5px; flex: none; }
+  .ver {
+    font-size: 0.72rem; color: var(--muted); background: #222838;
+    padding: 2px 8px; border-radius: 10px; white-space: nowrap;
+  }
+  .banner { margin-top: 12px; }
+  .banner-title { font-size: 0.92rem; margin-bottom: 6px; }
+  .meta { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
+  .days { font-weight: 700; }
+  .days.ok { color: var(--green); }
+  .days.soon { color: var(--amber); }
+  .days.urgent { color: var(--red); }
+  .days.ended { color: var(--gray); }
+  .bar { height: 6px; background: #232938; border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s; }
+  .upcoming { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--card-border); }
+  .upcoming h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
+  .upcoming li {
+    list-style: none; font-size: 0.85rem; margin-bottom: 4px;
+    display: flex; justify-content: space-between; gap: 10px;
+  }
+  .upcoming .when { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+  .notes { margin-top: 10px; font-size: 0.78rem; color: #b8a06a; }
+  .check {
+    margin-top: 12px; padding: 10px; background: #2a2030; border: 1px solid #4a3050;
+    border-radius: 8px; font-size: 0.85rem; color: #d8a0e8;
+  }
+  .links { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .links a {
+    font-size: 0.78rem; color: #7fb4e8; text-decoration: none;
+    background: #1d2433; padding: 3px 10px; border-radius: 6px;
+  }
+  .links a:hover { background: #243048; }
+  .ending-badge {
+    font-size: 0.68rem; background: #4a2222; color: #f08080;
+    padding: 2px 8px; border-radius: 10px; font-weight: 600;
+  }
+  .new-badge {
+    font-size: 0.68rem; background: #1d3a2a; color: #6fe0a0;
+    padding: 2px 8px; border-radius: 10px; font-weight: 600;
+  }
+  .calendar-section { margin-top: 28px; }
+  .calendar-section > h2 {
+    font-size: 1.05rem; font-weight: 600; margin-bottom: 12px;
+  }
+  .cal-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .cal-header h3 { font-size: 0.95rem; font-weight: 600; }
+  .cal-nav { display: flex; gap: 6px; }
+  .cal-nav button {
+    width: 28px; height: 28px; border-radius: 6px; cursor: pointer;
+    background: #222838; border: 1px solid var(--card-border); color: var(--text);
+    font-size: 1rem; line-height: 1;
+  }
+  .cal-nav button:hover { background: #2c3550; }
+  .cal-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .cal-filter {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.75rem; font-family: inherit; color: var(--muted); cursor: pointer;
+    background: #1d2433; border: 1px solid var(--card-border); border-radius: 14px;
+    padding: 3px 11px;
+  }
+  .cal-filter:hover { background: #243048; color: var(--text); }
+  .cal-filter.active {
+    background: #222d45; color: var(--text); font-weight: 600;
+    border-color: var(--chip, #7fb4e8);
+  }
+  .cal-dows, .cal-week { display: grid; grid-template-columns: repeat(7, 1fr); }
+  .cal-dow {
+    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--muted); text-align: center; padding: 4px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .cal-week { border-bottom: 1px solid #1f2430; padding-bottom: 5px; align-content: start; }
+  .cal-week:last-child { border-bottom: none; padding-bottom: 0; }
+  .cal-daynum {
+    grid-row: 1; text-align: right; font-size: 0.75rem;
+    padding: 4px 6px 3px; min-height: 24px;
+    border-left: 1px solid #1f2430;
+  }
+  .cal-daynum:first-child { border-left: none; }
+  .cal-daynum.other { color: var(--gray); opacity: 0.55; }
+  .cal-daynum.today { background: #2a3450; border-radius: 4px; font-weight: 700; }
+  .cal-bar {
+    height: 17px; line-height: 17px; margin: 2px 1px 0;
+    padding: 0 6px; font-size: 0.68rem; font-weight: 600;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    cursor: default;
+  }
+  .cal-bar.starts { border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
+  .cal-bar.ends { border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+  .cal-dot { width: 5px; height: 5px; border-radius: 50%; flex: none; }
+  #cal-tooltip {
+    position: fixed; z-index: 10; display: none;
+    background: #1d2433; border: 1px solid #3a4258; border-radius: 8px;
+    padding: 8px 10px; font-size: 0.78rem; max-width: 280px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5); pointer-events: none;
+  }
+  #cal-tooltip .tt-date { color: var(--muted); font-size: 0.7rem; margin-bottom: 5px; }
+  #cal-tooltip .tt-row {
+    display: flex; align-items: baseline; gap: 6px; margin-top: 3px;
+  }
+  #cal-tooltip .tt-row .cal-dot { position: relative; top: -1px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎰 Gacha Banner Tracker</h1>
+  <span class="updated" id="updated"></span>
+  <span class="stale-warn" id="stale" style="display:none"></span>
+</header>
+<div class="grid" id="grid"></div>
+
+<section class="calendar-section">
+  <h2>📅 Calendar overview</h2>
+  <div class="cal-card">
+    <div class="cal-header">
+      <h3 id="cal-title"></h3>
+      <div class="cal-nav">
+        <button id="cal-prev" aria-label="Previous month">‹</button>
+        <button id="cal-next" aria-label="Next month">›</button>
+      </div>
+    </div>
+    <div class="cal-filters" id="cal-filters"></div>
+    <div class="cal-dows">
+      <div class="cal-dow">Sun</div><div class="cal-dow">Mon</div><div class="cal-dow">Tue</div>
+      <div class="cal-dow">Wed</div><div class="cal-dow">Thu</div><div class="cal-dow">Fri</div>
+      <div class="cal-dow">Sat</div>
+    </div>
+    <div id="cal-weeks"></div>
+  </div>
+</section>
+<div id="cal-tooltip"></div>
+
+<!-- Load data.js with a unique query so HTTP-served pages never show stale data (no-op on file://) -->
+<script>document.write('<script src="data.js?v=' + Date.now() + '"><\/script>')</script>
+<script>
+(function () {
+  const data = window.GACHA_DATA;
+  const now = new Date();
+  const DAY = 86400000;
+  const parse = s => new Date(s + "T00:00:00");
+  const fmt = s => parse(s).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+
+  // Header: last-updated + staleness
+  const updatedEl = document.getElementById("updated");
+  const lastUpd = parse(data.lastUpdated);
+  const updAge = Math.floor((now - lastUpd) / DAY);
+  updatedEl.textContent = "Data refreshed " + data.lastUpdated + (updAge > 0 ? ` (${updAge}d ago)` : " (today)");
+
+  const anyEnded = data.games.some(g => (g.banners || []).some(b => parse(b.end) < now));
+  if (updAge > 10 || anyEnded) {
+    const stale = document.getElementById("stale");
+    stale.style.display = "";
+    stale.textContent = anyEnded
+      ? "⚠ A banner has ended since the last refresh — data needs updating"
+      : "⚠ Data is " + updAge + " days old — consider refreshing";
+  }
+
+  const grid = document.getElementById("grid");
+  for (const g of data.games) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.style.setProperty("--accent", g.accent || "#5a617a");
+
+    const icon = g.icon ? `<img class="gicon" src="${g.icon}" alt="" onerror="this.remove()">` : "";
+    let html = `<h2>${g.name} ${icon}<span class="ver">${g.version || ""}</span></h2>`;
+
+    for (const b of (g.banners || [])) {
+      const start = parse(b.start), end = parse(b.end);
+      // End of the listed end-day
+      const endOfDay = new Date(end.getTime() + DAY);
+      const daysLeft = Math.ceil((endOfDay - now) / DAY);
+      const total = endOfDay - start;
+      const pct = Math.min(100, Math.max(0, ((now - start) / total) * 100));
+
+      let cls = "ok", label = daysLeft + "d left", badge = "";
+      if (daysLeft <= 0) { cls = "ended"; label = "ended"; }
+      else if (daysLeft <= 3) { cls = "urgent"; label = daysLeft + "d left"; badge = `<span class="ending-badge">ENDING SOON</span>`; }
+      else if (daysLeft <= 7) { cls = "soon"; }
+      const isNew = (now - start) / DAY <= 3 && daysLeft > 0;
+      if (isNew) badge += ` <span class="new-badge">NEW</span>`;
+
+      const barColor = cls === "urgent" ? "var(--red)" : cls === "soon" ? "var(--amber)" : cls === "ended" ? "var(--gray)" : "var(--green)";
+      html += `
+        <div class="banner">
+          <div class="banner-title">${b.title} ${badge}</div>
+          <div class="meta">
+            <span>${fmt(b.start)} → ${fmt(b.end)}</span>
+            <span class="days ${cls}">${label}</span>
+          </div>
+          <div class="bar"><div class="bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
+        </div>`;
+    }
+
+    if (g.needsCheck) {
+      html += `<div class="check">🔍 No tracked banner data — check manually via the links below.</div>`;
+    }
+
+    if ((g.upcoming || []).length) {
+      html += `<div class="upcoming"><h3>Upcoming</h3><ul>`;
+      for (const u of g.upcoming) {
+        const d = parse(u.date);
+        const inDays = Math.ceil((d - now) / DAY);
+        const when = (u.approx ? "~" : "") + fmt(u.date) + (inDays > 0 ? ` (in ${inDays}d)` : "");
+        html += `<li><span>${u.title}</span><span class="when">${when}</span></li>`;
+      }
+      html += `</ul></div>`;
+    }
+
+    if (g.notes) html += `<div class="notes">📌 ${g.notes}</div>`;
+
+    if ((g.links || []).length) {
+      html += `<div class="links">` +
+        g.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join("") +
+        `</div>`;
+    }
+
+    card.innerHTML = html;
+    grid.appendChild(card);
+  }
+
+  // ---- Calendar overview ----
+  // Flat list of spans: running banners use start→end, upcoming entries are single-day
+  const calItems = [];
+  for (const g of data.games) {
+    const accent = g.accent || "#5a617a";
+    for (const b of (g.banners || []))
+      calItems.push({ name: g.name, accent, title: b.title, start: parse(b.start), end: parse(b.end), banner: true });
+    for (const u of (g.upcoming || []))
+      calItems.push({ name: g.name, accent, title: u.title, start: parse(u.date), end: parse(u.date), approx: u.approx });
+  }
+
+  const fmtD = d => d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  const textOn = hex => {
+    const n = parseInt(hex.slice(1), 16);
+    const lum = 0.299 * (n >> 16 & 255) + 0.587 * (n >> 8 & 255) + 0.114 * (n & 255);
+    return lum > 150 ? "#10131a" : "#fff";
+  };
+  const todayMid = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  let calY = now.getFullYear(), calM = now.getMonth();
+  const calSel = new Set(); // selected game names; empty = show all
+  const calTitle = document.getElementById("cal-title");
+  const weeksEl = document.getElementById("cal-weeks");
+
+  const filtersEl = document.getElementById("cal-filters");
+  filtersEl.innerHTML =
+    `<button class="cal-filter active" type="button">All</button>` +
+    data.games.map(g => {
+      const accent = g.accent || "#5a617a";
+      return `<button class="cal-filter" type="button" data-game="${g.name}" style="--chip:${accent}" title="${g.name}">` +
+        `<span class="cal-dot" style="background:${accent}"></span>${g.short}</button>`;
+    }).join("");
+  filtersEl.addEventListener("click", e => {
+    const btn = e.target.closest(".cal-filter");
+    if (!btn) return;
+    const game = btn.dataset.game;
+    if (!game) calSel.clear();                 // "All" resets the selection
+    else if (calSel.has(game)) calSel.delete(game);
+    else calSel.add(game);
+    filtersEl.querySelectorAll(".cal-filter").forEach(b =>
+      b.classList.toggle("active", b.dataset.game ? calSel.has(b.dataset.game) : calSel.size === 0));
+    renderCal();
+  });
+
+  function renderCal() {
+    calTitle.textContent = new Date(calY, calM, 1).toLocaleDateString(undefined, { month: "long", year: "numeric" });
+    const first = new Date(calY, calM, 1);
+    const last = new Date(calY, calM + 1, 0);
+    const gridStart = new Date(calY, calM, 1 - first.getDay());            // back to Sunday
+    const gridEnd = new Date(calY, calM, last.getDate() + 6 - last.getDay()); // forward to Saturday
+    let html = "";
+    for (let ws = new Date(gridStart); ws <= gridEnd; ws.setDate(ws.getDate() + 7)) {
+      const weekStart = new Date(ws);
+      const weekEnd = new Date(ws); weekEnd.setDate(weekEnd.getDate() + 6);
+      // Reserve height for the unfiltered lane count so filtering never shifts the layout
+      let lanes = 0;
+      for (const it of calItems) if (!(it.end < weekStart || it.start > weekEnd)) lanes++;
+      // 24px day-number row + 19px per lane + 5px padding + 1px border (border-box)
+      html += `<div class="cal-week" style="min-height:${30 + lanes * 19}px">`;
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(weekStart); d.setDate(d.getDate() + i);
+        const cls = ["cal-daynum"];
+        if (d.getMonth() !== calM) cls.push("other");
+        if (d.getTime() === todayMid.getTime()) cls.push("today");
+        html += `<div class="${cls.join(" ")}">${d.getDate()}</div>`;
+      }
+      let row = 2; // row 1 holds the day numbers; each bar gets its own lane below
+      calItems.forEach((it, idx) => {
+        if (calSel.size && !calSel.has(it.name)) return;
+        if (it.end < weekStart || it.start > weekEnd) return;
+        const s = it.start > weekStart ? it.start : weekStart;
+        const e = it.end < weekEnd ? it.end : weekEnd;
+        const col = Math.round((s - weekStart) / DAY) + 1;
+        const colEnd = Math.round((e - weekStart) / DAY) + 2;
+        const cls = ["cal-bar"];
+        if (it.start >= weekStart) cls.push("starts");
+        if (it.end <= weekEnd) cls.push("ends");
+        html += `<div class="${cls.join(" ")}" data-i="${idx}" ` +
+          `style="grid-row:${row++};grid-column:${col}/${colEnd};background:${it.accent};color:${textOn(it.accent)}">` +
+          `${it.approx ? "~" : ""}${it.title}</div>`;
+      });
+      html += `</div>`;
+    }
+    weeksEl.innerHTML = html;
+  }
+  renderCal();
+  // Lock the weeks area to the current month's height so flipping to a
+  // sparser month doesn't collapse the calendar (busier months can still grow)
+  weeksEl.style.minHeight = weeksEl.offsetHeight + "px";
+
+  document.getElementById("cal-prev").addEventListener("click", () => {
+    calM--; if (calM < 0) { calM = 11; calY--; } renderCal();
+  });
+  document.getElementById("cal-next").addEventListener("click", () => {
+    calM++; if (calM > 11) { calM = 0; calY++; } renderCal();
+  });
+
+  // Hover tooltip with the bar's full details
+  const tooltip = document.getElementById("cal-tooltip");
+  weeksEl.addEventListener("mouseover", e => {
+    const bar = e.target.closest(".cal-bar");
+    if (!bar) { tooltip.style.display = "none"; return; }
+    const it = calItems[+bar.dataset.i];
+    const dates = it.banner
+      ? `${fmtD(it.start)} → ${fmtD(it.end)} · ${Math.round((it.end - it.start) / DAY) + 1} days`
+      : (it.approx ? "~" : "") + fmtD(it.start);
+    tooltip.innerHTML =
+      `<div class="tt-date">${dates}</div>` +
+      `<div class="tt-row"><span class="cal-dot" style="background:${it.accent}"></span>` +
+      `<span><strong>${it.name}</strong> · ${it.title}</span></div>`;
+    tooltip.style.display = "block";
+    const r = bar.getBoundingClientRect();
+    let x = e.clientX - tooltip.offsetWidth / 2;
+    x = Math.max(8, Math.min(x, window.innerWidth - tooltip.offsetWidth - 8));
+    let y = r.top - tooltip.offsetHeight - 8;
+    if (y < 8) y = r.bottom + 8;
+    tooltip.style.left = x + "px";
+    tooltip.style.top = y + "px";
+  });
+  weeksEl.addEventListener("mouseleave", () => { tooltip.style.display = "none"; });
+})();
+</script>
+</body>
+</html>
