@@ -34,9 +34,10 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "Phase 2 — Phainon + Cyrene (reruns; ends Jul 14)", "date": "2026-06-24" },
-        { "title": "v4.4 Phase 1 — Himeko-Nova + Fate/Stay Night collab (Rin Tohsaka, Gilgamesh)", "date": "2026-07-14" }
+        { "title": "v4.4 Phase 1 — Himeko-Nova + Rin Tohsaka (Fate/Stay Night collab)", "date": "2026-07-14" },
+        { "title": "Gilgamesh (Fate/Stay Night collab, no fixed end)", "date": "2026-07-24" }
       ],
-      "notes": "4★ boosted on Mortenax Blade banner: Sampo, Luka, Tingyun.",
+      "notes": "4★ Phase 1: Sampo, Luka, Tingyun. Phase 2 4★: Yukong, Arlan, March 7th. Fate/stay Night collab: Saber + Archer permanently available (no fixed end; live since 2025-07-11).",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -53,7 +54,7 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "v3.0 Phase 1 — Velina (debut) + Ye Shunguang (rerun)", "date": "2026-06-17" },
-        { "title": "v3.0 Phase 2 — Norma (debut) + Sunna (rerun)", "date": "2026-07-08" }
+        { "title": "v3.0 Phase 2 — Norma (debut) + Sunna (rerun; ends Jul 28)", "date": "2026-07-08" }
       ],
       "notes": "v3.0 launches Jun 17; Pyrois available as free S-Rank.",
       "links": [
@@ -74,7 +75,7 @@ window.GACHA_DATA =
         { "title": "1st Anniversary + anniversary unit (unconfirmed)", "date": "2026-06-25", "approx": true },
         { "title": "Ichigo + main story 5-2", "date": "2026-07-09" }
       ],
-      "notes": "lufel.net 403-blocked this cloud run — upcoming entries unverified from primary source.",
+      "notes": "lufel.net and Steam API (appid=3061570) both 403-blocked this cloud run — current and upcoming entries unverified from primary source.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -126,7 +127,7 @@ window.GACHA_DATA =
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
       "upcoming": [],
-      "notes": "gfl2.help and Steam API both 403-blocked this cloud run; Basti banner confirmed via official patch notes. Next Global banner not yet announced. (CN: Faelynn + Soppo + Lewis — unverified this run.)",
+      "notes": "gfl2.help and Steam API (appid=3347400) both 403-blocked again this run; Basti banner confirmed in prior run via official patch notes. Next Global banner (from ~Jun 25) unconfirmed from primary source; community sources suggest Life Rekindled event with Quihua arrives ~Jul 2026.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
