@@ -1,6 +1,6 @@
 // Gacha tracker data — refreshed by Claude. Schema documented in README.md.
-// IMPORTANT: everything after the '=' must stay STRICT JSON (quoted keys, no
-// trailing commas) — post-discord.ps1 parses this same file with ConvertFrom-Json.
+// Keep everything after the '=' STRICT JSON (quoted keys, no trailing commas)
+// so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
   "lastUpdated": "2026-06-12",

@@ -4,9 +4,7 @@ One-glance dashboard for current and upcoming banners across the games I play.
 
 **Live site:** https://ck204.github.io/gacha-tracker/ (GitHub Pages serving
 the `main` branch root of repo `ck204/gacha-tracker`). Updates go live
-~a minute after `git push`. `discord.config.json` (webhook secret) and
-`calendar.png` are git-ignored — keep it that way, and never commit the
-webhook URL anywhere else either. Git identity is repo-local
+~a minute after `git push`. Git identity is repo-local
 (`ck204 <ck204@users.noreply.github.com>`); pushes authenticate via the
 `gh` CLI (installed via winget).
 
@@ -60,46 +58,15 @@ Pin it as a tab or set it as your new-tab page.
 `python -m http.server` — it needs Python on PATH (any 3.x). The page itself
 never needs a server; double-clicking `index.html` always works.
 
-## Discord live dashboard
+## Discord (removed June 2026)
 
-`post-discord.ps1` mirrors the dashboard into a Discord channel as ONE webhook
-message that gets edited in place. Countdowns use Discord dynamic timestamps,
-so they stay accurate between runs without edits.
-
-**One-time setup:**
-
-1. In Discord: channel → ⚙ Edit Channel → Integrations → Webhooks →
-   New Webhook → Copy Webhook URL.
-2. Paste it into `discord.config.json` (`webhookUrl`). Treat the URL like a
-   password — anyone holding it can post to the channel.
-3. Run `.\post-discord.ps1` once — it posts the dashboard and prints the
-   message id. **Pin that message** in Discord.
-4. Schedule a daily run via Task Scheduler so banner-transition edits and
-   "ending soon" alerts go out automatically.
-
-**Current state (set up June 2026):** the webhook is configured, the dashboard
-message is posted and pinned, and a scheduled task named
-**"Gacha Discord Dashboard"** runs the script daily at 09:00 (with
-StartWhenAvailable, so a missed 09:00 catches up when the PC wakes). Manage it
-with `Get-ScheduledTask -TaskName "Gacha Discord Dashboard"`.
-
-**Timeline calendar:** every run, `make-calendar.ps1` renders `calendar.png`
-(a 5-week Gantt timeline of all banners, drawn with System.Drawing — no
-dependencies) and the script attaches it as the last embed of the dashboard
-message. It can also be run standalone to regenerate just the image.
-
-**Behavior:**
-
-- Subsequent runs PATCH the same message (id stored in `discord.config.json`).
-  If the message was deleted, a fresh one is posted automatically.
-- Banners ending within `alertHoursBefore` (default 48 h) trigger one separate
-  alert message each, prefixed with `alertMention` (default `@here`; set to
-  `""` for no ping). Already-sent alerts are tracked in `alertedKeys`.
-- `.\post-discord.ps1 -DryRun` prints the payload without sending anything.
-- The script parses `data.js`, so the part after `window.GACHA_DATA =` must
-  stay **strict JSON** (quoted keys, no trailing commas).
-
-After every data refresh, run `post-discord.ps1` so the pinned message matches.
+A Discord webhook integration (edited-in-place pinned dashboard message +
+ending-soon alerts + Gantt timeline image) existed briefly and was removed at
+the user's request — scripts, config, and the daily scheduled task are all
+gone. If it's ever wanted again, see git history before commit removing
+`post-discord.ps1` / `make-calendar.ps1`; a new channel webhook URL would
+need to be created in Discord (the old one lived only in the deleted
+`discord.config.json`).
 
 ## Refreshing the data
 
@@ -114,8 +81,8 @@ Claude should then, for each game in `data.js`:
 2. Update only `data.js`: banner titles, `start`/`end` dates (YYYY-MM-DD),
    `version`, `upcoming` list, `notes`, and set `lastUpdated` to today.
 3. Do **not** edit `index.html` — it renders whatever is in `data.js`.
-4. Run `post-discord.ps1` (updates the pinned Discord message), then
-   `git commit` data.js and `git push` (updates the live site).
+4. `git commit` data.js and `git push` to update the live site — but **ask
+   the user before committing/pushing** (standing rule).
 
 ### Games tracked & primary sources
 
