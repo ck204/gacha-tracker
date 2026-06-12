@@ -15,7 +15,8 @@ window.GACHA_DATA =
         { "title": "Lohen (new 5★ Cryo Polearm) + Mavuika rerun", "start": "2026-06-09", "end": "2026-06-30" }
       ],
       "upcoming": [
-        { "title": "v6.7 — Sandrone (new 5★ Cryo Claymore) + reruns", "date": "2026-07-01" }
+        { "title": "v6.7 Phase 1 — Sandrone (debut, 5★ Cryo Claymore) + Columbina rerun", "date": "2026-07-01" },
+        { "title": "v6.7 Phase 2 — Raiden Shogun rerun + Citlali rerun", "date": "2026-07-21", "approx": true }
       ],
       "notes": "4★ boosted: Mika, Xiangling, Bennett.",
       "links": [
@@ -75,7 +76,7 @@ window.GACHA_DATA =
         { "title": "1st Anniversary + anniversary unit (unconfirmed)", "date": "2026-06-25", "approx": true },
         { "title": "Ichigo + main story 5-2", "date": "2026-07-09" }
       ],
-      "notes": "lufel.net and Steam API (appid=3061570) both 403-blocked this cloud run — current and upcoming entries unverified from primary source.",
+      "notes": "Data confirmed via mirrors (lufel.net + p5x-steam HTTP 200, fetched 2026-06-12). Sanada banner ends 1:59 AM Jun 25 UTC per Steam news. Anniversary placeholder unit (Jun 25) name unconfirmed.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -127,7 +128,7 @@ window.GACHA_DATA =
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
       "upcoming": [],
-      "notes": "gfl2.help and Steam API (appid=3347400) both 403-blocked again this run; Basti banner confirmed in prior run via official patch notes. Next Global banner (from ~Jun 25) unconfirmed from primary source; community sources suggest Life Rekindled event with Quihua arrives ~Jul 2026.",
+      "notes": "Banner confirmed via gfl2.help mirror (HTTP 200, fetched 2026-06-12): Basti + Voymastina + Lind, Jun 4–24. No upcoming Global banner pre-announced on gfl2.help; Steam patch notes imply next Procurement opens ~Jun 25 but character lineup unconfirmed.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
