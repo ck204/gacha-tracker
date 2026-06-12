@@ -2,10 +2,13 @@
 
 One-glance dashboard for current and upcoming banners across the games I play.
 
-**Live site:** https://ck204.github.io/gacha-tracker/ (GitHub Pages, repo
-`ck204/gacha-tracker`). Updates go live ~a minute after `git push`.
-`discord.config.json` (webhook secret) and `calendar.png` are git-ignored —
-keep it that way.
+**Live site:** https://ck204.github.io/gacha-tracker/ (GitHub Pages serving
+the `main` branch root of repo `ck204/gacha-tracker`). Updates go live
+~a minute after `git push`. `discord.config.json` (webhook secret) and
+`calendar.png` are git-ignored — keep it that way, and never commit the
+webhook URL anywhere else either. Git identity is repo-local
+(`ck204 <ck204@users.noreply.github.com>`); pushes authenticate via the
+`gh` CLI (installed via winget).
 
 ## Usage
 
@@ -39,6 +42,12 @@ Pin it as a tab or set it as your new-tab page.
 
 - Game cards show each game's official app icon (from `icons/`, see schema)
   to the right of the name; a missing icon file degrades gracefully.
+- All game cards render at **equal height**: the grid uses
+  `grid-auto-rows: 1fr` (every row matches the tallest card) and each card is
+  a flex column with the links row pinned to the bottom via
+  `.links { margin-top: auto }` — content-light cards absorb spare space
+  mid-card instead of leaving links floating. Don't "simplify" the auto
+  margin back to a fixed one.
 - `index.html` loads `data.js` via a small `document.write` loader with a
   `?v=<timestamp>` query. This is deliberate — it defeats browser heuristic
   caching when the page is served over HTTP (plain `python -m http.server`
@@ -65,8 +74,14 @@ so they stay accurate between runs without edits.
    password — anyone holding it can post to the channel.
 3. Run `.\post-discord.ps1` once — it posts the dashboard and prints the
    message id. **Pin that message** in Discord.
-4. Schedule a daily run (e.g. 09:00) via Task Scheduler so banner-transition
-   edits and "ending soon" alerts go out automatically.
+4. Schedule a daily run via Task Scheduler so banner-transition edits and
+   "ending soon" alerts go out automatically.
+
+**Current state (set up June 2026):** the webhook is configured, the dashboard
+message is posted and pinned, and a scheduled task named
+**"Gacha Discord Dashboard"** runs the script daily at 09:00 (with
+StartWhenAvailable, so a missed 09:00 catches up when the PC wakes). Manage it
+with `Get-ScheduledTask -TaskName "Gacha Discord Dashboard"`.
 
 **Timeline calendar:** every run, `make-calendar.ps1` renders `calendar.png`
 (a 5-week Gantt timeline of all banners, drawn with System.Drawing — no
