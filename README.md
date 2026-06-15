@@ -71,18 +71,18 @@ need to be created in Discord (the old one lived only in the deleted
 ## Automated weekly refresh (Claude cloud routine)
 
 A scheduled Claude cloud agent (configured on claude.ai/code under the user's
-account — not stored in this repo) refreshes the data **every Monday 09:00
+account — not stored in this repo) refreshes the data **every Monday 07:00
 GMT+8**, fully independent of the user's PC:
 
-1. **08:30** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/`
+1. **06:30** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/`
    (see "Source mirrors" below).
-2. **09:00** — the routine runs: it reads this README and follows the
+2. **07:00** — the routine runs: it reads this README and follows the
    "Refreshing the data" procedure and source rules, updates `data.js`,
    sanity-checks, then commits via PR and **merges it itself**. Its pushes are
    pre-authorized; the ask-before-push rule below applies to interactive
    sessions only. The repo has `delete_branch_on_merge` enabled, so its
    working branches clean up automatically.
-3. **~09:05** — GitHub Pages rebuilds the live site.
+3. **~07:05** — GitHub Pages rebuilds the live site.
 
 A healthy Monday leaves two commits: "Mirror source data (automated)" then
 "Weekly banner data refresh (automated)". Note for cloud runs: the sandbox
@@ -120,7 +120,7 @@ Claude should then, for each game in `data.js`:
 ### Source mirrors (GitHub Actions)
 
 `.github/workflows/mirror-sources.yml` runs on GitHub's runners every Monday
-00:30 UTC (08:30 GMT+8, 30 min before the cloud refresh routine) and commits
+22:30 UTC Sunday (06:30 GMT+8, 30 min before the cloud refresh routine) and commits
 fresh copies of the P5X/GFL2 sources into `mirrors/` — because the Claude
 cloud sandbox cannot fetch them directly. `mirrors/status.json` records each
 fetch's HTTP code and timestamp. The workflow can also be triggered manually
