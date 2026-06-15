@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-06-12",
+  "lastUpdated": "2026-06-15",
   "games": [
     {
       "name": "Genshin Impact",
@@ -76,7 +76,7 @@ window.GACHA_DATA =
         { "title": "1st Anniversary + anniversary unit (unconfirmed)", "date": "2026-06-25", "approx": true },
         { "title": "Ichigo + main story 5-2", "date": "2026-07-09" }
       ],
-      "notes": "Data confirmed via mirrors (lufel.net + p5x-steam HTTP 200, fetched 2026-06-12). Sanada banner ends 1:59 AM Jun 25 UTC per Steam news. Anniversary placeholder unit (Jun 25) name unconfirmed.",
+      "notes": "Data re-verified 2026-06-15 via mirrors (lufel.net + p5x-steam HTTP 200, fetched 2026-06-12). Sanada banner ends 1:59 AM Jun 25 UTC per Steam news. Anniversary placeholder unit (Jun 25) name unconfirmed.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -128,7 +128,7 @@ window.GACHA_DATA =
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
       "upcoming": [],
-      "notes": "Banner confirmed via gfl2.help mirror (HTTP 200, fetched 2026-06-12): Basti + Voymastina + Lind, Jun 4–24. No upcoming Global banner pre-announced on gfl2.help; Steam patch notes imply next Procurement opens ~Jun 25 but character lineup unconfirmed.",
+      "notes": "Re-verified 2026-06-15 via gfl2.help mirror (HTTP 200, fetched 2026-06-12): Basti + Voymastina + Lind, Jun 4–24. No upcoming Global banner pre-announced; Steam patch notes imply next Procurement opens ~Jun 25 but character lineup unconfirmed.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
