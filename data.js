@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-06-15",
+  "lastUpdated": "2026-06-16",
   "games": [
     {
       "name": "Genshin Impact",
@@ -76,7 +76,7 @@ window.GACHA_DATA =
         { "title": "1st Anniversary + anniversary unit (unconfirmed)", "date": "2026-06-25", "approx": true },
         { "title": "Ichigo + main story 5-2", "date": "2026-07-09" }
       ],
-      "notes": "Data re-verified 2026-06-15 via mirrors (lufel.net + p5x-steam HTTP 200, fetched 2026-06-12). Sanada banner ends 1:59 AM Jun 25 UTC per Steam news. Anniversary placeholder unit (Jun 25) name unconfirmed.",
+      "notes": "Data re-verified 2026-06-16 via mirrors (lufel.net + p5x-steam HTTP 200, fetched 2026-06-12). Sanada banner ends 1:59 AM Jun 25 UTC per Steam news. Anniversary placeholder unit (Jun 25) name unconfirmed.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -92,9 +92,11 @@ window.GACHA_DATA =
         { "title": "Lacrimosa “Fading Reverie” (S-class, Chaos)", "start": "2026-06-03", "end": "2026-06-24" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana); ends Jul 8", "date": "2026-06-24" }
+        { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana); ends Jul 8", "date": "2026-06-24" },
+        { "title": "v1.2 Phase 1 — Shinku (debut)", "date": "2026-07-02", "approx": true },
+        { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-23", "approx": true }
       ],
-      "notes": "",
+      "notes": "v1.2 Shinku (Phase 1) and Iroi (Phase 2) dates from community leaks/analysis — not yet officially confirmed by Hotta Studio.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
@@ -110,9 +112,10 @@ window.GACHA_DATA =
         { "title": "Mi Fu “Fists of No Regrets” (+ Scarlet Knot weapon banner)", "start": "2026-06-04", "end": "2026-06-26" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Camille “Expunger of Sin” (+ Crimson Hued weapon banner)", "date": "2026-06-26" }
+        { "title": "Phase 2 — Camille “Expunger of Sin” (+ Crimson Hued weapon banner)", "date": "2026-06-26" },
+        { "title": "v1.4 Phase 1 — Arcane / Li Zhiyan (debut)", "date": "2026-07-16", "approx": true }
       ],
-      "notes": "",
+      "notes": "v1.4 Arcane date (~Jul 16) based on community leaks and version-cycle estimates — not yet officially confirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -128,7 +131,7 @@ window.GACHA_DATA =
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
       "upcoming": [],
-      "notes": "Re-verified 2026-06-15 via gfl2.help mirror (HTTP 200, fetched 2026-06-12): Basti + Voymastina + Lind, Jun 4–24. No upcoming Global banner pre-announced; Steam patch notes imply next Procurement opens ~Jun 25 but character lineup unconfirmed.",
+      "notes": "Re-verified 2026-06-16 via gfl2.help mirror (HTTP 200, fetched 2026-06-12): Basti + Voymastina + Lind, Jun 4–24. No upcoming Global banner pre-announced; Steam patch notes imply next Procurement opens ~Jun 25 but character lineup unconfirmed.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
