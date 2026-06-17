@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-06-16",
+  "lastUpdated": "2026-06-17",
   "games": [
     {
       "name": "Genshin Impact",
@@ -35,8 +35,8 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "Phase 2 — Phainon + Cyrene (reruns; ends Jul 14)", "date": "2026-06-24" },
-        { "title": "v4.4 Phase 1 — Himeko-Nova + Rin Tohsaka (Fate/Stay Night collab)", "date": "2026-07-14" },
-        { "title": "Gilgamesh (Fate/Stay Night collab, no fixed end)", "date": "2026-07-24" }
+        { "title": "v4.4 Phase 1 — Himeko-Nova (new 5★ Fire Erudition)", "date": "2026-07-14" },
+        { "title": "Rin Tohsaka + Gilgamesh (Fate/Stay Night collab, starts Jul 24)", "date": "2026-07-24" }
       ],
       "notes": "4★ Phase 1: Sampo, Luka, Tingyun. Phase 2 4★: Yukong, Arlan, March 7th. Fate/stay Night collab: Saber + Archer permanently available (no fixed end; live since 2025-07-11).",
       "links": [
@@ -47,17 +47,16 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "version": "2.8 — Phase 2",
+      "version": "3.0 — Phase 1",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "banners": [
-        { "title": "Starlight Billy (debut) + Orphie (rerun)", "start": "2026-05-27", "end": "2026-06-16" }
+        { "title": "Velina (debut) + Ye Shunguang (rerun)", "start": "2026-06-17", "end": "2026-07-08" }
       ],
       "upcoming": [
-        { "title": "v3.0 Phase 1 — Velina (debut) + Ye Shunguang (rerun)", "date": "2026-06-17" },
         { "title": "v3.0 Phase 2 — Norma (debut) + Sunna (rerun; ends Jul 28)", "date": "2026-07-08" }
       ],
-      "notes": "v3.0 launches Jun 17; Pyrois available as free S-Rank.",
+      "notes": "v3.0 launched Jun 17; Pyrois available as free S-Rank.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -74,9 +73,10 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "1st Anniversary + anniversary unit (unconfirmed)", "date": "2026-06-25", "approx": true },
-        { "title": "Ichigo + main story 5-2", "date": "2026-07-09" }
+        { "title": "Ichigo + main story 5-2", "date": "2026-07-09" },
+        { "title": "Minami (Summer variant)", "date": "2026-07-23" }
       ],
-      "notes": "Data re-verified 2026-06-16 via mirrors (lufel.net + p5x-steam HTTP 200, fetched 2026-06-12). Sanada banner ends 1:59 AM Jun 25 UTC per Steam news. Anniversary placeholder unit (Jun 25) name unconfirmed.",
+      "notes": "Re-verified 2026-06-17 via mirrors (lufel.net + p5x-steam HTTP 200, fetched 2026-06-12). Sanada banner ends 1:59 AM Jun 25 UTC per Steam news. Anniversary unit (Jun 25) name unconfirmed per lufel data.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -93,10 +93,10 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana); ends Jul 8", "date": "2026-06-24" },
-        { "title": "v1.2 Phase 1 — Shinku (debut)", "date": "2026-07-02", "approx": true },
-        { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-23", "approx": true }
+        { "title": "v1.2 Phase 1 — Shinku (debut)", "date": "2026-07-08", "approx": true },
+        { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-29", "approx": true }
       ],
-      "notes": "v1.2 Shinku (Phase 1) and Iroi (Phase 2) dates from community leaks/analysis — not yet officially confirmed by Hotta Studio.",
+      "notes": "Shinku and Iroi drip-marketed Jun 6; v1.2 dates estimated (expected after Chaos banner ends Jul 8) — not officially confirmed by Hotta Studio.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
@@ -112,10 +112,10 @@ window.GACHA_DATA =
         { "title": "Mi Fu “Fists of No Regrets” (+ Scarlet Knot weapon banner)", "start": "2026-06-04", "end": "2026-06-26" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Camille “Expunger of Sin” (+ Crimson Hued weapon banner)", "date": "2026-06-26" },
+        { "title": "Phase 2 — Camille “Expunger of Sin” (+ Crimson Hued weapon banner; ends ~Jul 16)", "date": "2026-06-26" },
         { "title": "v1.4 Phase 1 — Arcane / Li Zhiyan (debut)", "date": "2026-07-16", "approx": true }
       ],
-      "notes": "v1.4 Arcane date (~Jul 16) based on community leaks and version-cycle estimates — not yet officially confirmed.",
+      "notes": "v1.4 Arcane start (~Jul 16) based on Game8 v1.3 end-date estimate; not yet officially confirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -131,7 +131,7 @@ window.GACHA_DATA =
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
       "upcoming": [],
-      "notes": "Re-verified 2026-06-16 via gfl2.help mirror (HTTP 200, fetched 2026-06-12): Basti + Voymastina + Lind, Jun 4–24. No upcoming Global banner pre-announced; Steam patch notes imply next Procurement opens ~Jun 25 but character lineup unconfirmed.",
+      "notes": "Re-verified 2026-06-17 via gfl2.help mirror (HTTP 200, fetched 2026-06-12): Basti + Voymastina + Lind, Jun 4–24. Jun 3 patch notes confirm procurement window opens Jun 25 (Surprise Access Permissions valid Jun 25–Aug 5); character lineup not yet announced.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
