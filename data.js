@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-06-17",
+  "lastUpdated": "2026-06-21",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,10 +15,10 @@ window.GACHA_DATA =
         { "title": "Lohen (new 5★ Cryo Polearm) + Mavuika rerun", "start": "2026-06-09", "end": "2026-06-30" }
       ],
       "upcoming": [
-        { "title": "v6.7 Phase 1 — Sandrone (debut, 5★ Cryo Claymore) + Columbina rerun", "date": "2026-07-01" },
-        { "title": "v6.7 Phase 2 — Raiden Shogun rerun + Citlali rerun", "date": "2026-07-21", "approx": true }
+        { "title": "v6.7 Phase 1 — Sandrone (debut, 5★ Cryo Claymore) + Citlali rerun", "date": "2026-07-01" },
+        { "title": "v6.7 Phase 2 — Columbina rerun + Raiden Shogun rerun", "date": "2026-07-21" }
       ],
-      "notes": "4★ boosted: Mika, Xiangling, Bennett.",
+      "notes": "4★ boosted: Mika, Xiangling, Bennett. v6.7 Phase 2 ends Aug 11.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -35,8 +35,8 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "Phase 2 — Phainon + Cyrene (reruns; ends Jul 14)", "date": "2026-06-24" },
-        { "title": "v4.4 Phase 1 — Himeko-Nova (new 5★ Fire Erudition)", "date": "2026-07-14" },
-        { "title": "Rin Tohsaka + Gilgamesh (Fate/Stay Night collab, starts Jul 24)", "date": "2026-07-24" }
+        { "title": "v4.4 Phase 1 — Himeko-Nova (new 5★ Fire Erudition; ends Aug 5)", "date": "2026-07-14" },
+        { "title": "Rin Tohsaka + Gilgamesh (Fate/Stay Night collab, starts Jul 24; no fixed end)", "date": "2026-07-24" }
       ],
       "notes": "4★ Phase 1: Sampo, Luka, Tingyun. Phase 2 4★: Yukong, Arlan, March 7th. Fate/stay Night collab: Saber + Archer permanently available (no fixed end; live since 2025-07-11).",
       "links": [
@@ -72,11 +72,11 @@ window.GACHA_DATA =
         { "title": "Akihiko Sanada (new release)", "start": "2026-06-11", "end": "2026-06-25" }
       ],
       "upcoming": [
-        { "title": "1st Anniversary + anniversary unit (unconfirmed)", "date": "2026-06-25", "approx": true },
+        { "title": "1st Anniversary — Hatsune Miku (debut, 5★ collab)", "date": "2026-06-25" },
         { "title": "Ichigo + main story 5-2", "date": "2026-07-09" },
         { "title": "Minami (Summer variant)", "date": "2026-07-23" }
       ],
-      "notes": "Re-verified 2026-06-17 via mirrors (lufel.net + p5x-steam HTTP 200, fetched 2026-06-12). Sanada banner ends 1:59 AM Jun 25 UTC per Steam news. Anniversary unit (Jun 25) name unconfirmed per lufel data.",
+      "notes": "Hatsune Miku confirmed as Global 1st Anniversary collab unit (Jun 25). Sanada ends 1:59 AM Jun 25 UTC per Steam news. Schedule via lufel.net mirror + official announcements.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -130,8 +130,10 @@ window.GACHA_DATA =
       "banners": [
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
-      "upcoming": [],
-      "notes": "Re-verified 2026-06-17 via gfl2.help mirror (HTTP 200, fetched 2026-06-12): Basti + Voymastina + Lind, Jun 4–24. Jun 3 patch notes confirm procurement window opens Jun 25 (Surprise Access Permissions valid Jun 25–Aug 5); character lineup not yet announced.",
+      "upcoming": [
+        { "title": "Loreley (new) + Lainie (rerun) + ??? (Targeted Procurement; ends ~Jul 15)", "date": "2026-06-25" }
+      ],
+      "notes": "Next procurement opens Jun 25 (Surprise Access Permissions valid Jun 25–Aug 5). Loreley + Lainie confirmed via gfl2.help web search (mirror stale >8 days as of Jun 21); third character TBD.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
