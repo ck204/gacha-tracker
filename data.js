@@ -15,8 +15,8 @@ window.GACHA_DATA =
         { "title": "Lohen (new 5★ Cryo Polearm) + Mavuika rerun", "start": "2026-06-09", "end": "2026-06-30" }
       ],
       "upcoming": [
-        { "title": "v6.7 Phase 1 — Sandrone (debut, 5★ Cryo Claymore) + Citlali rerun", "date": "2026-07-01" },
-        { "title": "v6.7 Phase 2 — Columbina rerun + Raiden Shogun rerun", "date": "2026-07-21" }
+        { "title": "v6.7 Phase 1 — Sandrone (debut, 5★ Cryo Claymore) + Citlali rerun", "date": "2026-07-01", "endDate": "2026-07-21" },
+        { "title": "v6.7 Phase 2 — Columbina rerun + Raiden Shogun rerun", "date": "2026-07-21", "endDate": "2026-08-11" }
       ],
       "notes": "4★ boosted: Mika, Xiangling, Bennett. v6.7 Phase 2 ends Aug 11.",
       "links": [
@@ -34,8 +34,8 @@ window.GACHA_DATA =
         { "title": "Mortenax Blade (new 5★ Fire) + Yao Guang (rerun)", "start": "2026-06-01", "end": "2026-06-24" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Phainon + Cyrene (reruns; ends Jul 14)", "date": "2026-06-24" },
-        { "title": "v4.4 Phase 1 — Himeko-Nova (new 5★ Fire Erudition; ends Aug 5)", "date": "2026-07-14" },
+        { "title": "Phase 2 — Phainon + Cyrene (reruns; ends Jul 14)", "date": "2026-06-24", "endDate": "2026-07-14" },
+        { "title": "v4.4 Phase 1 — Himeko-Nova (new 5★ Fire Erudition; ends Aug 5)", "date": "2026-07-14", "endDate": "2026-08-05" },
         { "title": "Rin Tohsaka + Gilgamesh (Fate/Stay Night collab, starts Jul 24; no fixed end)", "date": "2026-07-24" }
       ],
       "notes": "4★ Phase 1: Sampo, Luka, Tingyun. Phase 2 4★: Yukong, Arlan, March 7th. Fate/stay Night collab: Saber + Archer permanently available (no fixed end; live since 2025-07-11).",
@@ -54,7 +54,7 @@ window.GACHA_DATA =
         { "title": "Velina (debut) + Ye Shunguang (rerun)", "start": "2026-06-17", "end": "2026-07-08" }
       ],
       "upcoming": [
-        { "title": "v3.0 Phase 2 — Norma (debut) + Sunna (rerun; ends Jul 28)", "date": "2026-07-08" }
+        { "title": "v3.0 Phase 2 — Norma (debut) + Sunna (rerun; ends Jul 28)", "date": "2026-07-08", "endDate": "2026-07-28" }
       ],
       "notes": "v3.0 launched Jun 17; Pyrois available as free S-Rank.",
       "links": [
@@ -72,8 +72,8 @@ window.GACHA_DATA =
         { "title": "Akihiko Sanada (new release)", "start": "2026-06-11", "end": "2026-06-25" }
       ],
       "upcoming": [
-        { "title": "1st Anniversary — Hatsune Miku (debut, 5★ collab)", "date": "2026-06-25" },
-        { "title": "Ichigo + main story 5-2", "date": "2026-07-09" },
+        { "title": "1st Anniversary — Hatsune Miku (debut, 5★ collab)", "date": "2026-06-25", "endDate": "2026-07-09" },
+        { "title": "Ichigo + main story 5-2", "date": "2026-07-09", "endDate": "2026-07-23" },
         { "title": "Minami (Summer variant)", "date": "2026-07-23" }
       ],
       "notes": "Hatsune Miku confirmed as Global 1st Anniversary collab unit (Jun 25). Sanada ends 1:59 AM Jun 25 UTC per Steam news. Schedule via lufel.net mirror + official announcements.",
@@ -92,8 +92,8 @@ window.GACHA_DATA =
         { "title": "Lacrimosa “Fading Reverie” (S-class, Chaos)", "start": "2026-06-03", "end": "2026-06-24" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana); ends Jul 8", "date": "2026-06-24" },
-        { "title": "v1.2 Phase 1 — Shinku (debut)", "date": "2026-07-08", "approx": true },
+        { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana); ends Jul 8", "date": "2026-06-24", "endDate": "2026-07-08" },
+        { "title": "v1.2 Phase 1 — Shinku (debut)", "date": "2026-07-08", "endDate": "2026-07-29", "approx": true },
         { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-29", "approx": true }
       ],
       "notes": "Shinku and Iroi drip-marketed Jun 6; v1.2 dates estimated (expected after Chaos banner ends Jul 8) — not officially confirmed by Hotta Studio.",
@@ -112,7 +112,7 @@ window.GACHA_DATA =
         { "title": "Mi Fu “Fists of No Regrets” (+ Scarlet Knot weapon banner)", "start": "2026-06-04", "end": "2026-06-26" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Camille “Expunger of Sin” (+ Crimson Hued weapon banner; ends ~Jul 16)", "date": "2026-06-26" },
+        { "title": "Phase 2 — Camille “Expunger of Sin” (+ Crimson Hued weapon banner; ends ~Jul 16)", "date": "2026-06-26", "endDate": "2026-07-16" },
         { "title": "v1.4 Phase 1 — Arcane / Li Zhiyan (debut)", "date": "2026-07-16", "approx": true }
       ],
       "notes": "v1.4 Arcane start (~Jul 16) based on Game8 v1.3 end-date estimate; not yet officially confirmed.",
@@ -131,8 +131,8 @@ window.GACHA_DATA =
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
       "upcoming": [
-        { "title": "Loreley (new Elite Doll, 1.5th Anniversary; ends Jul 16)", "date": "2026-06-25" },
-        { "title": "Cheyanne & Liushih (new Elite Dolls; ends Aug 5)", "date": "2026-07-16" }
+        { "title": "Loreley (new Elite Doll, 1.5th Anniversary; ends Jul 16)", "date": "2026-06-25", "endDate": "2026-07-16" },
+        { "title": "Cheyanne & Liushih (new Elite Dolls; ends Aug 5)", "date": "2026-07-16", "endDate": "2026-08-05" }
       ],
       "notes": "From official 1.5th Anniversary event calendar: Loreley banner Jun 25–Jul 16, Cheyanne & Liushih Jul 16–Aug 5. Harpsy obtainable free via Evershifting Hacker event. Elite weapons: Nighttide Nocturne & Antinomy (P1), Nightwalker Cardamom & Transience (P2).",
       "links": [

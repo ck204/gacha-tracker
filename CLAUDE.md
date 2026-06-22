@@ -34,6 +34,12 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
    source; they can't be fetched directly — use web-search snippets).
 2. Update **only `data.js`**: banner `title`s, `start`/`end` dates (YYYY-MM-DD),
    `version`, `upcoming` list, `notes`, and set `lastUpdated` to today.
+   - For each `upcoming` entry, set the optional **`endDate`** (YYYY-MM-DD) when the
+     end is known or structurally certain — i.e. it's stated in the source, or the
+     entry is a phase that ends when the next contiguous phase starts (HoYo Phase 1
+     ends on Phase 2's start; etc.). Omit `endDate` only when the end is genuinely
+     unknown (e.g. "no fixed end", or the last phase in a chain). `endDate` makes the
+     calendar draw a proper start→end bar instead of a single-day marker.
 3. Do **not** edit `index.html`.
 4. `git commit` data.js and `git push` to update the live site — **ask first**.
 
@@ -126,7 +132,10 @@ window.GACHA_DATA = {
                                        // icons via iTunes Search API, 512px JPEG)
     needsCheck: true,                  // optional: shows "check manually" box
     banners:  [{ title, start, end }], // currently running
-    upcoming: [{ title, date, approx }],
+    upcoming: [{ title, date, approx, endDate }],  // endDate optional (YYYY-MM-DD):
+                                       // if set, the calendar draws a date→endDate bar
+                                       // instead of a single-day marker
+
     notes: "",                         // optional caveat line
     links: [{ label, url }]
   }]

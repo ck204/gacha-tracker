@@ -278,14 +278,15 @@
   }
 
   // ---- Calendar overview ----
-  // Flat list of spans: running banners use start→end, upcoming entries are single-day
+  // Flat list of spans: running banners use start→end; upcoming entries use date→endDate
+  // (single-day when endDate is omitted)
   const calItems = [];
   for (const g of data.games) {
     const accent = g.accent || "#5a617a";
     for (const b of (g.banners || []))
       calItems.push({ name: g.name, accent, title: b.title, start: parse(b.start), end: parse(b.end), banner: true });
     for (const u of (g.upcoming || []))
-      calItems.push({ name: g.name, accent, title: u.title, start: parse(u.date), end: parse(u.date), approx: u.approx });
+      calItems.push({ name: g.name, accent, title: u.title, start: parse(u.date), end: parse(u.endDate || u.date), approx: u.approx });
   }
 
   const fmtD = d => d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
