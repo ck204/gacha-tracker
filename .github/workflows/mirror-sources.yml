@@ -3,11 +3,12 @@ name: Mirror banner data sources
 # Fetches the P5X/GFL2 sources that the Claude cloud routine cannot reach
 # (its sandbox blocks outbound fetches) and commits them into mirrors/ so the
 # routine can read them from the repo itself.
-# Runs Sunday 22:30 UTC (Monday 06:30 GMT+8) — 30 min before the 07:00 refresh routine.
-
+# Runs Sunday 21:07 UTC (Monday 05:07 GMT+8) — ~2 h before the Mon 07:00 GMT+8
+# refresh routine. The 2 h buffer absorbs GitHub's scheduled-run delays; the odd
+# :07 minute avoids the congested top/bottom-of-hour slots that get dropped.
 on:
   schedule:
-    - cron: '30 22 * * 0'
+    - cron: '7 21 * * 0'
   workflow_dispatch:
 
 permissions:

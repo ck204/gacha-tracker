@@ -57,10 +57,11 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 
 ### Source mirrors (GitHub Actions)
 
-`.github/workflows/mirror-sources.yml` runs on GitHub's runners every Monday 22:30 UTC
-Sunday (06:30 GMT+8, 30 min before the cloud refresh routine) and commits fresh copies of
+`.github/workflows/mirror-sources.yml` runs on GitHub's runners every Sunday 21:07 UTC
+(Monday 05:07 GMT+8, ~2 h before the cloud refresh routine) and commits fresh copies of
 the P5X/GFL2 sources into `mirrors/` — because the Claude cloud sandbox cannot fetch them
-directly. `mirrors/status.json` records each fetch's HTTP code and timestamp. The workflow
+directly. (The 2 h buffer + odd `:07` minute guard against GitHub's scheduled-run delays
+and dropped top-of-hour slots.) `mirrors/status.json` records each fetch's HTTP code and timestamp. The workflow
 can also be triggered manually (`gh workflow run mirror-sources.yml` or the Actions tab). A
 failed fetch keeps the previous mirror file; status.json shows the failure code.
 
@@ -81,7 +82,7 @@ A scheduled Claude cloud agent (configured on claude.ai/code under the user's ac
 not stored in this repo) refreshes the data **every Monday 07:00 GMT+8**, fully independent
 of the user's PC:
 
-1. **06:30** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/` (see above).
+1. **05:07** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/` (see above).
 2. **07:00** — the routine runs: it reads this file and follows the "Refreshing the data"
    procedure and source rules, updates `data.js`, sanity-checks, then commits via PR and
    **merges it itself**. Its pushes are pre-authorized; the ask-before-push rule applies to
