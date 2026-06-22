@@ -37,6 +37,11 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 3. Do **not** edit `index.html`.
 4. `git commit` data.js and `git push` to update the live site — **ask first**.
 
+> **FGO is excluded from this procedure (and from the cloud routine).** It is
+> manual-only — never auto-refresh or edit its `data.js` entry here. To update it,
+> follow the dedicated runbook **[`FGO-update.md`](FGO-update.md)** when the user
+> asks (e.g. "run FGO-update").
+
 ### Games tracked & primary sources
 
 | Game | Source |
@@ -47,6 +52,7 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 | Persona 5: The Phantom X | **Direct feed:** `https://lufel.net/apps/schedule/data.js` (plain JS, fetchable — see P5X notes below). **Cloud runs CANNOT fetch it** (sandbox blocks all outbound fetches — WebFetch *and* shell curl both 403); read repo mirrors instead: `mirrors/p5x-lufel-data.js` (same format as the live feed), plus `mirrors/gfl2-steam-news.json` / `mirrors/p5x-steam-news.json` (official Steam posts: banner character + exact end datetime UTC, posted release day; no future schedule). Check `mirrors/status.json` for each mirror's HTTP code + timestamp — if stale (>8 days) or non-200, fall back to web search, then keep-and-flag. |
 | Neverness to Everness | game8.co/games/Neverness-to-Everness/archives/597944 |
 | Arknights: Endfield | game8.co/games/Arknights-Endfield/archives/524215 |
+| Fate/Grand Order (NA) | **MANUAL ONLY — the routine must SKIP this game entirely; never edit the FGO entry in `data.js` during an automated/routine refresh.** Maintained by hand via the runbook **[`FGO-update.md`](FGO-update.md)**. Source `grandorder.gamepress.gg/summon-banner-list` needs raw-HTML parsing (NA dates embedded per row) the sandbox can't do. Keep ONLY banners that debut a NEW Servant (verify via NA-banner history — the word "Pickup" doesn't distinguish new from rerun); DROP all reruns including "Pickup 2/3", `Revival:`, and support/participation banners. `upcoming` = up to the next 3 new-Servant debuts. Keep a short `notes` line (NA server; debuts-only; estimated dates). See the runbook for the full method. |
 | Girls' Frontline 2: Exilium | gfl2.help/en/banners (primary — fetchable via WebFetch with a verbatim-quote prompt; direct Invoke-WebRequest 403s after one request). **CAUTION:** the page lists Global AND CN sections and WebFetch summaries have swapped the server headings before — always ask for the verbatim heading-to-content pairing and sanity-check (user plays GLOBAL; Global dates use UTC-4). Global does NOT follow CN's banner order/timeline (confirmed by user) — never infer a Global `upcoming` entry from CN banners; CN info belongs in `notes` only. Do NOT use Dexerto or IOP Wiki (confirmed unreliable for this game). exilium.xyz is JS-rendered — needs a real browser (Chrome connector). No Game8 page. **Cloud runs: read the repo mirrors** — `mirrors/gfl2-help-banners.html` if its status is 200, else `mirrors/gfl2-steam-news.json` (official "Update Contents" posts list the Rate Up Event lineup, e.g. "drop rate for Elite Doll [Basti] ... [Voymastina] ... increased", with start datetime in UTC-4; banners run ~3 weeks — confirm end via the next update post or search). |
 
 ### Source mirrors (GitHub Actions)

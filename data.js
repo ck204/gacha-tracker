@@ -138,6 +138,26 @@ window.GACHA_DATA =
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
+    },
+    {
+      "name": "Fate/Grand Order (NA)",
+      "short": "FGO",
+      "version": "NA / Global",
+      "accent": "#c0a062",
+      "icon": "icons/fgo.jpg",
+      "banners": [
+        { "title": "Dancing Dragon Castle — Hibiki & Chikagi", "start": "2026-06-12", "end": "2026-07-02" }
+      ],
+      "upcoming": [
+        { "title": "Space Ereshkigal", "date": "2026-07-15", "approx": true },
+        { "title": "Mysterious Executor C.I.E.L.", "date": "2026-07-29", "approx": true },
+        { "title": "BB (Dubai)", "date": "2026-08-12", "approx": true }
+      ],
+      "notes": "NA server. Shows new-Servant debuts only (reruns/support hidden). Upcoming dates are estimates from the JP schedule (NA trails JP ~23 months) — not yet officially announced.",
+      "links": [
+        { "label": "GamePress NA campaigns", "url": "https://grandorder.gamepress.gg/p/campaign-list" },
+        { "label": "Official NA site", "url": "https://fate-go.us/" }
+      ]
     }
   ]
 }
