@@ -124,16 +124,17 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "version": "Global",
+      "version": "1.5th Anniversary",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "banners": [
         { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
       ],
       "upcoming": [
-        { "title": "Loreley (new) + Lainie (rerun) + ??? (Targeted Procurement; ends ~Jul 15)", "date": "2026-06-25" }
+        { "title": "Loreley (new Elite Doll, 1.5th Anniversary; ends Jul 16)", "date": "2026-06-25" },
+        { "title": "Cheyanne & Liushih (new Elite Dolls; ends Aug 5)", "date": "2026-07-16" }
       ],
-      "notes": "Next procurement opens Jun 25 (Surprise Access Permissions valid Jun 25–Aug 5). Loreley + Lainie confirmed via gfl2.help web search (mirror stale >8 days as of Jun 21); third character TBD.",
+      "notes": "From official 1.5th Anniversary event calendar: Loreley banner Jun 25–Jul 16, Cheyanne & Liushih Jul 16–Aug 5. Harpsy obtainable free via Evershifting Hacker event. Elite weapons: Nighttide Nocturne & Antinomy (P1), Nightwalker Cardamom & Transience (P2).",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
