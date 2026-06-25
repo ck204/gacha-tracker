@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-06-21",
+  "lastUpdated": "2026-06-25",
   "games": [
     {
       "name": "Genshin Impact",
@@ -18,7 +18,7 @@ window.GACHA_DATA =
         { "title": "v6.7 Phase 1 — Sandrone (debut, 5★ Cryo Claymore) + Citlali rerun", "date": "2026-07-01", "endDate": "2026-07-21" },
         { "title": "v6.7 Phase 2 — Columbina rerun + Raiden Shogun rerun", "date": "2026-07-21", "endDate": "2026-08-11" }
       ],
-      "notes": "4★ boosted: Mika, Xiangling, Bennett. v6.7 Phase 2 ends Aug 11.",
+      "notes": "4★ boosted: Mika, Xiangling, Bennett. v6.7 introduces Stellar-Conduct reaction; Phase 2 ends Aug 11.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -27,18 +27,17 @@ window.GACHA_DATA =
     {
       "name": "Honkai: Star Rail",
       "short": "HSR",
-      "version": "4.3 — Phase 1",
+      "version": "4.3 — Phase 2",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "banners": [
-        { "title": "Mortenax Blade (new 5★ Fire) + Yao Guang (rerun)", "start": "2026-06-01", "end": "2026-06-24" }
+        { "title": "Phase 2 — Phainon + Cyrene (reruns)", "start": "2026-06-24", "end": "2026-07-14" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Phainon + Cyrene (reruns; ends Jul 14)", "date": "2026-06-24", "endDate": "2026-07-14" },
-        { "title": "v4.4 Phase 1 — Himeko-Nova (new 5★ Fire Erudition; ends Aug 5)", "date": "2026-07-14", "endDate": "2026-08-05" },
-        { "title": "Rin Tohsaka + Gilgamesh (Fate/Stay Night collab, starts Jul 24; no fixed end)", "date": "2026-07-24" }
+        { "title": "v4.4 Phase 1 — Himeko Nova (debut, 5★ Fire Erudition)", "date": "2026-07-14", "endDate": "2026-08-05" },
+        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka (pullable) + Gilgamesh (free); starts Jul 24", "date": "2026-07-24" }
       ],
-      "notes": "4★ Phase 1: Sampo, Luka, Tingyun. Phase 2 4★: Yukong, Arlan, March 7th. Fate/stay Night collab: Saber + Archer permanently available (no fixed end; live since 2025-07-11).",
+      "notes": "Phase 2 4★: Yukong, Arlan, March 7th. Fate collab Part 2 ('Imagenae Holy Grail War') runs concurrent with v4.4; Saber + Archer from Part 1 remain available (live since 2025-07-11).",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -54,9 +53,11 @@ window.GACHA_DATA =
         { "title": "Velina (debut) + Ye Shunguang (rerun)", "start": "2026-06-17", "end": "2026-07-08" }
       ],
       "upcoming": [
-        { "title": "v3.0 Phase 2 — Norma (debut) + Sunna (rerun; ends Jul 28)", "date": "2026-07-08", "endDate": "2026-07-28" }
+        { "title": "v3.0 Phase 2 — Norma (debut, Fire Stun) + Sunna (rerun)", "date": "2026-07-08", "endDate": "2026-07-28" },
+        { "title": "v3.1 Phase 1 — Remielle Dan (debut, Ether Anomaly/Support)", "date": "2026-07-29", "endDate": "2026-08-18", "approx": true },
+        { "title": "v3.1 Phase 2 — Sigrid (debut, Ice Attack)", "date": "2026-08-18", "approx": true }
       ],
-      "notes": "v3.0 launched Jun 17; Pyrois available as free S-Rank.",
+      "notes": "v3.0 launched Jun 17; Pyrois available as free S-Rank. v3.1 (Jul 29) banners not yet officially confirmed — Remielle Dan + Sigrid per community sources.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -65,18 +66,17 @@ window.GACHA_DATA =
     {
       "name": "Persona 5: The Phantom X",
       "short": "P5X",
-      "version": "4.3 (Global)",
+      "version": "1st Anniversary (Global)",
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "Akihiko Sanada (new release)", "start": "2026-06-11", "end": "2026-06-25" }
+        { "title": "Hatsune Miku (1st Anniversary collab, debut 5★)", "start": "2026-06-25", "end": "2026-07-09" }
       ],
       "upcoming": [
-        { "title": "1st Anniversary — Hatsune Miku (debut, 5★ collab)", "date": "2026-06-25", "endDate": "2026-07-09" },
         { "title": "Ichigo + main story 5-2", "date": "2026-07-09", "endDate": "2026-07-23" },
-        { "title": "Minami (Summer variant)", "date": "2026-07-23" }
+        { "title": "Minami (Summer variant)", "date": "2026-07-23", "endDate": "2026-08-06" }
       ],
-      "notes": "Hatsune Miku confirmed as Global 1st Anniversary collab unit (Jun 25). Sanada ends 1:59 AM Jun 25 UTC per Steam news. Schedule via lufel.net mirror + official announcements.",
+      "notes": "Hatsune Miku confirmed as Global 1st Anniversary collab unit (starts Jun 25, 14 days). Sanada ended 1:59 AM Jun 25 UTC per Steam news. Schedule via lufel.net mirror (14-day intervals from v4.0+).",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -85,18 +85,17 @@ window.GACHA_DATA =
     {
       "name": "Neverness to Everness",
       "short": "NTE",
-      "version": "1.1 — Phase 1",
+      "version": "1.1 — Phase 2",
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
       "banners": [
-        { "title": "Lacrimosa “Fading Reverie” (S-class, Chaos)", "start": "2026-06-03", "end": "2026-06-24" }
+        { "title": "Chaos \"Forsaken Path\" (S-class, Lakshana)", "start": "2026-06-24", "end": "2026-07-08" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Chaos “Forsaken Path” (S-class, Lakshana); ends Jul 8", "date": "2026-06-24", "endDate": "2026-07-08" },
         { "title": "v1.2 Phase 1 — Shinku (debut)", "date": "2026-07-08", "endDate": "2026-07-29", "approx": true },
         { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-29", "approx": true }
       ],
-      "notes": "Shinku and Iroi drip-marketed Jun 6; v1.2 dates estimated (expected after Chaos banner ends Jul 8) — not officially confirmed by Hotta Studio.",
+      "notes": "Chaos banner (Lakshana attribute) confirmed Jun 24 – Jul 8. Shinku and Iroi drip-marketed Jun 6; v1.2 dates estimated after Chaos banner ends — not officially confirmed by Hotta Studio.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
@@ -109,10 +108,10 @@ window.GACHA_DATA =
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "banners": [
-        { "title": "Mi Fu “Fists of No Regrets” (+ Scarlet Knot weapon banner)", "start": "2026-06-04", "end": "2026-06-26" }
+        { "title": "Mi Fu \"Fists of No Regrets\" (+ Scarlet Knot weapon banner)", "start": "2026-06-04", "end": "2026-06-26" }
       ],
       "upcoming": [
-        { "title": "Phase 2 — Camille “Expunger of Sin” (+ Crimson Hued weapon banner; ends ~Jul 16)", "date": "2026-06-26", "endDate": "2026-07-16" },
+        { "title": "Phase 2 — Camille \"Expunger of Sin\" (+ Crimson Hued weapon banner; ends ~Jul 16)", "date": "2026-06-26", "endDate": "2026-07-16" },
         { "title": "v1.4 Phase 1 — Arcane / Li Zhiyan (debut)", "date": "2026-07-16", "approx": true }
       ],
       "notes": "v1.4 Arcane start (~Jul 16) based on Game8 v1.3 end-date estimate; not yet officially confirmed.",
@@ -128,13 +127,12 @@ window.GACHA_DATA =
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "banners": [
-        { "title": "Basti + Voymastina + Lind (Targeted Procurement)", "start": "2026-06-04", "end": "2026-06-24" }
+        { "title": "Loreley + Lainie (Targeted Procurement)", "start": "2026-06-25", "end": "2026-07-15" }
       ],
       "upcoming": [
-        { "title": "Loreley (new Elite Doll, 1.5th Anniversary; ends Jul 16)", "date": "2026-06-25", "endDate": "2026-07-16" },
-        { "title": "Cheyanne & Liushih (new Elite Dolls; ends Aug 5)", "date": "2026-07-16", "endDate": "2026-08-05" }
+        { "title": "Cheyanne + Liushih + Helen (Targeted Procurement)", "date": "2026-07-16", "endDate": "2026-08-05" }
       ],
-      "notes": "From official 1.5th Anniversary event calendar: Loreley banner Jun 25–Jul 16, Cheyanne & Liushih Jul 16–Aug 5. Harpsy obtainable free via Evershifting Hacker event. Elite weapons: Nighttide Nocturne & Antinomy (P1), Nightwalker Cardamom & Transience (P2).",
+      "notes": "Loreley banner Jun 25 – Jul 15 (mirror confirmed; 3rd featured doll listed as Unknown in Jun 21 snapshot — may be revealed at launch). Cheyanne + Liushih + Helen Jul 16 – Aug 5. Surprise Access Permissions (from Basti event) valid Jun 25 – Aug 5 UTC-4. Source: gfl2.help mirror (status 200, fetched Jun 21).",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
