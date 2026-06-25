@@ -63,6 +63,7 @@
   .days.soon { color: var(--amber); }
   .days.urgent { color: var(--red); }
   .days.ended { color: var(--gray); }
+  .days.upcoming { color: #7fb4e8; }
   .bar { height: 6px; background: #232938; border-radius: 3px; overflow: hidden; }
   .bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s; }
   .upcoming { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--card-border); }
@@ -199,13 +200,34 @@
   const parse = s => new Date(s + "T00:00:00");
   const fmt = s => parse(s).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 
+  // Pick the single banner a card should show right now. Candidates are the
+  // current banners plus any upcoming entry that has an endDate (so it can be a
+  // real bar). Prefer the active one (start ≤ now ≤ end); if none is active,
+  // fall back to the most recently ended; only show a not-yet-started banner if
+  // nothing has started at all. This makes the bar auto-advance to the next
+  // banner the moment its start date arrives — no refresh needed.
+  const pickBanner = g => {
+    const cands = [];
+    for (const b of (g.banners || [])) cands.push({ title: b.title, start: b.start, end: b.end });
+    for (const u of (g.upcoming || [])) if (u.endDate) cands.push({ title: u.title, start: u.date, end: u.endDate, approx: u.approx });
+    if (!cands.length) return null;
+    const t = cands.map(c => ({ ...c, s: parse(c.start), e: new Date(parse(c.end).getTime() + DAY) }));
+    const active = t.filter(c => c.s <= now && now < c.e).sort((a, b) => b.s - a.s);
+    if (active.length) return active[0];
+    const ended = t.filter(c => c.e <= now).sort((a, b) => b.s - a.s);
+    if (ended.length) return ended[0];
+    return t.sort((a, b) => a.s - b.s)[0];
+  };
+
   // Header: last-updated + staleness
   const updatedEl = document.getElementById("updated");
   const lastUpd = parse(data.lastUpdated);
   const updAge = Math.floor((now - lastUpd) / DAY);
   updatedEl.textContent = "Data refreshed " + data.lastUpdated + (updAge > 0 ? ` (${updAge}d ago)` : " (today)");
 
-  const anyEnded = data.games.some(g => (g.banners || []).some(b => parse(b.end) < now));
+  // Warn only when the banner actually on display has ended (a real gap with no
+  // started successor) — auto-advanced cards don't need a "data stale" nudge.
+  const anyEnded = data.games.some(g => { const p = pickBanner(g); return p && new Date(parse(p.end).getTime() + DAY) <= now; });
   if (updAge > 10 || anyEnded) {
     const stale = document.getElementById("stale");
     stale.style.display = "";
@@ -223,8 +245,9 @@
     const icon = g.icon ? `<img class="gicon" src="${g.icon}" alt="" onerror="this.remove()">` : "";
     let html = `<h2>${g.name} ${icon}<span class="ver">${g.version || ""}</span></h2>`;
 
-    for (const b of (g.banners || [])) {
-      const start = parse(b.start), end = parse(b.end);
+    const pb = pickBanner(g);
+    if (pb) {
+      const start = parse(pb.start), end = parse(pb.end);
       // End of the listed end-day
       const endOfDay = new Date(end.getTime() + DAY);
       const daysLeft = Math.ceil((endOfDay - now) / DAY);
@@ -232,18 +255,19 @@
       const pct = Math.min(100, Math.max(0, ((now - start) / total) * 100));
 
       let cls = "ok", label = daysLeft + "d left", badge = "";
-      if (daysLeft <= 0) { cls = "ended"; label = "ended"; }
+      if (now < start) { cls = "upcoming"; label = "starts in " + Math.ceil((start - now) / DAY) + "d"; }
+      else if (daysLeft <= 0) { cls = "ended"; label = "ended"; }
       else if (daysLeft <= 3) { cls = "urgent"; label = daysLeft + "d left"; badge = `<span class="ending-badge">ENDING SOON</span>`; }
       else if (daysLeft <= 7) { cls = "soon"; }
-      const isNew = (now - start) / DAY <= 3 && daysLeft > 0;
+      const isNew = now >= start && (now - start) / DAY <= 3 && daysLeft > 0;
       if (isNew) badge += ` <span class="new-badge">NEW</span>`;
 
-      const barColor = cls === "urgent" ? "var(--red)" : cls === "soon" ? "var(--amber)" : cls === "ended" ? "var(--gray)" : "var(--green)";
+      const barColor = cls === "urgent" ? "var(--red)" : cls === "soon" ? "var(--amber)" : cls === "ended" ? "var(--gray)" : cls === "upcoming" ? "#7fb4e8" : "var(--green)";
       html += `
         <div class="banner">
-          <div class="banner-title">${b.title} ${badge}</div>
+          <div class="banner-title">${pb.title} ${badge}</div>
           <div class="meta">
-            <span>${fmt(b.start)} → ${fmt(b.end)}</span>
+            <span>${fmt(pb.start)} → ${fmt(pb.end)}</span>
             <span class="days ${cls}">${label}</span>
           </div>
           <div class="bar"><div class="bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
@@ -254,11 +278,13 @@
       html += `<div class="check">🔍 No tracked banner data — check manually via the links below.</div>`;
     }
 
-    if ((g.upcoming || []).length) {
+    // Only list upcoming entries that haven't started yet; once an entry's start
+    // date arrives it's promoted to the bar above (and drops off this list).
+    const futureUp = (g.upcoming || []).filter(u => parse(u.date) > now);
+    if (futureUp.length) {
       html += `<div class="upcoming"><h3>Upcoming</h3><ul>`;
-      for (const u of g.upcoming) {
-        const d = parse(u.date);
-        const inDays = Math.ceil((d - now) / DAY);
+      for (const u of futureUp) {
+        const inDays = Math.ceil((parse(u.date) - now) / DAY);
         const when = (u.approx ? "~" : "") + fmt(u.date) + (inDays > 0 ? ` (in ${inDays}d)` : "");
         html += `<li><span>${u.title}</span><span class="when">${when}</span></li>`;
       }
