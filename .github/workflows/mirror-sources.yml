@@ -52,6 +52,14 @@ jobs:
           rm -f mirrors/status.partial
           cat mirrors/status.json
 
+      - name: Build digests
+        # Compact, routine-friendly versions of the bulky mirrors so the cloud
+        # routine reads ~4K tokens instead of ~70K. Raw mirrors are kept for
+        # fallback/debugging. See scripts/make-digests.py.
+        run: |
+          python3 scripts/make-digests.py
+          echo "digests:" && ls -l mirrors/*digest* 2>/dev/null
+
       - name: Commit mirrors
         run: |
           git config user.name "github-actions[bot]"
