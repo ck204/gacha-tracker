@@ -3,22 +3,21 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-06-28",
+  "lastUpdated": "2026-07-05",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "version": "6.6 (Luna VII) — Phase 2",
+      "version": "6.7 (Luna VIII) — Phase 1",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "banners": [
-        { "title": "Lohen (new 5★ Cryo Polearm) + Mavuika rerun", "start": "2026-06-09", "end": "2026-06-30" }
+        { "title": "Sandrone (debut, 5★ Cryo Claymore) + Citlali rerun", "start": "2026-07-01", "end": "2026-07-21" }
       ],
       "upcoming": [
-        { "title": "v6.7 Phase 1 — Sandrone (debut, 5★ Cryo Claymore) + Citlali rerun", "date": "2026-07-01", "endDate": "2026-07-21" },
         { "title": "v6.7 Phase 2 — Columbina rerun + Raiden Shogun rerun", "date": "2026-07-21", "endDate": "2026-08-11" }
       ],
-      "notes": "4★ boosted: Mika, Xiangling, Bennett. v6.7 introduces Stellar-Conduct reaction; Phase 2 ends Aug 11.",
+      "notes": "New Lightrace Wish added in 6.7. Version 6.8 is skipped — next major update is v7.0 (~Aug 12), introducing the Tsaritsa and the Snezhnaya region.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
