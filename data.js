@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-07-06",
+  "lastUpdated": "2026-07-11",
   "games": [
     {
       "name": "Genshin Impact",
@@ -45,18 +45,17 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "version": "3.0 — Phase 1",
+      "version": "3.0 — Phase 2",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "banners": [
-        { "title": "Velina (debut) + Ye Shunguang (rerun)", "start": "2026-06-17", "end": "2026-07-08" }
+        { "title": "Norma (debut, Fire Stun) + Sunna (rerun)", "start": "2026-07-08", "end": "2026-07-28" }
       ],
       "upcoming": [
-        { "title": "v3.0 Phase 2 — Norma (debut, Fire Stun) + Sunna (rerun)", "date": "2026-07-08", "endDate": "2026-07-28" },
         { "title": "v3.1 Phase 1 — Remielle Dan (debut, Ether Anomaly/Support)", "date": "2026-07-29", "endDate": "2026-08-18" },
         { "title": "v3.1 Phase 2 — Sigrid (debut, Ice Attack)", "date": "2026-08-18", "approx": true }
       ],
-      "notes": "v3.0 launched Jun 17; Pyrois available as free S-Rank. v3.1 confirmed for Jul 29; Remielle (Phase 1) and Sigrid (Phase 2) officially announced. Phase 2 start (~Aug 18) still estimated.",
+      "notes": "v3.0 Phase 2 runs Jul 8–28. v3.1 confirmed for Jul 29; Remielle (Phase 1) and Sigrid (Phase 2) officially announced. Phase 2 start (~Aug 18) still estimated.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -85,17 +84,16 @@ window.GACHA_DATA =
     {
       "name": "Neverness to Everness",
       "short": "NTE",
-      "version": "1.1 — Phase 2",
+      "version": "1.2 — Phase 1",
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
       "banners": [
-        { "title": "Chaos \"Forsaken Path\" (S-class, Lakshana)", "start": "2026-06-24", "end": "2026-07-08" }
+        { "title": "Shinku (debut)", "start": "2026-07-08", "end": "2026-07-29" }
       ],
       "upcoming": [
-        { "title": "v1.2 Phase 1 — Shinku (debut)", "date": "2026-07-08", "endDate": "2026-07-29" },
         { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-29", "endDate": "2026-08-19" }
       ],
-      "notes": "Chaos banner (Lakshana attribute) confirmed Jun 24 – Jul 8. v1.2 dates confirmed in Jun 27 Preview Program: Shinku Jul 8 – Jul 29, Iroi Jul 29 – Aug 19.",
+      "notes": "v1.2 dates confirmed in the Jun 27 Preview Program: Shinku Jul 8–29, Iroi Jul 29–Aug 19.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
@@ -131,7 +129,7 @@ window.GACHA_DATA =
       "upcoming": [
         { "title": "Cheyanne + Liushih + Helen (Targeted Procurement)", "date": "2026-07-16", "endDate": "2026-08-05" }
       ],
-      "notes": "Loreley + Lainie + Lewis Jun 25 – Jul 15 (gfl2.help mirror confirmed, fetched Jun 28). Cheyanne + Liushih + Helen Jul 16 – Aug 5.",
+      "notes": "Loreley + Lainie + Lewis Jun 25–Jul 15 (gfl2.help mirror confirmed). Cheyanne + Liushih + Helen Jul 16–Aug 5.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
