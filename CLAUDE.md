@@ -63,10 +63,10 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 
 ### Source mirrors (GitHub Actions)
 
-`.github/workflows/mirror-sources.yml` runs on GitHub's runners every Sunday 21:07 UTC
-(Monday 05:07 GMT+8, ~2 h before the cloud refresh routine) and commits fresh copies of
+`.github/workflows/mirror-sources.yml` runs on GitHub's runners every Sunday 13:07 UTC
+(Sunday 21:07 GMT+8, ~2 h 38 min before the cloud refresh routine) and commits fresh copies of
 the P5X/GFL2 sources into `mirrors/` — because the Claude cloud sandbox cannot fetch them
-directly. (The 2 h buffer + odd `:07` minute guard against GitHub's scheduled-run delays
+directly. (The 2 h 38 min buffer + odd `:07` minute guard against GitHub's scheduled-run delays
 and dropped top-of-hour slots.) `mirrors/status.json` records each fetch's HTTP code and timestamp. The workflow
 can also be triggered manually (`gh workflow run mirror-sources.yml` or the Actions tab). A
 failed fetch keeps the previous mirror file; status.json shows the failure code.
@@ -90,21 +90,21 @@ server: use the listed dates as-is — no shift.** (Do not apply the site's SEA 
 of +7 days; that was used briefly and reverted in June 2026.) Fetch it with PowerShell
 `Invoke-WebRequest` (WebFetch also works — it's plain JS).
 
-## Automated weekly refresh (Claude cloud routine)
+## Automated weekly refresh (ChatGPT cloud routine)
 
-A scheduled Claude cloud agent (configured on claude.ai/code under the user's account —
-not stored in this repo) refreshes the data **every Monday 07:00 GMT+8**, fully independent
+A scheduled ChatGPT cloud task (configured on chatgpt.com under the user's account —
+not stored in this repo) refreshes the data **every Sunday 23:45 GMT+8**, fully independent
 of the user's PC:
 
-1. **05:07** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/` (see above).
-2. **07:00** — the routine runs: it reads this file and follows the "Refreshing the data"
+1. **Sunday 21:07** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/` (see above).
+2. **Sunday 23:45** — the routine runs: it reads this file and follows the "Refreshing the data"
    procedure and source rules, updates `data.js`, sanity-checks, then commits via PR and
    **merges it itself**. Its pushes are pre-authorized; the ask-before-push rule applies to
    interactive sessions only. The repo has `delete_branch_on_merge` enabled, so its working
    branches clean up automatically.
-3. **~07:05** — GitHub Pages rebuilds the live site.
+3. **~23:50** — GitHub Pages rebuilds the live site.
 
-A healthy Monday leaves two commits: "Mirror source data (automated)" then "Weekly banner
+A healthy Sunday leaves two commits: "Mirror source data (automated)" then "Weekly banner
 data refresh (automated)". **Cloud-run constraint:** the sandbox cannot fetch arbitrary
 URLs (403 on WebFetch *and* shell curl) — use web search and the `mirrors/` files only.
 
