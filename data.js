@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-07-11",
+  "lastUpdated": "2026-07-12",
   "games": [
     {
       "name": "Genshin Impact",
@@ -33,10 +33,12 @@ window.GACHA_DATA =
         { "title": "Phase 2 — Phainon + Cyrene (reruns)", "start": "2026-06-24", "end": "2026-07-14" }
       ],
       "upcoming": [
-        { "title": "v4.4 Phase 1 — Himeko Nova (debut, 5★ Fire Erudition)", "date": "2026-07-14", "endDate": "2026-08-05" },
-        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (both pullable, no fixed end); starts Jul 24", "date": "2026-07-24" }
+        { "title": "v4.4 — Himeko Nova (debut, 5★ Fire Erudition; full-version banner)", "date": "2026-07-15", "endDate": "2026-08-25" },
+        { "title": "v4.4 Phase 1 reruns — Sparxie + Dan Heng Permansor Terrae + Evernight", "date": "2026-07-15", "endDate": "2026-08-05" },
+        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (both pullable, no fixed end)", "date": "2026-07-24" },
+        { "title": "v4.4 Phase 2 reruns — Cerydra + Anaxa + Aventurine", "date": "2026-08-05", "endDate": "2026-08-25" }
       ],
-      "notes": "Phase 2 4★: Yukong, Arlan, March 7th. Fate collab Part 2 ('Imagenae Holy Grail War') runs concurrent with v4.4; Saber + Archer from Part 1 remain available (live since 2025-07-11).",
+      "notes": "Current Phase 2 4★: Yukong, Arlan, March 7th. v4.4 begins Jul 15; Himeko Nova remains available for the full version through Aug 25. Fate collab Part 2 starts Jul 24; Saber + Archer from Part 1 remain available (live since 2025-07-11).",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -111,7 +113,7 @@ window.GACHA_DATA =
       "upcoming": [
         { "title": "v1.4 Phase 1 — Arcane / Li Zhiyan (debut)", "date": "2026-07-16" }
       ],
-      "notes": "v1.4 confirmed for Jul 16; Phase 1 features Arcane / Li Zhiyan. Phase 2 character TBD.",
+      "notes": "v1.4 confirmed for Jul 16; Phase 1 features Arcane / Li Zhiyan. Phase 2 character and banner end date remain unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
