@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-07-12",
+  "lastUpdated": "2026-07-14",
   "games": [
     {
       "name": "Genshin Impact",
@@ -146,9 +146,9 @@ window.GACHA_DATA =
         { "title": "9th Anniversary — Space Ereshkigal", "start": "2026-07-04", "end": "2026-07-18" }
       ],
       "upcoming": [
-        { "title": "Mysterious Executor C.I.E.L.", "date": "2026-07-14", "approx": true },
-        { "title": "BB (Dubai)", "date": "2026-07-28", "approx": true },
-        { "title": "Kazuradrop", "date": "2026-09-15", "approx": true }
+        { "title": "Mysterious Executor C.I.E.L.", "date": "2026-07-14", "endDate": "2026-09-01", "approx": true },
+        { "title": "BB (Dubai)", "date": "2026-07-28", "endDate": "2026-09-08", "approx": true },
+        { "title": "Kazuradrop", "date": "2026-09-15", "endDate": "2026-10-06", "approx": true }
       ],
       "notes": "NA server. Shows new-Servant debuts only (reruns/support hidden). Upcoming dates are estimates from the JP schedule (NA trails JP ~23 months) — not yet officially announced.",
       "links": [
