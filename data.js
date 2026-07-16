@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-07-14",
+  "lastUpdated": "2026-07-16",
   "games": [
     {
       "name": "Genshin Impact",
@@ -26,19 +26,18 @@ window.GACHA_DATA =
     {
       "name": "Honkai: Star Rail",
       "short": "HSR",
-      "version": "4.3 — Phase 2",
+      "version": "4.4 — Phase 1",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "banners": [
-        { "title": "Phase 2 — Phainon + Cyrene (reruns)", "start": "2026-06-24", "end": "2026-07-14" }
+        { "title": "Himeko Nova (debut, 5★ Fire Erudition; full-version banner)", "start": "2026-07-15", "end": "2026-08-25" },
+        { "title": "Phase 1 reruns — Sparxie + Dan Heng Permansor Terrae + Evernight", "start": "2026-07-15", "end": "2026-08-05" }
       ],
       "upcoming": [
-        { "title": "v4.4 — Himeko Nova (debut, 5★ Fire Erudition; full-version banner)", "date": "2026-07-15", "endDate": "2026-08-25" },
-        { "title": "v4.4 Phase 1 reruns — Sparxie + Dan Heng Permansor Terrae + Evernight", "date": "2026-07-15", "endDate": "2026-08-05" },
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (both pullable, no fixed end)", "date": "2026-07-24" },
         { "title": "v4.4 Phase 2 reruns — Cerydra + Anaxa + Aventurine", "date": "2026-08-05", "endDate": "2026-08-25" }
       ],
-      "notes": "Current Phase 2 4★: Yukong, Arlan, March 7th. v4.4 begins Jul 15; Himeko Nova remains available for the full version through Aug 25. Fate collab Part 2 starts Jul 24; Saber + Archer from Part 1 remain available (live since 2025-07-11).",
+      "notes": "v4.4 began Jul 15. Himeko Nova remains available for the full version through Aug 25; Phase 1 reruns run through Aug 5. Fate collab Part 2 starts Jul 24; Saber + Archer from Part 1 remain available (live since 2025-07-11).",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -66,18 +65,18 @@ window.GACHA_DATA =
     {
       "name": "Persona 5: The Phantom X",
       "short": "P5X",
-      "version": "1st Anniversary (Global)",
+      "version": "4.5 — Summer",
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "Hatsune Miku (1st Anniversary collab, debut 5★)", "start": "2026-06-25", "end": "2026-07-16" }
+        { "title": "Beachflower Minami (Summer variant, debut 5★)", "start": "2026-07-16", "end": "2026-08-06" }
       ],
       "upcoming": [
-        { "title": "Minami (Summer variant)", "date": "2026-07-16", "endDate": "2026-08-06" },
         { "title": "Miyu (Summer variant)", "date": "2026-08-06", "endDate": "2026-08-20" },
-        { "title": "Ichigo + main story 5-2", "date": "2026-08-20", "endDate": "2026-09-03" }
+        { "title": "Ichigo + main story 5-2", "date": "2026-08-20", "endDate": "2026-09-03" },
+        { "title": "Katayama", "date": "2026-09-03", "endDate": "2026-09-17" }
       ],
-      "notes": "Hatsune Miku (1st Anniversary collab) ends Jul 16 per Steam ('Available until 1:59 AM Jul 16 UTC'). Upcoming order per lufel.net: Minami Summer → Miyu Summer → Ichigo (5-2); 21/14/14-day intervals.",
+      "notes": "Beachflower Minami was announced for Ver. 4.5 and starts Jul 16. Upcoming order per the fresh lufel.net mirror: Miyu Summer → Ichigo (5-2) → Katayama; 21/14/14-day intervals.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -104,16 +103,14 @@ window.GACHA_DATA =
     {
       "name": "Arknights: Endfield",
       "short": "AKE",
-      "version": "1.3 — Phase 2",
+      "version": "1.4 — Phase 1",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "banners": [
-        { "title": "Camille \"Expunger of Sin\" (+ Crimson Hued weapon banner)", "start": "2026-06-26", "end": "2026-07-16" }
+        { "title": "Arcane / Li Zhiyan (debut)", "start": "2026-07-16", "end": "2026-08-05" }
       ],
-      "upcoming": [
-        { "title": "v1.4 Phase 1 — Arcane / Li Zhiyan (debut)", "date": "2026-07-16" }
-      ],
-      "notes": "v1.4 confirmed for Jul 16; Phase 1 features Arcane / Li Zhiyan. Phase 2 character and banner end date remain unconfirmed.",
+      "upcoming": [],
+      "notes": "v1.4 Phase 1 began Jul 16 and features Arcane / Li Zhiyan. The Aug 5 end is the structurally expected three-week phase boundary; Phase 2 character remains unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -126,12 +123,10 @@ window.GACHA_DATA =
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "banners": [
-        { "title": "Loreley + Lainie + Lewis (Targeted Procurement)", "start": "2026-06-25", "end": "2026-07-15" }
+        { "title": "Cheyanne + Liushih + Helen + Yoohee (Targeted Procurement)", "start": "2026-07-16", "end": "2026-08-05" }
       ],
-      "upcoming": [
-        { "title": "Cheyanne + Liushih + Helen (Targeted Procurement)", "date": "2026-07-16", "endDate": "2026-08-05" }
-      ],
-      "notes": "Loreley + Lainie + Lewis Jun 25–Jul 15 (gfl2.help mirror confirmed). Cheyanne + Liushih + Helen Jul 16–Aug 5.",
+      "upcoming": [],
+      "notes": "Cheyanne + Liushih + Helen + Yoohee run Jul 16–Aug 5 on Global, confirmed by the fresh gfl2.help mirror. No later Global banner is confirmed; CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
