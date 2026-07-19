@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-07-16",
+  "lastUpdated": "2026-07-19",
   "games": [
     {
       "name": "Genshin Impact",
@@ -17,7 +17,7 @@ window.GACHA_DATA =
       "upcoming": [
         { "title": "v6.7 Phase 2 — Columbina rerun + Raiden Shogun rerun", "date": "2026-07-21", "endDate": "2026-08-11" }
       ],
-      "notes": "New Lightrace Wish added in 6.7. Version 6.8 is skipped — next major update is v7.0 (~Aug 12), introducing the Tsaritsa and the Snezhnaya region.",
+      "notes": "Phase 2 is confirmed for Jul 21–Aug 11, with Columbina and Raiden Shogun. Version 7.0 follows in August; its full rerun lineup is not yet confirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -37,7 +37,7 @@ window.GACHA_DATA =
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (both pullable, no fixed end)", "date": "2026-07-24" },
         { "title": "v4.4 Phase 2 reruns — Cerydra + Anaxa + Aventurine", "date": "2026-08-05", "endDate": "2026-08-25" }
       ],
-      "notes": "v4.4 began Jul 15. Himeko Nova remains available for the full version through Aug 25; Phase 1 reruns run through Aug 5. Fate collab Part 2 starts Jul 24; Saber + Archer from Part 1 remain available (live since 2025-07-11).",
+      "notes": "v4.4 began Jul 15. Himeko Nova remains available for the full version through Aug 25; Phase 1 reruns run through Aug 5. Fate collab Part 2 starts Jul 24; no fixed end date is published.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -53,10 +53,10 @@ window.GACHA_DATA =
         { "title": "Norma (debut, Fire Stun) + Sunna (rerun)", "start": "2026-07-08", "end": "2026-07-28" }
       ],
       "upcoming": [
-        { "title": "v3.1 Phase 1 — Remielle Dan (debut, Ether Anomaly/Support)", "date": "2026-07-29", "endDate": "2026-08-18" },
-        { "title": "v3.1 Phase 2 — Sigrid (debut, Ice Attack)", "date": "2026-08-18", "approx": true }
+        { "title": "v3.1 full-version — Remielle Dan (debut, Lumiflux Anomaly); Phase 1 also reruns Aria", "date": "2026-07-29" },
+        { "title": "v3.1 Phase 2 — Sigrid (debut, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "date": "2026-08-18", "approx": true }
       ],
-      "notes": "v3.0 Phase 2 runs Jul 8–28. v3.1 confirmed for Jul 29; Remielle (Phase 1) and Sigrid (Phase 2) officially announced. Phase 2 start (~Aug 18) still estimated.",
+      "notes": "v3.1 launches Jul 29. Remielle remains available for the whole version; Aria reruns in Phase 1. Sigrid and the selectable rerun channel arrive in Phase 2. Exact Phase 2 and version-end dates were not published in accessible text, so the existing ~Aug 18 boundary remains flagged as approximate.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -69,14 +69,14 @@ window.GACHA_DATA =
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "Beachflower Minami (Summer variant, debut 5★)", "start": "2026-07-16", "end": "2026-08-06" }
+        { "title": "Beachflower Minami (Summer variant, debut 5★)", "start": "2026-07-16", "end": "2026-07-30" }
       ],
       "upcoming": [
-        { "title": "Miyu (Summer variant)", "date": "2026-08-06", "endDate": "2026-08-20" },
-        { "title": "Ichigo + main story 5-2", "date": "2026-08-20", "endDate": "2026-09-03" },
-        { "title": "Katayama", "date": "2026-09-03", "endDate": "2026-09-17" }
+        { "title": "Miyu (Summer variant)", "date": "2026-07-30", "endDate": "2026-08-13" },
+        { "title": "Ichigo + main story 5-2", "date": "2026-08-13", "endDate": "2026-08-27" },
+        { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" }
       ],
-      "notes": "Beachflower Minami was announced for Ver. 4.5 and starts Jul 16. Upcoming order per the fresh lufel.net mirror: Miyu Summer → Ichigo (5-2) → Katayama; 21/14/14-day intervals.",
+      "notes": "The fresh lufel.net mirror now places Miyu Summer on Jul 30, Ichigo on Aug 13, and Katayama on Aug 27. Steam confirms the Ver. 4.5 content period through Jul 30, matching Beachflower Minami's current banner boundary.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -92,9 +92,11 @@ window.GACHA_DATA =
         { "title": "Shinku (debut)", "start": "2026-07-08", "end": "2026-07-29" }
       ],
       "upcoming": [
-        { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-29", "endDate": "2026-08-19" }
+        { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-29", "endDate": "2026-08-19" },
+        { "title": "v1.3 Phase 1 — Zankou (debut)", "date": "2026-08-20", "endDate": "2026-09-09" },
+        { "title": "v1.3 Phase 2 — Linko (debut)", "date": "2026-09-09", "endDate": "2026-09-30" }
       ],
-      "notes": "v1.2 dates confirmed in the Jun 27 Preview Program: Shinku Jul 8–29, Iroi Jul 29–Aug 19.",
+      "notes": "Shinku runs Jul 8–29 and Iroi Jul 29–Aug 19. Recent banner schedules list Zankou for Aug 20–Sep 9 and Linko for Sep 9–30; Game8's indexed page remains stale, so these later entries should be rechecked against the next official notice.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
@@ -107,10 +109,12 @@ window.GACHA_DATA =
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "banners": [
-        { "title": "Arcane / Li Zhiyan (debut)", "start": "2026-07-16", "end": "2026-08-05" }
+        { "title": "Arcane / Li Zhiyan (debut)", "start": "2026-07-16", "end": "2026-08-09" }
       ],
-      "upcoming": [],
-      "notes": "v1.4 Phase 1 began Jul 16 and features Arcane / Li Zhiyan. The Aug 5 end is the structurally expected three-week phase boundary; Phase 2 character remains unconfirmed.",
+      "upcoming": [
+        { "title": "v1.4 Phase 2 — Liino (debut, Electric Supporter)", "date": "2026-08-09" }
+      ],
+      "notes": "The official Homecoming notice confirms Liino's banner starts Aug 9 at 12:00 server time and runs until the next version maintenance. Arcane's current banner therefore ends at the Phase 2 boundary on Aug 9; the exact version-end date is not stated, so Liino has no endDate.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -126,7 +130,7 @@ window.GACHA_DATA =
         { "title": "Cheyanne + Liushih + Helen + Yoohee (Targeted Procurement)", "start": "2026-07-16", "end": "2026-08-05" }
       ],
       "upcoming": [],
-      "notes": "Cheyanne + Liushih + Helen + Yoohee run Jul 16–Aug 5 on Global, confirmed by the fresh gfl2.help mirror. No later Global banner is confirmed; CN ordering was not used.",
+      "notes": "Cheyanne + Liushih + Helen + Yoohee run Jul 16–Aug 5 on Global, confirmed by the fresh gfl2.help mirror fetched Jul 19. No later Global banner is confirmed; CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
