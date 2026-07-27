@@ -29,13 +29,12 @@ window.GACHA_DATA =
       "icon": "icons/hsr.jpg",
       "banners": [
         { "title": "Himeko Nova (debut, 5★ Fire Erudition; full-version banner)", "start": "2026-07-15", "end": "2026-08-25" },
-        { "title": "Phase 1 reruns — Sparxie + Dan Heng Permansor Terrae + Evernight", "start": "2026-07-15", "end": "2026-08-05" },
-        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (both pullable, no fixed end)", "start": "2026-07-24", "end": "9999-12-31" }
+        { "title": "Phase 1 reruns — Sparxie + Dan Heng Permansor Terrae + Evernight", "start": "2026-07-15", "end": "2026-08-05" }
       ],
       "upcoming": [
         { "title": "v4.4 Phase 2 reruns — Cerydra + Anaxa + Aventurine", "date": "2026-08-05", "endDate": "2026-08-25" }
       ],
-      "notes": "v4.4 began Jul 15. Himeko Nova remains available for the full version through Aug 25; Phase 1 reruns run through Aug 5. Fate collab Part 2 began Jul 24 and has no fixed end date.",
+      "notes": "v4.4 began Jul 15. Himeko Nova remains available for the full version through Aug 25; Phase 1 reruns run through Aug 5. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) began Jul 24, but no fixed end date is published, so it is flagged here rather than assigned a guessed dated bar.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
