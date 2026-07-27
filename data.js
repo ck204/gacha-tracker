@@ -3,21 +3,19 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-07-19",
+  "lastUpdated": "2026-07-27",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "version": "6.7 (Luna VIII) — Phase 1",
+      "version": "6.7 (Luna VIII) — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "banners": [
-        { "title": "Sandrone (debut, 5★ Cryo Claymore) + Citlali rerun", "start": "2026-07-01", "end": "2026-07-21" }
+        { "title": "Columbina rerun + Raiden Shogun rerun", "start": "2026-07-21", "end": "2026-08-11" }
       ],
-      "upcoming": [
-        { "title": "v6.7 Phase 2 — Columbina rerun + Raiden Shogun rerun", "date": "2026-07-21", "endDate": "2026-08-11" }
-      ],
-      "notes": "Phase 2 is confirmed for Jul 21–Aug 11, with Columbina and Raiden Shogun. Version 7.0 follows in August; its full rerun lineup is not yet confirmed.",
+      "upcoming": [],
+      "notes": "Phase 2 runs Jul 21–Aug 11 with Columbina and Raiden Shogun. Version 7.0 follows in August; its full banner lineup is not yet confirmed, so no uncertain entry was added.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -31,13 +29,13 @@ window.GACHA_DATA =
       "icon": "icons/hsr.jpg",
       "banners": [
         { "title": "Himeko Nova (debut, 5★ Fire Erudition; full-version banner)", "start": "2026-07-15", "end": "2026-08-25" },
-        { "title": "Phase 1 reruns — Sparxie + Dan Heng Permansor Terrae + Evernight", "start": "2026-07-15", "end": "2026-08-05" }
+        { "title": "Phase 1 reruns — Sparxie + Dan Heng Permansor Terrae + Evernight", "start": "2026-07-15", "end": "2026-08-05" },
+        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (both pullable, no fixed end)", "start": "2026-07-24", "end": "9999-12-31" }
       ],
       "upcoming": [
-        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (both pullable, no fixed end)", "date": "2026-07-24" },
         { "title": "v4.4 Phase 2 reruns — Cerydra + Anaxa + Aventurine", "date": "2026-08-05", "endDate": "2026-08-25" }
       ],
-      "notes": "v4.4 began Jul 15. Himeko Nova remains available for the full version through Aug 25; Phase 1 reruns run through Aug 5. Fate collab Part 2 starts Jul 24; no fixed end date is published.",
+      "notes": "v4.4 began Jul 15. Himeko Nova remains available for the full version through Aug 25; Phase 1 reruns run through Aug 5. Fate collab Part 2 began Jul 24 and has no fixed end date.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -76,7 +74,7 @@ window.GACHA_DATA =
         { "title": "Ichigo + main story 5-2", "date": "2026-08-13", "endDate": "2026-08-27" },
         { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" }
       ],
-      "notes": "The fresh lufel.net mirror now places Miyu Summer on Jul 30, Ichigo on Aug 13, and Katayama on Aug 27. Steam confirms the Ver. 4.5 content period through Jul 30, matching Beachflower Minami's current banner boundary.",
+      "notes": "The fresh lufel.net mirror places Miyu Summer on Jul 30, Ichigo on Aug 13, and Katayama on Aug 27. Steam confirms the Ver. 4.5 content period through Jul 30, matching Beachflower Minami's current banner boundary.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -130,7 +128,7 @@ window.GACHA_DATA =
         { "title": "Cheyanne + Liushih + Helen + Yoohee (Targeted Procurement)", "start": "2026-07-16", "end": "2026-08-05" }
       ],
       "upcoming": [],
-      "notes": "Cheyanne + Liushih + Helen + Yoohee run Jul 16–Aug 5 on Global, confirmed by the fresh gfl2.help mirror fetched Jul 19. No later Global banner is confirmed; CN ordering was not used.",
+      "notes": "Cheyanne + Liushih + Helen + Yoohee run Jul 16–Aug 5 on Global, confirmed by the fresh gfl2.help mirror fetched Jul 26. No later Global banner is confirmed; CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
