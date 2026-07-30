@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-07-27",
+  "lastUpdated": "2026-07-30",
   "games": [
     {
       "name": "Genshin Impact",
@@ -43,17 +43,16 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "version": "3.0 — Phase 2",
+      "version": "3.1 — Phase 1",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "banners": [
-        { "title": "Norma (debut, Fire Stun) + Sunna (rerun)", "start": "2026-07-08", "end": "2026-07-28" }
+        { "title": "Remielle Dan (debut, Lumiflux Anomaly; full-version) + Aria (rerun)", "start": "2026-07-29", "end": "2026-08-18" }
       ],
       "upcoming": [
-        { "title": "v3.1 full-version — Remielle Dan (debut, Lumiflux Anomaly); Phase 1 also reruns Aria", "date": "2026-07-29" },
         { "title": "v3.1 Phase 2 — Sigrid (debut, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "date": "2026-08-18", "approx": true }
       ],
-      "notes": "v3.1 launches Jul 29. Remielle remains available for the whole version; Aria reruns in Phase 1. Sigrid and the selectable rerun channel arrive in Phase 2. Exact Phase 2 and version-end dates were not published in accessible text, so the existing ~Aug 18 boundary remains flagged as approximate.",
+      "notes": "v3.1 launched Jul 29. Remielle remains available for the whole version, while Aria reruns in Phase 1. Sigrid and the selectable rerun channel arrive in Phase 2. The existing Aug 18 phase boundary remains flagged as approximate because exact Phase 2 and version-end dates were not published in accessible source text.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -62,18 +61,18 @@ window.GACHA_DATA =
     {
       "name": "Persona 5: The Phantom X",
       "short": "P5X",
-      "version": "4.5 — Summer",
+      "version": "4.6 — Summer",
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "Beachflower Minami (Summer variant, debut 5★)", "start": "2026-07-16", "end": "2026-07-30" }
+        { "title": "Miyu (Summer variant)", "start": "2026-07-30", "end": "2026-08-13" }
       ],
       "upcoming": [
-        { "title": "Miyu (Summer variant)", "date": "2026-07-30", "endDate": "2026-08-13" },
         { "title": "Ichigo + main story 5-2", "date": "2026-08-13", "endDate": "2026-08-27" },
-        { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" }
+        { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" },
+        { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" }
       ],
-      "notes": "The fresh lufel.net mirror places Miyu Summer on Jul 30, Ichigo on Aug 13, and Katayama on Aug 27. Steam confirms the Ver. 4.5 content period through Jul 30, matching Beachflower Minami's current banner boundary.",
+      "notes": "The fresh lufel.net mirror places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The mirror status is healthy (HTTP 200, fetched Jul 26); the prior Steam digest confirms Ver. 4.5 ended Jul 30, matching the rollover to Miyu Summer.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -82,18 +81,17 @@ window.GACHA_DATA =
     {
       "name": "Neverness to Everness",
       "short": "NTE",
-      "version": "1.2 — Phase 1",
+      "version": "1.2 — Phase 2",
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
       "banners": [
-        { "title": "Shinku (debut)", "start": "2026-07-08", "end": "2026-07-29" }
+        { "title": "Iroi (debut)", "start": "2026-07-29", "end": "2026-08-19" }
       ],
       "upcoming": [
-        { "title": "v1.2 Phase 2 — Iroi (debut)", "date": "2026-07-29", "endDate": "2026-08-19" },
         { "title": "v1.3 Phase 1 — Zankou (debut)", "date": "2026-08-20", "endDate": "2026-09-09" },
         { "title": "v1.3 Phase 2 — Linko (debut)", "date": "2026-09-09", "endDate": "2026-09-30" }
       ],
-      "notes": "Shinku runs Jul 8–29 and Iroi Jul 29–Aug 19. Recent banner schedules list Zankou for Aug 20–Sep 9 and Linko for Sep 9–30; Game8's indexed page remains stale, so these later entries should be rechecked against the next official notice.",
+      "notes": "Iroi runs Jul 29–Aug 19. Recent banner schedules list Zankou for Aug 20–Sep 9 and Linko for Sep 9–30; Game8's indexed page remains stale, so these later entries should be rechecked against the next official notice.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
