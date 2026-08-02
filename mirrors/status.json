@@ -1,6 +1,6 @@
 {
-  "p5x_steam": {"http": "200", "fetched": "2026-07-26T14:43:04Z"},
-  "gfl2_steam": {"http": "200", "fetched": "2026-07-26T14:43:05Z"},
-  "p5x_lufel": {"http": "200", "fetched": "2026-07-26T14:43:05Z"},
-  "gfl2_help": {"http": "200", "fetched": "2026-07-26T14:43:06Z"}
+  "p5x_steam": {"http": "200", "fetched": "2026-08-02T14:41:49Z"},
+  "gfl2_steam": {"http": "200", "fetched": "2026-08-02T14:41:50Z"},
+  "p5x_lufel": {"http": "200", "fetched": "2026-08-02T14:41:50Z"},
+  "gfl2_help": {"http": "504", "fetched": "2026-08-02T14:41:52Z"}
 }
