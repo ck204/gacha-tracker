@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-07-30",
+  "lastUpdated": "2026-08-02",
   "games": [
     {
       "name": "Genshin Impact",
