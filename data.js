@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-02",
+  "lastUpdated": "2026-08-07",
   "games": [
     {
       "name": "Genshin Impact",
@@ -24,17 +24,15 @@ window.GACHA_DATA =
     {
       "name": "Honkai: Star Rail",
       "short": "HSR",
-      "version": "4.4 — Phase 1",
+      "version": "4.4 — Phase 2",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "banners": [
         { "title": "Himeko Nova (debut, 5★ Fire Erudition; full-version banner)", "start": "2026-07-15", "end": "2026-08-25" },
-        { "title": "Phase 1 reruns — Sparxie + Dan Heng Permansor Terrae + Evernight", "start": "2026-07-15", "end": "2026-08-05" }
+        { "title": "Phase 2 reruns — Cerydra + Anaxa + Aventurine", "start": "2026-08-05", "end": "2026-08-25" }
       ],
-      "upcoming": [
-        { "title": "v4.4 Phase 2 reruns — Cerydra + Anaxa + Aventurine", "date": "2026-08-05", "endDate": "2026-08-25" }
-      ],
-      "notes": "v4.4 began Jul 15. Himeko Nova remains available for the full version through Aug 25; Phase 1 reruns run through Aug 5. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) began Jul 24, but no fixed end date is published, so it is flagged here rather than assigned a guessed dated bar.",
+      "upcoming": [],
+      "notes": "v4.4 Phase 2 began Aug 5. Himeko Nova remains available for the full version through Aug 25, alongside Phase 2 reruns Cerydra, Anaxa, and Aventurine through Aug 25. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) began Jul 24, but no fixed end date is published, so it is flagged here rather than assigned a guessed dated bar.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -72,7 +70,7 @@ window.GACHA_DATA =
         { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" },
         { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" }
       ],
-      "notes": "The fresh lufel.net mirror places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The mirror status is healthy (HTTP 200, fetched Jul 26); the prior Steam digest confirms Ver. 4.5 ended Jul 30, matching the rollover to Miyu Summer.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 2) places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The Steam digest confirms Ver. 4.6 content runs until Aug 13, matching the rollover to Ichigo.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -121,11 +119,10 @@ window.GACHA_DATA =
       "version": "1.5th Anniversary",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
-      "banners": [
-        { "title": "Cheyanne + Liushih + Helen + Yoohee (Targeted Procurement)", "start": "2026-07-16", "end": "2026-08-05" }
-      ],
+      "needsCheck": true,
+      "banners": [],
       "upcoming": [],
-      "notes": "Cheyanne + Liushih + Helen + Yoohee run Jul 16–Aug 5 on Global, confirmed by the fresh gfl2.help mirror fetched Jul 26. No later Global banner is confirmed; CN ordering was not used.",
+      "notes": "The last confirmed Global lineup (Cheyanne + Liushih + Helen + Yoohee) ended Aug 5. The Aug 2 gfl2.help mirror fetch failed with HTTP 504, and the fallback Steam digest's newest official update is Jul 15, so no later Global current or upcoming banner is confirmed from the available GitHub sources. CN ordering was not used; recheck manually when a fresh Global source is available.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
