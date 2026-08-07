@@ -3,12 +3,12 @@ name: Mirror banner data sources
 # Fetches the P5X/GFL2 sources that the ChatGPT cloud routine cannot reach
 # (its sandbox blocks outbound fetches) and commits them into mirrors/ so the
 # routine can read them from the repo itself.
-# Runs Sunday 13:07 UTC (Sunday 21:07 GMT+8) — ~2 h 38 min before the Sun 23:45 GMT+8
-# refresh routine. The buffer absorbs GitHub's scheduled-run delays; the odd
-# :07 minute avoids the congested top/bottom-of-hour slots that get dropped.
+# Runs daily at 13:07 UTC (21:07 GMT+8) to keep mirrors fresh for both the
+# weekly Sunday refresh and manual refreshes. The odd :07 minute avoids the
+# congested top/bottom-of-hour slots that get dropped.
 on:
   schedule:
-    - cron: '7 13 * * 0'
+    - cron: '7 13 * * *'
   workflow_dispatch:
 
 permissions:
@@ -27,6 +27,7 @@ jobs:
 
           fetch () { # $1=key $2=url $3=outfile
             code=$(curl -sS -L --max-time 30 \
+              --retry 1 --retry-all-errors --retry-delay 5 \
               -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) gacha-tracker-mirror" \
               -o "mirrors/$3.tmp" -w "%{http_code}" "$2" || echo "000")
             if [ "$code" = "200" ] && [ -s "mirrors/$3.tmp" ]; then
