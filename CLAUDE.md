@@ -63,13 +63,14 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 
 ### Source mirrors (GitHub Actions)
 
-`.github/workflows/mirror-sources.yml` runs on GitHub's runners every Sunday 13:07 UTC
-(Sunday 21:07 GMT+8, ~2 h 38 min before the cloud refresh routine) and commits fresh copies of
-the P5X/GFL2 sources into `mirrors/` — because the Claude cloud sandbox cannot fetch them
-directly. (The 2 h 38 min buffer + odd `:07` minute guard against GitHub's scheduled-run delays
-and dropped top-of-hour slots.) `mirrors/status.json` records each fetch's HTTP code and timestamp. The workflow
-can also be triggered manually (`gh workflow run mirror-sources.yml` or the Actions tab). A
-failed fetch keeps the previous mirror file; status.json shows the failure code.
+`.github/workflows/mirror-sources.yml` runs on GitHub's runners every day at 13:07 UTC
+(21:07 GMT+8) and commits fresh copies of the P5X/GFL2 sources into `mirrors/` — because
+the Claude cloud sandbox cannot fetch them directly. The daily cadence keeps mirrors fresh
+for both the weekly Sunday refresh and manual refreshes; the odd `:07` minute guards against
+GitHub's scheduled-run delays and congested top/bottom-of-hour slots. `mirrors/status.json`
+records each fetch's HTTP code and timestamp. The workflow can also be triggered manually
+(`gh workflow run mirror-sources.yml` or the Actions tab). A failed fetch is retried once;
+if it still fails, the previous mirror file is kept and status.json shows the failure code.
 
 After fetching, the workflow runs `scripts/make-digests.py` to write compact
 **digests** the routine reads instead of the bulky raw mirrors (cuts mirror read
@@ -93,20 +94,23 @@ of +7 days; that was used briefly and reverted in June 2026.) Fetch it with Powe
 ## Automated weekly refresh (ChatGPT cloud routine)
 
 A scheduled ChatGPT cloud task (configured on chatgpt.com under the user's account —
-not stored in this repo) refreshes the data **every Sunday 23:45 GMT+8**, fully independent
-of the user's PC:
+not stored in this repo) refreshes the data **every Sunday at 22:00 GMT+8 with flexible
+scheduling** (it may run within about an hour after that time), fully independent of the
+user's PC:
 
-1. **Sunday 21:07** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/` (see above).
-2. **Sunday 23:45** — the routine runs: it reads this file and follows the "Refreshing the data"
-   procedure and source rules, updates `data.js`, sanity-checks, then commits via PR and
-   **merges it itself**. Its pushes are pre-authorized; the ask-before-push rule applies to
-   interactive sessions only. The repo has `delete_branch_on_merge` enabled, so its working
-   branches clean up automatically.
-3. **~23:50** — GitHub Pages rebuilds the live site.
+1. **Daily 21:07** — the `mirror-sources.yml` Actions workflow refreshes `mirrors/` (see above).
+   The Sunday run supplies a fresh snapshot shortly before the weekly refresh routine.
+2. **Sunday 22:00 (flexible)** — the routine runs: it reads this file and follows the
+   "Refreshing the data" procedure and source rules, updates `data.js`, sanity-checks, then
+   commits via PR and **merges it itself**. Its pushes are pre-authorized; the ask-before-push
+   rule applies to interactive sessions only. The repo has `delete_branch_on_merge` enabled,
+   so its working branches clean up automatically.
+3. **~1 min after the refresh commit** — GitHub Pages rebuilds the live site.
 
-A healthy Sunday leaves two commits: "Mirror source data (automated)" then "Weekly banner
-data refresh (automated)". **Cloud-run constraint:** the sandbox cannot fetch arbitrary
-URLs (403 on WebFetch *and* shell curl) — use web search and the `mirrors/` files only.
+A healthy Sunday leaves a "Mirror source data (automated)" commit followed by a "Weekly
+banner data refresh (automated)" commit. Other days normally leave only the daily mirror
+commit. **Cloud-run constraint:** the sandbox cannot fetch arbitrary URLs (403 on WebFetch
+*and* shell curl) — use web search and the `mirrors/` files only.
 
 ## Implementation gotchas — do NOT "simplify" these
 
