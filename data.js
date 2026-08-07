@@ -14,8 +14,10 @@ window.GACHA_DATA =
       "banners": [
         { "title": "Columbina rerun + Raiden Shogun rerun", "start": "2026-07-21", "end": "2026-08-11" }
       ],
-      "upcoming": [],
-      "notes": "Phase 2 runs Jul 21–Aug 11 with Columbina and Raiden Shogun. Version 7.0 follows in August; its full banner lineup is not yet confirmed, so no uncertain entry was added.",
+      "upcoming": [
+        { "title": "v7.0 Phase 1 — Odette (debut) + Arlecchino rerun; Alyosha (new 4★)", "date": "2026-08-12" }
+      ],
+      "notes": "Phase 2 runs Jul 21–Aug 11 with Columbina and Raiden Shogun. Version 7.0 launches Aug 12; Phase 1 features Odette with Arlecchino and introduces 4★ Alyosha. Flins and Ineffa are confirmed for Phase 2, but its exact phase boundary was not assigned here without a verified date.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -32,7 +34,7 @@ window.GACHA_DATA =
         { "title": "Phase 2 reruns — Cerydra + Anaxa + Aventurine", "start": "2026-08-05", "end": "2026-08-25" }
       ],
       "upcoming": [],
-      "notes": "v4.4 Phase 2 began Aug 5. Himeko Nova remains available for the full version through Aug 25, alongside Phase 2 reruns Cerydra, Anaxa, and Aventurine through Aug 25. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) began Jul 24, but no fixed end date is published, so it is flagged here rather than assigned a guessed dated bar.",
+      "notes": "v4.4 Phase 2 began Aug 5. Himeko Nova remains available for the full version through Aug 25, alongside Phase 2 reruns Cerydra, Anaxa, and Aventurine through Aug 25. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) began Jul 24. Robin Summeretto and Aventurine Waveflair are confirmed as new v4.5 characters, but no unverified phase order or dates were added.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -45,12 +47,13 @@ window.GACHA_DATA =
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "banners": [
-        { "title": "Remielle Dan (debut, Lumiflux Anomaly; full-version) + Aria (rerun)", "start": "2026-07-29", "end": "2026-08-18" }
+        { "title": "Remielle Dan (debut, Lumiflux Anomaly; full-version banner)", "start": "2026-07-29", "end": "2026-09-08" },
+        { "title": "Aria rerun — Phase 1", "start": "2026-07-29", "end": "2026-08-19" }
       ],
       "upcoming": [
-        { "title": "v3.1 Phase 2 — Sigrid (debut, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "date": "2026-08-18", "approx": true }
+        { "title": "v3.1 Phase 2 — Sigrid (debut, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "date": "2026-08-19", "endDate": "2026-09-08" }
       ],
-      "notes": "v3.1 launched Jul 29. Remielle remains available for the whole version, while Aria reruns in Phase 1. Sigrid and the selectable rerun channel arrive in Phase 2. The existing Aug 18 phase boundary remains flagged as approximate because exact Phase 2 and version-end dates were not published in accessible source text.",
+      "notes": "v3.1 launched Jul 29. Remielle remains available for the whole version through Sep 8, while Aria is the Phase 1 rerun through Aug 19. Phase 2 starts Aug 19 with Sigrid and the selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel, also ending Sep 8.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -70,7 +73,7 @@ window.GACHA_DATA =
         { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" },
         { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 2) places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The Steam digest confirms Ver. 4.6 content runs until Aug 13, matching the rollover to Ichigo.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 7) places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The Steam digest confirms Ver. 4.6 content runs until Aug 13, matching the rollover to Ichigo.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -116,13 +119,14 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "version": "1.5th Anniversary",
+      "version": "Moonshroud Requiem",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
-      "needsCheck": true,
-      "banners": [],
+      "banners": [
+        { "title": "Sextans + Phaetusa + Ullrid (Targeted Procurement)", "start": "2026-08-06", "end": "2026-08-26" }
+      ],
       "upcoming": [],
-      "notes": "The last confirmed Global lineup (Cheyanne + Liushih + Helen + Yoohee) ended Aug 5. The Aug 2 gfl2.help mirror fetch failed with HTTP 504, and the fallback Steam digest's newest official update is Jul 15, so no later Global current or upcoming banner is confirmed from the available GitHub sources. CN ordering was not used; recheck manually when a fresh Global source is available.",
+      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 7) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
