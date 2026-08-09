@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-07",
+  "lastUpdated": "2026-08-09",
   "games": [
     {
       "name": "Genshin Impact",
@@ -73,7 +73,7 @@ window.GACHA_DATA =
         { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" },
         { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 7) places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The Steam digest confirms Ver. 4.6 content runs until Aug 13, matching the rollover to Ichigo.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 9) places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The Steam digest confirms Ver. 4.6 content runs until Aug 13, matching the rollover to Ichigo.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -101,16 +101,14 @@ window.GACHA_DATA =
     {
       "name": "Arknights: Endfield",
       "short": "AKE",
-      "version": "1.4 — Phase 1",
+      "version": "1.4 — Phase 2",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "banners": [
-        { "title": "Arcane / Li Zhiyan (debut)", "start": "2026-07-16", "end": "2026-08-09" }
+        { "title": "Liino (debut, Electric Supporter)", "start": "2026-08-09", "end": "2026-08-09" }
       ],
-      "upcoming": [
-        { "title": "v1.4 Phase 2 — Liino (debut, Electric Supporter)", "date": "2026-08-09" }
-      ],
-      "notes": "The official Homecoming notice confirms Liino's banner starts Aug 9 at 12:00 server time and runs until the next version maintenance. Arcane's current banner therefore ends at the Phase 2 boundary on Aug 9; the exact version-end date is not stated, so Liino has no endDate.",
+      "upcoming": [],
+      "notes": "The official Homecoming notice confirms Liino's banner starts Aug 9 at 12:00 server time and runs until the next version maintenance. The exact version-end date is not stated, so no endDate or later upcoming banner is guessed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -126,7 +124,7 @@ window.GACHA_DATA =
         { "title": "Sextans + Phaetusa + Ullrid (Targeted Procurement)", "start": "2026-08-06", "end": "2026-08-26" }
       ],
       "upcoming": [],
-      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 7) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
+      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 9) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
