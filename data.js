@@ -15,7 +15,7 @@ window.GACHA_DATA =
         { "title": "Columbina rerun + Raiden Shogun rerun", "start": "2026-07-21", "end": "2026-08-11" }
       ],
       "upcoming": [
-        { "title": "v7.0 Phase 1 — Odette (debut) + Arlecchino rerun; Alyosha (new 4★)", "date": "2026-08-12" }
+        { "title": "v7.0 Phase 1 — Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "date": "2026-08-12" }
       ],
       "notes": "Phase 2 runs Jul 21–Aug 11 with Columbina and Raiden Shogun. Version 7.0 launches Aug 12; Phase 1 features Odette with Arlecchino and introduces 4★ Alyosha. Flins and Ineffa are confirmed for Phase 2, but its exact phase boundary was not assigned here without a verified date.",
       "links": [
@@ -30,7 +30,7 @@ window.GACHA_DATA =
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "banners": [
-        { "title": "Himeko Nova (debut, 5★ Fire Erudition; full-version banner)", "start": "2026-07-15", "end": "2026-08-25" },
+        { "title": "Himeko Nova (new 5★, Fire Erudition; full-version banner)", "start": "2026-07-15", "end": "2026-08-25" },
         { "title": "Phase 2 reruns — Cerydra + Anaxa + Aventurine", "start": "2026-08-05", "end": "2026-08-25" }
       ],
       "upcoming": [],
@@ -47,11 +47,11 @@ window.GACHA_DATA =
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "banners": [
-        { "title": "Remielle Dan (debut, Lumiflux Anomaly; full-version banner)", "start": "2026-07-29", "end": "2026-09-08" },
+        { "title": "Remielle Dan (new 5★, Lumiflux Anomaly; full-version banner)", "start": "2026-07-29", "end": "2026-09-08" },
         { "title": "Aria rerun — Phase 1", "start": "2026-07-29", "end": "2026-08-19" }
       ],
       "upcoming": [
-        { "title": "v3.1 Phase 2 — Sigrid (debut, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "date": "2026-08-19", "endDate": "2026-09-08" }
+        { "title": "v3.1 Phase 2 — Sigrid (new 5★, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "date": "2026-08-19", "endDate": "2026-09-08" }
       ],
       "notes": "v3.1 launched Jul 29. Remielle remains available for the whole version through Sep 8, while Aria is the Phase 1 rerun through Aug 19. Phase 2 starts Aug 19 with Sigrid and the selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel, also ending Sep 8.",
       "links": [
@@ -86,11 +86,11 @@ window.GACHA_DATA =
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
       "banners": [
-        { "title": "Iroi (debut)", "start": "2026-07-29", "end": "2026-08-19" }
+        { "title": "Iroi (new 5★)", "start": "2026-07-29", "end": "2026-08-19" }
       ],
       "upcoming": [
-        { "title": "v1.3 Phase 1 — Zankou (debut)", "date": "2026-08-20", "endDate": "2026-09-09" },
-        { "title": "v1.3 Phase 2 — Linko (debut)", "date": "2026-09-09", "endDate": "2026-09-30" }
+        { "title": "v1.3 Phase 1 — Zankou (new 5★)", "date": "2026-08-20", "endDate": "2026-09-09" },
+        { "title": "v1.3 Phase 2 — Linko (new 5★)", "date": "2026-09-09", "endDate": "2026-09-30" }
       ],
       "notes": "Iroi runs Jul 29–Aug 19. Recent banner schedules list Zankou for Aug 20–Sep 9 and Linko for Sep 9–30; Game8's indexed page remains stale, so these later entries should be rechecked against the next official notice.",
       "links": [
@@ -105,7 +105,7 @@ window.GACHA_DATA =
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "banners": [
-        { "title": "Liino (debut, Electric Supporter)", "start": "2026-08-09", "end": "2026-09-02" }
+        { "title": "Liino (new 6★, Electric Supporter)", "start": "2026-08-09", "end": "2026-09-02" }
       ],
       "upcoming": [],
       "notes": "Game8 lists Liino's Phase 2 banner from Aug 9 through Sep 2. The official Homecoming notice confirms it runs from Aug 9 at 12:00 server time until the next version update and maintenance.",
