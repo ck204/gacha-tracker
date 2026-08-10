@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-09",
+  "lastUpdated": "2026-08-10",
   "games": [
     {
       "name": "Genshin Impact",
@@ -101,16 +101,14 @@ window.GACHA_DATA =
     {
       "name": "Arknights: Endfield",
       "short": "AKE",
-      "version": "1.4 — Phase 1",
+      "version": "1.4 — Phase 2",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "banners": [
-        { "title": "Arcane / Li Zhiyan (debut)", "start": "2026-07-16", "end": "2026-08-09" }
+        { "title": "Liino (debut, Electric Supporter)", "start": "2026-08-09", "end": "2026-09-02" }
       ],
-      "upcoming": [
-        { "title": "v1.4 Phase 2 — Liino (debut, Electric Supporter)", "date": "2026-08-09" }
-      ],
-      "notes": "The official Homecoming notice confirms Liino's banner starts Aug 9 at 12:00 server time and runs until the next version maintenance. Arcane's current banner therefore ends at the Phase 2 boundary on Aug 9; the exact version-end date is not stated, so Liino has no endDate.",
+      "upcoming": [],
+      "notes": "Game8 lists Liino's Phase 2 banner from Aug 9 through Sep 2. The official Homecoming notice confirms it runs from Aug 9 at 12:00 server time until the next version update and maintenance.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
