@@ -8,14 +8,17 @@ window.GACHA_DATA =
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "version": "7.0 — Phase 1",
+      "version": "6.7 (Luna VIII) — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
+      "needsCheck": true,
       "banners": [
-        { "title": "Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "start": "2026-08-12", "end": "2026-09-01" }
+        { "title": "Columbina rerun + Raiden Shogun rerun", "start": "2026-07-21", "end": "2026-08-11" }
       ],
-      "upcoming": [],
-      "notes": "Version 7.0 launched Aug 12 with Odette and Arlecchino in Phase 1 and introduces 4★ Alyosha. Flins and Ineffa are confirmed for Phase 2, but its exact phase boundary was not added because this GitHub-only run had no newer verified repository source for that date.",
+      "upcoming": [
+        { "title": "v7.0 Phase 1 — Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "date": "2026-08-12" }
+      ],
+      "notes": "Phase 2 runs Jul 21–Aug 11 with Columbina and Raiden Shogun. Version 7.0 launches Aug 12; Phase 1 features Odette with Arlecchino and introduces 4★ Alyosha. This GitHub-only run had no newer verified repository source for the Phase 1 end date or Phase 2 boundary, so the existing entry was retained and flagged for manual checking rather than guessing.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
