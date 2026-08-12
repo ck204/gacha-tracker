@@ -3,21 +3,19 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-10",
+  "lastUpdated": "2026-08-12",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "version": "6.7 (Luna VIII) — Phase 2",
+      "version": "7.0 — Phase 1",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "banners": [
-        { "title": "Columbina rerun + Raiden Shogun rerun", "start": "2026-07-21", "end": "2026-08-11" }
+        { "title": "Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "start": "2026-08-12", "end": "2026-09-01" }
       ],
-      "upcoming": [
-        { "title": "v7.0 Phase 1 — Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "date": "2026-08-12" }
-      ],
-      "notes": "Phase 2 runs Jul 21–Aug 11 with Columbina and Raiden Shogun. Version 7.0 launches Aug 12; Phase 1 features Odette with Arlecchino and introduces 4★ Alyosha. Flins and Ineffa are confirmed for Phase 2, but its exact phase boundary was not assigned here without a verified date.",
+      "upcoming": [],
+      "notes": "Version 7.0 launched Aug 12 with Odette and Arlecchino in Phase 1 and introduces 4★ Alyosha. Flins and Ineffa are confirmed for Phase 2, but its exact phase boundary was not added because this GitHub-only run had no newer verified repository source for that date.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -73,7 +71,7 @@ window.GACHA_DATA =
         { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" },
         { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 9) places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The Steam digest confirms Ver. 4.6 content runs until Aug 13, matching the rollover to Ichigo.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 12) places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The Steam digest confirms Ver. 4.6 content runs until Aug 13, matching the rollover to Ichigo.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -124,7 +122,7 @@ window.GACHA_DATA =
         { "title": "Sextans + Phaetusa + Ullrid (Targeted Procurement)", "start": "2026-08-06", "end": "2026-08-26" }
       ],
       "upcoming": [],
-      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 9) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
+      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 12) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
