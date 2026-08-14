@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-12",
+  "lastUpdated": "2026-08-14",
   "games": [
     {
       "name": "Genshin Impact",
@@ -12,10 +12,12 @@ window.GACHA_DATA =
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "banners": [
-        { "title": "Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "start": "2026-08-12", "end": null }
+        { "title": "Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "start": "2026-08-12", "end": "2026-09-01" }
       ],
-      "upcoming": [],
-      "notes": "Version 7.0 launched Aug 12 with Odette and Arlecchino in Phase 1 and introduces 4★ Alyosha. The Phase 1 end date and Phase 2 boundary are not yet verified, so the active banner is represented truthfully with an unknown end instead of a guessed duration.",
+      "upcoming": [
+        { "title": "v7.0 Phase 2 — Flins + Ineffa reruns", "date": "2026-09-01", "endDate": "2026-09-22" }
+      ],
+      "notes": "Version 7.0 launched Aug 12 with Odette and Arlecchino in Phase 1 and introduces 4★ Alyosha. Game8 now lists Phase 1 through Sep 1 and confirms the Phase 2 Flins and Ineffa reruns from Sep 1–22.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -61,18 +63,18 @@ window.GACHA_DATA =
     {
       "name": "Persona 5: The Phantom X",
       "short": "P5X",
-      "version": "4.6 — Summer",
+      "version": "4.7 (4.2)",
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "Miyu (Summer variant)", "start": "2026-07-30", "end": "2026-08-13" }
+        { "title": "Ichigo + main story 5-2", "start": "2026-08-13", "end": "2026-08-27" }
       ],
       "upcoming": [
-        { "title": "Ichigo + main story 5-2", "date": "2026-08-13", "endDate": "2026-08-27" },
         { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" },
-        { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" }
+        { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" },
+        { "title": "Mitsuru", "date": "2026-09-24", "endDate": "2026-10-08" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 12) places Miyu Summer on Jul 30, Ichigo on Aug 13, Katayama on Aug 27, and YUI Stella on Sep 10. The Steam digest confirms Ver. 4.6 content runs until Aug 13, matching the rollover to Ichigo.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 13) places Ichigo and main story 5-2 on Aug 13, followed by Katayama on Aug 27, YUI Stella on Sep 10, and Mitsuru on Sep 24 at 14-day intervals. The Steam digest independently confirms the Ver. 4.7 update and Ichigo release.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -88,10 +90,10 @@ window.GACHA_DATA =
         { "title": "Iroi (new 5★)", "start": "2026-07-29", "end": "2026-08-19" }
       ],
       "upcoming": [
-        { "title": "v1.3 Phase 1 — Zankou (new 5★)", "date": "2026-08-20", "endDate": "2026-09-09" },
+        { "title": "v1.3 Phase 1 — Zankou (new 5★)", "date": "2026-08-19", "endDate": "2026-09-09" },
         { "title": "v1.3 Phase 2 — Linko (new 5★)", "date": "2026-09-09", "endDate": "2026-09-30" }
       ],
-      "notes": "Iroi runs Jul 29–Aug 19. Recent banner schedules list Zankou for Aug 20–Sep 9 and Linko for Sep 9–30; Game8's indexed page remains stale, so these later entries should be rechecked against the next official notice.",
+      "notes": "Iroi runs Jul 29–Aug 19. Game8's refreshed schedule lists Version 1.3 and Zankou launching Aug 19, followed by Linko on Sep 9; the 21-day phase structure places their ends on Sep 9 and Sep 30 respectively.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
@@ -123,7 +125,7 @@ window.GACHA_DATA =
         { "title": "Sextans + Phaetusa + Ullrid (Targeted Procurement)", "start": "2026-08-06", "end": "2026-08-26" }
       ],
       "upcoming": [],
-      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 12) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
+      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 13) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
