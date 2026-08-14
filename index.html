@@ -65,8 +65,17 @@
   .days.urgent { color: var(--red); }
   .days.ended { color: var(--gray); }
   .days.upcoming { color: #7fb4e8; }
+  .days.unknown { color: #9ec7ff; }
   .bar { height: 6px; background: #232938; border-radius: 3px; overflow: hidden; }
   .bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s; }
+  .bar-fill.unknown {
+    width: 100%;
+    background: repeating-linear-gradient(120deg, #385779 0 8px, #6b9fd5 8px 16px);
+    background-size: 28px 100%;
+    animation: unknown-slide 1.4s linear infinite;
+  }
+  @keyframes unknown-slide { to { background-position: 28px 0; } }
+  @media (prefers-reduced-motion: reduce) { .bar-fill.unknown { animation: none; } }
   .upcoming { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--card-border); }
   .upcoming h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
   .upcoming li {
@@ -148,6 +157,10 @@
   }
   .cal-bar.starts { border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
   .cal-bar.ends { border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+  .cal-bar.unknown-end {
+    border-right: 2px dashed currentColor;
+    background-image: repeating-linear-gradient(120deg, transparent 0 7px, rgba(255,255,255,0.25) 7px 12px);
+  }
   .cal-dot { width: 5px; height: 5px; border-radius: 50%; flex: none; }
   #cal-tooltip {
     position: fixed; z-index: 10; display: none;
@@ -201,21 +214,24 @@
   const parse = s => new Date(s + "T00:00:00");
   const fmt = s => parse(s).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 
-  // Pick the single banner a card should show right now. Candidates are the
-  // current banners plus any upcoming entry that has an endDate (so it can be a
-  // real bar). Prefer the active one (start ≤ now ≤ end); if none is active,
-  // fall back to the most recently ended; only show a not-yet-started banner if
-  // nothing has started at all. This makes the bar auto-advance to the next
-  // banner the moment its start date arrives — no refresh needed.
+  // Pick the single banner a card should show right now. A null/missing end is a
+  // genuine unknown end, not a one-day duration. Every upcoming entry is a
+  // candidate, so it is promoted as soon as its start date arrives even when it
+  // has no endDate. Prefer active banners, then the most recently ended banner,
+  // then the earliest future banner.
   const pickBanner = g => {
     const cands = [];
-    for (const b of (g.banners || [])) cands.push({ title: b.title, start: b.start, end: b.end });
-    for (const u of (g.upcoming || [])) if (u.endDate) cands.push({ title: u.title, start: u.date, end: u.endDate, approx: u.approx });
+    for (const b of (g.banners || [])) cands.push({ title: b.title, start: b.start, end: b.end ?? null });
+    for (const u of (g.upcoming || [])) cands.push({ title: u.title, start: u.date, end: u.endDate ?? null, approx: u.approx });
     if (!cands.length) return null;
-    const t = cands.map(c => ({ ...c, s: parse(c.start), e: new Date(parse(c.end).getTime() + DAY) }));
-    const active = t.filter(c => c.s <= now && now < c.e).sort((a, b) => b.s - a.s);
+    const t = cands.map(c => ({
+      ...c,
+      s: parse(c.start),
+      e: c.end ? new Date(parse(c.end).getTime() + DAY) : null
+    }));
+    const active = t.filter(c => c.s <= now && (!c.e || now < c.e)).sort((a, b) => b.s - a.s);
     if (active.length) return active[0];
-    const ended = t.filter(c => c.e <= now).sort((a, b) => b.s - a.s);
+    const ended = t.filter(c => c.e && c.e <= now).sort((a, b) => b.s - a.s);
     if (ended.length) return ended[0];
     return t.sort((a, b) => a.s - b.s)[0];
   };
@@ -228,7 +244,10 @@
 
   // Warn only when the banner actually on display has ended (a real gap with no
   // started successor) — auto-advanced cards don't need a "data stale" nudge.
-  const anyEnded = data.games.some(g => { const p = pickBanner(g); return p && new Date(parse(p.end).getTime() + DAY) <= now; });
+  const anyEnded = data.games.some(g => {
+    const p = pickBanner(g);
+    return p?.end && new Date(parse(p.end).getTime() + DAY) <= now;
+  });
   if (updAge > 10 || anyEnded) {
     const stale = document.getElementById("stale");
     stale.style.display = "";
@@ -248,30 +267,36 @@
 
     const pb = pickBanner(g);
     if (pb) {
-      const start = parse(pb.start), end = parse(pb.end);
-      // End of the listed end-day
-      const endOfDay = new Date(end.getTime() + DAY);
-      const daysLeft = Math.ceil((endOfDay - now) / DAY);
-      const total = endOfDay - start;
-      const pct = Math.min(100, Math.max(0, ((now - start) / total) * 100));
+      const start = parse(pb.start);
+      const endKnown = Boolean(pb.end);
+      const endOfDay = endKnown ? new Date(parse(pb.end).getTime() + DAY) : null;
+      const daysLeft = endKnown ? Math.ceil((endOfDay - now) / DAY) : null;
+      const total = endKnown ? endOfDay - start : null;
+      const pct = endKnown ? Math.min(100, Math.max(0, ((now - start) / total) * 100)) : 100;
 
-      let cls = "ok", label = daysLeft + "d left", badge = "";
+      let cls = endKnown ? "ok" : "unknown";
+      let label = endKnown ? daysLeft + "d left" : "end unknown";
+      let badge = "";
       if (now < start) { cls = "upcoming"; label = "starts in " + Math.ceil((start - now) / DAY) + "d"; }
-      else if (daysLeft <= 0) { cls = "ended"; label = "ended"; }
-      else if (daysLeft <= 3) { cls = "urgent"; label = daysLeft + "d left"; badge = `<span class="ending-badge">ENDING SOON</span>`; }
-      else if (daysLeft <= 7) { cls = "soon"; }
-      const isNew = now >= start && (now - start) / DAY <= 3 && daysLeft > 0;
+      else if (endKnown && daysLeft <= 0) { cls = "ended"; label = "ended"; }
+      else if (endKnown && daysLeft <= 3) { cls = "urgent"; label = daysLeft + "d left"; badge = `<span class="ending-badge">ENDING SOON</span>`; }
+      else if (endKnown && daysLeft <= 7) { cls = "soon"; }
+      const isNew = now >= start && (now - start) / DAY <= 3 && (!endKnown || daysLeft > 0);
       if (isNew) badge += ` <span class="new-badge">NEW</span>`;
 
       const barColor = cls === "urgent" ? "var(--red)" : cls === "soon" ? "var(--amber)" : cls === "ended" ? "var(--gray)" : cls === "upcoming" ? "#7fb4e8" : "var(--green)";
+      const dateRange = endKnown ? `${fmt(pb.start)} → ${fmt(pb.end)}` : `${fmt(pb.start)} → End date unknown`;
+      const barFill = endKnown
+        ? `<div class="bar-fill" style="width:${pct}%;background:${barColor}"></div>`
+        : `<div class="bar-fill unknown"></div>`;
       html += `
         <div class="banner">
           <div class="banner-title">${pb.title} ${badge}</div>
           <div class="meta">
-            <span>${fmt(pb.start)} → ${fmt(pb.end)}</span>
+            <span>${dateRange}</span>
             <span class="days ${cls}">${label}</span>
           </div>
-          <div class="bar"><div class="bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
+          <div class="bar">${barFill}</div>
         </div>`;
     }
 
@@ -305,15 +330,15 @@
   }
 
   // ---- Calendar overview ----
-  // Flat list of spans: running banners use start→end; upcoming entries use date→endDate
-  // (single-day when endDate is omitted)
+  // Flat list of spans. Null ends remain explicitly open-ended; they are never
+  // coerced into fake one-day calendar entries.
   const calItems = [];
   for (const g of data.games) {
     const accent = g.accent || "#5a617a";
     for (const b of (g.banners || []))
-      calItems.push({ name: g.name, accent, title: b.title, start: parse(b.start), end: parse(b.end), banner: true });
+      calItems.push({ name: g.name, accent, title: b.title, start: parse(b.start), end: b.end ? parse(b.end) : null, banner: true, unknownEnd: !b.end });
     for (const u of (g.upcoming || []))
-      calItems.push({ name: g.name, accent, title: u.title, start: parse(u.date), end: parse(u.endDate || u.date), approx: u.approx });
+      calItems.push({ name: g.name, accent, title: u.title, start: parse(u.date), end: u.endDate ? parse(u.endDate) : null, approx: u.approx, unknownEnd: !u.endDate });
   }
 
   const fmtD = d => d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
@@ -323,6 +348,7 @@
     return lum > 150 ? "#10131a" : "#fff";
   };
   const todayMid = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const calEnd = it => it.end || (it.start <= todayMid ? todayMid : it.start);
 
   let calY = now.getFullYear(), calM = now.getMonth();
   const calSel = new Set(); // selected game names; empty = show all
@@ -361,7 +387,10 @@
       const weekEnd = new Date(ws); weekEnd.setDate(weekEnd.getDate() + 6);
       // Reserve height for the unfiltered lane count so filtering never shifts the layout
       let lanes = 0;
-      for (const it of calItems) if (!(it.end < weekStart || it.start > weekEnd)) lanes++;
+      for (const it of calItems) {
+        const drawEnd = calEnd(it);
+        if (!(drawEnd < weekStart || it.start > weekEnd)) lanes++;
+      }
       // 24px day-number row + 19px per lane + 5px padding + 1px border (border-box)
       html += `<div class="cal-week" style="min-height:${30 + lanes * 19}px">`;
       for (let i = 0; i < 7; i++) {
@@ -374,17 +403,19 @@
       let row = 2; // row 1 holds the day numbers; each bar gets its own lane below
       calItems.forEach((it, idx) => {
         if (calSel.size && !calSel.has(it.name)) return;
-        if (it.end < weekStart || it.start > weekEnd) return;
+        const drawEnd = calEnd(it);
+        if (drawEnd < weekStart || it.start > weekEnd) return;
         const s = it.start > weekStart ? it.start : weekStart;
-        const e = it.end < weekEnd ? it.end : weekEnd;
+        const e = drawEnd < weekEnd ? drawEnd : weekEnd;
         const col = Math.round((s - weekStart) / DAY) + 1;
         const colEnd = Math.round((e - weekStart) / DAY) + 2;
         const cls = ["cal-bar"];
         if (it.start >= weekStart) cls.push("starts");
-        if (it.end <= weekEnd) cls.push("ends");
+        if (it.unknownEnd) cls.push("unknown-end");
+        else if (it.end <= weekEnd) cls.push("ends");
         html += `<div class="${cls.join(" ")}" data-i="${idx}" ` +
           `style="grid-row:${row++};grid-column:${col}/${colEnd};background:${it.accent};color:${textOn(it.accent)}">` +
-          `${it.approx ? "~" : ""}${it.title}</div>`;
+          `${it.unknownEnd ? "↝ " : ""}${it.approx ? "~" : ""}${it.title}</div>`;
       });
       html += `</div>`;
     }
@@ -408,9 +439,9 @@
     const bar = e.target.closest(".cal-bar");
     if (!bar) { tooltip.style.display = "none"; return; }
     const it = calItems[+bar.dataset.i];
-    const dates = it.banner
-      ? `${fmtD(it.start)} → ${fmtD(it.end)} · ${Math.round((it.end - it.start) / DAY) + 1} days`
-      : (it.approx ? "~" : "") + fmtD(it.start);
+    const dates = it.unknownEnd
+      ? `${it.approx ? "~" : ""}${fmtD(it.start)} → End date unknown`
+      : `${it.approx ? "~" : ""}${fmtD(it.start)} → ${fmtD(it.end)} · ${Math.round((it.end - it.start) / DAY) + 1} days`;
     tooltip.innerHTML =
       `<div class="tt-date">${dates}</div>` +
       `<div class="tt-row"><span class="cal-dot" style="background:${it.accent}"></span>` +

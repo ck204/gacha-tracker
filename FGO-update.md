@@ -1,7 +1,7 @@
 # FGO manual update runbook
 
 Step-by-step for refreshing the **Fate/Grand Order (NA)** card in `data.js`.
-FGO is **manual only** — the weekly cloud routine must never touch it (its source
+FGO is **manual only** — the scheduled cloud routine must never touch it (its source
 needs raw-HTML parsing the sandbox can't do, and the data is easy to mis-order).
 
 **Trigger:** user says something like "run FGO-update" / "update the FGO card".

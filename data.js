@@ -8,17 +8,14 @@ window.GACHA_DATA =
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "version": "6.7 (Luna VIII) — Phase 2",
+      "version": "7.0 — Phase 1",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
-      "needsCheck": true,
       "banners": [
-        { "title": "Columbina rerun + Raiden Shogun rerun", "start": "2026-07-21", "end": "2026-08-11" }
+        { "title": "Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "start": "2026-08-12", "end": null }
       ],
-      "upcoming": [
-        { "title": "v7.0 Phase 1 — Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "date": "2026-08-12" }
-      ],
-      "notes": "Phase 2 runs Jul 21–Aug 11 with Columbina and Raiden Shogun. Version 7.0 launches Aug 12; Phase 1 features Odette with Arlecchino and introduces 4★ Alyosha. This GitHub-only run had no newer verified repository source for the Phase 1 end date or Phase 2 boundary, so the existing entry was retained and flagged for manual checking rather than guessing.",
+      "upcoming": [],
+      "notes": "Version 7.0 launched Aug 12 with Odette and Arlecchino in Phase 1 and introduces 4★ Alyosha. The Phase 1 end date and Phase 2 boundary are not yet verified, so the active banner is represented truthfully with an unknown end instead of a guessed duration.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -32,10 +29,11 @@ window.GACHA_DATA =
       "icon": "icons/hsr.jpg",
       "banners": [
         { "title": "Himeko Nova (new 5★, Fire Erudition; full-version banner)", "start": "2026-07-15", "end": "2026-08-25" },
-        { "title": "Phase 2 reruns — Cerydra + Anaxa + Aventurine", "start": "2026-08-05", "end": "2026-08-25" }
+        { "title": "Phase 2 reruns — Cerydra + Anaxa + Aventurine", "start": "2026-08-05", "end": "2026-08-25" },
+        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "start": "2026-07-24", "end": null }
       ],
       "upcoming": [],
-      "notes": "v4.4 Phase 2 began Aug 5. Himeko Nova remains available for the full version through Aug 25, alongside Phase 2 reruns Cerydra, Anaxa, and Aventurine through Aug 25. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) began Jul 24. Robin Summeretto and Aventurine Waveflair are confirmed as new v4.5 characters, but no unverified phase order or dates were added.",
+      "notes": "v4.4 Phase 2 began Aug 5. Himeko Nova remains available for the full version through Aug 25, alongside Phase 2 reruns Cerydra, Anaxa, and Aventurine through Aug 25. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) began Jul 24 with no fixed end and is represented as an open-ended active banner. Robin Summeretto and Aventurine Waveflair are confirmed as new v4.5 characters, but no unverified phase order or dates were added.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
