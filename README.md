@@ -1,6 +1,6 @@
 # Gacha Banner Tracker
 
-One-glance dashboard for current and upcoming banners across the games I play.
+One-glance dashboard for current and upcoming banners across gacha games.
 
 **Live site:** https://ck204.github.io/gacha-tracker/
 
@@ -28,11 +28,3 @@ or set it as your new-tab page.
   and the calendar shows the combined timelines. Empty selection falls back to All;
   selection persists while flipping months.
 
-## Refreshing the data
-
-Open Claude Code in this folder and say:
-
-> Refresh the gacha dashboard data
-
-Claude follows the full procedure and per-game source rules in [`CLAUDE.md`](CLAUDE.md).
-The data lives in `data.js`; the page renders whatever is there.
