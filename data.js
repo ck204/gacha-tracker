@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-14",
+  "lastUpdated": "2026-08-19",
   "games": [
     {
       "name": "Genshin Impact",
@@ -44,17 +44,15 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "version": "3.1 — Phase 1",
+      "version": "3.1 — Phase 2",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "banners": [
         { "title": "Remielle Dan (new 5★, Lumiflux Anomaly; full-version banner)", "start": "2026-07-29", "end": "2026-09-08" },
-        { "title": "Aria rerun — Phase 1", "start": "2026-07-29", "end": "2026-08-19" }
+        { "title": "Sigrid (new 5★, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "start": "2026-08-19", "end": "2026-09-08" }
       ],
-      "upcoming": [
-        { "title": "v3.1 Phase 2 — Sigrid (new 5★, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "date": "2026-08-19", "endDate": "2026-09-08" }
-      ],
-      "notes": "v3.1 launched Jul 29. Remielle remains available for the whole version through Sep 8, while Aria is the Phase 1 rerun through Aug 19. Phase 2 starts Aug 19 with Sigrid and the selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel, also ending Sep 8.",
+      "upcoming": [],
+      "notes": "v3.1 Phase 2 begins Aug 19. Remielle remains available for the whole version through Sep 8, while Sigrid and the selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel run from Aug 19 through Sep 8. Aria's Phase 1 rerun has ended.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -74,7 +72,7 @@ window.GACHA_DATA =
         { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" },
         { "title": "Mitsuru", "date": "2026-09-24", "endDate": "2026-10-08" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 13) places Ichigo and main story 5-2 on Aug 13, followed by Katayama on Aug 27, YUI Stella on Sep 10, and Mitsuru on Sep 24 at 14-day intervals. The Steam digest independently confirms the Ver. 4.7 update and Ichigo release.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 18) places Ichigo and main story 5-2 on Aug 13, followed by Katayama on Aug 27, YUI Stella on Sep 10, and Mitsuru on Sep 24 at 14-day intervals. The Steam digest independently confirms the Ver. 4.7 update and Ichigo release.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -83,17 +81,16 @@ window.GACHA_DATA =
     {
       "name": "Neverness to Everness",
       "short": "NTE",
-      "version": "1.2 — Phase 2",
+      "version": "1.3 — Phase 1",
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
       "banners": [
-        { "title": "Iroi (new 5★)", "start": "2026-07-29", "end": "2026-08-19" }
+        { "title": "Zankou (new 5★)", "start": "2026-08-19", "end": "2026-09-09" }
       ],
       "upcoming": [
-        { "title": "v1.3 Phase 1 — Zankou (new 5★)", "date": "2026-08-19", "endDate": "2026-09-09" },
         { "title": "v1.3 Phase 2 — Linko (new 5★)", "date": "2026-09-09", "endDate": "2026-09-30" }
       ],
-      "notes": "Iroi runs Jul 29–Aug 19. Game8's refreshed schedule lists Version 1.3 and Zankou launching Aug 19, followed by Linko on Sep 9; the 21-day phase structure places their ends on Sep 9 and Sep 30 respectively.",
+      "notes": "Version 1.3 begins Aug 19 with Zankou in Phase 1. Linko follows on Sep 9; the existing verified contiguous 21-day phase schedule places Zankou's end on Sep 9 and Linko's end on Sep 30. Iroi's Version 1.2 Phase 2 banner has ended.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
@@ -125,7 +122,7 @@ window.GACHA_DATA =
         { "title": "Sextans + Phaetusa + Ullrid (Targeted Procurement)", "start": "2026-08-06", "end": "2026-08-26" }
       ],
       "upcoming": [],
-      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 13) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
+      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 18) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
