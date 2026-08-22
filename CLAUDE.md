@@ -96,14 +96,14 @@ of +7 days; that was used briefly and reverted in June 2026.) Fetch it with Powe
 ## Automated scheduled refresh (ChatGPT cloud routine)
 
 A scheduled ChatGPT cloud task (configured on chatgpt.com under the user's account —
-not stored in this repo) refreshes the data **every Monday, Wednesday, Friday, and Sunday
+not stored in this repo) refreshes the data **every Monday, Wednesday, and Friday
 at 22:00 Asia/Singapore (GMT+8) with flexible scheduling** (it may run within about an
 hour after that time), fully independent of the user's PC. Wednesday runs are expected.
 There is one active task for this repository.
 
 1. **Daily 21:07** — the `mirror-sources.yml` Actions workflow refreshes `mirrors` (see above).
    Each scheduled refresh therefore starts from a recent mirror snapshot.
-2. **Monday, Wednesday, Friday, and Sunday at 22:00 Asia/Singapore (flexible)** — the
+2. **Monday, Wednesday, and Friday at 22:00 Asia/Singapore (flexible)** — the
    routine reads this file and follows the "Refreshing the data" procedure and source
    rules. It builds the complete proposed `data.js`, reviews the full diff, and runs all
    validation before any GitHub write. Only after every check passes may it publish one
