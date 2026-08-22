@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-19",
+  "lastUpdated": "2026-08-22",
   "games": [
     {
       "name": "Genshin Impact",
@@ -34,8 +34,11 @@ window.GACHA_DATA =
         { "title": "Phase 2 reruns — Cerydra + Anaxa + Aventurine", "start": "2026-08-05", "end": "2026-08-25" },
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "start": "2026-07-24", "end": null }
       ],
-      "upcoming": [],
-      "notes": "v4.4 Phase 2 began Aug 5. Himeko Nova remains available for the full version through Aug 25, alongside Phase 2 reruns Cerydra, Anaxa, and Aventurine through Aug 25. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) began Jul 24 with no fixed end and is represented as an open-ended active banner. Robin Summeretto and Aventurine Waveflair are confirmed as new v4.5 characters, but no unverified phase order or dates were added.",
+      "upcoming": [
+        { "title": "v4.5 Phase 1 — Robin Summeretto (new 5★, Wind Remembrance) + Hyacine rerun", "date": "2026-08-26", "endDate": "2026-09-12" },
+        { "title": "v4.5 Phase 2 — Aventurine Waveflair (new 5★, Quantum Elation) + Ashveil rerun", "date": "2026-09-12" }
+      ],
+      "notes": "v4.4 Phase 2 remains current through Aug 25, with Himeko Nova, Cerydra, Anaxa, and Aventurine. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) remains open-ended. HoYoverse's v4.5 announcement confirms an Aug 26 launch with Robin Summeretto + Hyacine in Phase 1 and Aventurine Waveflair + Ashveil from Sep 12 in Phase 2. Phase 1 therefore ends Sep 12; no Phase 2 endDate was added because an exact version-end date was not verified.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -72,7 +75,7 @@ window.GACHA_DATA =
         { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" },
         { "title": "Mitsuru", "date": "2026-09-24", "endDate": "2026-10-08" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 18) places Ichigo and main story 5-2 on Aug 13, followed by Katayama on Aug 27, YUI Stella on Sep 10, and Mitsuru on Sep 24 at 14-day intervals. The Steam digest independently confirms the Ver. 4.7 update and Ichigo release.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 21) places Ichigo and main story 5-2 on Aug 13, followed by Katayama on Aug 27, YUI Stella on Sep 10, and Mitsuru on Sep 24 at 14-day intervals. The Steam digest independently confirms the Ver. 4.7 update and Ichigo release.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -122,7 +125,7 @@ window.GACHA_DATA =
         { "title": "Sextans + Phaetusa + Ullrid (Targeted Procurement)", "start": "2026-08-06", "end": "2026-08-26" }
       ],
       "upcoming": [],
-      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 18) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
+      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 21) confirms Sextans + Phaetusa + Ullrid as the current lineup from Aug 6–26. The official Steam digest dated Aug 5 independently confirms Sextans and the Moonshroud Requiem event. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
