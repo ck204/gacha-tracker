@@ -70,7 +70,7 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 the Claude cloud sandbox cannot fetch them directly. The daily cadence keeps mirrors fresh
 for every scheduled refresh day and for manual refreshes; the odd `:07` minute guards against
 GitHub's scheduled-run delays and congested top/bottom-of-hour slots. `mirrors/status.json`
-records each fetch's HTTP code and timestamp. The workflow can also be triggered manually
+records each fetch's HTTP code + timestamp. The workflow can also be triggered manually
 (`gh workflow run mirror-sources.yml` or the Actions tab). A failed fetch is retried once;
 if it still fails, the previous mirror file is kept and status.json shows the failure code.
 
@@ -107,21 +107,27 @@ There is one active task for this repository.
    routine reads this file and follows the "Refreshing the data" procedure and source
    rules. It builds the complete proposed `data.js`, reviews the full diff, and runs all
    validation before any GitHub write. Only after every check passes may it publish one
-   final, validated direct commit to `main`. The scheduled run's single final write is
-   pre-authorized; the ask-before-push rule still applies to interactive sessions.
+   final, validated direct commit to `main`. Every successful scheduled execution publishes
+   exactly one `data.js` commit and sets `lastUpdated` to that run's Asia/Singapore date;
+   when no banner data changed, `lastUpdated` is the only intended `data.js` change. The
+   scheduled run's single final write is pre-authorized; the ask-before-push rule still
+   applies to interactive sessions.
 3. **~1 min after the refresh commit** — GitHub Pages rebuilds the live site.
 
-Each scheduled execution may publish **at most one** final banner-data change. GitHub must
-never be used as temporary or intermediate storage: do not publish a preliminary state,
-use a first commit as a checkpoint, or create an automatic cleanup commit. After the
-single publication, verification of the resulting SHA and remote content is read-only,
-and the successful publication must be the run's final state-changing operation.
+Each successful scheduled execution publishes **exactly one** final `data.js` commit. If
+banner data changed, include the validated banner changes plus `lastUpdated`; if no banner
+data changed, the only intended change is `lastUpdated`. GitHub must never be used as
+temporary or intermediate storage: do not publish a preliminary state, use a first commit
+as a checkpoint, or create an automatic cleanup commit. After the single publication,
+verification of the resulting SHA and remote content is read-only, and the successful
+publication must be the run's final state-changing operation.
 
 If any pre-write validation fails, correct and revalidate the local/in-memory proposal.
-If every check cannot pass, publish nothing and report the failed invariant and affected
-game or field. If read-only post-write verification unexpectedly finds an error, do not
-write a correction: report the failed invariant and published SHA, mark the run as
-requiring manual review, and do not claim successful finalization.
+If every check cannot pass, publish nothing, do not update `lastUpdated`, and report the
+failed invariant and affected game or field. If read-only post-write verification
+unexpectedly finds an error, do not write a correction: report the failed invariant and
+published SHA, mark the run as requiring manual review, and do not claim successful
+finalization.
 
 ### Scheduled-refresh validation and regression rules
 
@@ -157,10 +163,12 @@ verified data without fabricating a duration. Do not use a sentinel, set `end` e
 span with an open end.
 
 A healthy scheduled refresh day leaves the daily "Mirror source data (automated)" commit
-and, only when banner data changed and all checks passed, no more than one "Weekly banner
-data refresh (automated)" direct commit. Non-refresh days normally leave only the daily
-mirror commit. **Cloud-run constraint:** the sandbox cannot fetch arbitrary URLs (403 on
-WebFetch and shell curl) — use web search and the `mirrors/` files only.
+and exactly one "Weekly banner data refresh (automated)" direct commit after validation.
+When no banner data changed, that weekly commit updates only `lastUpdated`; when banner data
+changed, it includes those validated changes plus `lastUpdated`. Non-refresh days normally
+leave only the daily mirror commit. **Cloud-run constraint:** the sandbox cannot fetch
+arbitrary URLs (403 on WebFetch and shell curl) — use web search and the `mirrors/` files
+only.
 
 ## Implementation gotchas — do NOT "simplify" these
 
