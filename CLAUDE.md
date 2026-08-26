@@ -70,7 +70,7 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 the Claude cloud sandbox cannot fetch them directly. The daily cadence keeps mirrors fresh
 for every scheduled refresh day and for manual refreshes; the odd `:07` minute guards against
 GitHub's scheduled-run delays and congested top/bottom-of-hour slots. `mirrors/status.json`
-records each fetch's HTTP code + timestamp. The workflow can also be triggered manually
+records each fetch's HTTP code and timestamp. The workflow can also be triggered manually
 (`gh workflow run mirror-sources.yml` or the Actions tab). A failed fetch is retried once;
 if it still fails, the previous mirror file is kept and status.json shows the failure code.
 
