@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-26",
+  "lastUpdated": "2026-08-28",
   "games": [
     {
       "name": "Genshin Impact",
@@ -62,18 +62,18 @@ window.GACHA_DATA =
     {
       "name": "Persona 5: The Phantom X",
       "short": "P5X",
-      "version": "4.7 (4.2)",
+      "version": "4.8 (4.4)",
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "Ichigo + main story 5-2", "start": "2026-08-13", "end": "2026-08-27" }
+        { "title": "Kumi Katayama", "start": "2026-08-27", "end": "2026-09-10" }
       ],
       "upcoming": [
-        { "title": "Katayama", "date": "2026-08-27", "endDate": "2026-09-10" },
         { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" },
-        { "title": "Mitsuru", "date": "2026-09-24", "endDate": "2026-10-08" }
+        { "title": "Mitsuru", "date": "2026-09-24", "endDate": "2026-10-08" },
+        { "title": "Fuuka", "date": "2026-10-08", "endDate": "2026-10-22" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 26) places Ichigo and main story 5-2 on Aug 13, followed by Katayama on Aug 27, YUI Stella on Sep 10, and Mitsuru on Sep 24. The fresh Steam digest independently confirms Kumi Katayama is coming next. Existing contiguous phase boundaries are retained; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 27) places Kumi Katayama on Aug 27, followed by YUI Stella on Sep 10, Mitsuru on Sep 24, and Fuuka on Oct 8. The fresh official Steam digest confirms Kumi Katayama is now live and its event window runs through Sep 9 UTC. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -106,8 +106,10 @@ window.GACHA_DATA =
       "banners": [
         { "title": "Liino (new 6★, Electric Supporter)", "start": "2026-08-09", "end": "2026-09-02" }
       ],
-      "upcoming": [],
-      "notes": "Game8 lists Liino's Phase 2 banner from Aug 9 through Sep 2. The official Homecoming notice confirms it runs from Aug 9 at 12:00 server time until the next version update and maintenance.",
+      "upcoming": [
+        { "title": "Dreamscape of Wind and Snow — Typhoeus (new 6★, Nature Striker)", "date": "2026-09-02" }
+      ],
+      "notes": "Liino remains current through the Sep 2 version update and maintenance. GRYPHLINE's Aug 21 announcement confirms Dreamscape of Wind and Snow launches Sep 2 headlined by Typhoeus; no exact Typhoeus banner end date is stored because a sufficiently authoritative exact end was not verified.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -120,13 +122,12 @@ window.GACHA_DATA =
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "banners": [
-        { "title": "Sextans + Phaetusa + Ullrid (Targeted Procurement)", "start": "2026-08-06", "end": "2026-08-26" }
+        { "title": "OTs-14 + Basti + Voymastina (Targeted Procurement)", "start": "2026-08-27", "end": "2026-09-16" }
       ],
       "upcoming": [
-        { "title": "OTs-14 + Basti + Voymastina", "date": "2026-08-27", "endDate": "2026-09-16" },
         { "title": "Soppo + Loreley (third Targeted Procurement doll not yet listed)", "date": "2026-09-17", "endDate": "2026-10-07" }
       ],
-      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 26) confirms Sextans + Phaetusa + Ullrid through Aug 26, OTs-14 + Basti + Voymastina for Aug 27–Sep 16, and Soppo + Loreley for Sep 17–Oct 7; the third doll in the latter lineup is not yet identified by the source. The official Aug 26 Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
+      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 27) confirms OTs-14 + Basti + Voymastina are now live Aug 27–Sep 16, followed by Soppo + Loreley Sep 17–Oct 7; the third doll in the latter lineup is still not identified by the source. The official Aug 26 Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
