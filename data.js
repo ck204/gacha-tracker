@@ -3,21 +3,19 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-08-31",
+  "lastUpdated": "2026-09-02",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "version": "7.0 — Phase 1",
+      "version": "7.0 — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "banners": [
-        { "title": "Odette (new 5★) + Arlecchino rerun; Alyosha (new 4★)", "start": "2026-08-12", "end": "2026-09-01" }
+        { "title": "v7.0 Phase 2 — Flins + Ineffa reruns", "start": "2026-09-01", "end": "2026-09-22" }
       ],
-      "upcoming": [
-        { "title": "v7.0 Phase 2 — Flins + Ineffa reruns", "date": "2026-09-01", "endDate": "2026-09-22" }
-      ],
-      "notes": "Version 7.0 launched Aug 12 with Odette and Arlecchino in Phase 1 and introduces 4★ Alyosha. Game8 now lists Phase 1 through Sep 1 and confirms the Phase 2 Flins and Ineffa reruns from Sep 1–22.",
+      "upcoming": [],
+      "notes": "Version 7.0 Phase 2 is now live Sep 1–22 with Flins and Ineffa reruns. HoYoverse has revealed Vesna and Vodyanitsa as upcoming playable characters, but no exact Version 7.1 banner phase/date is stored until an authoritative schedule is published.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -76,7 +74,7 @@ window.GACHA_DATA =
         { "title": "Mitsuru", "date": "2026-09-24", "endDate": "2026-10-08" },
         { "title": "Fuuka", "date": "2026-10-08", "endDate": "2026-10-22" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Aug 30) places Kumi Katayama on Aug 27, followed by YUI Stella on Sep 10, Mitsuru on Sep 24, and Fuuka on Oct 8. The fresh official Steam digest confirms Kumi Katayama is now live and its event window runs through Sep 9 UTC. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
+      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Sep 1) places Kumi Katayama on Aug 27, followed by YUI Stella on Sep 10, Mitsuru on Sep 24, and Fuuka on Oct 8. The fresh official Steam digest confirms Kumi Katayama is live and its event window runs through Sep 9 UTC. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -103,17 +101,16 @@ window.GACHA_DATA =
     {
       "name": "Arknights: Endfield",
       "short": "AKE",
-      "version": "1.4 — Phase 2",
+      "version": "Dreamscape of Wind and Snow",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "banners": [
-        { "title": "Liino (new 6★, Electric Supporter)", "start": "2026-08-09", "end": "2026-09-02" }
+        { "title": "Winter Hunt — Typhoeus (new 6★, Nature Striker)", "start": "2026-09-02", "end": "2026-09-30" }
       ],
       "upcoming": [
-        { "title": "Dreamscape of Wind and Snow — Typhoeus (new 6★, Nature Striker)", "date": "2026-09-02" },
         { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "date": "2026-09-24" }
       ],
-      "notes": "Liino remains current through the Sep 2 version update and maintenance. GRYPHLINE confirms Dreamscape of Wind and Snow launches Sep 2 headlined by Typhoeus, and separately confirms the Resplendent Spectrum RE-Factor Yvonne rate-up opens Sep 24. Exact banner end dates are omitted where not verified.",
+      "notes": "Dreamscape of Wind and Snow launched Sep 2. GRYPHLINE confirms Winter Hunt features Typhoeus from the version release through Sep 30, and Resplendent Spectrum RE-Factor Headhunting #1 opens Sep 24 with Yvonne rate-up. Yvonne's exact end date is not stored because the official notice only ties it to the next version maintenance.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -131,7 +128,7 @@ window.GACHA_DATA =
       "upcoming": [
         { "title": "Soppo + Loreley (third Targeted Procurement doll not yet listed)", "date": "2026-09-17", "endDate": "2026-10-07" }
       ],
-      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Aug 30) confirms OTs-14 + Basti + Voymastina are now live Aug 27–Sep 16, followed by Soppo + Loreley Sep 17–Oct 7; the third doll in the latter lineup is still not identified by the source. The official Aug 26 Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
+      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Sep 1) confirms OTs-14 + Basti + Voymastina are live Aug 27–Sep 16, followed by Soppo + Loreley Sep 17–Oct 7; the third doll in the latter lineup is still not identified by the source. The official Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
