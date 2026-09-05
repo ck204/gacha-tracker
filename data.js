@@ -1,4 +1,4 @@
-// Gacha tracker data — refreshed by Claude. Schema documented in README.md.
+// Gacha tracker data. Schema documented in CLAUDE.md.
 // Keep everything after the '=' STRICT JSON (quoted keys, no trailing commas)
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
@@ -74,7 +74,7 @@ window.GACHA_DATA =
         { "title": "Mitsuru", "date": "2026-09-24", "endDate": "2026-10-08" },
         { "title": "Fuuka", "date": "2026-10-08", "endDate": "2026-10-22" }
       ],
-      "notes": "The healthy lufel.net mirror (HTTP 200, fetched Sep 1) places Kumi Katayama on Aug 27, followed by YUI Stella on Sep 10, Mitsuru on Sep 24, and Fuuka on Oct 8. The fresh official Steam digest confirms Kumi Katayama is live and its event window runs through Sep 9 UTC. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
+      "notes": "The lufel.net mirror places Kumi Katayama on Aug 27, followed by YUI Stella on Sep 10, Mitsuru on Sep 24, and Fuuka on Oct 8. The official Steam digest confirms Kumi Katayama is live and its event window runs through Sep 9 UTC. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
@@ -128,7 +128,7 @@ window.GACHA_DATA =
       "upcoming": [
         { "title": "Soppo + Loreley (third Targeted Procurement doll not yet listed)", "date": "2026-09-17", "endDate": "2026-10-07" }
       ],
-      "notes": "The fresh gfl2.help Global mirror (HTTP 200, fetched Sep 1) confirms OTs-14 + Basti + Voymastina are live Aug 27–Sep 16, followed by Soppo + Loreley Sep 17–Oct 7; the third doll in the latter lineup is still not identified by the source. The official Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
+      "notes": "The gfl2.help Global mirror confirms OTs-14 + Basti + Voymastina are live Aug 27–Sep 16, followed by Soppo + Loreley Sep 17–Oct 7; the third doll in the latter lineup is still not identified by the source. The official Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]

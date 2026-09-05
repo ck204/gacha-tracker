@@ -70,7 +70,7 @@ while(($i=$t.IndexOf($name,$i)) -ge 0){
 ($dates | Sort-Object -Unique)   # only this event's dates => new; older dates => rerun
 ```
 
-Verified examples (June 2026): Hibiki & Chikagi → NA only 2026-06 = **new**;
+Historical examples (June 2026): Hibiki & Chikagi → NA only 2026-06 = **new**;
 Zhuge Liang → NA back to 2017 = **rerun**; Sei Shōnagon → back to 2022 = **rerun**.
 
 ## 4. What goes on the card (conventions)
@@ -85,10 +85,7 @@ Zhuge Liang → NA back to 2017 = **rerun**; Sei Shōnagon → back to 2022 = **
   Swimsuit/class-change Servants are a classic trap (e.g. "Tamamo-no-Mae (Lancer)" looks
   like a new unit but has NA history back to 2018 = rerun).
 - Use the new Servant's name as the title, e.g. `Dancing Dragon Castle — Hibiki & Chikagi`.
-  Example from this event: keep **only** Hibiki & Chikagi; drop Zhuge Liang, Sei Shōnagon
-  (rerun pickups) **and** the Abigail Williams (Summer) / Jeanne d'Arc support banner
-  (both reruns).
-- **`upcoming`: top 2 only**, units only (no banner names), in soonest→later order
+- **`upcoming`: up to the next 3 new-Servant debuts**, units only (no banner names), in soonest→later order
   by JP date. Mark `"approx": true` and use estimated NA dates.
   - **Estimating NA dates:** NA trails JP by ~23 months, but the offset is NOT
     constant (measured ~702–716 days; support banners get repositioned). Treat
@@ -98,15 +95,13 @@ Zhuge Liang → NA back to 2017 = **rerun**; Sei Shōnagon → back to 2022 = **
 - Keep `version: "NA / Global"`, `accent: "#c0a062"`, `icon: "icons/fgo.jpg"`,
   and the two links (GamePress campaigns + official NA site).
 
-## 5. Predicting upcoming (for the 2 `upcoming` entries)
+## 5. Predicting upcoming (up to 3 `upcoming` entries)
 
 List up to the **next 3 NEW-Servant debuts** (units, no banner names), soonest→later.
 Walk the JP-only entries with the smallest JP start date after the current event
 (sorted JP ascending), read their `Single:` units, and **run the §3.5 NA-history check on
-each — skip any whose units are all reruns.** Keep going until you have 3 new debuts.
-(Example for this event: Tamamo-no-Mae (Lancer)/Altria (Archer) and Karna/Percival are
-reruns and skipped; the next three new debuts are Space Ereshkigal, Mysterious Executor
-C.I.E.L., then BB (Dubai).)
+each — skip any whose units are all reruns.** Keep going until you have 3 new debuts
+or exhaust the available source entries.
 
 Helper to list the next NA rate-ups by JP order (adjust the date window):
 
@@ -123,6 +118,6 @@ around the unit name, e.g. `$t.IndexOf('Tamamo-no-Mae (Lancer)')`.)
 1. Edit only the FGO `banners` / `upcoming` in `data.js`; set `lastUpdated` to today (GMT+8).
 2. Validate JSON parses (strip `// ...` lines, drop `window.GACHA_DATA =` and trailing `;`,
    `ConvertFrom-Json`). Confirm 8 games present.
-3. Preview (`python -m http.server` via `.claude/launch.json`) and confirm the FGO card
-   shows the intended bars + 2 upcoming.
+3. Preview by opening `index.html` directly or running `python -m http.server`
+   from the repo root. Confirm the FGO card shows the intended banner and up to 3 upcoming entries.
 4. **Ask the user**, then `git commit` + `git push` (live site updates ~1 min later).

@@ -4,7 +4,7 @@ name: Mirror banner data sources
 # (its sandbox blocks outbound fetches) and commits them into mirrors/ so the
 # routine can read them from the repo itself.
 # Runs daily at 13:07 UTC (21:07 GMT+8) to keep mirrors fresh for both the
-# weekly Sunday refresh and manual refreshes. The odd :07 minute avoids the
+# Monday, Wednesday, and Friday refreshes and manual refreshes. The odd :07 minute avoids the
 # congested top/bottom-of-hour slots that get dropped.
 on:
   schedule:

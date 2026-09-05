@@ -2,7 +2,7 @@
 
 Static, single-page dashboard of current and upcoming gacha banners for the games the
 user plays. Pure front-end: `index.html` renders everything from `data.js` at load.
-Hosted on GitHub Pages. Human-facing usage lives in `README.md`.
+Hosted on GitHub Pages. A brief project description lives in `README.md`.
 
 ## Architecture / layout
 
@@ -12,9 +12,8 @@ Hosted on GitHub Pages. Human-facing usage lives in `README.md`.
 - **`icons/`** — official app icons (iTunes Search API, 512px JPEG); referenced per game.
 - **`mirrors/`** — committed copies of sources the Claude cloud sandbox can't fetch live.
 - **`.github/workflows/mirror-sources.yml`** — refreshes `mirrors/` on GitHub runners.
-- **`.claude/launch.json`** — serves the page for Claude Code's preview panel via
-  `python -m http.server` (needs Python 3.x on PATH). The page itself never needs a
-  server; double-clicking `index.html` always works.
+- **Local preview:** open `index.html` directly, or run `python -m http.server`
+  from the repo root (needs Python 3.x on PATH).
 
 ## Deploy & git
 
@@ -88,7 +87,9 @@ mirror only if its digest is missing.
 `manualReleases` + `autoGenerateCharacters` (version, `date`, `characters`, `days` =
 interval to next release). Character names are **Korean** — translate (e.g. 사나다 =
 Akihiko Sanada, 유카리 = Yukari Takeba, 유키 마코토 = Makoto Yuki). Entries are
-global-server releases; banner length ≈ the `days` interval. **User plays on the GLOBAL
+global-server releases. The `days` interval describes release spacing; it does not
+independently confirm a banner end. Use an end date only when stated by a source or
+established by a verified contiguous phase boundary. Otherwise keep the end unknown. **User plays on the GLOBAL
 server: use the listed dates as-is — no shift.** (Do not apply the site's SEA checkbox rule
 of +7 days; that was used briefly and reverted in June 2026.) Fetch it with PowerShell
 `Invoke-WebRequest` (WebFetch also works — it's plain JS).
@@ -164,7 +165,7 @@ span with an open end.
 
 A healthy scheduled refresh day leaves the daily "Mirror source data (automated)" commit
 and exactly one "Weekly banner data refresh (automated)" direct commit after validation.
-When no banner data changed, that weekly commit updates only `lastUpdated`; when banner data
+When no banner data changed, that refresh commit updates only `lastUpdated`; when banner data
 changed, it includes those validated changes plus `lastUpdated`. Non-refresh days normally
 leave only the daily mirror commit. **Cloud-run constraint:** the sandbox cannot fetch
 arbitrary URLs (403 on WebFetch and shell curl) — use web search and the `mirrors/` files
@@ -226,12 +227,3 @@ window.GACHA_DATA = {
 - If the project later adopts branch protection, move both the banner refresh and daily
   mirror workflow from direct `main` commits to one temporary branch, one validated commit,
   one pull request, and one squash merge. Update the scheduled-task prompt at the same time.
-
-## History
-
-- A Discord webhook integration (edited-in-place pinned dashboard message + ending-soon
-  alerts + Gantt timeline image) existed briefly and was removed at the user's request
-  (June 2026) — scripts, config, and the daily scheduled task are all gone. To revive it,
-  see git history before the commit removing `post-discord.ps1` / `make-calendar.ps1`; a
-  new channel webhook URL would need to be created in Discord (the old one lived only in
-  the deleted `discord.config.json`).

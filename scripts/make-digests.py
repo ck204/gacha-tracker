@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build compact digests of the bulky mirror files for the cloud routine.
 
-The weekly routine reads mirrors/ into context; the raw GFL2 page (~45K tokens)
+The scheduled routine reads mirrors/ into context; the raw GFL2 page (~45K tokens)
 and Steam JSONs (~22K) dominate its token use. This reduces them to ~2K total:
 
   mirrors/gfl2-help-banners.html  -> mirrors/gfl2-digest.txt        (tag-stripped)
