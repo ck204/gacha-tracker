@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-04",
+  "lastUpdated": "2026-09-07",
   "games": [
     {
       "name": "Genshin Impact",
@@ -52,9 +52,9 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "v3.2 Phase 1 — Claret Flint (new S-Rank, Electric Armorer) + Nangong Yu rerun", "date": "2026-09-09", "endDate": "2026-09-30" },
-        { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "date": "2026-09-30" }
+        { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "date": "2026-09-30", "endDate": "2026-10-20" }
       ],
-      "notes": "v3.1 Phase 2 remains current through Sep 8. Version 3.2 launches Sep 9 with Claret Flint + Nangong Yu in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia from Sep 30. The exact Phase 2 end date is not stored because it was not verified to the required confidence.",
+      "notes": "v3.1 Phase 2 remains current through Sep 8. Version 3.2 launches Sep 9 with Claret Flint + Nangong Yu in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia Sep 30–Oct 20. The Phase 2 end date is now corroborated by current Version 3.2 schedule coverage.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
