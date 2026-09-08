@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-07",
+  "lastUpdated": "2026-09-08",
   "games": [
     {
       "name": "Genshin Impact",
@@ -12,8 +12,8 @@ window.GACHA_DATA =
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "leaks": [
-        { "title": "Skirk + Escoffier reruns", "version": "7.1", "confidence": "medium", "confidenceReason": "Kuroo-attributed report; these rerun banners remain unconfirmed.", "sourceUrl": "https://www.reddit.com/r/Genshin_Impact_Leaks/comments/1vwyln2/71_banners_via_kuroo/", "checkedAt": "2026-09-08" },
-        { "title": "Mitya · Zibai + Linnea reruns · fourth slot unknown", "version": "7.2", "confidence": "low", "confidenceReason": "Hongyu-attributed report marked questionable by the community; incomplete lineup.", "sourceUrl": "https://www.reddit.com/r/Genshin_Impact_Leaks/comments/1w0iwm8/72_kit_crumbs_banners_via_hongyu/", "checkedAt": "2026-09-08" }
+        { "title": "Mitya + Valeriy", "version": "7.2", "confidence": "low", "confidenceReason": "An FSC/HxG-attributed roadmap paired both new units in Version 7.2, but a newer Hongyu-attributed banner report names Mitya without confirming Valeriy; timing remains disputed.", "sourceUrl": "https://www.reddit.com/r/Genshin_Impact_Leaks/comments/1uug2jh/character_release_order_via_fsc_hxg/", "checkedAt": "2026-09-08" },
+        { "title": "Tsaritsa (Anastasya) + Danica", "version": "7.3", "confidence": "low", "confidenceReason": "Several roadmap reposts agree on this pair, but the recent source post was removed and the claim is still far ahead of beta confirmation.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-09-08" }
       ],
       "banners": [
         { "title": "v7.0 Phase 2 — Flins + Ineffa reruns", "start": "2026-09-01", "end": "2026-09-22" }
@@ -22,7 +22,7 @@ window.GACHA_DATA =
         { "title": "Vesna (announced character)", "date": null },
         { "title": "Vodyanitsa (announced character)", "date": null }
       ],
-      "notes": "Version 7.0 Phase 2 is now live Sep 1–22 with Flins and Ineffa reruns. HoYoverse has revealed Vesna and Vodyanitsa as upcoming playable characters, but no exact Version 7.1 banner phase/date is stored until an authoritative schedule is published.",
+      "notes": "Version 7.0 Phase 2 is now live Sep 1–22 with Flins and Ineffa reruns. HoYoverse has revealed Vesna and Vodyanitsa as upcoming playable characters. The leak section tracks only new playable units through Version 7.3, three version increments beyond the current Version 7.0 banner.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }

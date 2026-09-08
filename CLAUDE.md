@@ -212,6 +212,13 @@ only.
 
 - Maintain `leaks` only for GI, HSR, ZZZ, NTE, and AKE. Never add leak sections
   for P5X, GFL2 Global, or FGO NA; their regional schedules are easy to confuse.
+- Leaked entries are strictly for new playable units. Never include rerun characters,
+  rerun pairings, or empty/unknown banner slots. When a source mixes debut units with
+  reruns, retain only the debut units. An existing NPC newly becoming playable still
+  counts as a new unit.
+- Keep leak coverage to at most the next three version increments after the current
+  game version (for example, a v7.0 card may show leaks only through v7.3). Drop
+  farther-out roadmap claims even when named so cards remain compact.
 - Each entry is `{ title, version, confidence, confidenceReason, sourceUrl, checkedAt }`.
   `version` is the rumored version string, `checkedAt` is the actual research date
   in YYYY-MM-DD, and `confidence` is `low`, `medium`, or `high`.
@@ -225,8 +232,8 @@ only.
   fabricate lineups to fill an empty section. Remove disproven/superseded claims.
 - Once a character/banner is officially confirmed, show it only in Upcoming
   (Date TBA if needed), never in Leaked even if version or phase is still rumored.
-  Remove confirmed units from grouped leak titles while keeping any unconfirmed
-  reruns or units. Check every game for overlap during refreshes.
+  Remove confirmed units from grouped leak titles and discard all rerun information.
+  Check every game for overlap during refreshes.
 - Leaks never enter the calendar, countdowns, or automatic current-banner selection.
 - `notes` remains internal refresh context, but the yellow notes text is no longer
   rendered on any game card. Do not restore it during data refreshes.

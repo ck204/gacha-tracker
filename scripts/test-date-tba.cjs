@@ -61,6 +61,10 @@ assert.equal(live.cards.reduce((count, card) =>
   count + (card.innerHTML.match(/Date TBA/g) || []).length, 0), expectedTbaCount);
 assert.ok(live.cards.every(card => !/NaN|Invalid Date/.test(card.innerHTML)));
 const games = dataContext.window.GACHA_DATA.games;
+const numericVersion = value => {
+  const match = String(value).match(/(\d+)\.(\d+)/);
+  return match ? { major: Number(match[1]), minor: Number(match[2]) } : null;
+};
 assert.equal(live.cards.filter(card => card.innerHTML.includes('class="leaks"')).length, 5);
 assert.ok(live.cards.every(card => !card.innerHTML.includes('class="notes"')));
 for (const [index, game] of games.entries()) {
@@ -69,8 +73,15 @@ for (const [index, game] of games.entries()) {
     assert.doesNotMatch(live.cards[index].innerHTML, /Leaked \/ Unconfirmed/);
   }
   for (const leak of game.leaks || []) {
+    const currentVersion = numericVersion(game.version);
+    const leakVersion = numericVersion(leak.version);
     assert.ok(['low', 'medium', 'high'].includes(leak.confidence));
     assert.ok(leak.confidenceReason && leak.version && leak.title);
+    assert.doesNotMatch(leak.title, /\breruns?\b/i);
+    if (currentVersion && leakVersion && currentVersion.major === leakVersion.major) {
+      assert.ok(leakVersion.minor > currentVersion.minor);
+      assert.ok(leakVersion.minor <= currentVersion.minor + 3);
+    }
     assert.equal(new URL(leak.sourceUrl).protocol, 'https:');
     assert.match(leak.checkedAt, /^\d{4}-\d{2}-\d{2}$/);
     assert.match(live.cards[index].innerHTML, /Rumoured for/);
