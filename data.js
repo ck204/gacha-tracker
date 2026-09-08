@@ -11,10 +11,17 @@ window.GACHA_DATA =
       "version": "7.0 — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
+      "leaks": [
+        { "title": "Skirk + Escoffier reruns", "version": "7.1", "confidence": "medium", "confidenceReason": "Kuroo-attributed report; these rerun banners remain unconfirmed.", "sourceUrl": "https://www.reddit.com/r/Genshin_Impact_Leaks/comments/1vwyln2/71_banners_via_kuroo/", "checkedAt": "2026-09-08" },
+        { "title": "Mitya · Zibai + Linnea reruns · fourth slot unknown", "version": "7.2", "confidence": "low", "confidenceReason": "Hongyu-attributed report marked questionable by the community; incomplete lineup.", "sourceUrl": "https://www.reddit.com/r/Genshin_Impact_Leaks/comments/1w0iwm8/72_kit_crumbs_banners_via_hongyu/", "checkedAt": "2026-09-08" }
+      ],
       "banners": [
         { "title": "v7.0 Phase 2 — Flins + Ineffa reruns", "start": "2026-09-01", "end": "2026-09-22" }
       ],
-      "upcoming": [],
+      "upcoming": [
+        { "title": "Vesna (announced character)", "date": null },
+        { "title": "Vodyanitsa (announced character)", "date": null }
+      ],
       "notes": "Version 7.0 Phase 2 is now live Sep 1–22 with Flins and Ineffa reruns. HoYoverse has revealed Vesna and Vodyanitsa as upcoming playable characters, but no exact Version 7.1 banner phase/date is stored until an authoritative schedule is published.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
@@ -27,12 +34,16 @@ window.GACHA_DATA =
       "version": "4.5 — Phase 1",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
+      "leaks": [
+        { "title": "Nihilux", "version": "4.7", "confidence": "low", "confidenceReason": "Dim-attributed repost labelled very subject to change; original publication not verified.", "sourceUrl": "https://www.reddit.com/r/HonkaiStarailItalia/comments/1w0hqgk/47_nihilux_kit_stc_5_quantum_elation/", "checkedAt": "2026-09-08" }
+      ],
       "banners": [
         { "title": "v4.5 Phase 1 — Robin Summeretto (new 5★, Wind Remembrance) + Hyacine rerun", "start": "2026-08-26", "end": "2026-09-12" },
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "start": "2026-07-24", "end": null }
       ],
       "upcoming": [
-        { "title": "v4.5 Phase 2 — Aventurine Waveflair (new 5★, Quantum Elation) + Ashveil rerun", "date": "2026-09-12" }
+        { "title": "v4.5 Phase 2 — Aventurine Waveflair (new 5★, Quantum Elation) + Ashveil rerun", "date": "2026-09-12" },
+        { "title": "Pearl (announced character)", "date": null }
       ],
       "notes": "Version 4.5 launched Aug 26. Robin Summeretto + Hyacine are current in Phase 1 through Sep 12; Aventurine Waveflair + Ashveil begin Sep 12 in Phase 2. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) remains open-ended. No Phase 2 endDate was added because an exact version-end date was not verified.",
       "links": [
@@ -46,6 +57,9 @@ window.GACHA_DATA =
       "version": "3.1 — Phase 2",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
+      "leaks": [
+        { "title": "Severian + Pheony", "version": "3.3", "confidence": "medium", "confidenceReason": "Nanoka-attributed September 5 report marked datamined; no banner details or reruns supplied. Names follow the report.", "sourceUrl": "https://www.reddit.com/r/Zenlesszonezeroleaks_/comments/1w7qak6/33_agents_via_nanoka/", "checkedAt": "2026-09-08" }
+      ],
       "banners": [
         { "title": "Remielle Dan (new 5★, Lumiflux Anomaly; full-version banner)", "start": "2026-07-29", "end": "2026-09-08" },
         { "title": "Sigrid (new 5★, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "start": "2026-08-19", "end": "2026-09-08" }
@@ -72,12 +86,14 @@ window.GACHA_DATA =
       "upcoming": [
         { "title": "YUI Stella + main story 5-3", "date": "2026-09-10", "endDate": "2026-09-24" },
         { "title": "Mitsuru", "date": "2026-09-24", "endDate": "2026-10-08" },
-        { "title": "Fuuka", "date": "2026-10-08", "endDate": "2026-10-22" }
+        { "title": "Fuuka", "date": "2026-10-08", "endDate": "2026-10-22" },
+        { "title": "Kotone Shiomi / FeMC (announced playable character)", "date": null }
       ],
       "notes": "The lufel.net mirror places Kumi Katayama on Aug 27, followed by YUI Stella on Sep 10, Mitsuru on Sep 24, and Fuuka on Oct 8. The official Steam digest confirms Kumi Katayama is live and its event window runs through Sep 9 UTC. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
-        { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" }
+        { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" },
+        { "label": "Kotone announcement coverage", "url": "https://www.siliconera.com/persona-3-portable-female-protagonist-joins-persona-5-the-phantom-x/" }
       ]
     },
     {
@@ -86,16 +102,23 @@ window.GACHA_DATA =
       "version": "1.3 — Phase 1",
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
+      "leaks": [
+        { "title": "Exe + Elyms", "version": "1.5", "confidence": "low", "confidenceReason": "Recent coverage and Seele-attributed reposts agree on the pair, but the original leak has not been verified.", "sourceUrl": "https://vortexgaming.io/en/postdetail/1262292", "checkedAt": "2026-09-08" }
+      ],
       "banners": [
         { "title": "Zankou (new 5★) + Nanally rerun", "start": "2026-08-19", "end": "2026-09-09" }
       ],
       "upcoming": [
-        { "title": "v1.3 Phase 2 — Linko (new 5★) + Hotori rerun", "date": "2026-09-09", "endDate": "2026-09-30" }
+        { "title": "v1.3 Phase 2 — Linko (new 5★) + Hotori rerun", "date": "2026-09-09", "endDate": "2026-09-30" },
+        { "title": "Blackbird (announced character)", "date": null },
+        { "title": "Akane Rin (announced character)", "date": null }
       ],
       "notes": "Version 1.3 Phase 1 runs Aug 19–Sep 9 with Zankou and a concurrent Nanally rerun. Phase 2 runs Sep 9–30 with Linko and a concurrent Hotori rerun. These exact windows are confirmed by the published Version 1.3 schedule.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
-        { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" }
+        { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" },
+        { "label": "Blackbird announcement coverage", "url": "https://gamemarket.gg/news/neverness-to-everness/nte-confirms-blackbird-as-s-class-what-s-known-and-what-isn-t" },
+        { "label": "Akane Rin announcement", "url": "https://www.reddit.com/r/NevernessToEverness/comments/1vwqy98/hethereau_special_bulletin%E4%B8%A8akane_rin/" }
       ]
     },
     {
@@ -104,6 +127,9 @@ window.GACHA_DATA =
       "version": "Dreamscape of Wind and Snow",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
+      "leaks": [
+        { "title": "Si + Ye Minghui", "version": "1.6", "confidence": "low", "confidenceReason": "Secondary coverage names the pair; earlier reports disagree on timing and elements. Playable banners remain unconfirmed.", "sourceUrl": "https://www.topuplive.com/news/arknights-endfield-1-6.html", "checkedAt": "2026-09-08" }
+      ],
       "banners": [
         { "title": "Winter Hunt — Typhoeus (new 6★, Nature Striker)", "start": "2026-09-02", "end": "2026-09-30" }
       ],

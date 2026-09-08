@@ -41,6 +41,12 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
      unknown (e.g. "no fixed end", or the last phase in a chain). A started upcoming
      entry is promoted to the main card whether or not `endDate` exists; a missing
      `endDate` becomes an open-ended active banner instead of a fake one-day duration.
+   - Officially announced upcoming playable characters/banners with no confirmed
+     start date must still appear in `upcoming` with `date: null` ("Date TBA").
+     Do not infer a version, phase, or date from reveal order, leaks, or normal
+     patch cadence. Omit `endDate` and `approx` on undated entries. Keep these
+     entries until a confirmed date replaces null, or an authoritative correction
+     warrants removal. Undated entries never become current or enter the calendar.
 3. Do **not** edit `index.html`.
 4. `git commit` data.js and `git push` to update the live site — **ask first**.
 
@@ -137,8 +143,10 @@ remote `main`:
 
 - `data.js` is syntactically valid, and the value assigned after `window.GACHA_DATA =`
   remains strict JSON-compatible data.
-- Dates are valid `YYYY-MM-DD`; every banner with a known end has `start <= end`; every
-  upcoming entry with an `endDate` has `date <= endDate`. A genuinely unknown active end
+- Known dates are valid `YYYY-MM-DD`; `upcoming.date: null` means an announced
+  character/banner with no confirmed start date (missing dates also render as TBA).
+  Every banner with a known end has `start <= end`; every upcoming entry with an
+  `endDate` must have a known `date` and `date <= endDate`. A genuinely unknown active end
   is represented explicitly as `end: null`.
 - Do not use sentinel dates (for example `9999-12-31`), fake one-day durations, guessed
   normal banner durations, or unverified exact dates merely to satisfy the duration-bar
@@ -188,8 +196,10 @@ only.
   still grow).
 - **Unknown banner ends:** `end: null` is intentional schema, not missing data to coerce.
   `pickBanner` treats it as active after `start`, the card uses an indeterminate striped
-  bar, and the calendar draws only the known elapsed span with an open-ended marker. An
-  `upcoming` entry is eligible for promotion based on `date <= now` even without `endDate`.
+  bar, and the calendar draws only the known elapsed span with an open-ended marker. A
+  dated `upcoming` entry is eligible for promotion based on `date <= now` even without
+  `endDate`. A null/missing upcoming date displays "Date TBA" and is excluded from
+  promotion and the calendar.
 - **Accent colours:** a game's `accent` drives its card border, calendar bars, and filter
   chip dot; bar-label text auto-switches black/white based on accent luminance. ZZZ uses
   dark orange `#f57c00` so it doesn't blend with Endfield's yellow.
@@ -197,6 +207,31 @@ only.
   the name; a missing icon file degrades gracefully.
 
 ## data.js schema
+
+### Leaked / Unconfirmed sections
+
+- Maintain `leaks` only for GI, HSR, ZZZ, NTE, and AKE. Never add leak sections
+  for P5X, GFL2 Global, or FGO NA; their regional schedules are easy to confuse.
+- Each entry is `{ title, version, confidence, confidenceReason, sourceUrl, checkedAt }`.
+  `version` is the rumored version string, `checkedAt` is the actual research date
+  in YYYY-MM-DD, and `confidence` is `low`, `medium`, or `high`.
+- Confidence is an editorial assessment of evidence, not a probability or official
+  confirmation: low = indirect/unverified/conflicting reports; medium = attributable
+  report or reported datamine with remaining uncertainty; high = inspected original
+  evidence corroborated independently. Reposts of one claim are not independent sources.
+  Explain the assessment in `confidenceReason` (displayed on hover).
+- Check source publication dates and corrections before retaining or replacing a
+  claim. Do not stamp a fresh `checkedAt` without reviewing its evidence. Never
+  fabricate lineups to fill an empty section. Remove disproven/superseded claims.
+- Once a character/banner is officially confirmed, show it only in Upcoming
+  (Date TBA if needed), never in Leaked even if version or phase is still rumored.
+  Remove confirmed units from grouped leak titles while keeping any unconfirmed
+  reruns or units. Check every game for overlap during refreshes.
+- Leaks never enter the calendar, countdowns, or automatic current-banner selection.
+- `notes` remains internal refresh context, but the yellow notes text is no longer
+  rendered on any game card. Do not restore it during data refreshes.
+- Run `node scripts/test-date-tba.cjs` after rendering/schema changes; it covers TBA
+  behavior, leak isolation, exclusions, and hidden notes.
 
 ```js
 window.GACHA_DATA = {
@@ -208,11 +243,14 @@ window.GACHA_DATA = {
     needsCheck: true,                  // optional: shows "check manually" box
     banners:  [{ title, start, end }], // currently running; end is YYYY-MM-DD or null
                                        // when the active end is genuinely unknown
-    upcoming: [{ title, date, approx, endDate }],  // endDate optional (YYYY-MM-DD).
-                                       // Once date <= now, the entry can become current
+    upcoming: [{ title, date, approx, endDate }],  // date: YYYY-MM-DD or null (Date TBA).
+                                       // endDate optional; omit on undated entries.
+                                       // Only dated entries enter the calendar.
+                                       // Once a known date <= now, the entry can become current
                                        // even when endDate is absent.
 
-    notes: "",                         // optional caveat line
+    leaks: [{ title, version, confidence, confidenceReason, sourceUrl, checkedAt }], // optional, five eligible games only
+    notes: "",                         // internal refresh context; not rendered
     links: [{ label, url }]
   }]
 }

@@ -16,6 +16,9 @@
     --amber: #e0a93e;
     --red: #e05c5c;
     --gray: #5a617a;
+    --current-text: #ffffff;
+    --upcoming-text: #9ecbff;
+    --leaked-text: #d5b5f5;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -50,14 +53,14 @@
     display: flex;
     flex-direction: column;
   }
-  .card h2 { font-size: 1.05rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .card h2 { font-size: 1.05rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 8px; }
   .gicon { width: 22px; height: 22px; border-radius: 5px; flex: none; }
   .ver {
     font-size: 0.72rem; color: var(--muted); background: #222838;
     padding: 2px 8px; border-radius: 10px; white-space: nowrap;
   }
   .banner { margin-top: 12px; }
-  .banner-title { font-size: 0.92rem; margin-bottom: 6px; }
+  .banner-title { font-size: 0.92rem; margin-bottom: 6px; color: var(--current-text); }
   .meta { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
   .days { font-weight: 700; }
   .days.ok { color: var(--green); }
@@ -77,13 +80,21 @@
   @keyframes unknown-slide { to { background-position: 28px 0; } }
   @media (prefers-reduced-motion: reduce) { .bar-fill.unknown { animation: none; } }
   .upcoming { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--card-border); }
-  .upcoming h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
+  .upcoming h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--upcoming-text); margin-bottom: 6px; }
   .upcoming li {
     list-style: none; font-size: 0.85rem; margin-bottom: 4px;
-    display: flex; justify-content: space-between; gap: 10px;
+    display: flex; justify-content: space-between; gap: 10px; color: var(--upcoming-text);
   }
   .upcoming .when { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
-  .notes { margin-top: 10px; font-size: 0.78rem; color: #b8a06a; }
+  .leaks { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--card-border); }
+  .leaks h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--leaked-text); margin-bottom: 6px; }
+  .leaks li { list-style: none; font-size: 0.85rem; margin-bottom: 9px; color: var(--leaked-text); }
+  .leak-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 8px; margin-top: 4px; font-size: 0.73rem; color: var(--muted); }
+  .leak-meta a { color: #7fb4e8; }
+  .confidence { padding: 2px 6px; border-radius: 4px; background: #232938; }
+  .confidence.medium { color: #c4b5fd; }
+  .confidence.low { color: #c2c8d2; }
+  .confidence.high { color: #93c5fd; }
   .check {
     margin-top: 12px; padding: 10px; background: #2a2030; border: 1px solid #4a3050;
     border-radius: 8px; font-size: 0.85rem; color: #d8a0e8;
@@ -215,14 +226,16 @@
   const fmt = s => parse(s).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 
   // Pick the single banner a card should show right now. A null/missing end is a
-  // genuine unknown end, not a one-day duration. Every upcoming entry is a
+  // genuine unknown end, not a one-day duration. Every dated upcoming entry is a
   // candidate, so it is promoted as soon as its start date arrives even when it
   // has no endDate. Prefer active banners, then the most recently ended banner,
   // then the earliest future banner.
   const pickBanner = g => {
     const cands = [];
     for (const b of (g.banners || [])) cands.push({ title: b.title, start: b.start, end: b.end ?? null });
-    for (const u of (g.upcoming || [])) cands.push({ title: u.title, start: u.date, end: u.endDate ?? null, approx: u.approx });
+    for (const u of (g.upcoming || [])) {
+      if (u.date) cands.push({ title: u.title, start: u.date, end: u.endDate ?? null, approx: u.approx });
+    }
     if (!cands.length) return null;
     const t = cands.map(c => ({
       ...c,
@@ -304,20 +317,33 @@
       html += `<div class="check">🔍 No tracked banner data — check manually via the links below.</div>`;
     }
 
-    // Only list upcoming entries that haven't started yet; once an entry's start
-    // date arrives it's promoted to the bar above (and drops off this list).
-    const futureUp = (g.upcoming || []).filter(u => parse(u.date) > now);
+    // Announced entries without dates stay here until a start date is confirmed.
+    // Dated entries move to the bar above once their start date arrives.
+    const futureUp = (g.upcoming || []).filter(u => !u.date || parse(u.date) > now);
     if (futureUp.length) {
       html += `<div class="upcoming"><h3>Upcoming</h3><ul>`;
       for (const u of futureUp) {
-        const inDays = Math.ceil((parse(u.date) - now) / DAY);
-        const when = (u.approx ? "~" : "") + fmt(u.date) + (inDays > 0 ? ` (in ${inDays}d)` : "");
+        const inDays = u.date ? Math.ceil((parse(u.date) - now) / DAY) : null;
+        const when = u.date
+          ? (u.approx ? "~" : "") + fmt(u.date) + (inDays > 0 ? ` (in ${inDays}d)` : "")
+          : "Date TBA";
         html += `<li><span>${u.title}</span><span class="when">${when}</span></li>`;
       }
       html += `</ul></div>`;
     }
 
-    if (g.notes) html += `<div class="notes">📌 ${g.notes}</div>`;
+    // Leaks are display-only: never candidates for promotion or calendar spans.
+    if (!['P5X', 'GFL2', 'FGO'].includes(g.short) && g.leaks?.length) {
+      html += `<div class="leaks"><h3>Leaked / Unconfirmed</h3><ul>`;
+      for (const leak of g.leaks) {
+        html += `<li><span>${leak.title}</span><div class="leak-meta">` +
+          `<span>Rumoured for ${leak.version}</span>` +
+          `<span class="confidence ${leak.confidence}" title="${leak.confidenceReason}">${leak.confidence[0].toUpperCase() + leak.confidence.slice(1)} confidence</span>` +
+          `<a href="${leak.sourceUrl}" target="_blank" rel="noopener">Source ↗</a>` +
+          `<span>Checked ${fmt(leak.checkedAt)}</span></div></li>`;
+      }
+      html += `</ul></div>`;
+    }
 
     if ((g.links || []).length) {
       html += `<div class="links">` +
@@ -337,7 +363,7 @@
     const accent = g.accent || "#5a617a";
     for (const b of (g.banners || []))
       calItems.push({ name: g.name, accent, title: b.title, start: parse(b.start), end: b.end ? parse(b.end) : null, banner: true, unknownEnd: !b.end });
-    for (const u of (g.upcoming || []))
+    for (const u of (g.upcoming || []).filter(u => u.date))
       calItems.push({ name: g.name, accent, title: u.title, start: parse(u.date), end: u.endDate ? parse(u.endDate) : null, approx: u.approx, unknownEnd: !u.endDate });
   }
 
