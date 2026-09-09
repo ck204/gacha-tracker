@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-08",
+  "lastUpdated": "2026-09-09",
   "games": [
     {
       "name": "Genshin Impact",
@@ -165,10 +165,7 @@ window.GACHA_DATA =
       "version": "NA / Global",
       "accent": "#c0a062",
       "icon": "icons/fgo.jpg",
-      "banners": [
-        { "title": "BB Presents☆Celeb Summer Experience! — Mysterious Executor C.I.E.L.", "start": "2026-07-15", "end": "2026-09-01" },
-        { "title": "Ordeal Call III: Archetype Inception — BB (Dubai)", "start": "2026-07-29", "end": "2026-09-08" }
-      ],
+      "banners": [],
       "upcoming": [
         { "title": "Kazuradrop", "date": "2026-09-15", "endDate": "2026-10-06", "approx": true },
         { "title": "Tutankhamun", "date": "2026-10-13", "endDate": "2026-11-03", "approx": true },
