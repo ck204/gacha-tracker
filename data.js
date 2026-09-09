@@ -54,21 +54,19 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "version": "3.1 — Phase 2",
+      "version": "3.2 — Phase 1",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "leaks": [
         { "title": "Severian + Pheony", "version": "3.3", "confidence": "medium", "confidenceReason": "Nanoka-attributed September 5 report marked datamined; no banner details or reruns supplied. Names follow the report.", "sourceUrl": "https://www.reddit.com/r/Zenlesszonezeroleaks_/comments/1w7qak6/33_agents_via_nanoka/", "checkedAt": "2026-09-08" }
       ],
       "banners": [
-        { "title": "Remielle Dan (new 5★, Lumiflux Anomaly; full-version banner)", "start": "2026-07-29", "end": "2026-09-08" },
-        { "title": "Sigrid (new 5★, Ice Attack) + selectable Dialyn / Ukinami Yuzuha / Asaba Harumasa rerun channel", "start": "2026-08-19", "end": "2026-09-08" }
+        { "title": "v3.2 Phase 1 — Claret Flint (new S-Rank, Electric Armorer) + Nangong Yu rerun", "start": "2026-09-09", "end": "2026-09-30" }
       ],
       "upcoming": [
-        { "title": "v3.2 Phase 1 — Claret Flint (new S-Rank, Electric Armorer) + Nangong Yu rerun", "date": "2026-09-09", "endDate": "2026-09-30" },
         { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "date": "2026-09-30", "endDate": "2026-10-20" }
       ],
-      "notes": "v3.1 Phase 2 remains current through Sep 8. Version 3.2 launches Sep 9 with Claret Flint + Nangong Yu in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia Sep 30–Oct 20. The Phase 2 end date is now corroborated by current Version 3.2 schedule coverage.",
+      "notes": "Version 3.2 launched Sep 9. Claret Flint + Nangong Yu are current in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia Sep 30–Oct 20. The Phase 2 end date is corroborated by current Version 3.2 schedule coverage.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -99,21 +97,20 @@ window.GACHA_DATA =
     {
       "name": "Neverness to Everness",
       "short": "NTE",
-      "version": "1.3 — Phase 1",
+      "version": "1.3 — Phase 2",
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
       "leaks": [
         { "title": "Exe + Elyms", "version": "1.5", "confidence": "low", "confidenceReason": "Recent coverage and Seele-attributed reposts agree on the pair, but the original leak has not been verified.", "sourceUrl": "https://vortexgaming.io/en/postdetail/1262292", "checkedAt": "2026-09-08" }
       ],
       "banners": [
-        { "title": "Zankou (new 5★) + Nanally rerun", "start": "2026-08-19", "end": "2026-09-09" }
+        { "title": "v1.3 Phase 2 — Linko (new 5★) + Hotori rerun", "start": "2026-09-09", "end": "2026-09-30" }
       ],
       "upcoming": [
-        { "title": "v1.3 Phase 2 — Linko (new 5★) + Hotori rerun", "date": "2026-09-09", "endDate": "2026-09-30" },
         { "title": "Blackbird (announced character)", "date": null },
         { "title": "Akane Rin (announced character)", "date": null }
       ],
-      "notes": "Version 1.3 Phase 1 runs Aug 19–Sep 9 with Zankou and a concurrent Nanally rerun. Phase 2 runs Sep 9–30 with Linko and a concurrent Hotori rerun. These exact windows are confirmed by the published Version 1.3 schedule.",
+      "notes": "Version 1.3 Phase 2 is now live Sep 9–30 with Linko and a concurrent Hotori rerun. Blackbird and Akane Rin remain announced with no confirmed banner dates.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" },
