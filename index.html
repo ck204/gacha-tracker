@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gacha Banner Tracker</title>
+<link rel="icon" type="image/png" sizes="64x64" href="assets/primogem-favicon.png">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="9a27ab70-b7f9-4a97-ad02-49ae5259eb6a"></script>
 <style>
   :root {
@@ -33,6 +34,8 @@
     margin-bottom: 20px;
   }
   h1 { font-size: 1.4rem; font-weight: 600; }
+  .site-title { display: flex; align-items: center; gap: 8px; }
+  .site-title-icon { width: 30px; height: 30px; object-fit: contain; flex: none; }
   .updated { color: var(--muted); font-size: 0.85rem; }
   .stale-warn {
     background: #3a2a1a; color: #f0b860; border: 1px solid #5a4020;
@@ -188,7 +191,7 @@
 </head>
 <body>
 <header>
-  <h1>🎰 Gacha Banner Tracker</h1>
+  <h1 class="site-title"><img class="site-title-icon" src="assets/primogem.png" alt="">Gacha Banner Tracker</h1>
   <span class="updated" id="updated"></span>
   <span class="stale-warn" id="stale" style="display:none"></span>
 </header>
