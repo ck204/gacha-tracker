@@ -188,6 +188,32 @@
   }
   #cal-tooltip .tt-row .cal-dot { position: relative; top: -1px; }
 </style>
+<style>
+  .wishlist-panel { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px 18px; margin-bottom: 20px; }
+  .wishlist-panel h2 { font-size: 1rem; margin-bottom: 8px; }
+  .wishlist-panel p, .wishlist-panel label { font-size: .85rem; color: var(--muted); }
+  .wish-group { margin: 10px 0; }
+
+  .wish-selections { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 12px 0; padding: 0; list-style: none; }
+  .wish-selection { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .wish-live { display: inline-block; width: 134px; overflow: hidden; color: #73e9ae; background: #18382b; border-radius: 5px; padding: 3px 0; font-size: .78rem; vertical-align: middle; }
+  .wish-live-track { display: flex; width: max-content; animation: wish-scroll 6s linear infinite; }
+  .wish-live-track span { flex: none; width: 134px; text-align: center; }
+  .wish-live:hover .wish-live-track { animation-play-state: paused; }
+  @keyframes wish-scroll { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .wish-live-track { animation: none; } }
+  .wish-character { display: inline; }
+  .wish-star { border: 0; border-radius: 4px; background: transparent; color: var(--muted); padding: 0 3px; margin-left: 2px; font: inherit; font-size: 1rem; line-height: 1.2; cursor: pointer; vertical-align: baseline; }
+  .wish-star[aria-pressed="true"] { color: #ffe09a; }
+  .wish-star:hover { color: #ffe09a; background: #382d1a; }
+  .wish-star:focus-visible, #wish-only:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .wish-match { box-shadow: inset 3px 0 var(--amber); padding-left: 8px; }
+  .cal-bar.wish-match { outline: 2px solid #ffe09a; outline-offset: -2px; }
+  #wish-status { margin-top: 8px; color: #f0b860; }
+  #wish-empty { padding: 16px 0; color: var(--muted); }
+  [hidden] { display: none !important; }
+  @media (max-width: 440px) { body { padding: 12px; } .grid { grid-template-columns: minmax(0, 1fr); } .card h2 { flex-wrap: wrap; } }
+</style>
 </head>
 <body>
 <header>
@@ -195,6 +221,13 @@
   <span class="updated" id="updated"></span>
   <span class="stale-warn" id="stale" style="display:none"></span>
 </header>
+<section class="wishlist-panel" aria-labelledby="wish-heading">
+  <h2 id="wish-heading">☆ Character wishlist <span id="wish-count"></span></h2>
+  <div id="wish-list"></div>
+  <label><input id="wish-only" type="checkbox"> Wishlisted only — cards and calendar</label>
+  <p id="wish-status" role="status"></p>
+</section>
+<p id="wish-empty" hidden>No matching game cards. Star a character or turn off “Wishlisted only”.</p>
 <div class="grid" id="grid"></div>
 
 <section class="calendar-section">
@@ -220,6 +253,7 @@
 
 <!-- Load data.js with a unique query so HTTP-served pages never show stale data (no-op on file://) -->
 <script>document.write('<script src="data.js?v=' + Date.now() + '"><\/script>')</script>
+<script src="wishlist.js"></script>
 <script>
 (function () {
   const data = window.GACHA_DATA;
@@ -227,6 +261,33 @@
   const DAY = 86400000;
   const parse = s => new Date(s + "T00:00:00");
   const fmt = s => parse(s).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  const wishlist = window.GachaWishlist.create({
+    getItem: key => window.localStorage.getItem(key),
+    setItem: (key, value) => window.localStorage.setItem(key, value)
+  });
+  const esc = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const allEntries = g => [...(g.banners || []), ...(g.upcoming || []), ...(g.leaks || [])];
+  const wishAttrs = entry => `data-wish-ids="${esc((entry.characterIds || []).join(' '))}"`;
+  const wishStar = (g, id) => {
+    const name = esc(g.characters?.[id] || id);
+    return `<button type="button" class="wish-star" data-wish-id="${esc(id)}" data-name="${name}" aria-label="Add ${name} to wishlist" title="Add ${name} to wishlist" aria-pressed="false">☆</button>`;
+  };
+  const wishName = (g, id) => `<span class="wish-character">${esc(g.characters?.[id] || id)}${wishStar(g, id)}</span>`;
+  // IDs define identity; name matching only places controls inside the display title.
+  const wishTitle = (g, entry) => {
+    const title = entry.title;
+    const matches = (entry.characterIds || []).map(id => ({ id, name: g.characters?.[id] }))
+      .map(item => ({ ...item, index: item.name ? title.indexOf(item.name) : -1 }))
+      .sort((a, b) => a.index - b.index || b.name?.length - a.name?.length);
+    let result = '', cursor = 0;
+    const remaining = [];
+    for (const item of matches) {
+      if (item.index < cursor) { remaining.push(item.id); continue; }
+      result += esc(title.slice(cursor, item.index)) + wishName(g, item.id);
+      cursor = item.index + item.name.length;
+    }
+    return result + esc(title.slice(cursor)) + remaining.map(id => ' · ' + wishName(g, id)).join('');
+  };
 
   // Pick the single banner a card should show right now. A null/missing end is a
   // genuine unknown end, not a one-day duration. Every dated upcoming entry is a
@@ -235,9 +296,9 @@
   // then the earliest future banner.
   const pickBanner = g => {
     const cands = [];
-    for (const b of (g.banners || [])) cands.push({ title: b.title, start: b.start, end: b.end ?? null });
+    for (const b of (g.banners || [])) cands.push({ ...b, title: b.title, start: b.start, end: b.end ?? null });
     for (const u of (g.upcoming || [])) {
-      if (u.date) cands.push({ title: u.title, start: u.date, end: u.endDate ?? null, approx: u.approx });
+      if (u.date) cands.push({ ...u, title: u.title, start: u.date, end: u.endDate ?? null, approx: u.approx });
     }
     if (!cands.length) return null;
     const t = cands.map(c => ({
@@ -306,8 +367,8 @@
         ? `<div class="bar-fill" style="width:${pct}%;background:${barColor}"></div>`
         : `<div class="bar-fill unknown"></div>`;
       html += `
-        <div class="banner">
-          <div class="banner-title">${pb.title} ${badge}</div>
+        <div class="banner" ${wishAttrs(pb)}>
+          <div class="banner-title">${wishTitle(g, pb)} ${badge}</div>
           <div class="meta">
             <span>${dateRange}</span>
             <span class="days ${cls}">${label}</span>
@@ -330,7 +391,7 @@
         const when = u.date
           ? (u.approx ? "~" : "") + fmt(u.date) + (inDays > 0 ? ` (in ${inDays}d)` : "")
           : "Date TBA";
-        html += `<li><span>${u.title}</span><span class="when">${when}</span></li>`;
+        html += `<li ${wishAttrs(u)}><span>${wishTitle(g, u)}</span><span class="when">${when}</span></li>`;
       }
       html += `</ul></div>`;
     }
@@ -339,7 +400,7 @@
     if (!['P5X', 'GFL2', 'FGO'].includes(g.short) && g.leaks?.length) {
       html += `<div class="leaks"><h3>Leaked / Unconfirmed</h3><ul>`;
       for (const leak of g.leaks) {
-        html += `<li><span>${leak.title}</span><div class="leak-meta">` +
+        html += `<li ${wishAttrs(leak)}><span>${wishTitle(g, leak)}</span><div class="leak-meta">` +
           `<span>Rumoured for ${leak.version}</span>` +
           `<span class="confidence ${leak.confidence}" title="${leak.confidenceReason}">${leak.confidence[0].toUpperCase() + leak.confidence.slice(1)} confidence</span>` +
           `<a href="${leak.sourceUrl}" target="_blank" rel="noopener">Source ↗</a>` +
@@ -365,9 +426,9 @@
   for (const g of data.games) {
     const accent = g.accent || "#5a617a";
     for (const b of (g.banners || []))
-      calItems.push({ name: g.name, accent, title: b.title, start: parse(b.start), end: b.end ? parse(b.end) : null, banner: true, unknownEnd: !b.end });
+      calItems.push({ characterIds: b.characterIds, name: g.name, accent, title: b.title, start: parse(b.start), end: b.end ? parse(b.end) : null, banner: true, unknownEnd: !b.end });
     for (const u of (g.upcoming || []).filter(u => u.date))
-      calItems.push({ name: g.name, accent, title: u.title, start: parse(u.date), end: u.endDate ? parse(u.endDate) : null, approx: u.approx, unknownEnd: !u.endDate });
+      calItems.push({ characterIds: u.characterIds, name: g.name, accent, title: u.title, start: parse(u.date), end: u.endDate ? parse(u.endDate) : null, approx: u.approx, unknownEnd: !u.endDate });
   }
 
   const fmtD = d => d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
@@ -432,6 +493,7 @@
       let row = 2; // row 1 holds the day numbers; each bar gets its own lane below
       calItems.forEach((it, idx) => {
         if (calSel.size && !calSel.has(it.name)) return;
+        if (document.getElementById('wish-only').checked && !wishlist.has(it)) return;
         const drawEnd = calEnd(it);
         if (drawEnd < weekStart || it.start > weekEnd) return;
         const s = it.start > weekStart ? it.start : weekStart;
@@ -439,12 +501,13 @@
         const col = Math.round((s - weekStart) / DAY) + 1;
         const colEnd = Math.round((e - weekStart) / DAY) + 2;
         const cls = ["cal-bar"];
+        if (wishlist.has(it)) cls.push('wish-match');
         if (it.start >= weekStart) cls.push("starts");
         if (it.unknownEnd) cls.push("unknown-end");
         else if (it.end <= weekEnd) cls.push("ends");
         html += `<div class="${cls.join(" ")}" data-i="${idx}" ` +
           `style="grid-row:${row++};grid-column:${col}/${colEnd};background:${it.accent};color:${textOn(it.accent)}">` +
-          `${it.unknownEnd ? "↝ " : ""}${it.approx ? "~" : ""}${it.title}</div>`;
+          `${wishlist.has(it) ? "★ " : ""}${it.unknownEnd ? "↝ " : ""}${it.approx ? "~" : ""}${it.title}</div>`;
       });
       html += `</div>`;
     }
@@ -485,6 +548,56 @@
     tooltip.style.top = y + "px";
   });
   weeksEl.addEventListener("mouseleave", () => { tooltip.style.display = "none"; });
+
+  function refreshWishlist() {
+    const panel = document.getElementById('wish-list');
+    const rows = window.GachaWishlist.timeline(data.games, wishlist.selected);
+    const content = rows.map(row => {
+      let status;
+      if (row.rank === 0) {
+        status = `<span class="wish-live" role="img" aria-label="Banner live now!${row.approx ? ' (estimated schedule)' : ''}"><span class="wish-live-track" aria-hidden="true"><span>✦ Banner live now!</span><span>✦ Banner live now!</span></span></span>${row.approx ? '<p>Estimated</p>' : ''}`;
+      } else if (row.rank === 1) {
+        status = `<p>${row.approx ? '~' : ''}${fmt(row.date)} (in ${row.days} ${row.days === 1 ? 'day' : 'days'})</p>`;
+      } else {
+        status = `<p>Date TBA</p>`;
+      }
+      return `<li class="wish-selection">${wishName(row.game, row.id)}${status}</li>`;
+    }).join('');
+    panel.innerHTML = content ? `<ul class="wish-selections">${content}</ul>` : '<p class="wish-group">Your wishlist is empty.</p>';
+    document.getElementById('wish-count').textContent = `(${wishlist.selected.size})`;
+    document.getElementById('wish-status').textContent = wishlist.warning;
+    document.querySelectorAll('[data-wish-id]').forEach(button => {
+      const selected = wishlist.selected.has(button.dataset.wishId);
+      button.setAttribute('aria-pressed', String(selected));
+      button.setAttribute('aria-label', `${selected ? 'Remove' : 'Add'} ${button.dataset.name} ${selected ? 'from' : 'to'} wishlist`);
+      button.title = button.getAttribute('aria-label');
+      button.textContent = selected ? '★' : '☆';
+    });
+    document.querySelectorAll('[data-wish-ids]').forEach(el => {
+      el.classList.toggle('wish-match', wishlist.has({ characterIds: el.dataset.wishIds.split(' ') }));
+    });
+    let visible = 0;
+    [...grid.children].forEach((card, index) => {
+      const match = Object.keys(data.games[index].characters || {}).some(id => wishlist.selected.has(id));
+      card.hidden = document.getElementById('wish-only').checked && !match;
+      if (!card.hidden) visible++;
+    });
+    document.getElementById('wish-empty').hidden = visible > 0;
+    renderCal();
+  }
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-wish-id]');
+    if (!button) return;
+    const inPanel = document.getElementById('wish-list').contains(button);
+    wishlist.toggle(button.dataset.wishId);
+    refreshWishlist();
+    if (inPanel) document.getElementById('wish-only').focus();
+  });
+  document.getElementById('wish-only').addEventListener('change', refreshWishlist);
+  window.addEventListener('storage', event => {
+    if (event.key === window.GachaWishlist.KEY || event.key === null) { wishlist.reload(); refreshWishlist(); }
+  });
+  refreshWishlist();
 })();
 </script>
 </body>

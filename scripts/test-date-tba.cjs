@@ -16,6 +16,7 @@ function render(games) {
   const node = () => ({ style: { setProperty() {} }, appendChild(card) { cards.push(card); } });
   const window = { GACHA_DATA: { lastUpdated: '2026-09-08', games } };
   const document = { getElementById: node, createElement: node };
+  vm.runInNewContext(fs.readFileSync(path.join(root, 'wishlist.js'), 'utf8'), { window });
   class Clock extends Date {
     constructor(...args) { super(...(args.length ? args : ['2026-09-08T12:00:00'])); }
   }

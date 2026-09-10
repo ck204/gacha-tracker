@@ -208,6 +208,23 @@ only.
 
 ## data.js schema
 
+### Character wishlist identity
+
+- Each game has `characters`, a dictionary of permanent IDs to display names, e.g.
+  `"gi:flins": "Flins"`. Every banner, upcoming entry, and leak has `characterIds`,
+  an array referencing this dictionary. Include only named playable characters;
+  story events and aliases are not extra characters.
+- Preserve these fields during refreshes. Reuse the SAME ID for a character on
+  reruns and when moving from leaks to upcoming to current. Never derive IDs from
+  banner titles, dates, or versions. A renamed character keeps its ID; distinct
+  playable variants have distinct IDs.
+- Add new character names/IDs inside data.js during normal refreshes. Retain catalog
+  entries after banners are removed so saved selections keep readable names.
+- `wishlist.js` stores only selected IDs in browser localStorage. Never prune a user's
+  selections based on banner expiry or missing current data. No banner ID is needed.
+- Run `node scripts/test-wishlist.cjs` and `node scripts/test-date-tba.cjs` after
+  character-schema or rendering changes. FGO's existing manual refresh rules still apply.
+
 ### Leaked / Unconfirmed sections
 
 - Maintain `leaks` only for GI, HSR, ZZZ, NTE, and AKE. Never add leak sections
