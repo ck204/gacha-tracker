@@ -50,11 +50,14 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 3. For GI, HSR, ZZZ, NTE and AKE, read and follow
    **[docs/leak-verification.md](docs/leak-verification.md)** on every run. Review
    both published `leaks` and the hidden `leakReview` queue. Update `characterChecks`
-   and source-review evidence inside `data.js`; run the required pre-write checks
-   against latest remote main. Missing evidence means hold for review, not guess.
+   and source-review evidence inside `data.js`; submit through the cloud publication
+   gate below. GitHub Actions runs the required pre-main-write checks. Missing evidence means hold for review, not guess.
    This stricter full-source rule overrides snippet fallback for leak eligibility.
    Do **not** edit `index.html`.
-4. `git commit` data.js and `git push` to update the live site — **ask first**.
+4. Follow **docs/cloud-refresh.md** to submit the complete candidate on a
+   `refresh-candidate/...` branch. Do not directly update main for a refresh.
+   Scheduled submissions are pre-authorized; interactive submissions need user
+   authorization (an explicit request to refresh and publish supplies it).
 
 > **FGO is excluded from this procedure (and from the cloud routine).** It is
 > manual-only — never auto-refresh or edit its `data.js` entry here. To update it,
@@ -114,43 +117,42 @@ at 22:00 Asia/Singapore (GMT+8) with flexible scheduling** (it may run within ab
 hour after that time), fully independent of the user's PC. Wednesday runs are expected.
 There is one active task for this repository.
 
-1. **Daily 21:07** — the `mirror-sources.yml` Actions workflow refreshes `mirrors` (see above).
-   Each scheduled refresh therefore starts from a recent mirror snapshot.
-2. **Monday, Wednesday, and Friday at 22:00 Asia/Singapore (flexible)** — the
-   routine reads this file and follows the "Refreshing the data" procedure and source
-   rules. It builds the complete proposed `data.js`, reviews the full diff, and runs all
-   validation before any GitHub write. Only after every check passes may it publish one
-   final, validated direct commit to `main`. Every successful scheduled execution publishes
-   exactly one `data.js` commit and sets `lastUpdated` to that run's Asia/Singapore date;
-   when no banner data changed, `lastUpdated` is the only intended `data.js` change. The
-   scheduled run's single final write is pre-authorized; the ask-before-push rule still
-   applies to interactive sessions.
-3. **~1 min after the refresh commit** — GitHub Pages rebuilds the live site.
+1. **Daily 21:07** — the existing mirror workflow refreshes source snapshots.
+2. **Monday, Wednesday, Friday at 22:00 Asia/Singapore (flexible)** — the existing
+   external cloud task reads the latest CLAUDE.md, docs/leak-verification.md and
+   **docs/cloud-refresh.md**, researches and builds the complete candidate data.js.
+3. The task creates a unique branch from latest main named
+   `refresh-candidate/YYYY-MM-DD-unique-run-id` and commits ONLY data.js there.
+   This candidate submission is explicitly permitted and pre-authorized for scheduled
+   runs. It is not live publication. No local PC, Node runtime or execution handoff
+   is required in the research chat. Do not refuse candidate submission merely because
+   repository commands cannot run in that chat.
+4. GitHub Actions runs **Validate and publish cloud refresh** on the candidate push.
+   It checks out trusted main code, parses only the candidate data, runs all validators,
+   checks FGO preservation and freshness, then pushes at most one data.js commit to
+   main. A stale base, failed check or racing main update blocks publication.
+5. The runner explicitly requests a Pages rebuild after publication. The external
+   task reports the workflow URL and published SHA, or the failure/pending status.
+   Candidate submission alone is not success. Details and recovery are in the runbook.
 
-Each successful scheduled execution publishes **exactly one** final `data.js` commit. If
-banner data changed, include the validated banner changes plus `lastUpdated`; if no banner
-data changed, the only intended change is `lastUpdated`. GitHub must never be used as
-temporary or intermediate storage: do not publish a preliminary state, use a first commit
-as a checkpoint, or create an automatic cleanup commit. After the single publication,
-verification of the resulting SHA and remote content is read-only, and the successful
-publication must be the run's final state-changing operation.
-
-If any pre-write validation fails, correct and revalidate the local/in-memory proposal.
-If every check cannot pass, publish nothing, do not update `lastUpdated`, and report the
-failed invariant and affected game or field. If read-only post-write verification
-unexpectedly finds an error, do not write a correction: report the failed invariant and
-published SHA, mark the run as requiring manual review, and do not claim successful
-finalization.
+**This supersedes the former prohibition on all intermediate GitHub writes and the
+requirement that the research chat execute Node before any GitHub write.** Candidate
+branches are now allowed; unvalidated direct-main writes are not. The invariant is
+validation BEFORE main publication, with at most one main data commit per candidate.
+Do not merge the candidate branch, bypass failed checks, force push, or make a direct
+main cleanup commit. Correct/re-submit a rejected candidate after reviewing the error.
+A failed attempt may leave a candidate branch and Actions logs, while main stays intact.
 
 ### Scheduled-refresh validation and regression rules
 
-Before the one permitted write, validate the complete proposed diff against the latest
-remote `main`:
+Before the main publication, the cloud runner validates the complete proposed diff
+against the main snapshot it checked out:
 
-- Run `node scripts/validate-leaks.cjs --baseline origin/main` and all commands in
-  [the leak runbook](docs/leak-verification.md#required-validation-before-the-single-remote-write).
-  A failure or unavailable validator blocks publication. The Actions check is only
-  a post-push backstop, not permission to skip local validation.
+- The dedicated cloud publication workflow runs all commands from the leak runbook,
+  including `node scripts/validate-leaks.cjs --baseline HEAD`, before changing main.
+  The separate Validate dashboard data workflow remains a post-main/PR backstop.
+  Lack of local execution does not block candidate submission. A failed cloud gate
+  blocks main publication; do not replace the gate with a claim of manual validation.
 - Treat verification evidence/status/queue changes as intended data changes, even
   when banner dates are unchanged. The “lastUpdated only” rule applies only when
   neither banner data nor verification data changed. No fabricated checked dates.
@@ -189,7 +191,7 @@ verified data without fabricating a duration. Do not use a sentinel, set `end` e
 span with an open end.
 
 A healthy scheduled refresh day leaves the daily "Mirror source data (automated)" commit
-and exactly one "Weekly banner data refresh (automated)" direct commit after validation.
+and at most one "Refresh verified banner data" main commit per successful candidate.
 When no banner data changed, that refresh commit updates only `lastUpdated`; when banner data
 changed, it includes those validated changes plus `lastUpdated`. Non-refresh days normally
 leave only the daily mirror commit. **Cloud-run constraint:** the sandbox cannot fetch

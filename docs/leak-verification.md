@@ -118,15 +118,18 @@ there; promote only eligible IDs to `leaks`, move announced units to Upcoming, a
 remove disproven claims with the reason recorded in refresh notes. Retain character
 catalogs and saved IDs. Do not leave a character both pending and published/confirmed.
 
-## Required validation before the single remote write
+## Required validation before main publication
 
-Fetch latest remote main, build the complete local candidate, then run:
+Submit the candidate through [the cloud workflow](cloud-refresh.md). The GitHub
+runner checks out main, stages only candidate data.js, and runs these commands there.
+The research chat does not need a local runtime or execution handoff:
 
 ```text
+node scripts/test-cloud-refresh.cjs
 node scripts/test-leak-validation.cjs
 node scripts/test-date-tba.cjs
 node scripts/test-wishlist.cjs
-node scripts/validate-leaks.cjs --baseline origin/main
+node scripts/validate-leaks.cjs --baseline HEAD
 git diff --check
 ```
 
@@ -136,11 +139,11 @@ review freshness, source access, excluded games and pending/public separation. I
 not retrieve sources or prove that a finding is true. Research and full-diff review are
 still mandatory. Existing version-window/date/FGO rules in CLAUDE.md also still apply.
 
-If tools/sources are unavailable, hold uncertain claims and validate the remainder.
-If validation cannot run or fails, publish nothing. Do not bypass checks or issue a
-second cleanup commit. Report held claim count and unresolved reasons in the run result.
-GitHub Actions repeats these checks after pushes and on PRs as a backstop; a direct-main
-push has already happened by then, so CI is not a substitute for this pre-write gate.
+If research sources are unavailable, hold uncertain claims and submit the remainder.
+If the cloud validators fail, main is not updated. Correct the candidate on its staging
+branch or build a fresh candidate against latest main. Report held claims and reasons.
+The separate post-main Actions check remains a backstop; the dedicated candidate
+workflow performs validation BEFORE main publication. Candidate branches are permitted.
 
-The existing external scheduled task must read the latest CLAUDE.md and this runbook
-each run. No new schedule or runtime web scraper is introduced by these changes.
+The external scheduled task reads the latest CLAUDE.md and docs/cloud-refresh.md each
+run. Its research schedule is unchanged; execution now happens on GitHub-hosted runners.

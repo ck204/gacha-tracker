@@ -1,0 +1,60 @@
+name: Validate and publish cloud refresh
+on:
+  push:
+    branches: ['refresh-candidate/**']
+  workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: 'Full candidate commit SHA; leave empty only to audit current main'
+        type: string
+        required: false
+      dry_run:
+        description: 'Validate without changing main (empty SHA audits current main)'
+        type: boolean
+        default: true
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: cloud-refresh-publication
+  cancel-in-progress: false
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Stage data only from immutable candidate
+        env:
+          CANDIDATE_SHA: ${{ github.event_name == 'push' && github.sha || inputs.candidate_sha }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
+        run: node scripts/cloud-refresh.cjs prepare
+      - run: node scripts/test-cloud-refresh.cjs
+      - run: node scripts/test-leak-validation.cjs
+      - run: node scripts/test-date-tba.cjs
+      - run: node scripts/test-wishlist.cjs
+      - run: node scripts/validate-leaks.cjs --baseline HEAD
+      - run: git diff --check
+      - name: Publish exact validated data with race protection
+        id: publish
+        run: node scripts/cloud-refresh.cjs publish
+      - name: Request Pages rebuild for bot publication
+        if: steps.publish.outputs.published_sha != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: gh api --method POST "repos/$REPOSITORY/pages/builds"
+      - name: Report result
+        if: always()
+        env:
+          RESULT: ${{ job.status }}
+          PUBLISHED: ${{ steps.publish.outputs.published_sha }}
+        run: |
+          printf 'Result: %s\n\nMain SHA (only set after publication/no-op): %s\n' "$RESULT" "$PUBLISHED" >> "$GITHUB_STEP_SUMMARY"
+          printf '\nIf Pages rebuild failed after publication, retry this run; do not submit a second data commit.\n' >> "$GITHUB_STEP_SUMMARY"

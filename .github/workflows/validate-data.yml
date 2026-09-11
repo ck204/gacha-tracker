@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: node scripts/test-cloud-refresh.cjs
       - run: node scripts/test-leak-validation.cjs
       - run: node scripts/test-date-tba.cjs
       - run: node scripts/test-wishlist.cjs
