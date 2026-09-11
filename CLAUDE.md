@@ -1,28 +1,5 @@
 # Gacha Banner Tracker — Claude instructions
 
-## Start here: cloud refresh execution contract (revision 2)
-
-For BOTH manual cloud refreshes and scheduled cloud refreshes:
-
-- Read this file and `docs/cloud-refresh.md` from the latest remote main SHA, not
-  a prior chat summary or cached copy. Report that SHA with the refresh result.
-- The research chat researches and submits ONLY `data.js` to a new
-  `refresh-candidate/...` branch using its GitHub connector. Candidate commits
-  are allowed BEFORE Node validation. They do not update the live site.
-- GitHub-hosted Actions executes every Node validator and `git diff --check`
-  BEFORE it updates main. Every command requirement elsewhere in this file is
-  assigned to that runner for cloud refreshes, not to the research chat.
-- Do NOT request a Codex/local execution handoff just to run these commands.
-  A declined execution handoff does not block candidate submission.
-- If the connector cannot create branches or write candidate files, report the
-  exact missing capability. That is a connector limitation, not a local-test
-  requirement. Never bypass this by writing main directly.
-- Report candidate SHA and Actions run URL after submission. If blocked, quote
-  the actual blocking instruction/tool error and the main SHA you inspected.
-
-This contract supersedes older instructions in this repository requiring tests
-before ANY GitHub commit. It does not override platform/tool permissions.
-
 Static, single-page dashboard of current and upcoming gacha banners for the games the
 user plays. Pure front-end: `index.html` renders everything from `data.js` at load.
 Hosted on GitHub Pages. A brief project description lives in `README.md`.
@@ -70,17 +47,8 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
      patch cadence. Omit `endDate` and `approx` on undated entries. Keep these
      entries until a confirmed date replaces null, or an authoritative correction
      warrants removal. Undated entries never become current or enter the calendar.
-3. For GI, HSR, ZZZ, NTE and AKE, read and follow
-   **[docs/leak-verification.md](docs/leak-verification.md)** on every run. Review
-   both published `leaks` and the hidden `leakReview` queue. Update `characterChecks`
-   and source-review evidence inside `data.js`; submit through the cloud publication
-   gate below. GitHub Actions runs the required pre-main-write checks. Missing evidence means hold for review, not guess.
-   This stricter full-source rule overrides snippet fallback for leak eligibility.
-   Do **not** edit `index.html`.
-4. Follow **docs/cloud-refresh.md** to submit the complete candidate on a
-   `refresh-candidate/...` branch. Do not directly update main for a refresh.
-   Scheduled submissions are pre-authorized; interactive submissions need user
-   authorization (an explicit request to refresh and publish supplies it).
+3. Do **not** edit `index.html`.
+4. `git commit` data.js and `git push` to update the live site — **ask first**.
 
 > **FGO is excluded from this procedure (and from the cloud routine).** It is
 > manual-only — never auto-refresh or edit its `data.js` entry here. To update it,
@@ -140,48 +108,38 @@ at 22:00 Asia/Singapore (GMT+8) with flexible scheduling** (it may run within ab
 hour after that time), fully independent of the user's PC. Wednesday runs are expected.
 There is one active task for this repository.
 
-1. **Daily 21:07** — the existing mirror workflow refreshes source snapshots.
-2. **Monday, Wednesday, Friday at 22:00 Asia/Singapore (flexible)** — the existing
-   external cloud task reads the latest CLAUDE.md, docs/leak-verification.md and
-   **docs/cloud-refresh.md**, researches and builds the complete candidate data.js.
-3. The task creates a unique branch from latest main named
-   `refresh-candidate/YYYY-MM-DD-unique-run-id` and commits ONLY data.js there.
-   This candidate submission is explicitly permitted and pre-authorized for scheduled
-   runs. It is not live publication. No local PC, Node runtime or execution handoff
-   is required in the research chat. Do not refuse candidate submission merely because
-   repository commands cannot run in that chat.
-4. GitHub Actions runs **Validate and publish cloud refresh** on the candidate push.
-   It checks out trusted main code, parses only the candidate data, runs all validators,
-   checks FGO preservation and freshness, then pushes at most one data.js commit to
-   main. A stale base, failed check or racing main update blocks publication.
-5. The runner explicitly requests a Pages rebuild after publication. The external
-   task reports the workflow URL and published SHA, or the failure/pending status.
-   Candidate submission alone is not success. Details and recovery are in the runbook.
+1. **Daily 21:07** — the `mirror-sources.yml` Actions workflow refreshes `mirrors` (see above).
+   Each scheduled refresh therefore starts from a recent mirror snapshot.
+2. **Monday, Wednesday, and Friday at 22:00 Asia/Singapore (flexible)** — the
+   routine reads this file and follows the "Refreshing the data" procedure and source
+   rules. It builds the complete proposed `data.js`, reviews the full diff, and runs all
+   validation before any GitHub write. Only after every check passes may it publish one
+   final, validated direct commit to `main`. Every successful scheduled execution publishes
+   exactly one `data.js` commit and sets `lastUpdated` to that run's Asia/Singapore date;
+   when no banner data changed, `lastUpdated` is the only intended `data.js` change. The
+   scheduled run's single final write is pre-authorized; the ask-before-push rule still
+   applies to interactive sessions.
+3. **~1 min after the refresh commit** — GitHub Pages rebuilds the live site.
 
-**This supersedes the former prohibition on all intermediate GitHub writes and the
-requirement that the research chat execute Node before any GitHub write.** Candidate
-branches are now allowed; unvalidated direct-main writes are not. The invariant is
-validation BEFORE main publication, with at most one main data commit per candidate.
-Do not merge the candidate branch, bypass failed checks, force push, or make a direct
-main cleanup commit. Correct/re-submit a rejected candidate after reviewing the error.
-A failed attempt may leave a candidate branch and Actions logs, while main stays intact.
+Each successful scheduled execution publishes **exactly one** final `data.js` commit. If
+banner data changed, include the validated banner changes plus `lastUpdated`; if no banner
+data changed, the only intended change is `lastUpdated`. GitHub must never be used as
+temporary or intermediate storage: do not publish a preliminary state, use a first commit
+as a checkpoint, or create an automatic cleanup commit. After the single publication,
+verification of the resulting SHA and remote content is read-only, and the successful
+publication must be the run's final state-changing operation.
+
+If any pre-write validation fails, correct and revalidate the local/in-memory proposal.
+If every check cannot pass, publish nothing, do not update `lastUpdated`, and report the
+failed invariant and affected game or field. If read-only post-write verification
+unexpectedly finds an error, do not write a correction: report the failed invariant and
+published SHA, mark the run as requiring manual review, and do not claim successful
+finalization.
 
 ### Scheduled-refresh validation and regression rules
 
-Before the main publication, the cloud runner validates the complete proposed diff
-against the main snapshot it checked out:
-
-- The dedicated cloud publication workflow runs all commands from the leak runbook,
-  including `node scripts/validate-leaks.cjs --baseline HEAD`, before changing main.
-  The separate Validate dashboard data workflow remains a post-main/PR backstop.
-  Lack of local execution does not block candidate submission. A failed cloud gate
-  blocks main publication; do not replace the gate with a claim of manual validation.
-- Treat verification evidence/status/queue changes as intended data changes, even
-  when banner dates are unchanged. The “lastUpdated only” rule applies only when
-  neither banner data nor verification data changed. No fabricated checked dates.
-- Source-unavailable leaks go to `leakReview` with the original claim and reason;
-  this is an explicit exception to keeping unverifiable leaks publicly displayed.
-  Preserve catalogs, IDs and confirmed banner data. Report held claims in the run result.
+Before the one permitted write, validate the complete proposed diff against the latest
+remote `main`:
 
 - `data.js` is syntactically valid, and the value assigned after `window.GACHA_DATA =`
   remains strict JSON-compatible data.
@@ -214,7 +172,7 @@ verified data without fabricating a duration. Do not use a sentinel, set `end` e
 span with an open end.
 
 A healthy scheduled refresh day leaves the daily "Mirror source data (automated)" commit
-and at most one "Refresh verified banner data" main commit per successful candidate.
+and exactly one "Weekly banner data refresh (automated)" direct commit after validation.
 When no banner data changed, that refresh commit updates only `lastUpdated`; when banner data
 changed, it includes those validated changes plus `lastUpdated`. Non-refresh days normally
 leave only the daily mirror commit. **Cloud-run constraint:** the sandbox cannot fetch
@@ -264,17 +222,10 @@ only.
   entries after banners are removed so saved selections keep readable names.
 - `wishlist.js` stores only selected IDs in browser localStorage. Never prune a user's
   selections based on banner expiry or missing current data. No banner ID is needed.
-- The GitHub runner runs `node scripts/test-wishlist.cjs` and
-  `node scripts/test-date-tba.cjs` before main publication. Local developers also
-  run them for schema/rendering edits; cloud research chats need no execution handoff.
-  FGO's existing manual refresh rules still apply.
+- Run `node scripts/test-wishlist.cjs` and `node scripts/test-date-tba.cjs` after
+  character-schema or rendering changes. FGO's existing manual refresh rules still apply.
 
 ### Leaked / Unconfirmed sections
-
-- The mandatory evidence schema, Reddit retrieval checks, status history, review
-  queue and publication gate are in [docs/leak-verification.md](docs/leak-verification.md).
-  New/retained published leaks require per-character checks; the title or a confidence
-  label alone is insufficient. Imported legacy classifications are not verified facts.
 
 - Maintain `leaks` only for GI, HSR, ZZZ, NTE, and AKE. Never add leak sections
   for P5X, GFL2 Global, or FGO NA; their regional schedules are easy to confuse.
@@ -303,8 +254,8 @@ only.
 - Leaks never enter the calendar, countdowns, or automatic current-banner selection.
 - `notes` remains internal refresh context, but the yellow notes text is no longer
   rendered on any game card. Do not restore it during data refreshes.
-- The runner's `node scripts/test-date-tba.cjs` covers TBA behavior, leak isolation,
-  exclusions, and hidden notes. It runs after candidate submission, before main publication.
+- Run `node scripts/test-date-tba.cjs` after rendering/schema changes; it covers TBA
+  behavior, leak isolation, exclusions, and hidden notes.
 
 ```js
 window.GACHA_DATA = {
