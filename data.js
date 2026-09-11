@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-09",
+  "lastUpdated": "2026-09-11",
   "games": [
     {
       "name": "Genshin Impact",
@@ -79,19 +79,18 @@ window.GACHA_DATA =
       "name": "Persona 5: The Phantom X",
       "short": "P5X",
       "characters": {"p5x:kumi-katayama":"Kumi Katayama","p5x:yui-stella":"YUI Stella","p5x:mitsuru":"Mitsuru","p5x:fuuka":"Fuuka","p5x:kotone-shiomi":"Kotone Shiomi"},
-      "version": "4.8 (4.4)",
+      "version": "4.9 (4.5)",
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "Kumi Katayama", "characterIds": ["p5x:kumi-katayama"], "start": "2026-08-27", "end": "2026-09-10" }
+        { "title": "YUI Stella", "characterIds": ["p5x:yui-stella"], "start": "2026-09-10", "end": "2026-09-24" }
       ],
       "upcoming": [
-        { "title": "YUI Stella + main story 5-3", "characterIds": ["p5x:yui-stella"], "date": "2026-09-10", "endDate": "2026-09-24" },
         { "title": "Mitsuru", "characterIds": ["p5x:mitsuru"], "date": "2026-09-24", "endDate": "2026-10-08" },
         { "title": "Fuuka", "characterIds": ["p5x:fuuka"], "date": "2026-10-08", "endDate": "2026-10-22" },
         { "title": "Kotone Shiomi / FeMC (announced playable character)", "characterIds": ["p5x:kotone-shiomi"], "date": null }
       ],
-      "notes": "The lufel.net mirror places Kumi Katayama on Aug 27, followed by YUI Stella on Sep 10, Mitsuru on Sep 24, and Fuuka on Oct 8. The official Steam digest confirms Kumi Katayama is live and its event window runs through Sep 9 UTC. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
+      "notes": "The lufel.net mirror places YUI Stella on Sep 10, followed by Mitsuru on Sep 24 and Fuuka on Oct 8. The official Steam digest independently confirms Cosmic Yui is now live. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" },
