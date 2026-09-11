@@ -9,12 +9,95 @@ window.GACHA_DATA =
       "name": "Genshin Impact",
       "short": "GI",
       "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa"},
+      "characterChecks": {
+        "gi:mitya": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "gi:valeriy": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "gi:tsaritsa": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "gi:danica": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "gi:flins": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "gi:ineffa": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "gi:vesna": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "gi:vodyanitsa": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        }
+      },
       "version": "7.0 — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
-      "leaks": [
-        { "title": "Mitya + Valeriy", "characterIds": ["gi:mitya","gi:valeriy"], "version": "7.2", "confidence": "low", "confidenceReason": "An FSC/HxG-attributed roadmap paired both new units in Version 7.2, but a newer Hongyu-attributed banner report names Mitya without confirming Valeriy; timing remains disputed.", "sourceUrl": "https://www.reddit.com/r/Genshin_Impact_Leaks/comments/1uug2jh/character_release_order_via_fsc_hxg/", "checkedAt": "2026-09-08" },
-        { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Several roadmap reposts agree on this pair, but the recent source post was removed and the claim is still far ahead of beta confirmation.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-09-08" }
+      "leaks": [],
+      "leakReview": [
+        {
+          "title": "Mitya + Valeriy",
+          "characterIds": [
+            "gi:mitya",
+            "gi:valeriy"
+          ],
+          "version": "7.2",
+          "confidence": "low",
+          "confidenceReason": "An FSC/HxG-attributed roadmap paired both new units in Version 7.2, but a newer Hongyu-attributed banner report names Mitya without confirming Valeriy; timing remains disputed.",
+          "sourceUrl": "https://www.reddit.com/r/Genshin_Impact_Leaks/comments/1uug2jh/character_release_order_via_fsc_hxg/",
+          "checkedAt": "2026-09-08",
+          "reviewReason": "Held for verification under the new leak policy: check original claim, corrections, playable identity, release history and official announcements before republishing."
+        },
+        {
+          "title": "Tsaritsa (Anastasya) + Danica",
+          "characterIds": [
+            "gi:tsaritsa",
+            "gi:danica"
+          ],
+          "version": "7.3",
+          "confidence": "low",
+          "confidenceReason": "Several roadmap reposts agree on this pair, but the recent source post was removed and the claim is still far ahead of beta confirmation.",
+          "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/",
+          "checkedAt": "2026-09-08",
+          "reviewReason": "Held for verification under the new leak policy: check original claim, corrections, playable identity, release history and official announcements before republishing."
+        }
       ],
       "banners": [
         { "title": "v7.0 Phase 2 — Flins + Ineffa reruns", "characterIds": ["gi:flins","gi:ineffa"], "start": "2026-09-01", "end": "2026-09-22" }
@@ -33,11 +116,81 @@ window.GACHA_DATA =
       "name": "Honkai: Star Rail",
       "short": "HSR",
       "characters": {"hsr:nihilux":"Nihilux","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl"},
+      "characterChecks": {
+        "hsr:nihilux": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "hsr:robin-summeretto": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "hsr:hyacine": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "hsr:rin-tohsaka": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "hsr:gilgamesh": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "hsr:aventurine-waveflair": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "hsr:ashveil": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "hsr:pearl": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        }
+      },
       "version": "4.5 — Phase 1",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
-      "leaks": [
-        { "title": "Nihilux", "characterIds": ["hsr:nihilux"], "version": "4.7", "confidence": "low", "confidenceReason": "Dim-attributed repost labelled very subject to change; original publication not verified.", "sourceUrl": "https://www.reddit.com/r/HonkaiStarailItalia/comments/1w0hqgk/47_nihilux_kit_stc_5_quantum_elation/", "checkedAt": "2026-09-08" }
+      "leaks": [],
+      "leakReview": [
+        {
+          "title": "Nihilux",
+          "characterIds": [
+            "hsr:nihilux"
+          ],
+          "version": "4.7",
+          "confidence": "low",
+          "confidenceReason": "Dim-attributed repost labelled very subject to change; original publication not verified.",
+          "sourceUrl": "https://www.reddit.com/r/HonkaiStarailItalia/comments/1w0hqgk/47_nihilux_kit_stc_5_quantum_elation/",
+          "checkedAt": "2026-09-08",
+          "reviewReason": "Held for verification under the new leak policy: check original claim, corrections, playable identity, release history and official announcements before republishing."
+        }
       ],
       "banners": [
         { "title": "v4.5 Phase 1 — Robin Summeretto (new 5★, Wind Remembrance) + Hyacine rerun", "characterIds": ["hsr:robin-summeretto","hsr:hyacine"], "start": "2026-08-26", "end": "2026-09-12" },
@@ -57,11 +210,68 @@ window.GACHA_DATA =
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
       "characters": {"zzz:severian":"Severian","zzz:pheony":"Pheony","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia"},
+      "characterChecks": {
+        "zzz:severian": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "zzz:pheony": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "zzz:claret-flint": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "zzz:nangong-yu": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "zzz:roxy-ifrita-pryce": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "zzz:promeia": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        }
+      },
       "version": "3.2 — Phase 1",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
-      "leaks": [
-        { "title": "Severian + Pheony", "characterIds": ["zzz:severian","zzz:pheony"], "version": "3.3", "confidence": "medium", "confidenceReason": "Nanoka-attributed September 5 report marked datamined; no banner details or reruns supplied. Names follow the report.", "sourceUrl": "https://www.reddit.com/r/Zenlesszonezeroleaks_/comments/1w7qak6/33_agents_via_nanoka/", "checkedAt": "2026-09-08" }
+      "leaks": [],
+      "leakReview": [
+        {
+          "title": "Severian + Pheony",
+          "characterIds": [
+            "zzz:severian",
+            "zzz:pheony"
+          ],
+          "version": "3.3",
+          "confidence": "medium",
+          "confidenceReason": "Nanoka-attributed September 5 report marked datamined; no banner details or reruns supplied. Names follow the report.",
+          "sourceUrl": "https://www.reddit.com/r/Zenlesszonezeroleaks_/comments/1w7qak6/33_agents_via_nanoka/",
+          "checkedAt": "2026-09-08",
+          "reviewReason": "Held for verification under the new leak policy: check original claim, corrections, playable identity, release history and official announcements before republishing."
+        }
       ],
       "banners": [
         { "title": "v3.2 Phase 1 — Claret Flint (new S-Rank, Electric Armorer) + Nangong Yu rerun", "characterIds": ["zzz:claret-flint","zzz:nangong-yu"], "start": "2026-09-09", "end": "2026-09-30" }
@@ -102,11 +312,68 @@ window.GACHA_DATA =
       "name": "Neverness to Everness",
       "short": "NTE",
       "characters": {"nte:exe":"Exe","nte:elyms":"Elyms","nte:linko":"Linko","nte:hotori":"Hotori","nte:blackbird":"Blackbird","nte:akane-rin":"Akane Rin"},
+      "characterChecks": {
+        "nte:exe": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "nte:elyms": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "nte:linko": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "nte:hotori": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "nte:blackbird": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "nte:akane-rin": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        }
+      },
       "version": "1.3 — Phase 2",
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
-      "leaks": [
-        { "title": "Exe + Elyms", "characterIds": ["nte:exe","nte:elyms"], "version": "1.5", "confidence": "low", "confidenceReason": "Recent coverage and Seele-attributed reposts agree on the pair, but the original leak has not been verified.", "sourceUrl": "https://vortexgaming.io/en/postdetail/1262292", "checkedAt": "2026-09-08" }
+      "leaks": [],
+      "leakReview": [
+        {
+          "title": "Exe + Elyms",
+          "characterIds": [
+            "nte:exe",
+            "nte:elyms"
+          ],
+          "version": "1.5",
+          "confidence": "low",
+          "confidenceReason": "Recent coverage and Seele-attributed reposts agree on the pair, but the original leak has not been verified.",
+          "sourceUrl": "https://vortexgaming.io/en/postdetail/1262292",
+          "checkedAt": "2026-09-08",
+          "reviewReason": "Held for verification under the new leak policy: check original claim, corrections, playable identity, release history and official announcements before republishing."
+        }
       ],
       "banners": [
         { "title": "v1.3 Phase 2 — Linko (new 5★) + Hotori rerun", "characterIds": ["nte:linko","nte:hotori"], "start": "2026-09-09", "end": "2026-09-30" }
@@ -127,11 +394,54 @@ window.GACHA_DATA =
       "name": "Arknights: Endfield",
       "short": "AKE",
       "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne"},
+      "characterChecks": {
+        "ake:si": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "ake:ye-minghui": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "leaks",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "ake:typhoeus": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "banners",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        },
+        "ake:yvonne": {
+          "status": "review",
+          "region": "Global",
+          "aliases": [],
+          "priorPlacement": "upcoming",
+          "reviewReason": "Imported from existing dashboard placement; primary-source identity and status verification pending. This is not a verified status."
+        }
+      },
       "version": "Dreamscape of Wind and Snow",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
-      "leaks": [
-        { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Secondary coverage names the pair; earlier reports disagree on timing and elements. Playable banners remain unconfirmed.", "sourceUrl": "https://www.topuplive.com/news/arknights-endfield-1-6.html", "checkedAt": "2026-09-08" }
+      "leaks": [],
+      "leakReview": [
+        {
+          "title": "Si + Ye Minghui",
+          "characterIds": [
+            "ake:si",
+            "ake:ye-minghui"
+          ],
+          "version": "1.6",
+          "confidence": "low",
+          "confidenceReason": "Secondary coverage names the pair; earlier reports disagree on timing and elements. Playable banners remain unconfirmed.",
+          "sourceUrl": "https://www.topuplive.com/news/arknights-endfield-1-6.html",
+          "checkedAt": "2026-09-08",
+          "reviewReason": "Held for verification under the new leak policy: check original claim, corrections, playable identity, release history and official announcements before republishing."
+        }
       ],
       "banners": [
         { "title": "Winter Hunt — Typhoeus (new 6★, Nature Striker)", "characterIds": ["ake:typhoeus"], "start": "2026-09-02", "end": "2026-09-30" }

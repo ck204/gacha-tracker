@@ -66,7 +66,7 @@ const numericVersion = value => {
   const match = String(value).match(/(\d+)\.(\d+)/);
   return match ? { major: Number(match[1]), minor: Number(match[2]) } : null;
 };
-assert.equal(live.cards.filter(card => card.innerHTML.includes('class="leaks"')).length, 5);
+assert.equal(live.cards.filter(card => card.innerHTML.includes('class="leaks"')).length, games.filter(g => g.leaks?.length).length);
 assert.ok(live.cards.every(card => !card.innerHTML.includes('class="notes"')));
 for (const [index, game] of games.entries()) {
   if (['P5X', 'GFL2', 'FGO'].includes(game.short)) {
@@ -92,12 +92,16 @@ for (const [index, game] of games.entries()) {
   assert.equal(JSON.stringify(live.pickBanner(game)), JSON.stringify(baseline.pickBanner(withoutLeaks)));
   assert.equal(JSON.stringify(live.calItems.filter(item => item.name === game.name)), JSON.stringify(baseline.calItems));
 }
-const rumorOnly = { name: 'Rumor only', short: 'GI', notes: 'Hidden note', leaks: games[0].leaks };
+const rumorOnly = { name: 'Rumor only', short: 'GI', notes: 'Hidden note', leaks: [{ title: "Synthetic new unit", version: "7.2", confidence: "low", confidenceReason: "Synthetic fixture", sourceUrl: "https://example.com/claim", checkedAt: "2026-09-08" }] };
 const rumorResult = render([rumorOnly]);
 assert.equal(rumorResult.pickBanner(rumorOnly), null);
 assert.equal(rumorResult.calItems.length, 0);
 assert.match(rumorResult.cards[0].innerHTML, /Leaked \/ Unconfirmed/);
 assert.doesNotMatch(rumorResult.cards[0].innerHTML, /Hidden note/);
+const pendingOnly = render([{ ...rumorOnly, leaks: [], leakReview: rumorOnly.leaks }]);
+assert.equal(pendingOnly.pickBanner({ leakReview: rumorOnly.leaks }), null);
+assert.equal(pendingOnly.calItems.length, 0);
+assert.doesNotMatch(pendingOnly.cards[0].innerHTML, /Synthetic new unit|Leaked \/ Unconfirmed/);
 for (const short of ['P5X', 'GFL2', 'FGO']) {
   const excluded = render([{ ...rumorOnly, short }]);
   assert.doesNotMatch(excluded.cards[0].innerHTML, /Leaked \/ Unconfirmed/);

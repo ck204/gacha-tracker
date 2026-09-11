@@ -47,7 +47,13 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
      patch cadence. Omit `endDate` and `approx` on undated entries. Keep these
      entries until a confirmed date replaces null, or an authoritative correction
      warrants removal. Undated entries never become current or enter the calendar.
-3. Do **not** edit `index.html`.
+3. For GI, HSR, ZZZ, NTE and AKE, read and follow
+   **[docs/leak-verification.md](docs/leak-verification.md)** on every run. Review
+   both published `leaks` and the hidden `leakReview` queue. Update `characterChecks`
+   and source-review evidence inside `data.js`; run the required pre-write checks
+   against latest remote main. Missing evidence means hold for review, not guess.
+   This stricter full-source rule overrides snippet fallback for leak eligibility.
+   Do **not** edit `index.html`.
 4. `git commit` data.js and `git push` to update the live site — **ask first**.
 
 > **FGO is excluded from this procedure (and from the cloud routine).** It is
@@ -141,6 +147,17 @@ finalization.
 Before the one permitted write, validate the complete proposed diff against the latest
 remote `main`:
 
+- Run `node scripts/validate-leaks.cjs --baseline origin/main` and all commands in
+  [the leak runbook](docs/leak-verification.md#required-validation-before-the-single-remote-write).
+  A failure or unavailable validator blocks publication. The Actions check is only
+  a post-push backstop, not permission to skip local validation.
+- Treat verification evidence/status/queue changes as intended data changes, even
+  when banner dates are unchanged. The “lastUpdated only” rule applies only when
+  neither banner data nor verification data changed. No fabricated checked dates.
+- Source-unavailable leaks go to `leakReview` with the original claim and reason;
+  this is an explicit exception to keeping unverifiable leaks publicly displayed.
+  Preserve catalogs, IDs and confirmed banner data. Report held claims in the run result.
+
 - `data.js` is syntactically valid, and the value assigned after `window.GACHA_DATA =`
   remains strict JSON-compatible data.
 - Known dates are valid `YYYY-MM-DD`; `upcoming.date: null` means an announced
@@ -226,6 +243,11 @@ only.
   character-schema or rendering changes. FGO's existing manual refresh rules still apply.
 
 ### Leaked / Unconfirmed sections
+
+- The mandatory evidence schema, Reddit retrieval checks, status history, review
+  queue and publication gate are in [docs/leak-verification.md](docs/leak-verification.md).
+  New/retained published leaks require per-character checks; the title or a confidence
+  label alone is insufficient. Imported legacy classifications are not verified facts.
 
 - Maintain `leaks` only for GI, HSR, ZZZ, NTE, and AKE. Never add leak sections
   for P5X, GFL2 Global, or FGO NA; their regional schedules are easy to confuse.

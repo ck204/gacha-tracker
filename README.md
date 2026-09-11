@@ -19,3 +19,16 @@ only for the current tab. Serve this folder at a stable localhost address for re
 local persistence; file URL storage behavior depends on the browser.
 
 Validation: `node scripts/test-date-tba.cjs` and `node scripts/test-wishlist.cjs`.
+
+## Refresh verification
+
+The scheduled refresher must follow [the leak-verification runbook](docs/leak-verification.md)
+and run `node scripts/validate-leaks.cjs --baseline origin/main` before publishing.
+Character status, aliases, official checks and original-claim reviews are retained in
+data.js. Unverified claims are held in the hidden `leakReview` queue, preserving names
+and wishlist IDs. The initial migration holds existing leaks until their evidence is
+reviewed; it does not claim that the characters were researched or disproven.
+
+Run `node scripts/test-leak-validation.cjs` for rejection/acceptance cases. GitHub
+Actions repeats validation as a backstop. It cannot prevent a direct-main write;
+the external scheduled task must execute the documented pre-write gate itself.
