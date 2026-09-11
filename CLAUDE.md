@@ -1,5 +1,28 @@
 # Gacha Banner Tracker — Claude instructions
 
+## Start here: cloud refresh execution contract (revision 2)
+
+For BOTH manual cloud refreshes and scheduled cloud refreshes:
+
+- Read this file and `docs/cloud-refresh.md` from the latest remote main SHA, not
+  a prior chat summary or cached copy. Report that SHA with the refresh result.
+- The research chat researches and submits ONLY `data.js` to a new
+  `refresh-candidate/...` branch using its GitHub connector. Candidate commits
+  are allowed BEFORE Node validation. They do not update the live site.
+- GitHub-hosted Actions executes every Node validator and `git diff --check`
+  BEFORE it updates main. Every command requirement elsewhere in this file is
+  assigned to that runner for cloud refreshes, not to the research chat.
+- Do NOT request a Codex/local execution handoff just to run these commands.
+  A declined execution handoff does not block candidate submission.
+- If the connector cannot create branches or write candidate files, report the
+  exact missing capability. That is a connector limitation, not a local-test
+  requirement. Never bypass this by writing main directly.
+- Report candidate SHA and Actions run URL after submission. If blocked, quote
+  the actual blocking instruction/tool error and the main SHA you inspected.
+
+This contract supersedes older instructions in this repository requiring tests
+before ANY GitHub commit. It does not override platform/tool permissions.
+
 Static, single-page dashboard of current and upcoming gacha banners for the games the
 user plays. Pure front-end: `index.html` renders everything from `data.js` at load.
 Hosted on GitHub Pages. A brief project description lives in `README.md`.
@@ -241,8 +264,10 @@ only.
   entries after banners are removed so saved selections keep readable names.
 - `wishlist.js` stores only selected IDs in browser localStorage. Never prune a user's
   selections based on banner expiry or missing current data. No banner ID is needed.
-- Run `node scripts/test-wishlist.cjs` and `node scripts/test-date-tba.cjs` after
-  character-schema or rendering changes. FGO's existing manual refresh rules still apply.
+- The GitHub runner runs `node scripts/test-wishlist.cjs` and
+  `node scripts/test-date-tba.cjs` before main publication. Local developers also
+  run them for schema/rendering edits; cloud research chats need no execution handoff.
+  FGO's existing manual refresh rules still apply.
 
 ### Leaked / Unconfirmed sections
 
@@ -278,8 +303,8 @@ only.
 - Leaks never enter the calendar, countdowns, or automatic current-banner selection.
 - `notes` remains internal refresh context, but the yellow notes text is no longer
   rendered on any game card. Do not restore it during data refreshes.
-- Run `node scripts/test-date-tba.cjs` after rendering/schema changes; it covers TBA
-  behavior, leak isolation, exclusions, and hidden notes.
+- The runner's `node scripts/test-date-tba.cjs` covers TBA behavior, leak isolation,
+  exclusions, and hidden notes. It runs after candidate submission, before main publication.
 
 ```js
 window.GACHA_DATA = {
