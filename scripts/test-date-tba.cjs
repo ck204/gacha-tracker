@@ -17,6 +17,7 @@ function render(games) {
   const window = { GACHA_DATA: { lastUpdated: '2026-09-08', games } };
   const document = { getElementById: node, createElement: node };
   vm.runInNewContext(fs.readFileSync(path.join(root, 'wishlist.js'), 'utf8'), { window });
+  vm.runInNewContext(fs.readFileSync(path.join(root, 'game-visibility.js'), 'utf8'), { window });
   class Clock extends Date {
     constructor(...args) { super(...(args.length ? args : ['2026-09-08T12:00:00'])); }
   }
@@ -56,6 +57,7 @@ const dataContext = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'data.js'), 'utf8'), dataContext);
 const live = render(dataContext.window.GACHA_DATA.games);
 assert.equal(live.cards.length, 8);
+assert.ok(live.cards.every(card => card.innerHTML.includes('data-hide-game=')), 'every game card has a hide control');
 const expectedTbaCount = dataContext.window.GACHA_DATA.games
   .flatMap(game => game.upcoming || []).filter(entry => !entry.date).length;
 assert.equal(live.cards.reduce((count, card) =>

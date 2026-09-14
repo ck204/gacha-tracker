@@ -58,6 +58,17 @@
   }
   .card h2 { font-size: 1.05rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 8px; }
   .gicon { width: 22px; height: 22px; border-radius: 5px; flex: none; }
+  .card-hide {
+    display: inline-flex; align-items: center; justify-content: center; flex: none;
+    width: 25px; height: 25px; padding: 0; border: 0; border-radius: 6px;
+    background: transparent; color: var(--muted); cursor: pointer;
+  }
+  .card-hide svg { width: 16px; height: 16px; }
+  .card-hide:hover { color: var(--text); background: #252c3b; }
+  .card-hide:focus-visible, .hidden-games-toggle:focus-visible, .hidden-game-show:focus-visible,
+  .hidden-games-show-all:focus-visible, .dashboard-toast button:focus-visible {
+    outline: 2px solid #fff; outline-offset: 2px;
+  }
   .ver {
     font-size: 0.72rem; color: var(--muted); background: #222838;
     padding: 2px 8px; border-radius: 10px; white-space: nowrap;
@@ -236,8 +247,37 @@
   .cal-bar.wish-match { outline: 2px solid #ffe09a; outline-offset: -2px; }
   #wish-status { margin-top: 8px; color: #f0b860; }
   #wish-empty { padding: 16px 0; color: var(--muted); }
+  .dashboard-toolbar { display: flex; justify-content: flex-end; margin: -8px 0 10px; }
+  .hidden-games-menu { position: relative; }
+  .hidden-games-toggle {
+    border: 1px solid var(--card-border); border-radius: 8px; padding: 6px 10px;
+    background: #1d2433; color: var(--muted); font: inherit; font-size: 0.78rem; cursor: pointer;
+  }
+  .hidden-games-toggle:hover, .hidden-games-toggle[aria-expanded="true"] { background: #263047; color: var(--text); }
+  .hidden-games-popover {
+    position: absolute; z-index: 20; right: 0; top: calc(100% + 6px); width: min(300px, calc(100vw - 24px));
+    padding: 8px; border: 1px solid #394258; border-radius: 10px; background: #1a202d;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+  }
+  .hidden-games-list { list-style: none; display: grid; gap: 3px; }
+  .hidden-games-list li { display: flex; align-items: center; gap: 8px; min-width: 0; padding: 5px 6px; }
+  .hidden-game-icon { width: 20px; height: 20px; border-radius: 5px; flex: none; }
+  .hidden-game-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; font-size: 0.83rem; }
+  .hidden-game-show, .hidden-games-show-all {
+    border: 0; border-radius: 6px; padding: 5px 8px; background: #2b354a;
+    color: var(--text); font: inherit; font-size: 0.76rem; cursor: pointer;
+  }
+  .hidden-game-show:hover, .hidden-games-show-all:hover { background: #394660; }
+  .hidden-games-footer { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 5px; padding: 7px 6px 1px; border-top: 1px solid var(--card-border); }
+  .hidden-games-warning { flex: 1; color: var(--amber); font-size: 0.7rem; line-height: 1.3; }
+  .dashboard-toast {
+    position: fixed; z-index: 50; right: 20px; bottom: 20px; display: flex; align-items: center; gap: 12px;
+    max-width: calc(100vw - 24px); padding: 10px 12px; border: 1px solid #46516a; border-radius: 9px;
+    background: #222a3a; color: var(--text); box-shadow: 0 10px 28px rgba(0, 0, 0, .38); font-size: 0.84rem;
+  }
+  .dashboard-toast button { border: 0; background: transparent; color: #9ecbff; font: inherit; font-weight: 700; cursor: pointer; }
   [hidden] { display: none !important; }
-  @media (max-width: 440px) { body { padding: 12px; } .grid { grid-template-columns: minmax(0, 1fr); } .card h2 { flex-wrap: wrap; } }
+  @media (max-width: 440px) { body { padding: 12px; } .grid { grid-template-columns: minmax(0, 1fr); } .card h2 { flex-wrap: wrap; } .dashboard-toast { right: 12px; bottom: 12px; } }
 </style>
 </head>
 <body>
@@ -255,6 +295,12 @@
   <p id="wish-status" role="status"></p>
 </section>
 <p id="wish-empty" hidden>No matching game cards. Star a character or turn off “Wishlisted only”.</p>
+<div class="dashboard-toolbar" id="hidden-games-controls" hidden>
+  <div class="hidden-games-menu">
+    <button class="hidden-games-toggle" id="hidden-games-toggle" type="button" aria-expanded="false" aria-controls="hidden-games-popover">Hidden games (<span id="hidden-games-count">0</span>)</button>
+    <div class="hidden-games-popover" id="hidden-games-popover" hidden aria-label="Hidden dashboard games"></div>
+  </div>
+</div>
 <div class="grid" id="grid"></div>
 
 <section class="calendar-section">
@@ -277,10 +323,14 @@
   </div>
 </section>
 <div id="cal-tooltip"></div>
+<div class="dashboard-toast" id="dashboard-toast" role="status" aria-live="polite" hidden>
+  <span id="dashboard-toast-message"></span><button id="undo-game-hide" type="button">Undo</button>
+</div>
 
 <!-- Load data.js with a unique query so HTTP-served pages never show stale data (no-op on file://) -->
 <script>document.write('<script src="data.js?v=' + Date.now() + '"><\/script>')</script>
 <script src="wishlist.js"></script>
+<script src="game-visibility.js"></script>
 <script>
 (function () {
   const data = window.GACHA_DATA;
@@ -289,6 +339,10 @@
   const parse = s => new Date(s + "T00:00:00");
   const fmt = s => parse(s).toLocaleDateString(undefined, { month: "short", day: "numeric" });
   const wishlist = window.GachaWishlist.create({
+    getItem: key => window.localStorage.getItem(key),
+    setItem: (key, value) => window.localStorage.setItem(key, value)
+  });
+  const gameVisibility = window.GachaGameVisibility.create({
     getItem: key => window.localStorage.getItem(key),
     setItem: (key, value) => window.localStorage.setItem(key, value)
   });
@@ -368,7 +422,8 @@
     card.style.setProperty("--accent", g.accent || "#5a617a");
 
     const icon = g.icon ? `<img class="gicon" src="${g.icon}" alt="" onerror="this.remove()">` : "";
-    let html = `<h2>${g.name} ${icon}<span class="ver">${g.version || ""}</span></h2>`;
+    const hideIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3l18 18"/><path d="M10.6 10.7a2 2 0 0 0 2.7 2.7"/><path d="M9.9 4.2A10.7 10.7 0 0 1 12 4c5.5 0 9 8 9 8a17.5 17.5 0 0 1-2.1 3.2"/><path d="M6.6 6.6C4.2 8.2 3 12 3 12s3.5 8 9 8a9.8 9.8 0 0 0 5.4-1.6"/></svg>`;
+    let html = `<h2><span class="game-name">${esc(g.name)}</span><button class="card-hide" type="button" data-hide-game="${esc(g.short)}" aria-label="Hide ${esc(g.name)} from dashboard" title="Hide ${esc(g.name)} from dashboard">${hideIcon}</button>${icon}<span class="ver">${esc(g.version || "")}</span></h2>`;
 
     const pb = pickBanner(g);
     if (pb) {
@@ -620,15 +675,99 @@
     document.querySelectorAll('[data-wish-ids]').forEach(el => {
       el.classList.toggle('wish-match', wishlist.has({ characterIds: el.dataset.wishIds.split(' ') }));
     });
-    let visible = 0;
-    [...grid.children].forEach((card, index) => {
-      const match = Object.keys(data.games[index].characters || {}).some(id => wishlist.selected.has(id));
-      card.hidden = document.getElementById('wish-only').checked && !match;
-      if (!card.hidden) visible++;
-    });
-    document.getElementById('wish-empty').hidden = visible > 0;
+    applyCardVisibility();
+    renderHiddenGamesMenu();
     renderCal();
   }
+
+  const hiddenControls = document.getElementById('hidden-games-controls');
+  const hiddenToggle = document.getElementById('hidden-games-toggle');
+  const hiddenPopover = document.getElementById('hidden-games-popover');
+  const toast = document.getElementById('dashboard-toast');
+  let lastHiddenGame = null, toastTimer = null;
+
+  function applyCardVisibility() {
+    let visible = 0;
+    const wishOnly = document.getElementById('wish-only').checked;
+    [...grid.children].forEach((card, index) => {
+      const game = data.games[index];
+      const wishMatch = Object.keys(game.characters || {}).some(id => wishlist.selected.has(id));
+      card.hidden = gameVisibility.has(game.short) || (wishOnly && !wishMatch);
+      if (!card.hidden) visible++;
+    });
+    const empty = document.getElementById('wish-empty');
+    empty.hidden = visible > 0;
+    if (!visible) {
+      empty.textContent = gameVisibility.hidden.size === data.games.length
+        ? 'All game cards are hidden. Use Hidden games to restore one.'
+        : 'No game cards match the current dashboard settings.';
+    }
+  }
+
+  function closeHiddenGamesMenu() {
+    hiddenPopover.hidden = true;
+    hiddenToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function renderHiddenGamesMenu() {
+    const hidden = data.games.filter(game => gameVisibility.has(game.short));
+    hiddenControls.hidden = hidden.length === 0;
+    document.getElementById('hidden-games-count').textContent = hidden.length;
+    if (!hidden.length) { closeHiddenGamesMenu(); return; }
+    const rows = hidden.map(game => {
+      const icon = game.icon ? `<img class="hidden-game-icon" src="${esc(game.icon)}" alt="" onerror="this.remove()">` : '';
+      return `<li>${icon}<span class="hidden-game-name">${esc(game.name)}</span><button class="hidden-game-show" type="button" data-show-game="${esc(game.short)}" aria-label="Show ${esc(game.name)} on dashboard" title="Show ${esc(game.name)} on dashboard">Show</button></li>`;
+    }).join('');
+    const warning = gameVisibility.warning ? `<span class="hidden-games-warning">${esc(gameVisibility.warning)}</span>` : '';
+    hiddenPopover.innerHTML = `<ul class="hidden-games-list">${rows}</ul><div class="hidden-games-footer">${warning}<button class="hidden-games-show-all" type="button" data-show-all-games>Show all</button></div>`;
+  }
+
+  function showHideToast(game) {
+    lastHiddenGame = game;
+    document.getElementById('dashboard-toast-message').textContent = `${game.name} hidden from dashboard.${gameVisibility.warning ? ' This change is only available in this tab.' : ''}`;
+    toast.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toast.hidden = true; lastHiddenGame = null; }, 6000);
+  }
+
+  document.addEventListener('click', event => {
+    const hideButton = event.target.closest('[data-hide-game]');
+    if (hideButton) {
+      const game = data.games.find(item => item.short === hideButton.dataset.hideGame);
+      if (game) { gameVisibility.hide(game.short); applyCardVisibility(); renderHiddenGamesMenu(); showHideToast(game); }
+      return;
+    }
+    const showButton = event.target.closest('[data-show-game]');
+    if (showButton) {
+      const gameId = showButton.dataset.showGame;
+      gameVisibility.show(gameId); applyCardVisibility(); renderHiddenGamesMenu();
+      document.querySelector(`[data-hide-game="${gameId}"]`)?.focus();
+      return;
+    }
+    if (event.target.closest('[data-show-all-games]')) {
+      gameVisibility.showAll(); applyCardVisibility(); renderHiddenGamesMenu();
+      return;
+    }
+    if (event.target.closest('#hidden-games-toggle')) {
+      const open = hiddenPopover.hidden;
+      hiddenPopover.hidden = !open;
+      hiddenToggle.setAttribute('aria-expanded', String(open));
+      return;
+    }
+    if (!event.target.closest('.hidden-games-menu')) closeHiddenGamesMenu();
+  });
+
+  document.getElementById('undo-game-hide').addEventListener('click', () => {
+    if (!lastHiddenGame) return;
+    const gameId = lastHiddenGame.short;
+    gameVisibility.show(gameId); applyCardVisibility(); renderHiddenGamesMenu();
+    toast.hidden = true; clearTimeout(toastTimer); lastHiddenGame = null;
+    document.querySelector(`[data-hide-game="${gameId}"]`)?.focus();
+  });
+  hiddenPopover.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    closeHiddenGamesMenu(); hiddenToggle.focus();
+  });
   document.addEventListener('click', event => {
     const tab = event.target.closest('[data-wish-tab]');
     if (tab) {
@@ -656,6 +795,7 @@
   document.getElementById('wish-only').addEventListener('change', refreshWishlist);
   window.addEventListener('storage', event => {
     if (event.key === window.GachaWishlist.KEY || event.key === null) { wishlist.reload(); refreshWishlist(); }
+    if (event.key === window.GachaGameVisibility.KEY || event.key === null) { gameVisibility.reload(); applyCardVisibility(); renderHiddenGamesMenu(); }
   });
   refreshWishlist();
 })();

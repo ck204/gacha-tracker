@@ -20,4 +20,12 @@ Clearing site data removes it. If storage is blocked, the page reports that chan
 only for the current tab. Serve this folder at a stable localhost address for reliable
 local persistence; file URL storage behavior depends on the browser.
 
-Validation: `node scripts/test-date-tba.cjs` and `node scripts/test-wishlist.cjs`.
+## Dashboard card visibility
+
+Use the eye-slash button beside a game name to hide its card from the dashboard. An Undo
+message appears briefly, and the **Hidden games** menu above the grid can restore one game
+or all games later. This preference is stored only in the current browser under
+`gacha-tracker:hidden-games:v1`. It does not affect calendar entries or calendar filters.
+
+Validation: `node scripts/test-date-tba.cjs`, `node scripts/test-wishlist.cjs`, and
+`node scripts/test-game-visibility.cjs`.
