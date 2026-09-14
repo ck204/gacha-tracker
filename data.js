@@ -3,12 +3,12 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-11",
+  "lastUpdated": "2026-09-14",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa"},
+      "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier"},
       "version": "7.0 — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
@@ -20,10 +20,10 @@ window.GACHA_DATA =
         { "title": "v7.0 Phase 2 — Flins + Ineffa reruns", "characterIds": ["gi:flins","gi:ineffa"], "start": "2026-09-01", "end": "2026-09-22" }
       ],
       "upcoming": [
-        { "title": "Vesna (announced character)", "characterIds": ["gi:vesna"], "date": null },
-        { "title": "Vodyanitsa (announced character)", "characterIds": ["gi:vodyanitsa"], "date": null }
+        { "title": "v7.1 Phase 1 — Vesna + Vodyanitsa", "characterIds": ["gi:vesna","gi:vodyanitsa"], "date": "2026-09-23", "endDate": "2026-10-13" },
+        { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "date": "2026-10-13", "endDate": "2026-11-03" }
       ],
-      "notes": "Version 7.0 Phase 2 is now live Sep 1–22 with Flins and Ineffa reruns. HoYoverse has revealed Vesna and Vodyanitsa as upcoming playable characters. The leak section tracks only new playable units through Version 7.3, three version increments beyond the current Version 7.0 banner.",
+      "notes": "Version 7.0 Phase 2 remains live Sep 1–22 with Flins and Ineffa reruns. HoYoverse's Version 7.1 Special Program confirmed Vesna + Vodyanitsa for Phase 1 beginning Sep 23, followed by Skirk + Escoffier reruns in Phase 2. The leak section tracks only new playable units through Version 7.3, three version increments beyond the current Version 7.0 banner.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -33,21 +33,20 @@ window.GACHA_DATA =
       "name": "Honkai: Star Rail",
       "short": "HSR",
       "characters": {"hsr:nihilux":"Nihilux","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl"},
-      "version": "4.5 — Phase 1",
+      "version": "4.5 — Phase 2",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "leaks": [
         { "title": "Nihilux", "characterIds": ["hsr:nihilux"], "version": "4.7", "confidence": "low", "confidenceReason": "Dim-attributed repost labelled very subject to change; original publication not verified.", "sourceUrl": "https://www.reddit.com/r/HonkaiStarailItalia/comments/1w0hqgk/47_nihilux_kit_stc_5_quantum_elation/", "checkedAt": "2026-09-08" }
       ],
       "banners": [
-        { "title": "v4.5 Phase 1 — Robin Summeretto (new 5★, Wind Remembrance) + Hyacine rerun", "characterIds": ["hsr:robin-summeretto","hsr:hyacine"], "start": "2026-08-26", "end": "2026-09-12" },
+        { "title": "v4.5 Phase 2 — Aventurine Waveflair (new 5★, Quantum Elation) + Ashveil rerun", "characterIds": ["hsr:aventurine-waveflair","hsr:ashveil"], "start": "2026-09-12", "end": "2026-09-28" },
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null }
       ],
       "upcoming": [
-        { "title": "v4.5 Phase 2 — Aventurine Waveflair (new 5★, Quantum Elation) + Ashveil rerun", "characterIds": ["hsr:aventurine-waveflair","hsr:ashveil"], "date": "2026-09-12" },
         { "title": "Pearl (announced character)", "characterIds": ["hsr:pearl"], "date": null }
       ],
-      "notes": "Version 4.5 launched Aug 26. Robin Summeretto + Hyacine are current in Phase 1 through Sep 12; Aventurine Waveflair + Ashveil begin Sep 12 in Phase 2. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) remains open-ended. No Phase 2 endDate was added because an exact version-end date was not verified.",
+      "notes": "Version 4.5 Phase 2 is live Sep 12–28 with Aventurine Waveflair + Ashveil. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) remains open-ended. Pearl remains officially announced without a confirmed banner date.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -147,7 +146,7 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley"},
+      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva"},
       "version": "Moonshroud Requiem",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
@@ -155,9 +154,9 @@ window.GACHA_DATA =
         { "title": "OTs-14 + Basti + Voymastina (Targeted Procurement)", "characterIds": ["gfl2:ots-14","gfl2:basti","gfl2:voymastina"], "start": "2026-08-27", "end": "2026-09-16" }
       ],
       "upcoming": [
-        { "title": "Soppo + Loreley (third Targeted Procurement doll not yet listed)", "characterIds": ["gfl2:soppo","gfl2:loreley"], "date": "2026-09-17", "endDate": "2026-10-07" }
+        { "title": "Soppo + Loreley + Alva (Targeted Procurement)", "characterIds": ["gfl2:soppo","gfl2:loreley","gfl2:alva"], "date": "2026-09-17", "endDate": "2026-10-07" }
       ],
-      "notes": "The gfl2.help Global mirror confirms OTs-14 + Basti + Voymastina are live Aug 27–Sep 16, followed by Soppo + Loreley Sep 17–Oct 7; the third doll in the latter lineup is still not identified by the source. The official Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
+      "notes": "The gfl2.help Global mirror confirms OTs-14 + Basti + Voymastina are live Aug 27–Sep 16, followed by Soppo + Loreley + Alva Sep 17–Oct 7. The official Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
