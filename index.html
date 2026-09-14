@@ -194,14 +194,39 @@
   .wishlist-panel p, .wishlist-panel label { font-size: .85rem; color: var(--muted); }
   .wish-group { margin: 10px 0; }
 
-  .wish-selections { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 12px 0; padding: 0; list-style: none; }
-  .wish-selection { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .wish-live { display: inline-block; width: 134px; overflow: hidden; color: #73e9ae; background: #18382b; border-radius: 5px; padding: 3px 0; font-size: .78rem; vertical-align: middle; }
-  .wish-live-track { display: flex; width: max-content; animation: wish-scroll 6s linear infinite; }
-  .wish-live-track span { flex: none; width: 134px; text-align: center; }
-  .wish-live:hover .wish-live-track { animation-play-state: paused; }
-  @keyframes wish-scroll { to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .wish-live-track { animation: none; } }
+  .wish-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .wish-header h2 { display: flex; align-items: center; gap: 9px; margin: 0; }
+  .wish-heading-star { color: #ffe09a; }
+  #wish-count { color: #ffe09a; background: #342d20; border: 1px solid #51432a; border-radius: 20px; padding: 2px 8px; font-size: .72rem; }
+  .wish-filter { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+  .wish-filter input { appearance: none; position: relative; width: 30px; height: 18px; background: #343c4e; border: 1px solid #505b70; border-radius: 20px; cursor: pointer; }
+  .wish-filter input::after { content: ''; position: absolute; width: 12px; height: 12px; top: 2px; left: 2px; background: #e8eaf0; border-radius: 50%; }
+  .wish-filter input:checked { background: #80642e; border-color: #cfa34c; }
+  .wish-filter input:checked::after { left: 14px; background: #ffe09a; }
+  .wish-empty-state { padding: 24px 12px 12px; text-align: center; }
+  .wish-empty-state strong { display: block; color: var(--text); margin-bottom: 6px; font-size: .9rem; }
+  .wish-tabs { display: flex; gap: 5px; margin-top: 12px; padding: 3px; width: fit-content; max-width: 100%; overflow-x: auto; background: #131822; border: 1px solid #252c3a; border-radius: 9px; }
+  .wish-tab { display: inline-flex; align-items: center; gap: 6px; border: 0; border-radius: 6px; padding: 5px 10px; white-space: nowrap; background: transparent; color: var(--muted); font: inherit; font-size: .75rem; cursor: pointer; }
+  .wish-tab:hover { color: var(--text); background: #202736; }
+  .wish-tab[aria-selected="true"] { color: var(--text); background: #2a3243; box-shadow: 0 1px 4px #0005; }
+  .wish-tab[data-wish-tab="live"][aria-selected="true"] { color: #82edb5; }
+  .wish-tab[data-wish-tab="soon"][aria-selected="true"] { color: #a9d1ff; }
+  .wish-tab-count { min-width: 18px; padding: 1px 5px; border-radius: 9px; background: #171c26; color: currentColor; text-align: center; font-size: .65rem; }
+  .wish-tab:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .wish-tab-empty { margin: 13px 3px 2px; color: var(--muted); font-size: .78rem; }
+  .wish-clusters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .wish-cluster { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; min-width: 0; padding: 5px 6px; border: 1px solid #2d3545; border-left: 2px solid var(--accent, #5a617a); border-radius: 9px; background: #141923; }
+  .wish-cluster-game { display: inline-flex; align-items: center; gap: 6px; padding: 0 4px 0 1px; color: #b4bbca; font-size: .7rem; font-weight: 700; letter-spacing: .03em; }
+  .wish-cluster-game img { width: 20px; height: 20px; border-radius: 5px; }
+  .wish-cluster-list { display: flex; flex-wrap: wrap; gap: 5px; padding: 0; list-style: none; }
+  .wish-chip { position: relative; display: inline-flex; align-items: center; gap: 5px; max-width: 100%; padding: 3px 7px 3px 3px; border: 1px solid #343d4f; border-radius: 16px; background: linear-gradient(135deg, #252938, #1b202c); box-shadow: inset 0 1px rgba(255,255,255,.04); }
+  .wish-chip:hover, .wish-chip:focus-within { border-color: var(--accent, #ffe09a); box-shadow: 0 0 12px color-mix(in srgb, var(--accent, #ffe09a) 18%, transparent); }
+  .wish-chip-name { min-width: 0; overflow-wrap: anywhere; font-size: .78rem; font-weight: 600; }
+  .wish-chip > .wish-star { flex: none; margin: 0; padding: 3px 5px; border-radius: 50%; }
+  .wish-chip-status { flex: none; font-size: .62rem; line-height: 1.35; padding: 1px 5px; border-radius: 9px; color: #b4bbca; background: #2a303e; }
+  @media (max-width: 440px) { .wish-cluster { width: 100%; } }
+  .wish-chip-status.live { color: #82edb5; background: #1c3c30; }
+  .wish-chip-status.scheduled { color: #a9d1ff; background: #243950; }
   .wish-character { display: inline; }
   .wish-star { border: 0; border-radius: 4px; background: transparent; color: var(--muted); padding: 0 3px; margin-left: 2px; font: inherit; font-size: 1rem; line-height: 1.2; cursor: pointer; vertical-align: baseline; }
   .wish-star[aria-pressed="true"] { color: #ffe09a; }
@@ -222,9 +247,11 @@
   <span class="stale-warn" id="stale" style="display:none"></span>
 </header>
 <section class="wishlist-panel" aria-labelledby="wish-heading">
-  <h2 id="wish-heading">☆ Character wishlist <span id="wish-count"></span></h2>
+  <div class="wish-header">
+    <h2 id="wish-heading"><span class="wish-heading-star" aria-hidden="true">★</span> Character wishlist <span id="wish-count"></span></h2>
+    <label class="wish-filter" title="Filter game cards and calendar to wishlisted characters"><input id="wish-only" type="checkbox" aria-label="Wishlisted only — cards and calendar"> Wishlisted only</label>
+  </div>
   <div id="wish-list"></div>
-  <label><input id="wish-only" type="checkbox"> Wishlisted only — cards and calendar</label>
   <p id="wish-status" role="status"></p>
 </section>
 <p id="wish-empty" hidden>No matching game cards. Star a character or turn off “Wishlisted only”.</p>
@@ -265,6 +292,7 @@
     getItem: key => window.localStorage.getItem(key),
     setItem: (key, value) => window.localStorage.setItem(key, value)
   });
+  let wishlistTab = 'live';
   const esc = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const allEntries = g => [...(g.banners || []), ...(g.upcoming || []), ...(g.leaks || [])];
   const wishAttrs = entry => `data-wish-ids="${esc((entry.characterIds || []).join(' '))}"`;
@@ -552,19 +580,35 @@
   function refreshWishlist() {
     const panel = document.getElementById('wish-list');
     const rows = window.GachaWishlist.timeline(data.games, wishlist.selected);
-    const content = rows.map(row => {
-      let status;
-      if (row.rank === 0) {
-        status = `<span class="wish-live" role="img" aria-label="Banner live now!${row.approx ? ' (estimated schedule)' : ''}"><span class="wish-live-track" aria-hidden="true"><span>✦ Banner live now!</span><span>✦ Banner live now!</span></span></span>${row.approx ? '<p>Estimated</p>' : ''}`;
-      } else if (row.rank === 1) {
-        status = `<p>${row.approx ? '~' : ''}${fmt(row.date)} (in ${row.days} ${row.days === 1 ? 'day' : 'days'})</p>`;
-      } else {
-        status = `<p>Date TBA</p>`;
-      }
-      return `<li class="wish-selection">${wishName(row.game, row.id)}${status}</li>`;
+    const tabs = [
+      { id: 'live', label: 'Live', rank: 0 },
+      { id: 'soon', label: 'Soon', rank: 1 },
+      { id: 'tba', label: 'TBA', rank: 2 }
+    ].map(tab => ({ ...tab, count: rows.filter(row => row.rank === tab.rank).length }));
+    const activeTab = tabs.find(tab => tab.id === wishlistTab) || tabs[0];
+    const tabList = tabs.map(tab => `<button type="button" class="wish-tab" role="tab" id="wish-tab-${tab.id}" data-wish-tab="${tab.id}" aria-controls="wish-tabpanel" aria-selected="${tab.id === activeTab.id}" tabindex="${tab.id === activeTab.id ? '0' : '-1'}">${tab.label}<span class="wish-tab-count">${tab.count}</span></button>`).join('');
+    const groups = [];
+    rows.filter(row => row.rank === activeTab.rank).forEach(row => {
+      let group = groups.find(item => item.game === row.game);
+      if (!group) { group = { game: row.game, rows: [] }; groups.push(group); }
+      group.rows.push(row);
+    });
+    const content = groups.map(group => {
+      const characters = group.rows.map(row => {
+        const tone = row.rank === 0 ? 'live' : row.rank === 1 ? 'scheduled' : '';
+        const badge = row.rank === 0 ? '● Live' : row.rank === 1 ? `${row.approx ? '~' : ''}${fmt(row.date)}` : 'TBA';
+        let detail = row.rank === 0 ? 'Banner live now' : row.rank === 1 ? `${fmt(row.date)} · in ${row.days} ${row.days === 1 ? 'day' : 'days'}` : 'Date TBA';
+        if (row.approx) detail += ' · Estimated schedule';
+        if (row.leak) detail += ' · Unconfirmed';
+        return `<li class="wish-chip" title="${esc(detail)}">${wishStar(row.game, row.id)}<span class="wish-chip-name">${esc(row.name)}</span><span class="wish-chip-status ${tone}">${badge}</span></li>`;
+      }).join('');
+      const gameName = group.game.name || 'Unknown game';
+      const gameIcon = group.game.icon ? `<img src="${esc(group.game.icon)}" alt="">` : '';
+      return `<section class="wish-cluster" style="--accent:${esc(group.game.accent || '#5a617a')}" aria-label="${esc(gameName)} wishlist"><span class="wish-cluster-game" title="${esc(gameName)}">${gameIcon}${esc(group.game.short || gameName)}</span><ul class="wish-cluster-list">${characters}</ul></section>`;
     }).join('');
-    panel.innerHTML = content ? `<ul class="wish-selections">${content}</ul>` : '<p class="wish-group">Your wishlist is empty.</p>';
-    document.getElementById('wish-count').textContent = `(${wishlist.selected.size})`;
+    const emptyLabel = activeTab.id === 'live' ? 'No wishlisted characters are live right now.' : activeTab.id === 'soon' ? 'No wishlisted characters have a scheduled banner.' : 'No wishlisted characters are waiting for a date.';
+    panel.innerHTML = rows.length ? `<div class="wish-tabs" role="tablist" aria-label="Wishlist status">${tabList}</div><div id="wish-tabpanel" role="tabpanel" aria-labelledby="wish-tab-${activeTab.id}">${content ? `<div class="wish-clusters">${content}</div>` : `<p class="wish-tab-empty">${emptyLabel}</p>`}</div>` : '<p class="wish-empty-state"><strong>Your next favorite starts here</strong>Star a character below to follow their next banner.</p>';
+    document.getElementById('wish-count').textContent = wishlist.selected.size;
     document.getElementById('wish-status').textContent = wishlist.warning;
     document.querySelectorAll('[data-wish-id]').forEach(button => {
       const selected = wishlist.selected.has(button.dataset.wishId);
@@ -586,12 +630,28 @@
     renderCal();
   }
   document.addEventListener('click', event => {
+    const tab = event.target.closest('[data-wish-tab]');
+    if (tab) {
+      wishlistTab = tab.dataset.wishTab;
+      refreshWishlist();
+      document.querySelector(`[data-wish-tab="${wishlistTab}"]`)?.focus();
+      return;
+    }
     const button = event.target.closest('[data-wish-id]');
     if (!button) return;
     const inPanel = document.getElementById('wish-list').contains(button);
     wishlist.toggle(button.dataset.wishId);
     refreshWishlist();
     if (inPanel) document.getElementById('wish-only').focus();
+  });
+  document.getElementById('wish-list').addEventListener('keydown', event => {
+    const tab = event.target.closest('[data-wish-tab]');
+    if (!tab || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    const tabs = [...document.querySelectorAll('[data-wish-tab]')];
+    const current = tabs.indexOf(tab);
+    const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+    event.preventDefault();
+    tabs[next].click();
   });
   document.getElementById('wish-only').addEventListener('change', refreshWishlist);
   window.addEventListener('storage', event => {

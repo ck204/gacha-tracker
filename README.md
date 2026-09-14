@@ -6,8 +6,10 @@ A small project for organizing selected game-related information.
 
 Star individual characters on current, upcoming, or unconfirmed entries. The wishlist
 panel sorts selections by arrival: live banners first, upcoming dates next, and Date TBA
-last. Live banners have a scrolling label (static with reduced motion enabled); upcoming
-entries show dates and day counts. Matching entries and calendar bars are highlighted.
+last. Live, Soon, and TBA tabs show compact game clusters pairing each game icon and
+abbreviation with its character chips. The view defaults to Live on every page load and
+keeps the user's chosen tab through wishlist changes. Hover a chip for schedule details.
+Matching entries and calendar bars are highlighted.
 “Wishlisted only” filters game cards and calendar bars, alongside the calendar game filters.
 
 Selections stay after a banner ends and match reruns using permanent character IDs.
