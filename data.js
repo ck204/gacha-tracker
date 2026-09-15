@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-14",
+  "lastUpdated": "2026-09-15",
   "games": [
     {
       "name": "Genshin Impact",
@@ -32,21 +32,19 @@ window.GACHA_DATA =
     {
       "name": "Honkai: Star Rail",
       "short": "HSR",
-      "characters": {"hsr:nihilux":"Nihilux","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl"},
+      "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl"},
       "version": "4.5 — Phase 2",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
-      "leaks": [
-        { "title": "Nihilux", "characterIds": ["hsr:nihilux"], "version": "4.7", "confidence": "low", "confidenceReason": "Dim-attributed repost labelled very subject to change; original publication not verified.", "sourceUrl": "https://www.reddit.com/r/HonkaiStarailItalia/comments/1w0hqgk/47_nihilux_kit_stc_5_quantum_elation/", "checkedAt": "2026-09-08" }
-      ],
       "banners": [
         { "title": "v4.5 Phase 2 — Aventurine Waveflair (new 5★, Quantum Elation) + Ashveil rerun", "characterIds": ["hsr:aventurine-waveflair","hsr:ashveil"], "start": "2026-09-12", "end": "2026-09-28" },
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null }
       ],
       "upcoming": [
-        { "title": "Pearl (announced character)", "characterIds": ["hsr:pearl"], "date": null }
+        { "title": "Pearl (announced character)", "characterIds": ["hsr:pearl"], "date": null },
+        { "title": "Aeon ★ Aha (announced playable character; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null }
       ],
-      "notes": "Version 4.5 Phase 2 is live Sep 12–28 with Aventurine Waveflair + Ashveil. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) remains open-ended. Pearl remains officially announced without a confirmed banner date.",
+      "notes": "Version 4.5 Phase 2 is live Sep 12–28 with Aventurine Waveflair + Ashveil. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) remains open-ended. Pearl and Aeon ★ Aha (the playable identity previously leaked as Nihilux) are officially announced without confirmed banner dates.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -55,20 +53,19 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "characters": {"zzz:severian":"Severian","zzz:pheony":"Pheony","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia"},
+      "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia"},
       "version": "3.2 — Phase 1",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
-      "leaks": [
-        { "title": "Severian + Pheony", "characterIds": ["zzz:severian","zzz:pheony"], "version": "3.3", "confidence": "medium", "confidenceReason": "Nanoka-attributed September 5 report marked datamined; no banner details or reruns supplied. Names follow the report.", "sourceUrl": "https://www.reddit.com/r/Zenlesszonezeroleaks_/comments/1w7qak6/33_agents_via_nanoka/", "checkedAt": "2026-09-08" }
-      ],
       "banners": [
         { "title": "v3.2 Phase 1 — Claret Flint (new S-Rank, Electric Armorer) + Nangong Yu rerun", "characterIds": ["zzz:claret-flint","zzz:nangong-yu"], "start": "2026-09-09", "end": "2026-09-30" }
       ],
       "upcoming": [
-        { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "characterIds": ["zzz:roxy-ifrita-pryce","zzz:promeia"], "date": "2026-09-30", "endDate": "2026-10-20" }
+        { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "characterIds": ["zzz:roxy-ifrita-pryce","zzz:promeia"], "date": "2026-09-30", "endDate": "2026-10-20" },
+        { "title": "Phoenix Reffaella (announced S-Rank Fire Anomaly Agent)", "characterIds": ["zzz:pheony"], "date": null },
+        { "title": "Severian Lowell (announced S-Rank Wind Attack Agent)", "characterIds": ["zzz:severian"], "date": null }
       ],
-      "notes": "Version 3.2 launched Sep 9. Claret Flint + Nangong Yu are current in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia Sep 30–Oct 20. The Phase 2 end date is corroborated by current Version 3.2 schedule coverage.",
+      "notes": "Version 3.2 launched Sep 9. Claret Flint + Nangong Yu are current in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia Sep 30–Oct 20. HoYoverse has officially revealed Phoenix Reffaella (previously leaked as Pheony) and Severian Lowell as upcoming S-Rank Agents, but their banner dates and phase order remain unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
