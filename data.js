@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-15",
+  "lastUpdated": "2026-09-16",
   "games": [
     {
       "name": "Genshin Impact",
@@ -82,15 +82,15 @@ window.GACHA_DATA =
         { "title": "YUI Stella", "characterIds": ["p5x:yui-stella"], "start": "2026-09-10", "end": "2026-09-24" }
       ],
       "upcoming": [
-        { "title": "Mitsuru", "characterIds": ["p5x:mitsuru"], "date": "2026-09-24", "endDate": "2026-10-08" },
-        { "title": "Fuuka", "characterIds": ["p5x:fuuka"], "date": "2026-10-08", "endDate": "2026-10-22" },
-        { "title": "Kotone Shiomi / FeMC (announced playable character)", "characterIds": ["p5x:kotone-shiomi"], "date": null }
+        { "title": "Kotone Shiomi / FeMC — P3P collaboration", "characterIds": ["p5x:kotone-shiomi"], "date": "2026-09-24" },
+        { "title": "Mitsuru", "characterIds": ["p5x:mitsuru"], "date": null },
+        { "title": "Fuuka", "characterIds": ["p5x:fuuka"], "date": null }
       ],
-      "notes": "The lufel.net mirror places YUI Stella on Sep 10, followed by Mitsuru on Sep 24 and Fuuka on Oct 8. The official Steam digest independently confirms Cosmic Yui is now live. Dashboard phase boundaries follow the verified Global release schedule; the Lufel days interval is not treated as independent evidence for an unsupported final banner end.",
+      "notes": "The latest Lufel mirror now places Kotone Shiomi's P3P collaboration on Sep 24, matching ATLUS's official Global announcement. This supersedes the previous Sep 24 Mitsuru placement. Mitsuru and Fuuka remain in the mirrored future release order, but their exact revised Global dates are not stored until confirmed. Cosmic Yui remains current from Sep 10 through the verified Sep 24 boundary.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" },
-        { "label": "Kotone announcement coverage", "url": "https://www.siliconera.com/persona-3-portable-female-protagonist-joins-persona-5-the-phantom-x/" }
+        { "label": "Kotone announcement coverage", "url": "https://www.siliconera.com/persona-5-the-phantom-x-persona-3-heroine-kotone-shiomi-release-date-set/" }
       ]
     },
     {
