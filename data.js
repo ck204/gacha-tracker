@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-16",
+  "lastUpdated": "2026-09-18",
   "games": [
     {
       "name": "Genshin Impact",
@@ -148,12 +148,10 @@ window.GACHA_DATA =
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "banners": [
-        { "title": "OTs-14 + Basti + Voymastina (Targeted Procurement)", "characterIds": ["gfl2:ots-14","gfl2:basti","gfl2:voymastina"], "start": "2026-08-27", "end": "2026-09-16" }
+        { "title": "Soppo + Loreley + Alva (Targeted Procurement)", "characterIds": ["gfl2:soppo","gfl2:loreley","gfl2:alva"], "start": "2026-09-17", "end": "2026-10-07" }
       ],
-      "upcoming": [
-        { "title": "Soppo + Loreley + Alva (Targeted Procurement)", "characterIds": ["gfl2:soppo","gfl2:loreley","gfl2:alva"], "date": "2026-09-17", "endDate": "2026-10-07" }
-      ],
-      "notes": "The gfl2.help Global mirror confirms OTs-14 + Basti + Voymastina are live Aug 27–Sep 16, followed by Soppo + Loreley + Alva Sep 17–Oct 7. The official Steam digest independently confirms OTs-14 as a new Doll. CN ordering was not used.",
+      "upcoming": [],
+      "notes": "The healthy gfl2.help Global mirror confirms Soppo + Loreley + Alva are live Sep 17–Oct 7. The official Steam digest independently confirms Soppo as the new Doll in the Sep 17 update. No later Global banner is stored without reliable Global evidence; CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
