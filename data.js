@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-18",
+  "lastUpdated": "2026-09-21",
   "games": [
     {
       "name": "Genshin Impact",
@@ -79,14 +79,14 @@ window.GACHA_DATA =
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "YUI Stella", "characterIds": ["p5x:yui-stella"], "start": "2026-09-10", "end": "2026-09-24" }
+        { "title": "YUI Stella", "characterIds": ["p5x:yui-stella"], "start": "2026-09-10", "end": "2026-10-15" }
       ],
       "upcoming": [
         { "title": "Kotone Shiomi / FeMC — P3P collaboration", "characterIds": ["p5x:kotone-shiomi"], "date": "2026-09-24" },
         { "title": "Mitsuru", "characterIds": ["p5x:mitsuru"], "date": null },
         { "title": "Fuuka", "characterIds": ["p5x:fuuka"], "date": null }
       ],
-      "notes": "The latest Lufel mirror now places Kotone Shiomi's P3P collaboration on Sep 24, matching ATLUS's official Global announcement. This supersedes the previous Sep 24 Mitsuru placement. Mitsuru and Fuuka remain in the mirrored future release order, but their exact revised Global dates are not stored until confirmed. Cosmic Yui remains current from Sep 10 through the verified Sep 24 boundary.",
+      "notes": "The latest Lufel mirror places Kotone Shiomi's P3P collaboration on Sep 24, matching ATLUS's official Global announcement. Mitsuru and Fuuka remain in the mirrored future release order, but their exact revised Global dates are not stored until confirmed. The official Ver. 4.9 notice confirms Cosmic Yui's contract runs from Sep 9 maintenance until Oct 15 at 1:59 AM UTC, correcting the earlier unsupported Sep 24 end boundary.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" },
