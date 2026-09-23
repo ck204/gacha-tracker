@@ -3,13 +3,13 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-21",
+  "lastUpdated": "2026-09-23",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
       "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier"},
-      "version": "7.0 — Phase 2",
+      "version": "7.1 — Phase 1",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "leaks": [
@@ -17,13 +17,12 @@ window.GACHA_DATA =
         { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Several roadmap reposts agree on this pair, but the recent source post was removed and the claim is still far ahead of beta confirmation.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-09-08" }
       ],
       "banners": [
-        { "title": "v7.0 Phase 2 — Flins + Ineffa reruns", "characterIds": ["gi:flins","gi:ineffa"], "start": "2026-09-01", "end": "2026-09-22" }
+        { "title": "v7.1 Phase 1 — Vesna + Vodyanitsa", "characterIds": ["gi:vesna","gi:vodyanitsa"], "start": "2026-09-23", "end": "2026-10-13" }
       ],
       "upcoming": [
-        { "title": "v7.1 Phase 1 — Vesna + Vodyanitsa", "characterIds": ["gi:vesna","gi:vodyanitsa"], "date": "2026-09-23", "endDate": "2026-10-13" },
         { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "date": "2026-10-13", "endDate": "2026-11-03" }
       ],
-      "notes": "Version 7.0 Phase 2 remains live Sep 1–22 with Flins and Ineffa reruns. HoYoverse's Version 7.1 Special Program confirmed Vesna + Vodyanitsa for Phase 1 beginning Sep 23, followed by Skirk + Escoffier reruns in Phase 2. The leak section tracks only new playable units through Version 7.3, three version increments beyond the current Version 7.0 banner.",
+      "notes": "Version 7.1 Phase 1 is live from Sep 23 with Vesna + Vodyanitsa, followed by Skirk + Escoffier reruns in Phase 2. The leak section tracks only new playable units through Version 7.3, two version increments beyond the current Version 7.1 banner.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -96,7 +95,7 @@ window.GACHA_DATA =
     {
       "name": "Neverness to Everness",
       "short": "NTE",
-      "characters": {"nte:exe":"Exe","nte:elyms":"Elyms","nte:linko":"Linko","nte:hotori":"Hotori","nte:blackbird":"Blackbird","nte:akane-rin":"Akane Rin"},
+      "characters": {"nte:exe":"Exe","nte:elyms":"Elyms","nte:linko":"Linko","nte:hotori":"Hotori","nte:blackbird":"Blackbird","nte:akane-rin":"Akane Rin","nte:lacrimosa":"Lacrimosa"},
       "version": "1.3 — Phase 2",
       "accent": "#66bb6a",
       "icon": "icons/nte.jpg",
@@ -107,10 +106,10 @@ window.GACHA_DATA =
         { "title": "v1.3 Phase 2 — Linko (new 5★) + Hotori rerun", "characterIds": ["nte:linko","nte:hotori"], "start": "2026-09-09", "end": "2026-09-30" }
       ],
       "upcoming": [
-        { "title": "Blackbird (announced character)", "characterIds": ["nte:blackbird"], "date": null },
-        { "title": "Akane Rin (announced character)", "characterIds": ["nte:akane-rin"], "date": null }
+        { "title": "v1.4 Phase 1 — Blackbird + Lacrimosa rerun", "characterIds": ["nte:blackbird","nte:lacrimosa"], "date": "2026-09-30", "endDate": "2026-10-21" },
+        { "title": "v1.4 Phase 2 — Akane Rin", "characterIds": ["nte:akane-rin"], "date": "2026-10-21", "endDate": "2026-11-11" }
       ],
-      "notes": "Version 1.3 Phase 2 is now live Sep 9–30 with Linko and a concurrent Hotori rerun. Blackbird and Akane Rin remain announced with no confirmed banner dates.",
+      "notes": "Version 1.3 Phase 2 remains live Sep 9–30 with Linko and a concurrent Hotori rerun. The Version 1.4 Preview Special Program confirms the Sep 30 Global launch, Blackbird's Foretold Finale and Lacrimosa's Fading Reverie in Phase 1, followed by Akane Rin's Dazzling Star from Oct 21; the announced program windows establish the Oct 21 phase boundary and Nov 11 end.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
         { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" },
