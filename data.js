@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-23",
+  "lastUpdated": "2026-09-25",
   "games": [
     {
       "name": "Genshin Impact",
@@ -31,7 +31,7 @@ window.GACHA_DATA =
     {
       "name": "Honkai: Star Rail",
       "short": "HSR",
-      "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl"},
+      "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl","hsr:evanescia":"Evanescia","hsr:mortenax-blade":"Mortenax Blade"},
       "version": "4.5 — Phase 2",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
@@ -40,10 +40,12 @@ window.GACHA_DATA =
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null }
       ],
       "upcoming": [
-        { "title": "Pearl (announced character)", "characterIds": ["hsr:pearl"], "date": null },
+        { "title": "v4.6 — Pearl (new 5★, Ice Elation; whole version)", "characterIds": ["hsr:pearl"], "date": "2026-09-28", "endDate": "2026-11-10" },
+        { "title": "v4.6 Phase 1 — Evanescia rerun", "characterIds": ["hsr:evanescia"], "date": "2026-09-28", "endDate": "2026-10-21" },
+        { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "date": "2026-10-21", "endDate": "2026-11-10" },
         { "title": "Aeon ★ Aha (announced playable character; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null }
       ],
-      "notes": "Version 4.5 Phase 2 is live Sep 12–28 with Aventurine Waveflair + Ashveil. Fate/stay Night collab Part 2 (Rin Tohsaka + Gilgamesh) remains open-ended. Pearl and Aeon ★ Aha (the playable identity previously leaked as Nihilux) are officially announced without confirmed banner dates.",
+      "notes": "Version 4.5 Phase 2 remains live through Sep 28. Version 4.6 launches Sep 28: Pearl is rate-up throughout the version, Evanescia reruns in Phase 1 through Oct 21, and Mortenax Blade reruns in Phase 2 through Nov 10. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced without a confirmed banner date.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -74,18 +76,18 @@ window.GACHA_DATA =
       "name": "Persona 5: The Phantom X",
       "short": "P5X",
       "characters": {"p5x:kumi-katayama":"Kumi Katayama","p5x:yui-stella":"YUI Stella","p5x:mitsuru":"Mitsuru","p5x:fuuka":"Fuuka","p5x:kotone-shiomi":"Kotone Shiomi"},
-      "version": "4.9 (4.5)",
+      "version": "4.10 (5.4.1)",
       "accent": "#ef5350",
       "icon": "icons/p5x.jpg",
       "banners": [
-        { "title": "YUI Stella", "characterIds": ["p5x:yui-stella"], "start": "2026-09-10", "end": "2026-10-15" }
+        { "title": "YUI Stella", "characterIds": ["p5x:yui-stella"], "start": "2026-09-10", "end": "2026-10-15" },
+        { "title": "Kotone Shiomi / FeMC — P3P collaboration", "characterIds": ["p5x:kotone-shiomi"], "start": "2026-09-24", "end": "2026-11-12" }
       ],
       "upcoming": [
-        { "title": "Kotone Shiomi / FeMC — P3P collaboration", "characterIds": ["p5x:kotone-shiomi"], "date": "2026-09-24" },
-        { "title": "Mitsuru", "characterIds": ["p5x:mitsuru"], "date": null },
+        { "title": "Mitsuru", "characterIds": ["p5x:mitsuru"], "date": "2026-10-15" },
         { "title": "Fuuka", "characterIds": ["p5x:fuuka"], "date": null }
       ],
-      "notes": "The latest Lufel mirror places Kotone Shiomi's P3P collaboration on Sep 24, matching ATLUS's official Global announcement. Mitsuru and Fuuka remain in the mirrored future release order, but their exact revised Global dates are not stored until confirmed. The official Ver. 4.9 notice confirms Cosmic Yui's contract runs from Sep 9 maintenance until Oct 15 at 1:59 AM UTC, correcting the earlier unsupported Sep 24 end boundary.",
+      "notes": "Ver. 4.10 launched Sep 24 with Kotone Shiomi; the official Global notice confirms her contract through Nov 12 at 1:59 AM UTC. The healthy Lufel Global mirror explicitly dates Mitsuru for Oct 15. Fuuka remains in the mirrored future release order, but her exact date is not stored until independently confirmed. Cosmic Yui remains active through Oct 15.",
       "links": [
         { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
         { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" },
@@ -128,12 +130,11 @@ window.GACHA_DATA =
         { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Secondary coverage names the pair; earlier reports disagree on timing and elements. Playable banners remain unconfirmed.", "sourceUrl": "https://www.topuplive.com/news/arknights-endfield-1-6.html", "checkedAt": "2026-09-08" }
       ],
       "banners": [
-        { "title": "Winter Hunt — Typhoeus (new 6★, Nature Striker)", "characterIds": ["ake:typhoeus"], "start": "2026-09-02", "end": "2026-09-30" }
+        { "title": "Winter Hunt — Typhoeus (new 6★, Nature Striker)", "characterIds": ["ake:typhoeus"], "start": "2026-09-02", "end": "2026-09-30" },
+        { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "characterIds": ["ake:yvonne"], "start": "2026-09-24", "end": null }
       ],
-      "upcoming": [
-        { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "characterIds": ["ake:yvonne"], "date": "2026-09-24" }
-      ],
-      "notes": "Dreamscape of Wind and Snow launched Sep 2. GRYPHLINE confirms Winter Hunt features Typhoeus from the version release through Sep 30, and Resplendent Spectrum RE-Factor Headhunting #1 opens Sep 24 with Yvonne rate-up. Yvonne's exact end date is not stored because the official notice only ties it to the next version maintenance.",
+      "upcoming": [],
+      "notes": "Dreamscape of Wind and Snow launched Sep 2. Winter Hunt features Typhoeus through Sep 30. Resplendent Spectrum RE-Factor Headhunting #1 opened Sep 24 with Yvonne rate-up; its active end is explicitly unknown because the official notice only ties it to the next version update and maintenance.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
