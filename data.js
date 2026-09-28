@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-25",
+  "lastUpdated": "2026-09-28",
   "games": [
     {
       "name": "Genshin Impact",
@@ -32,20 +32,19 @@ window.GACHA_DATA =
       "name": "Honkai: Star Rail",
       "short": "HSR",
       "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl","hsr:evanescia":"Evanescia","hsr:mortenax-blade":"Mortenax Blade"},
-      "version": "4.5 — Phase 2",
+      "version": "4.6 — Phase 1",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "banners": [
-        { "title": "v4.5 Phase 2 — Aventurine Waveflair (new 5★, Quantum Elation) + Ashveil rerun", "characterIds": ["hsr:aventurine-waveflair","hsr:ashveil"], "start": "2026-09-12", "end": "2026-09-28" },
-        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null }
+        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null },
+        { "title": "v4.6 — Pearl (new 5★, Ice Elation; whole version)", "characterIds": ["hsr:pearl"], "start": "2026-09-28", "end": "2026-11-10" },
+        { "title": "v4.6 Phase 1 — Evanescia rerun", "characterIds": ["hsr:evanescia"], "start": "2026-09-28", "end": "2026-10-21" }
       ],
       "upcoming": [
-        { "title": "v4.6 — Pearl (new 5★, Ice Elation; whole version)", "characterIds": ["hsr:pearl"], "date": "2026-09-28", "endDate": "2026-11-10" },
-        { "title": "v4.6 Phase 1 — Evanescia rerun", "characterIds": ["hsr:evanescia"], "date": "2026-09-28", "endDate": "2026-10-21" },
         { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "date": "2026-10-21", "endDate": "2026-11-10" },
         { "title": "Aeon ★ Aha (announced playable character; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null }
       ],
-      "notes": "Version 4.5 Phase 2 remains live through Sep 28. Version 4.6 launches Sep 28: Pearl is rate-up throughout the version, Evanescia reruns in Phase 1 through Oct 21, and Mortenax Blade reruns in Phase 2 through Nov 10. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced without a confirmed banner date.",
+      "notes": "Version 4.6 is live from Sep 28: Pearl is rate-up throughout the version, Evanescia reruns in current Phase 1 through Oct 21, and Mortenax Blade reruns in Phase 2 through Nov 10. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced without a confirmed banner date.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
