@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-28",
+  "lastUpdated": "2026-09-29",
   "games": [
     {
       "name": "Genshin Impact",
@@ -13,8 +13,8 @@ window.GACHA_DATA =
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "leaks": [
-        { "title": "Mitya + Valeriy", "characterIds": ["gi:mitya","gi:valeriy"], "version": "7.2", "confidence": "low", "confidenceReason": "An FSC/HxG-attributed roadmap paired both new units in Version 7.2, but a newer Hongyu-attributed banner report names Mitya without confirming Valeriy; timing remains disputed.", "sourceUrl": "https://www.reddit.com/r/Genshin_Impact_Leaks/comments/1uug2jh/character_release_order_via_fsc_hxg/", "checkedAt": "2026-09-08" },
-        { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Several roadmap reposts agree on this pair, but the recent source post was removed and the claim is still far ahead of beta confirmation.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-09-08" }
+        { "title": "Mitya + Valeriy", "characterIds": ["gi:mitya","gi:valeriy"], "version": "7.2", "confidence": "medium", "confidenceReason": "Version 7.2 beta materials, Wish animations, and subsequent beta changes now independently show both characters as playable in 7.2, though all pre-release details remain subject to change.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-72-four-new-character-poses-leak/", "checkedAt": "2026-09-29" },
+        { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Recent deep-beta and kit reports continue to pair both new characters in Version 7.3, but the evidence remains unofficial, indirect, and earlier than the public beta cycle.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-09-29" }
       ],
       "banners": [
         { "title": "v7.1 Phase 1 — Vesna + Vodyanitsa", "characterIds": ["gi:vesna","gi:vodyanitsa"], "start": "2026-09-23", "end": "2026-10-13" }
@@ -22,7 +22,7 @@ window.GACHA_DATA =
       "upcoming": [
         { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "date": "2026-10-13", "endDate": "2026-11-03" }
       ],
-      "notes": "Version 7.1 Phase 1 is live from Sep 23 with Vesna + Vodyanitsa, followed by Skirk + Escoffier reruns in Phase 2. The leak section tracks only new playable units through Version 7.3, two version increments beyond the current Version 7.1 banner.",
+      "notes": "Version 7.1 Phase 1 is live from Sep 23 with Vesna + Vodyanitsa, followed by Skirk + Escoffier reruns in Phase 2. Version 7.2 beta evidence now supports both Mitya and Valeriy as playable, while the Version 7.3 Tsaritsa + Danica pairing remains an earlier, lower-confidence leak.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -37,14 +37,14 @@ window.GACHA_DATA =
       "icon": "icons/hsr.jpg",
       "banners": [
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null },
-        { "title": "v4.6 — Pearl (new 5★, Ice Elation; whole version)", "characterIds": ["hsr:pearl"], "start": "2026-09-28", "end": "2026-11-10" },
+        { "title": "v4.6 — Pearl (new 5★, Ice Elation; whole version)", "characterIds": ["hsr:pearl"], "start": "2026-09-28", "end": "2026-11-11" },
         { "title": "v4.6 Phase 1 — Evanescia rerun", "characterIds": ["hsr:evanescia"], "start": "2026-09-28", "end": "2026-10-21" }
       ],
       "upcoming": [
-        { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "date": "2026-10-21", "endDate": "2026-11-10" },
-        { "title": "Aeon ★ Aha (announced playable character; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null }
+        { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "date": "2026-10-21", "endDate": "2026-11-11" },
+        { "title": "v4.7 — Aeon ★ Aha (new 5★ Quantum Elation; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null }
       ],
-      "notes": "Version 4.6 is live from Sep 28: Pearl is rate-up throughout the version, Evanescia reruns in current Phase 1 through Oct 21, and Mortenax Blade reruns in Phase 2 through Nov 10. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced without a confirmed banner date.",
+      "notes": "Version 4.6 is live from Sep 28: Pearl is rate-up through the version end on Nov 11 (Asia/Singapore), Evanescia reruns in current Phase 1 through Oct 21, and Mortenax Blade reruns in Phase 2 through Nov 11. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced for Version 4.7, but her exact banner date is not yet confirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -62,10 +62,10 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "characterIds": ["zzz:roxy-ifrita-pryce","zzz:promeia"], "date": "2026-09-30", "endDate": "2026-10-20" },
-        { "title": "Phoenix Reffaella (announced S-Rank Fire Anomaly Agent)", "characterIds": ["zzz:pheony"], "date": null },
-        { "title": "Severian Lowell (announced S-Rank Wind Attack Agent)", "characterIds": ["zzz:severian"], "date": null }
+        { "title": "v3.3 — Phoenix Reffaella (announced S-Rank Fire Anomaly Agent)", "characterIds": ["zzz:pheony"], "date": null },
+        { "title": "v3.3 — Severian Lowell (announced S-Rank Wind Attack Agent)", "characterIds": ["zzz:severian"], "date": null }
       ],
-      "notes": "Version 3.2 launched Sep 9. Claret Flint + Nangong Yu are current in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia Sep 30–Oct 20. HoYoverse has officially revealed Phoenix Reffaella (previously leaked as Pheony) and Severian Lowell as upcoming S-Rank Agents, but their banner dates and phase order remain unconfirmed.",
+      "notes": "Version 3.2 launched Sep 9. Claret Flint + Nangong Yu are current in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia Sep 30–Oct 20. HoYoverse's Agent Records associate Phoenix Reffaella (previously leaked as Pheony) and Severian Lowell with Version 3.3, but their exact banner dates and phase order remain unconfirmed. A low-reliability Version 3.4 Eldreda rumor was reviewed but not stored because it does not clearly establish a pull-banner debut.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -79,14 +79,14 @@ window.GACHA_DATA =
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "leaks": [
-        { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Secondary coverage names the pair; earlier reports disagree on timing and elements. Playable banners remain unconfirmed.", "sourceUrl": "https://www.topuplive.com/news/arknights-endfield-1-6.html", "checkedAt": "2026-09-08" }
+        { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Recent secondary coverage still places both previewed characters in Version 1.6, but the version assignment, banner order, Ye Minghui name, and playable details remain leak-sourced rather than officially announced.", "sourceUrl": "https://www.gamsgo.com/blog/arknights-endfield-1-6-banners", "checkedAt": "2026-09-29" }
       ],
       "banners": [
         { "title": "Winter Hunt — Typhoeus (new 6★, Nature Striker)", "characterIds": ["ake:typhoeus"], "start": "2026-09-02", "end": "2026-09-30" },
-        { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "characterIds": ["ake:yvonne"], "start": "2026-09-24", "end": null }
+        { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "characterIds": ["ake:yvonne"], "start": "2026-09-24", "end": "2026-10-15" }
       ],
       "upcoming": [],
-      "notes": "Dreamscape of Wind and Snow launched Sep 2. Winter Hunt features Typhoeus through Sep 30. Resplendent Spectrum RE-Factor Headhunting #1 opened Sep 24 with Yvonne rate-up; its active end is explicitly unknown because the official notice only ties it to the next version update and maintenance.",
+      "notes": "Dreamscape of Wind and Snow launched Sep 2. Winter Hunt features Typhoeus through Sep 30. Resplendent Spectrum RE-Factor Headhunting #1 opened Sep 24 with Yvonne rate-up and ends Oct 15 at 05:59 on the Asia server, immediately before the next version maintenance. Si + Ye Minghui remain low-confidence Version 1.6 leak coverage pending the official preview.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
