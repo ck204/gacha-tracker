@@ -72,53 +72,6 @@ window.GACHA_DATA =
       ]
     },
     {
-      "name": "Persona 5: The Phantom X",
-      "short": "P5X",
-      "characters": {"p5x:kumi-katayama":"Kumi Katayama","p5x:yui-stella":"YUI Stella","p5x:mitsuru":"Mitsuru","p5x:fuuka":"Fuuka","p5x:kotone-shiomi":"Kotone Shiomi"},
-      "version": "4.10 (5.4.1)",
-      "accent": "#ef5350",
-      "icon": "icons/p5x.jpg",
-      "banners": [
-        { "title": "YUI Stella", "characterIds": ["p5x:yui-stella"], "start": "2026-09-10", "end": "2026-10-15" },
-        { "title": "Kotone Shiomi / FeMC — P3P collaboration", "characterIds": ["p5x:kotone-shiomi"], "start": "2026-09-24", "end": "2026-11-12" }
-      ],
-      "upcoming": [
-        { "title": "Mitsuru", "characterIds": ["p5x:mitsuru"], "date": "2026-10-15" },
-        { "title": "Fuuka", "characterIds": ["p5x:fuuka"], "date": null }
-      ],
-      "notes": "Ver. 4.10 launched Sep 24 with Kotone Shiomi; the official Global notice confirms her contract through Nov 12 at 1:59 AM UTC. The healthy Lufel Global mirror explicitly dates Mitsuru for Oct 15. Fuuka remains in the mirrored future release order, but her exact date is not stored until independently confirmed. Cosmic Yui remains active through Oct 15.",
-      "links": [
-        { "label": "Lufelnet schedule", "url": "https://lufel.net/en/schedule/" },
-        { "label": "Game8 banners", "url": "https://game8.co/games/Persona-5-Phantom-X/archives/532248" },
-        { "label": "Kotone announcement coverage", "url": "https://www.siliconera.com/persona-5-the-phantom-x-persona-3-heroine-kotone-shiomi-release-date-set/" }
-      ]
-    },
-    {
-      "name": "Neverness to Everness",
-      "short": "NTE",
-      "characters": {"nte:exe":"Exe","nte:elyms":"Elyms","nte:linko":"Linko","nte:hotori":"Hotori","nte:blackbird":"Blackbird","nte:akane-rin":"Akane Rin","nte:lacrimosa":"Lacrimosa"},
-      "version": "1.3 — Phase 2",
-      "accent": "#66bb6a",
-      "icon": "icons/nte.jpg",
-      "leaks": [
-        { "title": "Exe + Elyms", "characterIds": ["nte:exe","nte:elyms"], "version": "1.5", "confidence": "low", "confidenceReason": "Recent coverage and Seele-attributed reposts agree on the pair, but the original leak has not been verified.", "sourceUrl": "https://vortexgaming.io/en/postdetail/1262292", "checkedAt": "2026-09-08" }
-      ],
-      "banners": [
-        { "title": "v1.3 Phase 2 — Linko (new 5★) + Hotori rerun", "characterIds": ["nte:linko","nte:hotori"], "start": "2026-09-09", "end": "2026-09-30" }
-      ],
-      "upcoming": [
-        { "title": "v1.4 Phase 1 — Blackbird + Lacrimosa rerun", "characterIds": ["nte:blackbird","nte:lacrimosa"], "date": "2026-09-30", "endDate": "2026-10-21" },
-        { "title": "v1.4 Phase 2 — Akane Rin", "characterIds": ["nte:akane-rin"], "date": "2026-10-21", "endDate": "2026-11-11" }
-      ],
-      "notes": "Version 1.3 Phase 2 remains live Sep 9–30 with Linko and a concurrent Hotori rerun. The Version 1.4 Preview Special Program confirms the Sep 30 Global launch, Blackbird's Foretold Finale and Lacrimosa's Fading Reverie in Phase 1, followed by Akane Rin's Dazzling Star from Oct 21; the announced program windows establish the Oct 21 phase boundary and Nov 11 end.",
-      "links": [
-        { "label": "Game8 banners", "url": "https://game8.co/games/Neverness-to-Everness/archives/597944" },
-        { "label": "NTEbuild banners", "url": "https://www.ntebuild.com/banners" },
-        { "label": "Blackbird announcement coverage", "url": "https://gamemarket.gg/news/neverness-to-everness/nte-confirms-blackbird-as-s-class-what-s-known-and-what-isn-t" },
-        { "label": "Akane Rin announcement", "url": "https://www.reddit.com/r/NevernessToEverness/comments/1vwqy98/hethereau_special_bulletin%E4%B8%A8akane_rin/" }
-      ]
-    },
-    {
       "name": "Arknights: Endfield",
       "short": "AKE",
       "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne"},

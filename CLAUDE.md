@@ -62,8 +62,6 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 | Genshin Impact | game8.co/games/Genshin-Impact/archives/305012 |
 | Honkai: Star Rail | game8.co/games/Honkai-Star-Rail/archives/408381 |
 | Zenless Zone Zero | game8.co/games/Zenless-Zone-Zero/archives/435687 |
-| Persona 5: The Phantom X | **Direct feed:** `https://lufel.net/apps/schedule/data.js` (plain JS, fetchable — see P5X notes below). **Cloud runs CANNOT fetch it** (sandbox blocks all outbound fetches — WebFetch *and* shell curl both 403); read repo mirrors instead: `mirrors/p5x-lufel-data.js` (same format as the live feed), plus the **digest** `mirrors/p5x-steam-digest.json` (official Steam posts: banner character + exact end datetime UTC, posted release day; no future schedule). **Read the digest, not the raw `*-steam-news.json` — the digests are ~10× smaller; only open a raw mirror if a digest is missing.** Check `mirrors/status.json` for each source's HTTP code + timestamp — if stale (>8 days) or non-200, fall back to web search, then keep-and-flag. |
-| Neverness to Everness | game8.co/games/Neverness-to-Everness/archives/597944 |
 | Arknights: Endfield | game8.co/games/Arknights-Endfield/archives/524215 |
 | Fate/Grand Order (NA) | **MANUAL ONLY — the routine must SKIP this game entirely; never edit the FGO entry in `data.js` during an automated/routine refresh.** Maintained by hand via the runbook **[`FGO-update.md`](FGO-update.md)**. Source `grandorder.gamepress.gg/summon-banner-list` needs raw-HTML parsing (NA dates embedded per row) the sandbox can't do. Keep ONLY banners that debut a NEW Servant (verify via NA-banner history — the word "Pickup" doesn't distinguish new from rerun); DROP all reruns including "Pickup 2/3", `Revival:`, and support/participation banners. `upcoming` = up to the next 3 new-Servant debuts. Keep a short `notes` line (NA server; debuts-only; estimated dates). See the runbook for the full method. |
 | Girls' Frontline 2: Exilium | gfl2.help/en/banners (primary — fetchable via WebFetch with a verbatim-quote prompt; direct Invoke-WebRequest 403s after one request). **CAUTION:** the page lists Global AND CN sections and WebFetch summaries have swapped the server headings before — always ask for the verbatim heading-to-content pairing and sanity-check (user plays GLOBAL; Global dates use UTC-4). Global does NOT follow CN's banner order/timeline (confirmed by user) — never infer a Global `upcoming` entry from CN banners; CN info belongs in `notes` only. Do NOT use Dexerto or IOP Wiki (confirmed unreliable for this game). exilium.xyz is JS-rendered — needs a real browser (Chrome connector). No Game8 page. **Cloud runs: read the repo digests** — `mirrors/gfl2-digest.txt` if `gfl2_help` status is 200 (tag-stripped banner list: "GLOBAL SERVER ... <date range> Now Live/Upcoming <3 dolls>"), else `mirrors/gfl2-steam-digest.json` (official "Update Contents" posts list the Rate Up Event lineup, e.g. "drop rate for Elite Doll [Basti] ... [Voymastina] ... increased", with start datetime in UTC-4; banners run ~3 weeks — confirm end via the next update post or search). **Read the digests, not the raw `gfl2-help-banners.html` / `gfl2-steam-news.json` (those are ~10–35× larger); only open a raw mirror if its digest is missing.** |
@@ -71,7 +69,7 @@ Trigger phrase: **"Refresh the gacha dashboard data"**. For each game in `data.j
 ### Source mirrors (GitHub Actions)
 
 `.github/workflows/mirror-sources.yml` runs on GitHub's runners every day at 13:07 UTC
-(21:07 GMT+8) and commits fresh copies of the P5X/GFL2 sources into `mirrors/` — because
+(21:07 GMT+8) and commits fresh copies of the GFL2 sources into `mirrors/` — because
 the Claude cloud sandbox cannot fetch them directly. The daily cadence keeps mirrors fresh
 for every scheduled refresh day and for manual refreshes; the odd `:07` minute guards against
 GitHub's scheduled-run delays and congested top/bottom-of-hour slots. `mirrors/status.json`
@@ -82,23 +80,10 @@ if it still fails, the previous mirror file is kept and status.json shows the fa
 After fetching, the workflow runs `scripts/make-digests.py` to write compact
 **digests** the routine reads instead of the bulky raw mirrors (cuts mirror read
 cost from ~70K to ~2K tokens):
-`mirrors/gfl2-digest.txt` (tag-stripped banner list), `mirrors/p5x-steam-digest.json`
-and `mirrors/gfl2-steam-digest.json` (6 latest Steam posts, 400-char bodies). Raw
+`mirrors/gfl2-digest.txt` (tag-stripped banner list) and
+`mirrors/gfl2-steam-digest.json` (6 latest Steam posts, 400-char bodies). Raw
 mirrors are kept for fallback/debugging. The routine should read digests; open a raw
 mirror only if its digest is missing.
-
-### P5X data feed notes
-
-`https://lufel.net/apps/schedule/data.js` returns `window.ReleaseScheduleData` with
-`manualReleases` + `autoGenerateCharacters` (version, `date`, `characters`, `days` =
-interval to next release). Character names are **Korean** — translate (e.g. 사나다 =
-Akihiko Sanada, 유카리 = Yukari Takeba, 유키 마코토 = Makoto Yuki). Entries are
-global-server releases. The `days` interval describes release spacing; it does not
-independently confirm a banner end. Use an end date only when stated by a source or
-established by a verified contiguous phase boundary. Otherwise keep the end unknown. **User plays on the GLOBAL
-server: use the listed dates as-is — no shift.** (Do not apply the site's SEA checkbox rule
-of +7 days; that was used briefly and reverted in June 2026.) Fetch it with PowerShell
-`Invoke-WebRequest` (WebFetch also works — it's plain JS).
 
 ## Automated scheduled refresh (ChatGPT cloud routine)
 
@@ -227,8 +212,8 @@ only.
 
 ### Leaked / Unconfirmed sections
 
-- Maintain `leaks` only for GI, HSR, ZZZ, NTE, and AKE. Never add leak sections
-  for P5X, GFL2 Global, or FGO NA; their regional schedules are easy to confuse.
+- Maintain `leaks` only for GI, HSR, ZZZ, and AKE. Never add leak sections
+  for GFL2 Global or FGO NA; their regional schedules are easy to confuse.
 - Leaked entries are strictly for new playable units. Never include rerun characters,
   rerun pairings, or empty/unknown banner slots. When a source mixes debut units with
   reruns, retain only the debut units. An existing NPC newly becoming playable still
@@ -273,7 +258,7 @@ window.GACHA_DATA = {
                                        // Once a known date <= now, the entry can become current
                                        // even when endDate is absent.
 
-    leaks: [{ title, version, confidence, confidenceReason, sourceUrl, checkedAt }], // optional, five eligible games only
+    leaks: [{ title, version, confidence, confidenceReason, sourceUrl, checkedAt }], // optional, four eligible games only
     notes: "",                         // internal refresh context; not rendered
     links: [{ label, url }]
   }]

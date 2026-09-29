@@ -34,9 +34,9 @@ unavailable.hide('ZZZ');
 assert.equal(unavailable.has('ZZZ'), true);
 assert.match(unavailable.warning, /only available in this tab/);
 
-saved = '["P5X"]';
+saved = '["AKE"]';
 visibility.reload();
-assert.equal(visibility.has('P5X'), true, 'another tab changes hidden games');
+assert.equal(visibility.has('AKE'), true, 'another tab changes hidden games');
 const calendarSource = html.slice(html.indexOf('// ---- Calendar overview ----'), html.indexOf('function refreshWishlist'));
 assert.doesNotMatch(calendarSource, /gameVisibility|hidden-games/, 'card visibility must not affect the calendar path');
 console.log('PASS: game-card visibility persistence, restore, validation, blocked storage, and cross-tab reload.');

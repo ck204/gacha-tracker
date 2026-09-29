@@ -480,7 +480,7 @@
     }
 
     // Leaks are display-only: never candidates for promotion or calendar spans.
-    if (!['P5X', 'GFL2', 'FGO'].includes(g.short) && g.leaks?.length) {
+    if (!['GFL2', 'FGO'].includes(g.short) && g.leaks?.length) {
       html += `<div class="leaks"><h3>Leaked / Unconfirmed</h3><ul>`;
       for (const leak of g.leaks) {
         html += `<li ${wishAttrs(leak)}><span>${wishTitle(g, leak)}</span><div class="leak-meta">` +

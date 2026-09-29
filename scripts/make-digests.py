@@ -5,7 +5,6 @@ The scheduled routine reads mirrors/ into context; the raw GFL2 page (~45K token
 and Steam JSONs (~22K) dominate its token use. This reduces them to ~2K total:
 
   mirrors/gfl2-help-banners.html  -> mirrors/gfl2-digest.txt        (tag-stripped)
-  mirrors/p5x-steam-news.json     -> mirrors/p5x-steam-digest.json  (6 latest posts)
   mirrors/gfl2-steam-news.json    -> mirrors/gfl2-steam-digest.json (6 latest posts)
 
 Raw mirrors are kept untouched (fallback/debugging). Missing inputs are skipped.
@@ -51,5 +50,4 @@ def steam_digest(app):
 
 if __name__ == "__main__":
     gfl2_text_digest()
-    steam_digest("p5x")
     steam_digest("gfl2")

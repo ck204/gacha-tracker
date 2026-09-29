@@ -56,7 +56,7 @@ assert.doesNotMatch(promoted.cards[0].innerHTML, /Date TBA|<h3>Upcoming/);
 const dataContext = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'data.js'), 'utf8'), dataContext);
 const live = render(dataContext.window.GACHA_DATA.games);
-assert.equal(live.cards.length, 8);
+assert.equal(live.cards.length, 6);
 assert.ok(live.cards.every(card => card.innerHTML.includes('data-hide-game=')), 'every game card has a hide control');
 const expectedTbaCount = dataContext.window.GACHA_DATA.games
   .flatMap(game => game.upcoming || []).filter(entry => !entry.date).length;
@@ -68,10 +68,10 @@ const numericVersion = value => {
   const match = String(value).match(/(\d+)\.(\d+)/);
   return match ? { major: Number(match[1]), minor: Number(match[2]) } : null;
 };
-assert.equal(live.cards.filter(card => card.innerHTML.includes('class="leaks"')).length, 5);
+assert.equal(live.cards.filter(card => card.innerHTML.includes('class="leaks"')).length, 2);
 assert.ok(live.cards.every(card => !card.innerHTML.includes('class="notes"')));
 for (const [index, game] of games.entries()) {
-  if (['P5X', 'GFL2', 'FGO'].includes(game.short)) {
+  if (['GFL2', 'FGO'].includes(game.short)) {
     assert.ok(!game.leaks?.length);
     assert.doesNotMatch(live.cards[index].innerHTML, /Leaked \/ Unconfirmed/);
   }
@@ -100,8 +100,8 @@ assert.equal(rumorResult.pickBanner(rumorOnly), null);
 assert.equal(rumorResult.calItems.length, 0);
 assert.match(rumorResult.cards[0].innerHTML, /Leaked \/ Unconfirmed/);
 assert.doesNotMatch(rumorResult.cards[0].innerHTML, /Hidden note/);
-for (const short of ['P5X', 'GFL2', 'FGO']) {
+for (const short of ['GFL2', 'FGO']) {
   const excluded = render([{ ...rumorOnly, short }]);
   assert.doesNotMatch(excluded.cards[0].innerHTML, /Leaked \/ Unconfirmed/);
 }
-console.log('PASS: TBA rendering, promotion, leak isolation, excluded games, hidden notes, and all eight cards.');
+console.log('PASS: TBA rendering, promotion, leak isolation, excluded games, hidden notes, and all six cards.');

@@ -1,6 +1,6 @@
 name: Mirror banner data sources
 
-# Fetches the P5X/GFL2 sources that the ChatGPT cloud routine cannot reach
+# Fetches the GFL2 sources that the ChatGPT cloud routine cannot reach
 # (its sandbox blocks outbound fetches) and commits them into mirrors/ so the
 # routine can read them from the repo itself.
 # Runs daily at 13:07 UTC (21:07 GMT+8) to keep mirrors fresh for both the
@@ -40,9 +40,7 @@ jobs:
             echo "  \"$1\": {\"http\": \"$code\", \"fetched\": \"$(date -u +%FT%TZ)\"}," >> mirrors/status.partial
           }
 
-          fetch p5x_steam  "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3061570&count=10" p5x-steam-news.json
           fetch gfl2_steam "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3347400&count=10" gfl2-steam-news.json
-          fetch p5x_lufel  "https://lufel.net/apps/schedule/data.js" p5x-lufel-data.js
           fetch gfl2_help  "https://gfl2.help/en/banners" gfl2-help-banners.html
 
           {
@@ -55,7 +53,7 @@ jobs:
 
       - name: Build digests
         # Compact, routine-friendly versions of the bulky mirrors so the cloud
-        # routine reads ~4K tokens instead of ~70K. Raw mirrors are kept for
+        # routine reads ~2K tokens instead of ~70K. Raw mirrors are kept for
         # fallback/debugging. See scripts/make-digests.py.
         run: |
           python3 scripts/make-digests.py
