@@ -293,7 +293,7 @@
   </nav>
   <div class="nav-caption games-caption">TRACKED GAMES</div>
   <nav class="universe-nav" id="universe-nav" aria-label="Jump to a game"></nav>
-  <div class="sidebar-footer"><span class="status-dot"></span> Local testing edition</div>
+  <div class="sidebar-footer"><span class="status-dot" aria-hidden="true"></span><span id="sidebar-updated"></span></div>
 </aside>
 <main class="main-content" id="dashboard">
 <header class="topbar">
@@ -426,9 +426,14 @@
 
   // Header: last-updated + staleness
   const updatedEl = document.getElementById("updated");
-  const lastUpd = parse(data.lastUpdated);
-  const updAge = Math.floor((now - lastUpd) / DAY);
-  updatedEl.textContent = "Data refreshed " + data.lastUpdated + (updAge > 0 ? ` (${updAge}d ago)` : " (today)");
+  const singaporeToday = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Singapore', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(now);
+  const updAge = Math.round((Date.parse(singaporeToday) - Date.parse(data.lastUpdated)) / DAY);
+  const refreshText = "Data refreshed " + data.lastUpdated +
+    (updAge > 0 ? ` (${updAge}d ago)` : updAge === 0 ? " (today)" : "");
+  updatedEl.textContent = refreshText;
+  document.getElementById('sidebar-updated').textContent = refreshText;
 
   // Warn only when the banner actually on display has ended (a real gap with no
   // started successor) — auto-advanced cards don't need a "data stale" nudge.
