@@ -21,16 +21,17 @@ window.GACHA_DATA =
         "mobilePosition": "68% center"
       },
       "leaks": [
-        { "title": "Mitya + Valeriy", "characterIds": ["gi:mitya","gi:valeriy"], "version": "7.2", "confidence": "medium", "confidenceReason": "Version 7.2 beta materials, Wish animations, and subsequent beta changes now independently show both characters as playable in 7.2, though all pre-release details remain subject to change.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-72-four-new-character-poses-leak/", "checkedAt": "2026-09-29" },
         { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Recent deep-beta and kit reports continue to pair both new characters in Version 7.3, but the evidence remains unofficial, indirect, and earlier than the public beta cycle.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-09-29" }
       ],
       "banners": [
         { "title": "v7.1 Phase 1 — Vesna + Vodyanitsa", "characterIds": ["gi:vesna","gi:vodyanitsa"], "start": "2026-09-23", "end": "2026-10-13" }
       ],
       "upcoming": [
-        { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "date": "2026-10-13", "endDate": "2026-11-03" }
+        { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "date": "2026-10-13", "endDate": "2026-11-03" },
+        { "title": "v7.2 — Mitya (announced playable character)", "characterIds": ["gi:mitya"], "date": null },
+        { "title": "v7.2 — Valeriy (announced playable character)", "characterIds": ["gi:valeriy"], "date": null }
       ],
-      "notes": "Version 7.1 Phase 1 is live from Sep 23 with Vesna + Vodyanitsa, followed by Skirk + Escoffier reruns in Phase 2. Version 7.2 beta evidence now supports both Mitya and Valeriy as playable, while the Version 7.3 Tsaritsa + Danica pairing remains an earlier, lower-confidence leak.",
+      "notes": "Version 7.1 Phase 1 is live from Sep 23 with Vesna + Vodyanitsa, followed by Skirk + Escoffier reruns in Phase 2. Mitya and Valeriy are officially announced playable characters for Version 7.2; exact banner dates and phase order remain unconfirmed. The Version 7.3 Tsaritsa + Danica pairing remains a low-confidence leak.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
