@@ -1,0 +1,46 @@
+{
+  "note": "Official promotional artwork for each game; artwork does not identify the scheduled banner characters. Copyright belongs to the respective rights holders.",
+  "sources": [
+    {
+      "file": "assets/splash/genshin-impact.jpg",
+      "page": "https://x.com/GenshinImpact",
+      "image": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
+      "retrieved": "2026-09-30",
+      "placement": "Official X profile header"
+    },
+    {
+      "file": "assets/splash/honkai-star-rail.jpg",
+      "page": "https://x.com/honkaistarrail",
+      "image": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
+      "retrieved": "2026-09-30",
+      "placement": "Official X profile header"
+    },
+    {
+      "file": "assets/splash/zenless-zone-zero.jpg",
+      "page": "https://x.com/ZZZ_EN",
+      "image": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
+      "retrieved": "2026-09-30",
+      "placement": "Official X profile header"
+    },
+    {
+      "file": "assets/splash/arknights-endfield.jpg",
+      "page": "https://x.com/AKEndfield",
+      "image": "https://pbs.twimg.com/profile_banners/1501126821727059969/1787312056/1500x500",
+      "retrieved": "2026-09-30",
+      "placement": "Official X profile header"
+    },
+    {
+      "file": "assets/splash/girls-frontline-2.jpg",
+      "page": "https://x.com/GFL2EXILIUM_EN",
+      "image": "https://pbs.twimg.com/profile_banners/1801169021758517248/1789650015/1500x500",
+      "retrieved": "2026-09-30",
+      "placement": "Official X profile header"
+    },
+    {
+      "file": "assets/splash/fate-grand-order.jpg",
+      "page": "https://fate-go.us/?origin=true",
+      "image": "https://fate-go.us/assets/img/pc/top/main/slide01/kv.jpg",
+      "retrieved": "2026-09-30"
+    }
+  ]
+}

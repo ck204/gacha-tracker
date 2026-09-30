@@ -12,6 +12,14 @@ window.GACHA_DATA =
       "version": "7.1 — Phase 1",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
+      "artwork": {
+        "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
+        "sourceUrl": "https://x.com/GenshinImpact",
+        "checkedAt": "2026-09-30",
+        "fallback": "assets/splash/genshin-impact.jpg",
+        "position": "right center",
+        "mobilePosition": "68% center"
+      },
       "leaks": [
         { "title": "Mitya + Valeriy", "characterIds": ["gi:mitya","gi:valeriy"], "version": "7.2", "confidence": "medium", "confidenceReason": "Version 7.2 beta materials, Wish animations, and subsequent beta changes now independently show both characters as playable in 7.2, though all pre-release details remain subject to change.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-72-four-new-character-poses-leak/", "checkedAt": "2026-09-29" },
         { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Recent deep-beta and kit reports continue to pair both new characters in Version 7.3, but the evidence remains unofficial, indirect, and earlier than the public beta cycle.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-09-29" }
@@ -35,6 +43,14 @@ window.GACHA_DATA =
       "version": "4.6 — Phase 1",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
+      "artwork": {
+        "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
+        "sourceUrl": "https://x.com/honkaistarrail",
+        "checkedAt": "2026-09-30",
+        "fallback": "assets/splash/honkai-star-rail.jpg",
+        "position": "right center",
+        "mobilePosition": "52% center"
+      },
       "banners": [
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null },
         { "title": "v4.6 — Pearl (new 5★, Ice Elation; whole version)", "characterIds": ["hsr:pearl"], "start": "2026-09-28", "end": "2026-11-11" },
@@ -57,6 +73,14 @@ window.GACHA_DATA =
       "version": "3.2 — Phase 1",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
+      "artwork": {
+        "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
+        "sourceUrl": "https://x.com/ZZZ_EN",
+        "checkedAt": "2026-09-30",
+        "fallback": "assets/splash/zenless-zone-zero.jpg",
+        "position": "right center",
+        "mobilePosition": "72% center"
+      },
       "banners": [
         { "title": "v3.2 Phase 1 — Claret Flint (new S-Rank, Electric Armorer) + Nangong Yu rerun", "characterIds": ["zzz:claret-flint","zzz:nangong-yu"], "start": "2026-09-09", "end": "2026-09-30" }
       ],
@@ -78,6 +102,14 @@ window.GACHA_DATA =
       "version": "Dreamscape of Wind and Snow",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
+      "artwork": {
+        "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1787312056/1500x500",
+        "sourceUrl": "https://x.com/AKEndfield",
+        "checkedAt": "2026-09-30",
+        "fallback": "assets/splash/arknights-endfield.jpg",
+        "position": "right center",
+        "mobilePosition": "38% center"
+      },
       "leaks": [
         { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Recent secondary coverage still places both previewed characters in Version 1.6, but the version assignment, banner order, Ye Minghui name, and playable details remain leak-sourced rather than officially announced.", "sourceUrl": "https://www.gamsgo.com/blog/arknights-endfield-1-6-banners", "checkedAt": "2026-09-29" }
       ],
@@ -99,6 +131,14 @@ window.GACHA_DATA =
       "version": "Moonshroud Requiem",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
+      "artwork": {
+        "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1789650015/1500x500",
+        "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
+        "checkedAt": "2026-09-30",
+        "fallback": "assets/splash/girls-frontline-2.jpg",
+        "position": "right center",
+        "mobilePosition": "62% center"
+      },
       "banners": [
         { "title": "Soppo + Loreley + Alva (Targeted Procurement)", "characterIds": ["gfl2:soppo","gfl2:loreley","gfl2:alva"], "start": "2026-09-17", "end": "2026-10-07" }
       ],

@@ -279,14 +279,36 @@
   [hidden] { display: none !important; }
   @media (max-width: 440px) { body { padding: 12px; } .grid { grid-template-columns: minmax(0, 1fr); } .card h2 { flex-wrap: wrap; } .dashboard-toast { right: 12px; bottom: 12px; } }
 </style>
+<link rel="stylesheet" href="dashboard-ui.css">
 </head>
 <body>
-<header>
-  <h1 class="site-title"><img class="site-title-icon" src="assets/primogem.png" alt="">Gacha Banner Tracker</h1>
-  <span class="updated" id="updated"></span>
-  <span class="stale-warn" id="stale" style="display:none"></span>
+<a class="skip-link" href="#dashboard">Skip to dashboard</a>
+<aside class="sidebar" id="dashboard-sidebar" aria-label="Dashboard navigation">
+  <a class="brand" href="#dashboard"><img src="assets/primogem.png" alt=""><span>gacha<span class="brand-sub">BANNER TRACKER</span></span></a>
+  <div class="nav-caption">DASHBOARD</div>
+  <nav class="side-nav">
+    <a class="active" href="#dashboard" aria-current="location"><span aria-hidden="true">◈</span> Overview <span class="nav-arrow" aria-hidden="true">↗</span></a>
+    <a href="#banners"><span aria-hidden="true">▤</span> Banners</a>
+    <a href="#calendar"><span aria-hidden="true">▦</span> Calendar</a>
+  </nav>
+  <div class="nav-caption games-caption">TRACKED GAMES</div>
+  <nav class="universe-nav" id="universe-nav" aria-label="Jump to a game"></nav>
+  <div class="sidebar-footer"><span class="status-dot"></span> Local testing edition</div>
+</aside>
+<main class="main-content" id="dashboard">
+<header class="topbar">
+  <div class="topbar-start"><button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-label="Collapse sidebar" title="Collapse sidebar" aria-expanded="true" aria-controls="dashboard-sidebar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/><path class="sidebar-chevron" d="m16 9-3 3 3 3"/></svg></button><div class="breadcrumb">Dashboard <span aria-hidden="true">/</span> <strong>Overview</strong></div></div>
+  <div class="refresh-info"><span class="status-dot" aria-hidden="true"></span><span class="updated" id="updated"></span></div>
 </header>
-<section class="wishlist-panel" aria-labelledby="wish-heading">
+<div class="stale-container">
+  <span class="stale-warn" id="stale" style="display:none"></span>
+</div>
+<section class="hero" aria-labelledby="next-banner-label">
+  <div class="hero-content"><div class="hero-summary" id="hero-summary"></div></div>
+  <img class="hero-art" id="hero-art" alt="" aria-hidden="true" hidden decoding="async">
+</section>
+<section class="pulse-strip" aria-label="Banner schedule summary" id="pulse-strip"></section>
+<section class="wishlist-panel" id="wishlist" aria-labelledby="wish-heading">
   <div class="wish-header">
     <h2 id="wish-heading"><span class="wish-heading-star" aria-hidden="true">★</span> Character wishlist <span id="wish-count"></span></h2>
     <label class="wish-filter" title="Filter game cards and calendar to wishlisted characters"><input id="wish-only" type="checkbox" aria-label="Wishlisted only — cards and calendar"> Wishlisted only</label>
@@ -294,7 +316,11 @@
   <div id="wish-list"></div>
   <p id="wish-status" role="status"></p>
 </section>
+<section class="banners-section" id="banners" aria-labelledby="banners-heading">
+<div class="section-heading"><div><div class="eyebrow">BANNERS</div><h2 id="banners-heading">Tracked games <span id="visible-game-count"></span></h2></div><label class="search-field"><span aria-hidden="true">⌕</span><input id="game-search" type="search" placeholder="Find a game or character" aria-label="Search games and characters"><kbd aria-hidden="true">/</kbd></label></div>
+<div class="lineup-toolbar"><div class="lineup-filters" role="group" aria-label="Filter dashboard games"><button type="button" class="lineup-filter active" data-lineup="all" aria-pressed="true">All games</button><button type="button" class="lineup-filter" data-lineup="soon" aria-pressed="false">Ending in 7 days</button></div><span class="lineup-hint">Star characters to add them to your wishlist.</span></div>
 <p id="wish-empty" hidden>No matching game cards. Star a character or turn off “Wishlisted only”.</p>
+<p id="search-empty" class="search-empty" role="status" hidden>No games match this search or filter. Try another name or choose All games.</p>
 <div class="dashboard-toolbar" id="hidden-games-controls" hidden>
   <div class="hidden-games-menu">
     <button class="hidden-games-toggle" id="hidden-games-toggle" type="button" aria-expanded="false" aria-controls="hidden-games-popover">Hidden games (<span id="hidden-games-count">0</span>)</button>
@@ -302,14 +328,15 @@
   </div>
 </div>
 <div class="grid" id="grid"></div>
-
-<section class="calendar-section">
-  <h2>📅 Calendar overview</h2>
+</section>
+<section class="calendar-section" id="calendar" aria-labelledby="calendar-heading">
+  <div class="section-heading"><div><div class="eyebrow">SCHEDULE</div><h2 id="calendar-heading">Banner calendar</h2></div></div>
   <div class="cal-card">
     <div class="cal-header">
       <h3 id="cal-title"></h3>
       <div class="cal-nav">
         <button id="cal-prev" aria-label="Previous month">‹</button>
+        <button id="cal-today" type="button">Today</button>
         <button id="cal-next" aria-label="Next month">›</button>
       </div>
     </div>
@@ -322,6 +349,8 @@
     <div id="cal-weeks"></div>
   </div>
 </section>
+<footer class="page-footer"><span>Gacha Banner Tracker</span><a href="#dashboard">Back to top ↑</a></footer>
+</main>
 <div id="cal-tooltip"></div>
 <div class="dashboard-toast" id="dashboard-toast" role="status" aria-live="polite" hidden>
   <span id="dashboard-toast-message"></span><button id="undo-game-hide" type="button">Undo</button>
@@ -607,6 +636,10 @@
   document.getElementById("cal-next").addEventListener("click", () => {
     calM++; if (calM > 11) { calM = 0; calY++; } renderCal();
   });
+  document.getElementById("cal-today").addEventListener("click", () => {
+    const today = new Date();
+    calY = today.getFullYear(); calM = today.getMonth(); renderCal();
+  });
 
   // Hover tooltip with the bar's full details
   const tooltip = document.getElementById("cal-tooltip");
@@ -662,7 +695,7 @@
       return `<section class="wish-cluster" style="--accent:${esc(group.game.accent || '#5a617a')}" aria-label="${esc(gameName)} wishlist"><span class="wish-cluster-game" title="${esc(gameName)}">${gameIcon}${esc(group.game.short || gameName)}</span><ul class="wish-cluster-list">${characters}</ul></section>`;
     }).join('');
     const emptyLabel = activeTab.id === 'live' ? 'No wishlisted characters are live right now.' : activeTab.id === 'soon' ? 'No wishlisted characters have a scheduled banner.' : 'No wishlisted characters are waiting for a date.';
-    panel.innerHTML = rows.length ? `<div class="wish-tabs" role="tablist" aria-label="Wishlist status">${tabList}</div><div id="wish-tabpanel" role="tabpanel" aria-labelledby="wish-tab-${activeTab.id}">${content ? `<div class="wish-clusters">${content}</div>` : `<p class="wish-tab-empty">${emptyLabel}</p>`}</div>` : '<p class="wish-empty-state"><strong>Your next favorite starts here</strong>Star a character below to follow their next banner.</p>';
+    panel.innerHTML = rows.length ? `<div class="wish-tabs" role="tablist" aria-label="Wishlist status">${tabList}</div><div id="wish-tabpanel" role="tabpanel" aria-labelledby="wish-tab-${activeTab.id}">${content ? `<div class="wish-clusters">${content}</div>` : `<p class="wish-tab-empty">${emptyLabel}</p>`}</div>` : '<p class="wish-empty-state">Star a character below to follow their next banner.</p>';
     document.getElementById('wish-count').textContent = wishlist.selected.size;
     document.getElementById('wish-status').textContent = wishlist.warning;
     document.querySelectorAll('[data-wish-id]').forEach(button => {
@@ -800,5 +833,6 @@
   refreshWishlist();
 })();
 </script>
+<script src="dashboard-ui.js"></script>
 </body>
 </html>

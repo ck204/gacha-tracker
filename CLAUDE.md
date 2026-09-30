@@ -191,6 +191,19 @@ only.
 - **Icons:** game cards show each game's official app icon (from `icons/`) to the right of
   the name; a missing icon file degrades gracefully.
 
+## Overview artwork metadata
+
+GI, HSR, ZZZ, AKE, and GFL2 have optional `artwork` objects in `data.js` containing
+`url`, `sourceUrl`, `checkedAt`, `fallback`, `position`, and `mobilePosition`.
+Preserve these fields during banner-only refreshes. When the refresh invocation
+explicitly includes artwork checking, follow [docs/artwork-refresh.md](docs/artwork-refresh.md):
+verify each recorded official X header, update only its verified URL and successful
+check date, and retain existing metadata on failed verification. FGO remains fully
+excluded. Artwork checking fits the existing single `data.js` publication; do not
+modify UI files or image assets. The scheduled prompt must explicitly enable this
+check before it runs automatically. Run `node scripts/test-artwork.cjs` after
+artwork metadata or rotation changes.
+
 ## data.js schema
 
 ### Character wishlist identity
