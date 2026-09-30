@@ -1,6 +1,6 @@
 name: Mirror banner data sources
 
-# Fetches the GFL2 sources that the ChatGPT cloud routine cannot reach
+# Fetches the GFL2 sources and artwork header metadata that the ChatGPT cloud routine cannot reach
 # (its sandbox blocks outbound fetches) and commits them into mirrors/ so the
 # routine can read them from the repo itself.
 # Runs daily at 13:07 UTC (21:07 GMT+8) to keep mirrors fresh for both the
@@ -58,6 +58,11 @@ jobs:
         run: |
           python3 scripts/make-digests.py
           echo "digests:" && ls -l mirrors/*digest* 2>/dev/null
+
+      - name: Mirror official X headers through public profile lookup
+        # FxEmbed returns the official account's header URL; the script verifies
+        # account identity and the 1500x500 image on X's CDN. No credentials needed.
+        run: node scripts/mirror-artwork.cjs
 
       - name: Commit mirrors
         run: |

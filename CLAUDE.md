@@ -195,14 +195,28 @@ only.
 
 GI, HSR, ZZZ, AKE, and GFL2 have optional `artwork` objects in `data.js` containing
 `url`, `sourceUrl`, `checkedAt`, `fallback`, `position`, and `mobilePosition`.
-Preserve these fields during banner-only refreshes. When the refresh invocation
-explicitly includes artwork checking, follow [docs/artwork-refresh.md](docs/artwork-refresh.md):
-verify each recorded official X header, update only its verified URL and successful
-check date, and retain existing metadata on failed verification. FGO remains fully
-excluded. Artwork checking fits the existing single `data.js` publication; do not
-modify UI files or image assets. The scheduled prompt must explicitly enable this
-check before it runs automatically. Run `node scripts/test-artwork.cjs` after
-artwork metadata or rotation changes.
+Preserve these fields during banner-only refreshes. The daily mirror workflow also
+runs `scripts/mirror-artwork.cjs` to create `mirrors/artwork-headers.json` through
+FxEmbed's public profile lookup and validated X CDN images. This is a third-party
+lookup provider; the returned official account ID/handle and 1500x500 image are
+checked before the mirror records success. FGO is completely excluded.
+
+For an explicitly enabled artwork refresh, follow
+[docs/artwork-refresh.md](docs/artwork-refresh.md): read the mirror from the same
+starting revision, require a successful latest attempt no older than 26 hours,
+validate account/URL/hash/image metadata and ordered timestamps, and update only
+`artwork.url` and `checkedAt`. The check date is the Asia/Singapore date of the
+mirror's successful `verifiedAt`; never stamp a failed or merely read mirror as a
+new check. Keep the entire artwork object on stale, failed, or invalid evidence.
+The cloud routine must not directly fetch X, FxEmbed, or CDN images. It still
+writes only `data.js` in its single final publication; it does not edit the mirror
+or workflow. Successful authorized artwork URL/check-date changes may accompany
+`lastUpdated` even when no banner content changed, overriding the banner-only
+wording in older scheduled-refresh paragraphs above.
+
+The user must enable this in the saved scheduled prompt. Run
+`node scripts/test-artwork.cjs` after artwork metadata or rotation changes, and
+`node scripts/test-artwork-mirror.cjs` after mirror-script changes.
 
 ## data.js schema
 

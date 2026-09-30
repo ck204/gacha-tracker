@@ -42,8 +42,8 @@ The browser displays each approved local snapshot immediately, then switches to
 the verified remote header once loaded. Failed remote requests keep the snapshot. Source accounts, artwork check dates, backup paths, and crops
 are stored in `data.js`. `assets/splash/sources.json` documents the original local
 snapshots. The [artwork refresh contract](artwork-refresh.md) explains metadata and
-rules to incorporate into the automatic schedule prompt. Automatic checks are
-pending that prompt update.
+rules for the repository artwork mirror and the cloud schedule prompt. Automatic
+checks require publishing the mirror workflow and replacing the saved cloud prompt.
 
 ## Return to the original dashboard
 
@@ -109,6 +109,7 @@ node scripts/test-date-tba.cjs
 node scripts/test-wishlist.cjs
 node scripts/test-game-visibility.cjs
 node scripts/test-artwork.cjs
+node scripts/test-artwork-mirror.cjs
 node --check dashboard-ui.js
 git diff --check
 ```
