@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-29",
+  "lastUpdated": "2026-09-30",
   "games": [
     {
       "name": "Genshin Impact",
@@ -70,7 +70,7 @@ window.GACHA_DATA =
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
       "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia"},
-      "version": "3.2 — Phase 1",
+      "version": "3.2 — Phase 2",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "artwork": {
@@ -82,14 +82,13 @@ window.GACHA_DATA =
         "mobilePosition": "72% center"
       },
       "banners": [
-        { "title": "v3.2 Phase 1 — Claret Flint (new S-Rank, Electric Armorer) + Nangong Yu rerun", "characterIds": ["zzz:claret-flint","zzz:nangong-yu"], "start": "2026-09-09", "end": "2026-09-30" }
+        { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "characterIds": ["zzz:roxy-ifrita-pryce","zzz:promeia"], "start": "2026-09-30", "end": "2026-10-20" }
       ],
       "upcoming": [
-        { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "characterIds": ["zzz:roxy-ifrita-pryce","zzz:promeia"], "date": "2026-09-30", "endDate": "2026-10-20" },
         { "title": "v3.3 — Phoenix Reffaella (announced S-Rank Fire Anomaly Agent)", "characterIds": ["zzz:pheony"], "date": null },
         { "title": "v3.3 — Severian Lowell (announced S-Rank Wind Attack Agent)", "characterIds": ["zzz:severian"], "date": null }
       ],
-      "notes": "Version 3.2 launched Sep 9. Claret Flint + Nangong Yu are current in Phase 1 through Sep 30, followed by Roxy Ifrita Pryce + Promeia Sep 30–Oct 20. HoYoverse's Agent Records associate Phoenix Reffaella (previously leaked as Pheony) and Severian Lowell with Version 3.3, but their exact banner dates and phase order remain unconfirmed. A low-reliability Version 3.4 Eldreda rumor was reviewed but not stored because it does not clearly establish a pull-banner debut.",
+      "notes": "Version 3.2 Phase 2 is live Sep 30–Oct 20 with Roxy Ifrita Pryce + Promeia. HoYoverse's Agent Records associate Phoenix Reffaella (previously leaked as Pheony) and Severian Lowell with Version 3.3, but their exact banner dates and phase order remain unconfirmed. A low-reliability Version 3.4 Eldreda rumor was reviewed but not stored because it does not clearly establish a pull-banner debut.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -114,11 +113,10 @@ window.GACHA_DATA =
         { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Recent secondary coverage still places both previewed characters in Version 1.6, but the version assignment, banner order, Ye Minghui name, and playable details remain leak-sourced rather than officially announced.", "sourceUrl": "https://www.gamsgo.com/blog/arknights-endfield-1-6-banners", "checkedAt": "2026-09-29" }
       ],
       "banners": [
-        { "title": "Winter Hunt — Typhoeus (new 6★, Nature Striker)", "characterIds": ["ake:typhoeus"], "start": "2026-09-02", "end": "2026-09-30" },
         { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "characterIds": ["ake:yvonne"], "start": "2026-09-24", "end": "2026-10-15" }
       ],
       "upcoming": [],
-      "notes": "Dreamscape of Wind and Snow launched Sep 2. Winter Hunt features Typhoeus through Sep 30. Resplendent Spectrum RE-Factor Headhunting #1 opened Sep 24 with Yvonne rate-up and ends Oct 15 at 05:59 on the Asia server, immediately before the next version maintenance. Si + Ye Minghui remain low-confidence Version 1.6 leak coverage pending the official preview.",
+      "notes": "Dreamscape of Wind and Snow continues with Resplendent Spectrum RE-Factor Headhunting #1: Yvonne is active from Sep 24 through Oct 15 at 05:59 on the Asia server. Winter Hunt / Typhoeus ended Sep 30. Si + Ye Minghui remain low-confidence Version 1.6 leak coverage pending the official preview.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
