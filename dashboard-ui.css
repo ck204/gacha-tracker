@@ -67,6 +67,7 @@ a { color:inherit; }
 .next-title { font-size:30px; font-weight:600; letter-spacing:-.7px; line-height:1.2; margin:15px 0; overflow-wrap:anywhere; }
 .next-date { color:#d6c4ff; font-size:13px; }
 .next-countdown { color:#bbc5e1; font-size:11px; margin-top:4px; }
+.countdown-value { color:#e4eaff; font-size:15px; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
 .pulse-strip { display:grid; grid-template-columns:repeat(4,1fr); padding:22px 0 24px; border-bottom:1px solid #2d3857; margin-bottom:26px; }
 .pulse-metric { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:0 13px; padding:0 22px; border-right:1px solid #2d3857; }
 .pulse-metric:first-child { padding-left:4px; }

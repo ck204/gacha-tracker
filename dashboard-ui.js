@@ -33,7 +33,11 @@
   const distinct = rows => rows.filter((row, i) => rows.findIndex(other => other.game.short === row.game.short && other.banner.title === row.banner.title && other.banner.start === row.banner.start) === i);
   const active = distinct(all.filter(({banner}) => live(banner)));
   const ending = active.filter(({banner}) => remaining(banner) !== null && remaining(banner) <= 7);
-  const future = distinct(all.filter(({banner}) => parse(banner.start) > now)).sort((a,b) => parse(a.banner.start) - parse(b.banner.start));
+  // Banner dates have no launch time; use Singapore midnight consistently.
+  const scheduledBanners = distinct(all).map(row => ({
+    ...row, startTime: new Date(row.banner.start + 'T00:00:00+08:00').getTime()
+  })).filter(row => Number.isFinite(row.startTime)).sort((a,b) => a.startTime - b.startTime);
+  const future = scheduledBanners.filter(({startTime}) => startTime > now.getTime());
   const undated = data.games.flatMap(game => game.upcoming || []).filter(banner => !banner.date);
   document.getElementById('pulse-strip').innerHTML = [
     [data.games.length, 'Games tracked', 'Dashboard coverage'],
@@ -132,14 +136,41 @@
   updateArtworkToggle(); scheduleArtwork();
 
   const summary = document.getElementById('hero-summary');
-  if (next) {
-    const { game, banner } = next;
-    const characters = (banner.characterIds || []).map(id => game.characters?.[id]).filter(Boolean);
-    const date = parse(banner.start).toLocaleDateString(undefined, {month:'short', day:'numeric'});
-    summary.innerHTML = `<h1 class="eyebrow" id="next-banner-label">NEXT SCHEDULED BANNER</h1><div class="next-game">${game.icon ? `<img src="${esc(game.icon)}" alt="">` : ''}${esc(game.name)}</div><div class="next-title">${esc(characters.length ? characters.join(' + ') : banner.title)}</div><div class="next-date">${banner.approx ? 'Around ' : ''}${date}</div><div class="next-countdown">${banner.approx ? 'Estimated in' : 'Starts in'} ${Math.ceil((parse(banner.start) - now) / DAY)} days</div>`;
-  } else {
-    summary.innerHTML = '<h1 class="eyebrow" id="next-banner-label">UPCOMING SCHEDULE</h1><div class="next-title">No upcoming banners scheduled.</div><div class="next-countdown">Undated announcements appear on game cards.</div>';
+  let displayedNext;
+  let countdownValue;
+  let countdownTimer;
+  function updateNextBanner() {
+    const currentTime = Date.now();
+    const upcoming = scheduledBanners.find(({startTime}) => startTime > currentTime);
+    if (upcoming !== displayedNext || !summary.hasChildNodes()) {
+      displayedNext = upcoming;
+      if (upcoming) {
+        const { game, banner, startTime } = upcoming;
+        const characters = (banner.characterIds || []).map(id => game.characters?.[id]).filter(Boolean);
+        const date = new Date(startTime).toLocaleDateString(undefined, {timeZone:'Asia/Singapore', month:'short', day:'numeric'});
+        summary.innerHTML = `<h1 class="eyebrow" id="next-banner-label">NEXT SCHEDULED BANNER</h1><div class="next-game">${game.icon ? `<img src="${esc(game.icon)}" alt="">` : ''}${esc(game.name)}</div><div class="next-title">${esc(characters.length ? characters.join(' + ') : banner.title)}</div><div class="next-date">${banner.approx ? 'Around ' : ''}${date}</div><div class="next-countdown" role="timer" aria-live="off">${banner.approx ? 'Estimated in' : 'Starts in'} <span class="countdown-value"></span></div>`;
+        countdownValue = summary.querySelector('.countdown-value');
+      } else {
+        summary.innerHTML = '<h1 class="eyebrow" id="next-banner-label">UPCOMING SCHEDULE</h1><div class="next-title">No upcoming banners scheduled.</div><div class="next-countdown">Undated announcements appear on game cards.</div>';
+        countdownValue = null;
+      }
+    }
+    if (!upcoming) return;
+    const seconds = Math.ceil((upcoming.startTime - currentTime) / 1000);
+    const days = Math.floor(seconds / 86400);
+    const hours = String(Math.floor(seconds % 86400 / 3600)).padStart(2, '0');
+    const minutes = String(Math.floor(seconds % 3600 / 60)).padStart(2, '0');
+    const remainder = String(seconds % 60).padStart(2, '0');
+    countdownValue.textContent = `${days}d ${hours}h ${minutes}m ${remainder}s`;
   }
+  function scheduleCountdown() {
+    window.clearTimeout(countdownTimer);
+    updateNextBanner();
+    if (!document.hidden && displayedNext) countdownTimer = window.setTimeout(scheduleCountdown, 1000);
+  }
+  document.addEventListener('visibilitychange', scheduleCountdown);
+  window.addEventListener('pageshow', scheduleCountdown);
+  scheduleCountdown();
   const cards = [...document.querySelectorAll('#grid > .card')];
   const gameNav = document.getElementById('universe-nav');
   gameNav.innerHTML = data.games.map(game => `<a href="#game-${esc(game.short)}">${game.icon ? `<img src="${esc(game.icon)}" alt="">` : ''}<span>${esc(game.name.replace('Honkai: ', '').replace('Arknights: ', '').replace("Girls' Frontline 2: Exilium", 'Girls’ Frontline 2').replace('Fate/Grand Order (NA)', 'Fate/Grand Order'))}</span></a>`).join('');
