@@ -33,9 +33,9 @@
   const distinct = rows => rows.filter((row, i) => rows.findIndex(other => other.game.short === row.game.short && other.banner.title === row.banner.title && other.banner.start === row.banner.start) === i);
   const active = distinct(all.filter(({banner}) => live(banner)));
   const ending = active.filter(({banner}) => remaining(banner) !== null && remaining(banner) <= 7);
-  // Banner dates have no launch time; use Singapore midnight consistently.
+  // Use the normal banner start time: 12:00 noon in Singapore.
   const scheduledBanners = distinct(all).map(row => ({
-    ...row, startTime: new Date(row.banner.start + 'T00:00:00+08:00').getTime()
+    ...row, startTime: new Date(row.banner.start + 'T12:00:00+08:00').getTime()
   })).filter(row => Number.isFinite(row.startTime)).sort((a,b) => a.startTime - b.startTime);
   const future = scheduledBanners.filter(({startTime}) => startTime > now.getTime());
   const undated = data.games.flatMap(game => game.upcoming || []).filter(banner => !banner.date);

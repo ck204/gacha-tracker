@@ -52,7 +52,7 @@ function fixture(games, initialTime) {
   };
 }
 
-// Run from two browser timezones; the target must remain Singapore midnight.
+// Run from two browser timezones; the target must remain Singapore noon.
 for (const timezone of ['UTC', 'America/Los_Angeles']) {
   process.env.TZ = timezone;
   const games = [{
@@ -74,27 +74,30 @@ for (const timezone of ['UTC', 'America/Los_Angeles']) {
   assert.match(f.summary.innerHTML, /Starts in/);
   assert.doesNotMatch(f.summary.innerHTML, /countdown-note|Launch time TBA|midnight SGT/);
   assert.match(f.summary.innerHTML, /role="timer" aria-live="off"/);
-  assert.equal(f.value.textContent, '1d 11h 25m 04s');
+  assert.equal(f.value.textContent, '1d 23h 25m 04s');
   f.setTime('2026-10-02T12:34:57+08:00'); f.tick();
-  assert.equal(f.value.textContent, '1d 11h 25m 03s');
+  assert.equal(f.value.textContent, '1d 23h 25m 03s');
   assert.equal(f.renders, 1, 'only the digits update on each tick');
 
-  f.setTime('2026-10-03T23:59:59.500+08:00'); f.tick();
-  assert.equal(f.value.textContent, '0d 00h 00m 01s');
   f.setTime('2026-10-04T00:00:00+08:00'); f.tick();
+  assert.equal(f.value.textContent, '0d 12h 00m 00s');
+  assert.equal(f.renders, 1, 'the banner remains upcoming until noon, not midnight');
+  f.setTime('2026-10-04T11:59:59.500+08:00'); f.tick();
+  assert.equal(f.value.textContent, '0d 00h 00m 01s');
+  f.setTime('2026-10-04T12:00:00+08:00'); f.tick();
   assert.match(f.summary.innerHTML, /Later/);
   assert.match(f.summary.innerHTML, /Around Oct 5/);
   assert.match(f.summary.innerHTML, /Estimated in/);
   assert.doesNotMatch(f.summary.innerHTML, /countdown-note|Estimated date|midnight SGT/);
   assert.equal(f.value.textContent, '1d 00h 00m 00s');
-  assert.equal(f.renders, 2, 'skip all banners whose date has been reached');
+  assert.equal(f.renders, 2, 'skip all banners whose noon start time has been reached');
 
   f.visibility(true); assert.equal(f.timers.size, 0);
-  f.setTime('2026-10-04T23:59:58+08:00'); f.visibility(false);
+  f.setTime('2026-10-05T11:59:58+08:00'); f.visibility(false);
   assert.equal(f.value.textContent, '0d 00h 00m 02s');
   assert.equal(f.timers.size, 1);
   f.pageshow(); assert.equal(f.timers.size, 1, 'resume without duplicating timers');
-  f.setTime('2026-10-05T00:00:00+08:00'); f.tick();
+  f.setTime('2026-10-05T12:00:00+08:00'); f.tick();
   assert.match(f.summary.innerHTML, /No upcoming banners scheduled/);
   assert.equal(f.timers.size, 0);
   assert.doesNotMatch(f.summary.innerHTML, /NaN|Invalid Date|-1d/);
