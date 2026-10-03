@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-09-30",
+  "lastUpdated": "2026-10-03",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,13 +15,13 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-09-30",
+        "checkedAt": "2026-10-03",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
       },
       "leaks": [
-        { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Recent deep-beta and kit reports continue to pair both new characters in Version 7.3, but the evidence remains unofficial, indirect, and earlier than the public beta cycle.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-09-29" }
+        { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Recent deep-beta and kit reports continue to pair both new characters in Version 7.3, but the evidence remains unofficial, indirect, and earlier than the public beta cycle.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-10-03" }
       ],
       "banners": [
         { "title": "v7.1 Phase 1 — Vesna + Vodyanitsa", "characterIds": ["gi:vesna","gi:vodyanitsa"], "start": "2026-09-23", "end": "2026-10-13" }
@@ -40,7 +40,7 @@ window.GACHA_DATA =
     {
       "name": "Honkai: Star Rail",
       "short": "HSR",
-      "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl","hsr:evanescia":"Evanescia","hsr:mortenax-blade":"Mortenax Blade"},
+      "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl","hsr:evanescia":"Evanescia","hsr:mortenax-blade":"Mortenax Blade","hsr:ellen-joe":"Ellen Joe","hsr:astra-yao":"Astra Yao"},
       "version": "4.6 — Phase 1",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
@@ -59,9 +59,11 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "date": "2026-10-21", "endDate": "2026-11-11" },
-        { "title": "v4.7 — Aeon ★ Aha (new 5★ Quantum Elation; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null }
+        { "title": "v4.7 — Aeon ★ Aha (new 5★ Quantum Elation; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null },
+        { "title": "v4.8 — Ellen Joe (announced ZZZ collaboration character)", "characterIds": ["hsr:ellen-joe"], "date": null },
+        { "title": "v4.8 — Astra Yao (announced ZZZ collaboration character)", "characterIds": ["hsr:astra-yao"], "date": null }
       ],
-      "notes": "Version 4.6 is live from Sep 28: Pearl is rate-up through the version end on Nov 11 (Asia/Singapore), Evanescia reruns in current Phase 1 through Oct 21, and Mortenax Blade reruns in Phase 2 through Nov 11. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced for Version 4.7, but her exact banner date is not yet confirmed.",
+      "notes": "Version 4.6 is live from Sep 28: Pearl is rate-up through the version end on Nov 11 (Asia/Singapore), Evanescia reruns in current Phase 1 through Oct 21, and Mortenax Blade reruns in Phase 2 through Nov 11. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced for Version 4.7, but her exact banner date is not yet confirmed. Ellen Joe and Astra Yao are officially announced playable characters for the Version 4.8 ZZZ collaboration; exact dates, banner availability, and acquisition methods remain unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -77,7 +79,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-09-30",
+        "checkedAt": "2026-10-03",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -111,7 +113,7 @@ window.GACHA_DATA =
         "mobilePosition": "38% center"
       },
       "leaks": [
-        { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Recent secondary coverage still places both previewed characters in Version 1.6, but the version assignment, banner order, Ye Minghui name, and playable details remain leak-sourced rather than officially announced.", "sourceUrl": "https://www.gamsgo.com/blog/arknights-endfield-1-6-banners", "checkedAt": "2026-09-29" }
+        { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Recent secondary coverage still places both previewed characters in Version 1.6, but the version assignment, banner order, Ye Minghui name, and playable details remain leak-sourced rather than officially announced.", "sourceUrl": "https://www.gamsgo.com/blog/arknights-endfield-1-6-banners", "checkedAt": "2026-10-03" }
       ],
       "banners": [
         { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "characterIds": ["ake:yvonne"], "start": "2026-09-24", "end": "2026-10-15" }
@@ -126,8 +128,8 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva"},
-      "version": "Moonshroud Requiem",
+      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne"},
+      "version": "Chiral Redundancy: Part 2",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "artwork": {
@@ -141,8 +143,10 @@ window.GACHA_DATA =
       "banners": [
         { "title": "Soppo + Loreley + Alva (Targeted Procurement)", "characterIds": ["gfl2:soppo","gfl2:loreley","gfl2:alva"], "start": "2026-09-17", "end": "2026-10-07" }
       ],
-      "upcoming": [],
-      "notes": "The healthy gfl2.help Global mirror confirms Soppo + Loreley + Alva are live Sep 17–Oct 7. The official Steam digest independently confirms Soppo as the new Doll in the Sep 17 update. No later Global banner is stored without reliable Global evidence; CN ordering was not used.",
+      "upcoming": [
+        { "title": "Mityl + Cheyanne (third rate-up TBA)", "characterIds": ["gfl2:mityl","gfl2:cheyanne"], "date": "2026-10-08", "endDate": "2026-10-28" }
+      ],
+      "notes": "The healthy Oct 2 gfl2.help Global mirror confirms Soppo + Loreley + Alva are live Sep 17–Oct 7 and lists Mityl + Cheyanne + an unidentified third rate-up for Oct 8–28. Only the two named Dolls are catalogued; the third is not guessed. The official Steam digest identifies the current Sep 17 event as Chiral Redundancy: Part 2 and Soppo as its new Doll. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
