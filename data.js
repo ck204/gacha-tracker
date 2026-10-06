@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-03",
+  "lastUpdated": "2026-10-06",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,7 +15,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-03",
+        "checkedAt": "2026-10-06",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -47,7 +47,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-09-30",
+        "checkedAt": "2026-10-06",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -79,7 +79,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-03",
+        "checkedAt": "2026-10-06",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -107,7 +107,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1787312056/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-09-30",
+        "checkedAt": "2026-10-06",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
@@ -128,7 +128,7 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne"},
+      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih"},
       "version": "Chiral Redundancy: Part 2",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
@@ -144,9 +144,9 @@ window.GACHA_DATA =
         { "title": "Soppo + Loreley + Alva (Targeted Procurement)", "characterIds": ["gfl2:soppo","gfl2:loreley","gfl2:alva"], "start": "2026-09-17", "end": "2026-10-07" }
       ],
       "upcoming": [
-        { "title": "Mityl + Cheyanne (third rate-up TBA)", "characterIds": ["gfl2:mityl","gfl2:cheyanne"], "date": "2026-10-08", "endDate": "2026-10-28" }
+        { "title": "Mityl + Cheyanne + Liushih", "characterIds": ["gfl2:mityl","gfl2:cheyanne","gfl2:liushih"], "date": "2026-10-08", "endDate": "2026-10-28" }
       ],
-      "notes": "The healthy Oct 2 gfl2.help Global mirror confirms Soppo + Loreley + Alva are live Sep 17–Oct 7 and lists Mityl + Cheyanne + an unidentified third rate-up for Oct 8–28. Only the two named Dolls are catalogued; the third is not guessed. The official Steam digest identifies the current Sep 17 event as Chiral Redundancy: Part 2 and Soppo as its new Doll. CN ordering was not used.",
+      "notes": "The healthy Oct 6 gfl2.help Global mirror confirms Soppo + Loreley + Alva are live Sep 17–Oct 7 and lists Mityl + Cheyanne + Liushih for Oct 8–28. The official Steam digest identifies the current Sep 17 event as Chiral Redundancy: Part 2 and Soppo as its new Doll. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
