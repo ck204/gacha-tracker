@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-06",
+  "lastUpdated": "2026-10-07",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,7 +15,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-06",
+        "checkedAt": "2026-10-07",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -47,7 +47,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-06",
+        "checkedAt": "2026-10-07",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -79,7 +79,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-06",
+        "checkedAt": "2026-10-07",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -100,26 +100,26 @@ window.GACHA_DATA =
     {
       "name": "Arknights: Endfield",
       "short": "AKE",
-      "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne"},
+      "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:argent-flow":"Argent Flow","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne"},
       "version": "Dreamscape of Wind and Snow",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1787312056/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-06",
+        "checkedAt": "2026-10-07",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
       },
-      "leaks": [
-        { "title": "Si + Ye Minghui", "characterIds": ["ake:si","ake:ye-minghui"], "version": "1.6", "confidence": "low", "confidenceReason": "Recent secondary coverage still places both previewed characters in Version 1.6, but the version assignment, banner order, Ye Minghui name, and playable details remain leak-sourced rather than officially announced.", "sourceUrl": "https://www.gamsgo.com/blog/arknights-endfield-1-6-banners", "checkedAt": "2026-10-03" }
-      ],
       "banners": [
         { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "characterIds": ["ake:yvonne"], "start": "2026-09-24", "end": "2026-10-15" }
       ],
-      "upcoming": [],
-      "notes": "Dreamscape of Wind and Snow continues with Resplendent Spectrum RE-Factor Headhunting #1: Yvonne is active from Sep 24 through Oct 15 at 05:59 on the Asia server. Winter Hunt / Typhoeus ended Sep 30. Si + Ye Minghui remain low-confidence Version 1.6 leak coverage pending the official preview.",
+      "upcoming": [
+        { "title": "v1.6 — Rejuvenation — Si (new 6★ Cryo Supporter)", "characterIds": ["ake:si"], "date": "2026-10-15", "endDate": "2026-11-05" },
+        { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "date": "2026-11-05" }
+      ],
+      "notes": "Dreamscape of Wind and Snow continues with Yvonne through Oct 15. The Oct 6 Sanctuary of Ink Version 1.6 Special Program confirmed Si on Rejuvenation from the Oct 15 update through Nov 5 at 11:59 server time, followed by Argent Flow on The Hearth Fire Beckons the Starry Flow from Nov 5 at 12:00 until the next version maintenance. The earlier Si + Ye Minghui leak is superseded by the official lineup.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -135,7 +135,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1789650015/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-09-30",
+        "checkedAt": "2026-10-07",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
