@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-07",
+  "lastUpdated": "2026-10-08",
   "games": [
     {
       "name": "Genshin Impact",
@@ -154,17 +154,19 @@ window.GACHA_DATA =
     {
       "name": "Fate/Grand Order (NA)",
       "short": "FGO",
-      "characters": {"fgo:kazuradrop":"Kazuradrop","fgo:tutankhamun":"Tutankhamun","fgo:louhi":"Louhi"},
+      "characters": {"fgo:kazuradrop":"Kazuradrop","fgo:tutankhamun":"Tutankhamun","fgo:louhi":"Louhi","fgo:phantasmoon":"Phantasmoon"},
       "version": "NA / Global",
       "accent": "#c0a062",
       "icon": "icons/fgo.jpg",
-      "banners": [],
-      "upcoming": [
-        { "title": "Kazuradrop", "characterIds": ["fgo:kazuradrop"], "date": "2026-09-15", "endDate": "2026-10-06", "approx": true },
-        { "title": "Tutankhamun", "characterIds": ["fgo:tutankhamun"], "date": "2026-10-13", "endDate": "2026-11-03", "approx": true },
-        { "title": "Louhi", "characterIds": ["fgo:louhi"], "date": "2026-11-11", "endDate": "2026-11-24", "approx": true }
+      "banners": [
+        { "title": "Faerie Sugoroku Insect Cage Game — Kazuradrop", "characterIds": ["fgo:kazuradrop"], "start": "2026-09-25", "end": "2026-10-15" }
       ],
-      "notes": "NA server. Shows new-Servant debuts only (reruns/support hidden). Upcoming dates are estimates from the JP schedule (NA trails JP ~23 months) — not yet officially announced.",
+      "upcoming": [
+        { "title": "Tutankhamun", "characterIds": ["fgo:tutankhamun"], "date": "2026-10-13", "approx": true },
+        { "title": "Louhi", "characterIds": ["fgo:louhi"], "date": "2026-11-11", "approx": true },
+        { "title": "Phantasmoon", "characterIds": ["fgo:phantasmoon"], "date": "2026-11-25", "approx": true }
+      ],
+      "notes": "NA server; new-Servant debuts only (reruns/support hidden). Kazuradrop is confirmed for Sep 25–Oct 15. Upcoming dates are rough JP-schedule estimates (NA ~23mo behind), not announced NA dates; seasonal events may shift. Tutankhamun and Louhi retain their previous estimates; Phantasmoon uses the same method. Upcoming NA end dates are unconfirmed.",
       "links": [
         { "label": "GamePress NA campaigns", "url": "https://grandorder.gamepress.gg/p/campaign-list" },
         { "label": "Official NA site", "url": "https://fate-go.us/" }
