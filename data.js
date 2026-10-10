@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-08",
+  "lastUpdated": "2026-10-10",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,7 +15,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-07",
+        "checkedAt": "2026-10-10",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -47,7 +47,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-07",
+        "checkedAt": "2026-10-10",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -79,7 +79,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-07",
+        "checkedAt": "2026-10-10",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -100,14 +100,14 @@ window.GACHA_DATA =
     {
       "name": "Arknights: Endfield",
       "short": "AKE",
-      "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:argent-flow":"Argent Flow","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne"},
+      "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:argent-flow":"Argent Flow","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne","ake:tangtang":"Tangtang"},
       "version": "Dreamscape of Wind and Snow",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-07",
+        "checkedAt": "2026-10-10",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
@@ -117,9 +117,10 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "v1.6 — Rejuvenation — Si (new 6★ Cryo Supporter)", "characterIds": ["ake:si"], "date": "2026-10-15", "endDate": "2026-11-05" },
+        { "title": "v1.6 — Ancestral Spring Flows Anew RE-Factor Headhunting #1 — Tangtang rerun", "characterIds": ["ake:tangtang"], "date": "2026-10-29", "endDate": "2026-11-19" },
         { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "date": "2026-11-05" }
       ],
-      "notes": "Dreamscape of Wind and Snow continues with Yvonne through Oct 15. The Oct 6 Sanctuary of Ink Version 1.6 Special Program confirmed Si on Rejuvenation from the Oct 15 update through Nov 5 at 11:59 server time, followed by Argent Flow on The Hearth Fire Beckons the Starry Flow from Nov 5 at 12:00 until the next version maintenance. The earlier Si + Ye Minghui leak is superseded by the official lineup.",
+      "notes": "Dreamscape of Wind and Snow continues with Yvonne through Oct 15. The Oct 6 Sanctuary of Ink Version 1.6 Special Program confirmed Si on Rejuvenation from the Oct 15 update through Nov 5 at 11:59 server time, followed by Argent Flow on The Hearth Fire Beckons the Starry Flow from Nov 5 at 12:00 until the next version maintenance. The earlier Si + Ye Minghui leak is superseded by the official lineup. The announced Ancestral Spring Flows Anew RE-Factor Headhunting #1 brings Tangtang back Oct 29–Nov 19; its dates were cross-checked against the Oct 7 program recap and version schedule.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -129,24 +130,22 @@ window.GACHA_DATA =
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
       "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih"},
-      "version": "Chiral Redundancy: Part 2",
+      "version": "Amber Reel of Moonlight",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1789650015/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1791464398/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-10-07",
+        "checkedAt": "2026-10-10",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
       },
       "banners": [
-        { "title": "Soppo + Loreley + Alva (Targeted Procurement)", "characterIds": ["gfl2:soppo","gfl2:loreley","gfl2:alva"], "start": "2026-09-17", "end": "2026-10-07" }
+        { "title": "Mityl + Cheyanne + Liushih", "characterIds": ["gfl2:mityl","gfl2:cheyanne","gfl2:liushih"], "start": "2026-10-08", "end": "2026-10-28" }
       ],
-      "upcoming": [
-        { "title": "Mityl + Cheyanne + Liushih", "characterIds": ["gfl2:mityl","gfl2:cheyanne","gfl2:liushih"], "date": "2026-10-08", "endDate": "2026-10-28" }
-      ],
-      "notes": "The healthy Oct 6 gfl2.help Global mirror confirms Soppo + Loreley + Alva are live Sep 17–Oct 7 and lists Mityl + Cheyanne + Liushih for Oct 8–28. The official Steam digest identifies the current Sep 17 event as Chiral Redundancy: Part 2 and Soppo as its new Doll. CN ordering was not used.",
+      "upcoming": [],
+      "notes": "The healthy Oct 9 gfl2.help Global mirror confirms Mityl + Cheyanne + Liushih are now live Oct 8–28. The official Steam digest dated Oct 7 identifies the event as Amber Reel of Moonlight and Mityl as its new Doll. Expired Soppo + Loreley + Alva were removed from current banners; permanent character IDs were retained. CN ordering was not used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
