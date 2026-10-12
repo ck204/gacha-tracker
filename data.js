@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-10",
+  "lastUpdated": "2026-10-12",
   "games": [
     {
       "name": "Genshin Impact",
@@ -47,7 +47,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-10",
+        "checkedAt": "2026-10-12",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -72,14 +72,14 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia"},
+      "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia","zzz:velina":"Velina","zzz:norma":"Norma"},
       "version": "3.2 — Phase 2",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-10",
+        "checkedAt": "2026-10-12",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -88,10 +88,10 @@ window.GACHA_DATA =
         { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "characterIds": ["zzz:roxy-ifrita-pryce","zzz:promeia"], "start": "2026-09-30", "end": "2026-10-20" }
       ],
       "upcoming": [
-        { "title": "v3.3 — Phoenix Reffaella (announced S-Rank Fire Anomaly Agent)", "characterIds": ["zzz:pheony"], "date": null },
-        { "title": "v3.3 — Severian Lowell (announced S-Rank Wind Attack Agent)", "characterIds": ["zzz:severian"], "date": null }
+        { "title": "v3.3 Phase 1 — Phoenix Reffaella + Velina rerun", "characterIds": ["zzz:pheony","zzz:velina"], "date": "2026-10-21", "endDate": "2026-11-11" },
+        { "title": "v3.3 Phase 2 — Severian Lowell + Norma rerun", "characterIds": ["zzz:severian","zzz:norma"], "date": "2026-11-11" }
       ],
-      "notes": "Version 3.2 Phase 2 is live Sep 30–Oct 20 with Roxy Ifrita Pryce + Promeia. HoYoverse's Agent Records associate Phoenix Reffaella (previously leaked as Pheony) and Severian Lowell with Version 3.3, but their exact banner dates and phase order remain unconfirmed. A low-reliability Version 3.4 Eldreda rumor was reviewed but not stored because it does not clearly establish a pull-banner debut.",
+      "notes": "Version 3.2 Phase 2 is live Sep 30–Oct 20 with Roxy Ifrita Pryce + Promeia. The Oct 9 Version 3.3 Special Program confirmed Journey to the Sky: Phoenix Reffaella + Velina rerun in Phase 1 from Oct 21 through the Nov 11 Phase 2 boundary, followed by Severian Lowell + Norma rerun from Nov 11. Phase 2's end date remains unconfirmed. Phoenix Reffaella retains her existing character ID (previously leaked as Pheony).",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -107,7 +107,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-10",
+        "checkedAt": "2026-10-12",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
