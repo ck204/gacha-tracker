@@ -3,19 +3,19 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-12",
+  "lastUpdated": "2026-10-15",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
       "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier"},
-      "version": "7.1 — Phase 1",
+      "version": "7.1 — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-10",
+        "checkedAt": "2026-10-15",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -24,14 +24,13 @@ window.GACHA_DATA =
         { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Recent deep-beta and kit reports continue to pair both new characters in Version 7.3, but the evidence remains unofficial, indirect, and earlier than the public beta cycle.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-10-03" }
       ],
       "banners": [
-        { "title": "v7.1 Phase 1 — Vesna + Vodyanitsa", "characterIds": ["gi:vesna","gi:vodyanitsa"], "start": "2026-09-23", "end": "2026-10-13" }
+        { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "start": "2026-10-13", "end": "2026-11-03" }
       ],
       "upcoming": [
-        { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "date": "2026-10-13", "endDate": "2026-11-03" },
         { "title": "v7.2 — Mitya (announced playable character)", "characterIds": ["gi:mitya"], "date": null },
         { "title": "v7.2 — Valeriy (announced playable character)", "characterIds": ["gi:valeriy"], "date": null }
       ],
-      "notes": "Version 7.1 Phase 1 is live from Sep 23 with Vesna + Vodyanitsa, followed by Skirk + Escoffier reruns in Phase 2. Mitya and Valeriy are officially announced playable characters for Version 7.2; exact banner dates and phase order remain unconfirmed. The Version 7.3 Tsaritsa + Danica pairing remains a low-confidence leak.",
+      "notes": "Version 7.1 Phase 2 is live Oct 13–Nov 3 with Skirk + Escoffier reruns, replacing the expired Vesna + Vodyanitsa banner. The event-wish notice confirms those dates. Mitya and Valeriy remain officially announced playable characters for Version 7.2; exact banner dates and phase order remain unconfirmed. The Version 7.3 Tsaritsa + Danica pairing remains a low-confidence leak.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -47,7 +46,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-12",
+        "checkedAt": "2026-10-15",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -72,14 +71,14 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia","zzz:velina":"Velina","zzz:norma":"Norma"},
+      "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia","zzz:velina":"Velina","zzz:norma":"Norma","zzz:robin":"Robin","zzz:kafka":"Kafka"},
       "version": "3.2 — Phase 2",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-12",
+        "checkedAt": "2026-10-15",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -89,9 +88,11 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "v3.3 Phase 1 — Phoenix Reffaella + Velina rerun", "characterIds": ["zzz:pheony","zzz:velina"], "date": "2026-10-21", "endDate": "2026-11-11" },
-        { "title": "v3.3 Phase 2 — Severian Lowell + Norma rerun", "characterIds": ["zzz:severian","zzz:norma"], "date": "2026-11-11" }
+        { "title": "v3.3 Phase 2 — Severian Lowell + Norma rerun", "characterIds": ["zzz:severian","zzz:norma"], "date": "2026-11-11", "endDate": "2026-12-01" },
+        { "title": "v3.4 — Robin (announced Honkai: Star Rail collaboration character)", "characterIds": ["zzz:robin"], "date": null },
+        { "title": "v3.4 — Kafka (announced Honkai: Star Rail collaboration character)", "characterIds": ["zzz:kafka"], "date": null }
       ],
-      "notes": "Version 3.2 Phase 2 is live Sep 30–Oct 20 with Roxy Ifrita Pryce + Promeia. The Oct 9 Version 3.3 Special Program confirmed Journey to the Sky: Phoenix Reffaella + Velina rerun in Phase 1 from Oct 21 through the Nov 11 Phase 2 boundary, followed by Severian Lowell + Norma rerun from Nov 11. Phase 2's end date remains unconfirmed. Phoenix Reffaella retains her existing character ID (previously leaked as Pheony).",
+      "notes": "Version 3.2 Phase 2 remains live Sep 30–Oct 20 with Roxy Ifrita Pryce + Promeia. The Oct 9 Version 3.3 Special Program confirmed Journey to the Sky: Phoenix Reffaella + Velina rerun Oct 21–Nov 11, then Severian Lowell + Norma rerun Nov 11–Dec 1, as documented in coverage of the program's banner slides. Phoenix retains her existing character ID (previously leaked as Pheony). Robin and Kafka are announced playable collaboration characters for Version 3.4; exact dates, banner availability, and acquisition methods remain unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -101,26 +102,25 @@ window.GACHA_DATA =
       "name": "Arknights: Endfield",
       "short": "AKE",
       "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:argent-flow":"Argent Flow","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne","ake:tangtang":"Tangtang"},
-      "version": "Dreamscape of Wind and Snow",
+      "version": "Sanctuary of Ink",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-12",
+        "checkedAt": "2026-10-15",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
       },
       "banners": [
-        { "title": "Resplendent Spectrum RE-Factor Headhunting #1 — Yvonne rate-up", "characterIds": ["ake:yvonne"], "start": "2026-09-24", "end": "2026-10-15" }
+        { "title": "v1.6 — Rejuvenation — Si (new 6★ Cryo Supporter)", "characterIds": ["ake:si"], "start": "2026-10-15", "end": "2026-11-05" }
       ],
       "upcoming": [
-        { "title": "v1.6 — Rejuvenation — Si (new 6★ Cryo Supporter)", "characterIds": ["ake:si"], "date": "2026-10-15", "endDate": "2026-11-05" },
         { "title": "v1.6 — Ancestral Spring Flows Anew RE-Factor Headhunting #1 — Tangtang rerun", "characterIds": ["ake:tangtang"], "date": "2026-10-29", "endDate": "2026-11-19" },
         { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "date": "2026-11-05" }
       ],
-      "notes": "Dreamscape of Wind and Snow continues with Yvonne through Oct 15. The Oct 6 Sanctuary of Ink Version 1.6 Special Program confirmed Si on Rejuvenation from the Oct 15 update through Nov 5 at 11:59 server time, followed by Argent Flow on The Hearth Fire Beckons the Starry Flow from Nov 5 at 12:00 until the next version maintenance. The earlier Si + Ye Minghui leak is superseded by the official lineup. The announced Ancestral Spring Flows Anew RE-Factor Headhunting #1 brings Tangtang back Oct 29–Nov 19; its dates were cross-checked against the Oct 7 program recap and version schedule.",
+      "notes": "Sanctuary of Ink is live after the Oct 15 Asia-server update. Si is featured on Rejuvenation from Oct 15 through Nov 5 at 11:59 server time, replacing Yvonne's prior RE-Factor banner. Tangtang returns on Ancestral Spring Flows Anew Oct 29–Nov 19. Argent Flow follows on The Hearth Fire Beckons the Starry Flow from Nov 5 at 12:00 until the next version maintenance; no exact banner end is assumed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -136,7 +136,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1791464398/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-10-10",
+        "checkedAt": "2026-10-15",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
