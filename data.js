@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-16",
+  "lastUpdated": "2026-10-18",
   "games": [
     {
       "name": "Genshin Impact",
@@ -157,15 +157,13 @@ window.GACHA_DATA =
       "version": "NA / Global",
       "accent": "#c0a062",
       "icon": "icons/fgo.jpg",
-      "banners": [
-        { "title": "Faerie Sugoroku Insect Cage Game — Kazuradrop", "characterIds": ["fgo:kazuradrop"], "start": "2026-09-25", "end": "2026-10-15" }
-      ],
+      "banners": [],
       "upcoming": [
-        { "title": "Tutankhamun", "characterIds": ["fgo:tutankhamun"], "date": "2026-10-13", "approx": true },
-        { "title": "Louhi", "characterIds": ["fgo:louhi"], "date": "2026-11-11", "approx": true },
-        { "title": "Phantasmoon", "characterIds": ["fgo:phantasmoon"], "date": "2026-11-25", "approx": true }
+        { "title": "Tutankhamun", "characterIds": ["fgo:tutankhamun"], "date": "2026-11-13", "approx": true },
+        { "title": "Louhi", "characterIds": ["fgo:louhi"], "date": "2026-12-11", "approx": true },
+        { "title": "Phantasmoon", "characterIds": ["fgo:phantasmoon"], "date": "2026-12-25", "approx": true }
       ],
-      "notes": "NA server; new-Servant debuts only (reruns/support hidden). Kazuradrop is confirmed for Sep 25–Oct 15. Upcoming dates are rough JP-schedule estimates (NA ~23mo behind), not announced NA dates; seasonal events may shift. Tutankhamun and Louhi retain their previous estimates; Phantasmoon uses the same method. Upcoming NA end dates are unconfirmed.",
+      "notes": "NA server; new-Servant debuts only (reruns/support hidden). Kazuradrop ended Oct 15; the current GUDAGUDA revival features previously released Servants, so no current debut banner is listed. The next three predicted debuts are Tutankhamun (roughly mid-November), Louhi (roughly mid-December), and Phantasmoon (roughly late December), based on GamePress's current NA release-month estimates and JP debut order. Calendar dates are approximate anchors using the JP day of month, not confirmed NA starts; end dates remain unknown. Checked Oct 18, 2026.",
       "links": [
         { "label": "GamePress NA campaigns", "url": "https://grandorder.gamepress.gg/p/campaign-list" },
         { "label": "Official NA site", "url": "https://fate-go.us/" }
