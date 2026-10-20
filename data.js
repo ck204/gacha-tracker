@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-18",
+  "lastUpdated": "2026-10-19",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,7 +15,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-16",
+        "checkedAt": "2026-10-19",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -108,7 +108,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-16",
+        "checkedAt": "2026-10-19",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
@@ -136,7 +136,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1791464398/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-10-15",
+        "checkedAt": "2026-10-19",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
