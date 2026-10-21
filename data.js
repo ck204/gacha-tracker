@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-19",
+  "lastUpdated": "2026-10-21",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,7 +15,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-19",
+        "checkedAt": "2026-10-21",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -40,13 +40,13 @@ window.GACHA_DATA =
       "name": "Honkai: Star Rail",
       "short": "HSR",
       "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl","hsr:evanescia":"Evanescia","hsr:mortenax-blade":"Mortenax Blade","hsr:ellen-joe":"Ellen Joe","hsr:astra-yao":"Astra Yao"},
-      "version": "4.6 — Phase 1",
+      "version": "4.6 — Phase 2",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-16",
+        "checkedAt": "2026-10-21",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -54,15 +54,14 @@ window.GACHA_DATA =
       "banners": [
         { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null },
         { "title": "v4.6 — Pearl (new 5★, Ice Elation; whole version)", "characterIds": ["hsr:pearl"], "start": "2026-09-28", "end": "2026-11-11" },
-        { "title": "v4.6 Phase 1 — Evanescia rerun", "characterIds": ["hsr:evanescia"], "start": "2026-09-28", "end": "2026-10-21" }
+        { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "start": "2026-10-21", "end": "2026-11-11" }
       ],
       "upcoming": [
-        { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "date": "2026-10-21", "endDate": "2026-11-11" },
         { "title": "v4.7 — Aeon ★ Aha (new 5★ Quantum Elation; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null },
         { "title": "v4.8 — Ellen Joe (announced ZZZ collaboration character)", "characterIds": ["hsr:ellen-joe"], "date": null },
         { "title": "v4.8 — Astra Yao (announced ZZZ collaboration character)", "characterIds": ["hsr:astra-yao"], "date": null }
       ],
-      "notes": "Version 4.6 is live from Sep 28: Pearl is rate-up through the version end on Nov 11 (Asia/Singapore), Evanescia reruns in current Phase 1 through Oct 21, and Mortenax Blade reruns in Phase 2 through Nov 11. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced for Version 4.7, but her exact banner date is not yet confirmed. Ellen Joe and Astra Yao are officially announced playable characters for the Version 4.8 ZZZ collaboration; exact dates, banner availability, and acquisition methods remain unconfirmed.",
+      "notes": "Version 4.6 is live from Sep 28: Pearl remains rate-up through the version end on Nov 11 (Asia/Singapore), and Mortenax Blade is the current Phase 2 rerun from Oct 21 through Nov 11. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced for Version 4.7, but her exact banner date is not yet confirmed. Ellen Joe and Astra Yao are officially announced playable characters for the Version 4.8 ZZZ collaboration; exact dates, banner availability, and acquisition methods remain unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -72,27 +71,26 @@ window.GACHA_DATA =
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
       "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia","zzz:velina":"Velina","zzz:norma":"Norma","zzz:robin":"Robin","zzz:kafka":"Kafka"},
-      "version": "3.2 — Phase 2",
+      "version": "3.3 — Phase 1",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-16",
+        "checkedAt": "2026-10-21",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
       },
       "banners": [
-        { "title": "v3.2 Phase 2 — Roxy Ifrita Pryce (new S-Rank, Wind Stun) + Promeia rerun", "characterIds": ["zzz:roxy-ifrita-pryce","zzz:promeia"], "start": "2026-09-30", "end": "2026-10-20" }
+        { "title": "v3.3 Phase 1 — Phoenix Reffaella + Velina rerun", "characterIds": ["zzz:pheony","zzz:velina"], "start": "2026-10-21", "end": "2026-11-11" }
       ],
       "upcoming": [
-        { "title": "v3.3 Phase 1 — Phoenix Reffaella + Velina rerun", "characterIds": ["zzz:pheony","zzz:velina"], "date": "2026-10-21", "endDate": "2026-11-11" },
         { "title": "v3.3 Phase 2 — Severian Lowell + Norma rerun", "characterIds": ["zzz:severian","zzz:norma"], "date": "2026-11-11", "endDate": "2026-12-01" },
         { "title": "v3.4 — Robin (announced Honkai: Star Rail collaboration character)", "characterIds": ["zzz:robin"], "date": null },
         { "title": "v3.4 — Kafka (announced Honkai: Star Rail collaboration character)", "characterIds": ["zzz:kafka"], "date": null }
       ],
-      "notes": "Version 3.2 Phase 2 remains live Sep 30–Oct 20 with Roxy Ifrita Pryce + Promeia. The Oct 9 Version 3.3 Special Program confirmed Journey to the Sky: Phoenix Reffaella + Velina rerun Oct 21–Nov 11, then Severian Lowell + Norma rerun Nov 11–Dec 1, as documented in coverage of the program's banner slides. Phoenix retains her existing character ID (previously leaked as Pheony). Robin and Kafka are announced playable collaboration characters for Version 3.4; exact dates, banner availability, and acquisition methods remain unconfirmed.",
+      "notes": "Version 3.3 Phase 1 is live Oct 21–Nov 11 with Phoenix Reffaella + Velina rerun. The Oct 9 Special Program confirmed Severian Lowell + Norma rerun for Phase 2 from Nov 11–Dec 1, as documented in coverage of the program's banner slides. Phoenix retains her existing character ID (previously leaked as Pheony). Robin and Kafka are announced playable collaboration characters for Version 3.4; exact dates, banner availability, and acquisition methods remain unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -108,7 +106,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-19",
+        "checkedAt": "2026-10-21",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
@@ -136,7 +134,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1791464398/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-10-19",
+        "checkedAt": "2026-10-21",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
