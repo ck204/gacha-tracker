@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-21",
+  "lastUpdated": "2026-10-23",
   "games": [
     {
       "name": "Genshin Impact",
@@ -13,9 +13,9 @@ window.GACHA_DATA =
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1790131350/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1792555772/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-21",
+        "checkedAt": "2026-10-23",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -46,7 +46,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-21",
+        "checkedAt": "2026-10-23",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -75,9 +75,9 @@ window.GACHA_DATA =
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1788862502/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-21",
+        "checkedAt": "2026-10-23",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -106,7 +106,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-21",
+        "checkedAt": "2026-10-23",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
@@ -127,14 +127,14 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih"},
+      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih","gfl2:faelynn":"Faelynn","gfl2:welrod":"Welrod","gfl2:sextans":"Sextans"},
       "version": "Amber Reel of Moonlight",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1791464398/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-10-21",
+        "checkedAt": "2026-10-23",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
@@ -142,8 +142,10 @@ window.GACHA_DATA =
       "banners": [
         { "title": "Mityl + Cheyanne + Liushih", "characterIds": ["gfl2:mityl","gfl2:cheyanne","gfl2:liushih"], "start": "2026-10-08", "end": "2026-10-28" }
       ],
-      "upcoming": [],
-      "notes": "The healthy Oct 9 gfl2.help Global mirror confirms Mityl + Cheyanne + Liushih are now live Oct 8–28. The official Steam digest dated Oct 7 identifies the event as Amber Reel of Moonlight and Mityl as its new Doll. Expired Soppo + Loreley + Alva were removed from current banners; permanent character IDs were retained. CN ordering was not used.",
+      "upcoming": [
+        { "title": "Faelynn + Welrod + Sextans", "characterIds": ["gfl2:faelynn","gfl2:welrod","gfl2:sextans"], "date": "2026-10-29", "endDate": "2026-11-18" }
+      ],
+      "notes": "The healthy Oct 22 gfl2.help Global mirror confirms Mityl + Cheyanne + Liushih remain live Oct 8–28 and identifies Faelynn + Welrod + Sextans as the next Global lineup for Oct 29–Nov 18. The official Steam digest dated Oct 7 identifies the current event as Amber Reel of Moonlight and Mityl as its new Doll. No CN ordering or dates were used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
