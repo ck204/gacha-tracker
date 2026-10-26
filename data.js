@@ -3,19 +3,19 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-23",
+  "lastUpdated": "2026-10-26",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier"},
+      "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier","gi:furina":"Furina","gi:zibai":"Zibai","gi:linnea":"Linnea"},
       "version": "7.1 — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1792555772/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1792760556/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-23",
+        "checkedAt": "2026-10-26",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -27,10 +27,10 @@ window.GACHA_DATA =
         { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "start": "2026-10-13", "end": "2026-11-03" }
       ],
       "upcoming": [
-        { "title": "v7.2 — Mitya (announced playable character)", "characterIds": ["gi:mitya"], "date": null },
-        { "title": "v7.2 — Valeriy (announced playable character)", "characterIds": ["gi:valeriy"], "date": null }
+        { "title": "v7.2 Phase 1 — Mitya (new 5★) + Furina rerun; Valeriy rate-up", "characterIds": ["gi:mitya","gi:furina","gi:valeriy"], "date": "2026-11-04", "endDate": "2026-11-24" },
+        { "title": "v7.2 Phase 2 — Zibai + Linnea reruns", "characterIds": ["gi:zibai","gi:linnea"], "date": "2026-11-24", "endDate": "2026-12-15" }
       ],
-      "notes": "Version 7.1 Phase 2 is live Oct 13–Nov 3 with Skirk + Escoffier reruns, replacing the expired Vesna + Vodyanitsa banner. The event-wish notice confirms those dates. Mitya and Valeriy remain officially announced playable characters for Version 7.2; exact banner dates and phase order remain unconfirmed. The Version 7.3 Tsaritsa + Danica pairing remains a low-confidence leak.",
+      "notes": "Version 7.1 Phase 2 remains live Oct 13–Nov 3 with Skirk + Escoffier reruns. The Oct 23 Version 7.2 Special Program confirmed Hour of Ruin for Nov 4: Phase 1 features Mitya + Furina with Valeriy rate-up through Nov 24, followed by Zibai + Linnea reruns through Dec 15. The Version 7.3 Tsaritsa + Danica pairing remains a low-confidence leak.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -46,7 +46,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-23",
+        "checkedAt": "2026-10-26",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -77,7 +77,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-23",
+        "checkedAt": "2026-10-26",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -106,7 +106,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-23",
+        "checkedAt": "2026-10-26",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
@@ -127,14 +127,14 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih","gfl2:faelynn":"Faelynn","gfl2:welrod":"Welrod","gfl2:sextans":"Sextans"},
+      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih","gfl2:faelynn":"Faelynn","gfl2:welrod":"Welrod","gfl2:sextans":"Sextans","gfl2:phaetusa":"Phaetusa"},
       "version": "Amber Reel of Moonlight",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1791464398/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-10-23",
+        "checkedAt": "2026-10-26",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
@@ -143,9 +143,9 @@ window.GACHA_DATA =
         { "title": "Mityl + Cheyanne + Liushih", "characterIds": ["gfl2:mityl","gfl2:cheyanne","gfl2:liushih"], "start": "2026-10-08", "end": "2026-10-28" }
       ],
       "upcoming": [
-        { "title": "Faelynn + Welrod + Sextans", "characterIds": ["gfl2:faelynn","gfl2:welrod","gfl2:sextans"], "date": "2026-10-29", "endDate": "2026-11-18" }
+        { "title": "Faelynn + Welrod + Sextans + Phaetusa", "characterIds": ["gfl2:faelynn","gfl2:welrod","gfl2:sextans","gfl2:phaetusa"], "date": "2026-10-29", "endDate": "2026-11-18" }
       ],
-      "notes": "The healthy Oct 22 gfl2.help Global mirror confirms Mityl + Cheyanne + Liushih remain live Oct 8–28 and identifies Faelynn + Welrod + Sextans as the next Global lineup for Oct 29–Nov 18. The official Steam digest dated Oct 7 identifies the current event as Amber Reel of Moonlight and Mityl as its new Doll. No CN ordering or dates were used.",
+      "notes": "The healthy Oct 25 gfl2.help Global mirror confirms Mityl + Cheyanne + Liushih remain live Oct 8–28 and identifies Faelynn + Welrod + Sextans + Phaetusa as the next Global lineup for Oct 29–Nov 18. The official Steam digest dated Oct 7 identifies the current event as Amber Reel of Moonlight and Mityl as its new Doll. No CN ordering or dates were used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
