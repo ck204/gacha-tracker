@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-26",
+  "lastUpdated": "2026-10-28",
   "games": [
     {
       "name": "Genshin Impact",
@@ -44,9 +44,9 @@ window.GACHA_DATA =
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1790560682/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1793009322/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-26",
+        "checkedAt": "2026-10-28",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -134,7 +134,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1791464398/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-10-26",
+        "checkedAt": "2026-10-28",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
