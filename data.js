@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-10-28",
+  "lastUpdated": "2026-10-30",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,7 +15,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1792760556/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-10-26",
+        "checkedAt": "2026-10-30",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -39,14 +39,14 @@ window.GACHA_DATA =
     {
       "name": "Honkai: Star Rail",
       "short": "HSR",
-      "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl","hsr:evanescia":"Evanescia","hsr:mortenax-blade":"Mortenax Blade","hsr:ellen-joe":"Ellen Joe","hsr:astra-yao":"Astra Yao"},
+      "characters": {"hsr:nihilux":"Aeon ★ Aha","hsr:robin-summeretto":"Robin Summeretto","hsr:hyacine":"Hyacine","hsr:rin-tohsaka":"Rin Tohsaka","hsr:gilgamesh":"Gilgamesh","hsr:aventurine-waveflair":"Aventurine Waveflair","hsr:ashveil":"Ashveil","hsr:pearl":"Pearl","hsr:evanescia":"Evanescia","hsr:mortenax-blade":"Mortenax Blade","hsr:ellen-joe":"Ellen Joe","hsr:astra-yao":"Astra Yao","hsr:silver-wolf-lv999":"Silver Wolf LV.999","hsr:sparxie":"Sparxie","hsr:yao-guang":"Yao Guang","hsr:acheron":"Acheron","hsr:dan-heng-imbibitor-lunae":"Dan Heng • Imbibitor Lunae","hsr:jing-yuan":"Jing Yuan"},
       "version": "4.6 — Phase 2",
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1793009322/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-10-28",
+        "checkedAt": "2026-10-30",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -57,11 +57,13 @@ window.GACHA_DATA =
         { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "start": "2026-10-21", "end": "2026-11-11" }
       ],
       "upcoming": [
-        { "title": "v4.7 — Aeon ★ Aha (new 5★ Quantum Elation; previously known as Nihilux)", "characterIds": ["hsr:nihilux"], "date": null },
+        { "title": "v4.7 — Aeon ★ Aha (new 5★ Quantum Elation)", "characterIds": ["hsr:nihilux"], "date": "2026-11-11" },
+        { "title": "v4.7 Phase 1 reruns — Silver Wolf LV.999 + Sparxie + Yao Guang", "characterIds": ["hsr:silver-wolf-lv999","hsr:sparxie","hsr:yao-guang"], "date": "2026-11-11" },
+        { "title": "v4.7 Phase 2 reruns — Acheron + Dan Heng • Imbibitor Lunae + Jing Yuan", "characterIds": ["hsr:acheron","hsr:dan-heng-imbibitor-lunae","hsr:jing-yuan"], "date": null },
         { "title": "v4.8 — Ellen Joe (announced ZZZ collaboration character)", "characterIds": ["hsr:ellen-joe"], "date": null },
         { "title": "v4.8 — Astra Yao (announced ZZZ collaboration character)", "characterIds": ["hsr:astra-yao"], "date": null }
       ],
-      "notes": "Version 4.6 is live from Sep 28: Pearl remains rate-up through the version end on Nov 11 (Asia/Singapore), and Mortenax Blade is the current Phase 2 rerun from Oct 21 through Nov 11. Fate/stay Night collab Part 2 remains open-ended. Aeon ★ Aha is officially announced for Version 4.7, but her exact banner date is not yet confirmed. Ellen Joe and Astra Yao are officially announced playable characters for the Version 4.8 ZZZ collaboration; exact dates, banner availability, and acquisition methods remain unconfirmed.",
+      "notes": "Version 4.6 remains live through Nov 11 (Asia/Singapore) with Pearl and Mortenax Blade current; Fate/stay Night collab Part 2 remains open-ended. The Oct 30 Version 4.7 program confirmed the Nov 11 update, Aeon ★ Aha, Phase 1 reruns Silver Wolf LV.999 + Sparxie + Yao Guang, and Phase 2 reruns Acheron + Dan Heng • Imbibitor Lunae + Jing Yuan. No exact Phase 2 boundary or Aha end date is assumed. Ellen Joe and Astra Yao remain announced for Version 4.8 with exact acquisition timing unknown.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Honkai-Star-Rail/archives/408381" },
         { "label": "Official news", "url": "https://hsr.hoyoverse.com/en-us/news" }
@@ -77,7 +79,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-10-26",
+        "checkedAt": "2026-10-30",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -106,19 +108,19 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-10-26",
+        "checkedAt": "2026-10-30",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
       },
       "banners": [
-        { "title": "v1.6 — Rejuvenation — Si (new 6★ Cryo Supporter)", "characterIds": ["ake:si"], "start": "2026-10-15", "end": "2026-11-05" }
+        { "title": "v1.6 — Rejuvenation — Si (new 6★ Cryo Supporter)", "characterIds": ["ake:si"], "start": "2026-10-15", "end": "2026-11-05" },
+        { "title": "v1.6 — Ancestral Spring Flows Anew RE-Factor Headhunting #1 — Tangtang rerun", "characterIds": ["ake:tangtang"], "start": "2026-10-29", "end": "2026-11-19" }
       ],
       "upcoming": [
-        { "title": "v1.6 — Ancestral Spring Flows Anew RE-Factor Headhunting #1 — Tangtang rerun", "characterIds": ["ake:tangtang"], "date": "2026-10-29", "endDate": "2026-11-19" },
         { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "date": "2026-11-05" }
       ],
-      "notes": "Sanctuary of Ink is live after the Oct 15 Asia-server update. Si is featured on Rejuvenation from Oct 15 through Nov 5 at 11:59 server time, replacing Yvonne's prior RE-Factor banner. Tangtang returns on Ancestral Spring Flows Anew Oct 29–Nov 19. Argent Flow follows on The Hearth Fire Beckons the Starry Flow from Nov 5 at 12:00 until the next version maintenance; no exact banner end is assumed.",
+      "notes": "Sanctuary of Ink is live after the Oct 15 Asia-server update. Si remains featured on Rejuvenation through Nov 5, while Tangtang is now active on Ancestral Spring Flows Anew from Oct 29 through Nov 19. Argent Flow begins on The Hearth Fire Beckons the Starry Flow Nov 5 at 12:00 until the next version maintenance; no exact banner end is assumed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -132,20 +134,18 @@ window.GACHA_DATA =
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1791464398/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1793244120/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-10-28",
+        "checkedAt": "2026-10-30",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
       },
       "banners": [
-        { "title": "Mityl + Cheyanne + Liushih", "characterIds": ["gfl2:mityl","gfl2:cheyanne","gfl2:liushih"], "start": "2026-10-08", "end": "2026-10-28" }
+        { "title": "Faelynn + Welrod + Sextans + Phaetusa", "characterIds": ["gfl2:faelynn","gfl2:welrod","gfl2:sextans","gfl2:phaetusa"], "start": "2026-10-29", "end": "2026-11-18" }
       ],
-      "upcoming": [
-        { "title": "Faelynn + Welrod + Sextans + Phaetusa", "characterIds": ["gfl2:faelynn","gfl2:welrod","gfl2:sextans","gfl2:phaetusa"], "date": "2026-10-29", "endDate": "2026-11-18" }
-      ],
-      "notes": "The healthy Oct 25 gfl2.help Global mirror confirms Mityl + Cheyanne + Liushih remain live Oct 8–28 and identifies Faelynn + Welrod + Sextans + Phaetusa as the next Global lineup for Oct 29–Nov 18. The official Steam digest dated Oct 7 identifies the current event as Amber Reel of Moonlight and Mityl as its new Doll. No CN ordering or dates were used.",
+      "upcoming": [],
+      "notes": "The healthy Oct 29 gfl2.help Global mirror confirms Faelynn + Welrod + Sextans + Phaetusa are now live Oct 29–Nov 18. The official Oct 28 Steam digest independently lists new Dolls Faelynn and Welrod. No later Global lineup is verified, and no CN ordering or dates were used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
