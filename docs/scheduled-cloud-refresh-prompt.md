@@ -128,6 +128,8 @@ Use exact banner dates only when supported by reliable evidence or by a verified
 
 Preserve approximate dates as `approx: true`.
 
+Mark collaboration banners and upcoming entries with `collab: true`; preserve this flag during refreshes and promotion. Collabs without a known `end` / `endDate` are excluded from the calendar only. Keep their data and card/wishlist behavior; never invent an end date to make them appear in the calendar.
+
 For a genuinely unknown active banner end, use:
 
 `"end": null`

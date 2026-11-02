@@ -9,6 +9,9 @@ Hosted on GitHub Pages. A brief project description lives in `README.md`.
 - **`index.html`** — all rendering logic; reads `data.js` at load. **Never edit it during
   a data refresh** — it renders whatever is in `data.js`.
 - **`data.js`** — the data, and the *only* file a routine data refresh edits (schema below).
+- **`schedule-data.js`** — manually maintained all-day game launches, independent of
+  banner data. Never edit it during a routine data refresh. Source metadata stays
+  in the data; launches render only on their date and never become banners.
 - **`icons/`** — official app icons (iTunes Search API, 512px JPEG); referenced per game.
 - **`mirrors/`** — committed copies of sources the Claude cloud sandbox can't fetch live.
 - **`.github/workflows/mirror-sources.yml`** — refreshes `mirrors/` on GitHub runners.
@@ -153,8 +156,9 @@ Preserve the confirmed banner identity, start date, current version, and last-kn
 verified data without fabricating a duration. Do not use a sentinel, set `end` equal to
 `start`, guess an end, regress the version, restore an expired predecessor, or treat
 `needsCheck` as a substitute for truthful active representation. The main card displays
-"End date unknown" with an indeterminate bar, and the calendar renders the known elapsed
-span with an open end.
+"End date unknown" with an indeterminate bar. The calendar renders the known elapsed
+span with an open end for regular banners; collaboration banners without a known end
+are excluded from the calendar only.
 
 A healthy scheduled refresh day leaves the daily "Mirror source data (automated)" commit
 and exactly one "Weekly banner data refresh (automated)" direct commit after validation.
@@ -179,12 +183,18 @@ only.
   (filtering never shifts the layout), and the weeks area locks to the current month's
   height at load (flipping to a sparser month doesn't collapse the card; busier months can
   still grow).
+- **Launch milestones:** `window.GACHA_SCHEDULE.events` has `{ id, type: "launch",
+  game, region, date, source: "user" }`. Launches use their own calendar filter,
+  a one-day ◆ marker, and a monthly full-name list. Character wishlist filtering
+  applies only to banners. Run `node scripts/test-calendar-launches.cjs` after changes.
 - **Unknown banner ends:** `end: null` is intentional schema, not missing data to coerce.
   `pickBanner` treats it as active after `start`, the card uses an indeterminate striped
   bar, and the calendar draws only the known elapsed span with an open-ended marker. A
   dated `upcoming` entry is eligible for promotion based on `date <= now` even without
   `endDate`. A null/missing upcoming date displays "Date TBA" and is excluded from
-  promotion and the calendar.
+  promotion and the calendar. Collaboration banners without a known end are excluded
+  from the calendar (current and upcoming), while card selection and wishlist behavior
+  remain unchanged. Once a verified end is added, dated collabs enter the calendar.
 - **Accent colours:** a game's `accent` drives its card border, calendar bars, and filter
   chip dot; bar-label text auto-switches black/white based on accent luminance. ZZZ uses
   dark orange `#f57c00` so it doesn't blend with Endfield's yellow.
@@ -219,6 +229,13 @@ The user must enable this in the saved scheduled prompt. Run
 `node scripts/test-artwork-mirror.cjs` after mirror-script changes.
 
 ## data.js schema
+
+### Collaboration calendar visibility
+
+Mark collaboration banners and upcoming entries with `collab: true`, and preserve
+this flag during refreshes and promotion. A collab without `end` / `endDate` stays
+off the calendar, without deleting its data or inventing an end. Titles containing
+"collab" or "collaboration" are also recognized for compatibility with older data.
 
 ### Character wishlist identity
 

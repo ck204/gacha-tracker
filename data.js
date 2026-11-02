@@ -52,7 +52,7 @@ window.GACHA_DATA =
         "mobilePosition": "52% center"
       },
       "banners": [
-        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "start": "2026-07-24", "end": null },
+        { "title": "Fate/stay Night collab Part 2 — Rin Tohsaka + Gilgamesh (no fixed end)", "characterIds": ["hsr:rin-tohsaka","hsr:gilgamesh"], "collab": true, "start": "2026-07-24", "end": null },
         { "title": "v4.6 — Pearl (new 5★, Ice Elation; whole version)", "characterIds": ["hsr:pearl"], "start": "2026-09-28", "end": "2026-11-11" },
         { "title": "v4.6 Phase 2 — Mortenax Blade rerun", "characterIds": ["hsr:mortenax-blade"], "start": "2026-10-21", "end": "2026-11-11" }
       ],
@@ -60,8 +60,8 @@ window.GACHA_DATA =
         { "title": "v4.7 — Aeon ★ Aha (new 5★ Quantum Elation)", "characterIds": ["hsr:nihilux"], "date": "2026-11-11" },
         { "title": "v4.7 Phase 1 reruns — Silver Wolf LV.999 + Sparxie + Yao Guang", "characterIds": ["hsr:silver-wolf-lv999","hsr:sparxie","hsr:yao-guang"], "date": "2026-11-11" },
         { "title": "v4.7 Phase 2 reruns — Acheron + Dan Heng • Imbibitor Lunae + Jing Yuan", "characterIds": ["hsr:acheron","hsr:dan-heng-imbibitor-lunae","hsr:jing-yuan"], "date": null },
-        { "title": "v4.8 — Ellen Joe (announced ZZZ collaboration character)", "characterIds": ["hsr:ellen-joe"], "date": null },
-        { "title": "v4.8 — Astra Yao (announced ZZZ collaboration character)", "characterIds": ["hsr:astra-yao"], "date": null }
+        { "title": "v4.8 — Ellen Joe (announced ZZZ collaboration character)", "characterIds": ["hsr:ellen-joe"], "collab": true, "date": null },
+        { "title": "v4.8 — Astra Yao (announced ZZZ collaboration character)", "characterIds": ["hsr:astra-yao"], "collab": true, "date": null }
       ],
       "notes": "Version 4.6 remains live through Nov 11 (Asia/Singapore) with Pearl and Mortenax Blade current; Fate/stay Night collab Part 2 remains open-ended. The Oct 30 Version 4.7 program confirmed the Nov 11 update, Aeon ★ Aha, Phase 1 reruns Silver Wolf LV.999 + Sparxie + Yao Guang, and Phase 2 reruns Acheron + Dan Heng • Imbibitor Lunae + Jing Yuan. No exact Phase 2 boundary or Aha end date is assumed. Ellen Joe and Astra Yao remain announced for Version 4.8 with exact acquisition timing unknown.",
       "links": [

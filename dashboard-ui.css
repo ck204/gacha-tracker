@@ -164,6 +164,14 @@ a { color:inherit; }
 .cal-bar { font-size:9px; opacity:.88; }
 .cal-bar:hover { opacity:1; }
 #cal-tooltip { background:#273453; border-color:#586b94; }
+.cal-launch { box-shadow:inset 0 0 0 1px #b7f8d5; opacity:1; }
+.cal-launches { border-top:1px solid #2b3755; margin-top:16px; padding-top:16px; }
+.cal-launches h4 { margin:0 0 12px; color:var(--green); font-size:12px; font-weight:600; }
+.cal-launches ul { list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.cal-launches li { display:flex; align-items:baseline; gap:16px; font-size:12px; }
+.cal-launches time { color:var(--green); min-width:50px; font-variant-numeric:tabular-nums; }
+.cal-launches strong { font-weight:600; }
+.cal-launches small { display:block; color:var(--muted); font-size:10px; margin-top:2px; }
 .page-footer { display:flex; justify-content:space-between; align-items:center; gap:20px; border-top:1px solid #303957; margin-top:30px; padding:23px 0 30px; font-size:9px; color:#91a4c9; }
 .page-footer a { text-decoration:none; }
 .dashboard-toolbar { margin:-5px 0 16px; }

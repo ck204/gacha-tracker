@@ -27,5 +27,25 @@ message appears briefly, and the **Hidden games** menu above the grid can restor
 or all games later. This preference is stored only in the current browser under
 `gacha-tracker:hidden-games:v1`. It does not affect calendar entries or calendar filters.
 
+## Calendar
+
+The Game calendar combines banners and all-day launch milestones. Launches use a
+◆ marker on their date and a full-name list below the displayed month. Choose
+**Launches** in the calendar filters to show launches alone, or combine it with game
+filters. Character wishlist filtering applies only to banners; launches remain visible.
+
+Maintain manual launch dates in `schedule-data.js`, independently of automated
+`data.js` refreshes. Each event has a permanent `id`, `type: "launch"`, `game`, `region`,
+and ISO `date`. The initial dates were supplied by the user (`source: "user"`);
+November/December dates without a year were interpreted as 2026. No launch time or
+timezone is inferred. Launch milestones remain on their original date after launch.
+
+Collaboration banners without a known end date are excluded from the calendar,
+including upcoming collabs. Their data, card selection, and wishlist behavior are
+retained. Add `collab: true` to collaboration entries; titles containing "collab" or
+"collaboration" are also recognized. Once a verified end date is supplied, a dated
+collab appears in the calendar. Regular banners with unknown ends remain visible.
+
 Validation: `node scripts/test-date-tba.cjs`, `node scripts/test-wishlist.cjs`, and
-`node scripts/test-game-visibility.cjs`.
+`node scripts/test-game-visibility.cjs`. For launch calendar changes, also run
+`node scripts/test-calendar-launches.cjs`.

@@ -53,6 +53,36 @@ const promoted = render([confirmed]);
 assert.equal(promoted.pickBanner(confirmed).title, 'Announced');
 assert.equal(promoted.calItems.length, 1);
 assert.doesNotMatch(promoted.cards[0].innerHTML, /Date TBA|<h3>Upcoming/);
+// Calendar exclusions must not affect card selection, upcoming cards, or regular
+// open-ended banners. Exercise both date schemas and title/metadata detection.
+for (const entry of [
+  { title: 'Guest crossover', collab: true },
+  { title: 'Fate collab' },
+  { title: 'ZZZ COLLABORATION' }
+]) {
+  for (const upcoming of [false, true]) {
+    const startKey = upcoming ? 'date' : 'start';
+    const endKey = upcoming ? 'endDate' : 'end';
+    const collection = upcoming ? 'upcoming' : 'banners';
+    const fixture = banner => ({ name: 'Any game', [collection]: [banner] });
+    for (const end of [null, undefined]) {
+      const banner = { ...entry, [startKey]: '2026-09-07', [endKey]: end };
+      const hidden = render([fixture(banner)]);
+      assert.equal(hidden.calItems.length, 0, `${entry.title}: no end, no calendar span`);
+      assert.equal(hidden.pickBanner(fixture(banner)).title, entry.title);
+      assert.ok(hidden.cards[0].innerHTML.includes(entry.title));
+      assert.match(hidden.cards[0].innerHTML, /End date unknown/);
+    }
+    const dated = { ...entry, [startKey]: '2026-09-15', [endKey]: '2026-09-30' };
+    assert.equal(render([fixture(dated)]).calItems.length, 1, 'known-end collabs stay in calendar');
+    const future = { ...entry, [startKey]: '2026-09-15' };
+    const futureResult = render([fixture(future)]);
+    assert.equal(futureResult.calItems.length, 0, 'future open-ended collabs are excluded');
+    assert.ok(futureResult.cards[0].innerHTML.includes(entry.title));
+    assert.equal(render([fixture({ title: 'Regular banner', [startKey]: '2026-09-15' })]).calItems.length,
+      1, 'regular open-ended banners stay in calendar');
+  }
+}
 const dataContext = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'data.js'), 'utf8'), dataContext);
 const live = render(dataContext.window.GACHA_DATA.games);
@@ -64,11 +94,17 @@ assert.equal(live.cards.reduce((count, card) =>
   count + (card.innerHTML.match(/Date TBA/g) || []).length, 0), expectedTbaCount);
 assert.ok(live.cards.every(card => !/NaN|Invalid Date/.test(card.innerHTML)));
 const games = dataContext.window.GACHA_DATA.games;
+const hsr = games.find(game => game.short === 'HSR');
+const fateCollab = hsr.banners.find(banner => banner.collab && !banner.end);
+assert.ok(fateCollab, 'HSR collab data is retained');
+assert.ok(!live.calItems.some(item => item.name === hsr.name && item.title === fateCollab.title),
+  'HSR open-ended collab is excluded from calendar');
 const numericVersion = value => {
   const match = String(value).match(/(\d+)\.(\d+)/);
   return match ? { major: Number(match[1]), minor: Number(match[2]) } : null;
 };
-assert.equal(live.cards.filter(card => card.innerHTML.includes('class="leaks"')).length, 2);
+const expectedLeakCards = games.filter(game => !['GFL2', 'FGO'].includes(game.short) && game.leaks?.length).length;
+assert.equal(live.cards.filter(card => card.innerHTML.includes('class="leaks"')).length, expectedLeakCards);
 assert.ok(live.cards.every(card => !card.innerHTML.includes('class="notes"')));
 for (const [index, game] of games.entries()) {
   if (['GFL2', 'FGO'].includes(game.short)) {
@@ -104,4 +140,4 @@ for (const short of ['GFL2', 'FGO']) {
   const excluded = render([{ ...rumorOnly, short }]);
   assert.doesNotMatch(excluded.cards[0].innerHTML, /Leaked \/ Unconfirmed/);
 }
-console.log('PASS: TBA rendering, promotion, leak isolation, excluded games, hidden notes, and all six cards.');
+console.log('PASS: TBA rendering, promotion, open-ended collab calendar exclusions, leak isolation, excluded games, hidden notes, and all six cards.');

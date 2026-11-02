@@ -335,7 +335,7 @@
 <div class="grid" id="grid"></div>
 </section>
 <section class="calendar-section" id="calendar" aria-labelledby="calendar-heading">
-  <div class="section-heading"><div><div class="eyebrow">SCHEDULE</div><h2 id="calendar-heading">Banner calendar</h2></div></div>
+  <div class="section-heading"><div><div class="eyebrow">SCHEDULE</div><h2 id="calendar-heading">Game calendar</h2></div></div>
   <div class="cal-card">
     <div class="cal-header">
       <h3 id="cal-title"></h3>
@@ -352,6 +352,7 @@
       <div class="cal-dow">Sat</div>
     </div>
     <div id="cal-weeks"></div>
+    <div class="cal-launches" id="cal-launches" hidden></div>
   </div>
 </section>
 <footer class="page-footer"><span>Gacha Banner Tracker</span><a href="#dashboard">Back to top ↑</a></footer>
@@ -363,6 +364,7 @@
 
 <!-- Load data.js with a unique query so HTTP-served pages never show stale data (no-op on file://) -->
 <script>document.write('<script src="data.js?v=' + Date.now() + '"><\/script>')</script>
+<script>document.write('<script src="schedule-data.js?v=' + Date.now() + '"><\/script>')</script>
 <script src="wishlist.js"></script>
 <script src="game-visibility.js"></script>
 <script>
@@ -544,13 +546,27 @@
   // ---- Calendar overview ----
   // Flat list of spans. Null ends remain explicitly open-ended; they are never
   // coerced into fake one-day calendar entries.
+  // Open-ended collabs stay on cards but do not occupy calendar lanes. Recognize
+  // labelled titles as well as metadata so older/refreshed entries follow the rule.
+  const calendarEligible = (entry, end) => Boolean(end) ||
+    !(entry.collab === true || /\bcollab(?:oration)?\b/i.test(entry.title || ""));
   const calItems = [];
   for (const g of data.games) {
     const accent = g.accent || "#5a617a";
-    for (const b of (g.banners || []))
+    for (const b of (g.banners || []).filter(b => calendarEligible(b, b.end)))
       calItems.push({ characterIds: b.characterIds, name: g.name, accent, title: b.title, start: parse(b.start), end: b.end ? parse(b.end) : null, banner: true, unknownEnd: !b.end });
-    for (const u of (g.upcoming || []).filter(u => u.date))
+    for (const u of (g.upcoming || []).filter(u => u.date && calendarEligible(u, u.endDate)))
       calItems.push({ characterIds: u.characterIds, name: g.name, accent, title: u.title, start: parse(u.date), end: u.endDate ? parse(u.endDate) : null, approx: u.approx, unknownEnd: !u.endDate });
+  }
+  // Launches are date milestones, not banners with a fabricated duration.
+  const launchAccent = "#82edb5";
+  const launchFilter = "__launches__";
+  for (const event of (window.GACHA_SCHEDULE?.events || [])) {
+    if (event.type !== "launch" || !event.date) continue;
+    calItems.push({ id: event.id, type: "launch", name: event.game,
+      title: `${event.game} — ${event.region} release`, region: event.region,
+      date: event.date, source: event.source, accent: launchAccent,
+      start: parse(event.date), filter: launchFilter });
   }
 
   const fmtD = d => d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
@@ -560,16 +576,22 @@
     return lum > 150 ? "#10131a" : "#fff";
   };
   const todayMid = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const calEnd = it => it.end || (it.start <= todayMid ? todayMid : it.start);
+  const calEnd = it => it.type === "launch" ? it.start :
+    it.end || (it.start <= todayMid ? todayMid : it.start);
 
   let calY = now.getFullYear(), calM = now.getMonth();
-  const calSel = new Set(); // selected game names; empty = show all
+  const calSel = new Set(); // selected game names or Launches; empty = show all
   const calTitle = document.getElementById("cal-title");
   const weeksEl = document.getElementById("cal-weeks");
+  const launchesEl = document.getElementById("cal-launches");
+  // Character wishlist filtering applies only to banners, not launch milestones.
+  const calendarVisible = it => (!calSel.size || calSel.has(it.filter || it.name)) &&
+    (it.type === "launch" || !document.getElementById('wish-only').checked || wishlist.has(it));
 
   const filtersEl = document.getElementById("cal-filters");
   filtersEl.innerHTML =
     `<button class="cal-filter active" type="button">All</button>` +
+    `<button class="cal-filter" type="button" data-game="${launchFilter}" style="--chip:${launchAccent}"><span aria-hidden="true" style="color:var(--chip)">◆</span> Launches</button>` +
     data.games.map(g => {
       const accent = g.accent || "#5a617a";
       return `<button class="cal-filter" type="button" data-game="${g.name}" style="--chip:${accent}" title="${g.name}">` +
@@ -614,8 +636,7 @@
       }
       let row = 2; // row 1 holds the day numbers; each bar gets its own lane below
       calItems.forEach((it, idx) => {
-        if (calSel.size && !calSel.has(it.name)) return;
-        if (document.getElementById('wish-only').checked && !wishlist.has(it)) return;
+        if (!calendarVisible(it)) return;
         const drawEnd = calEnd(it);
         if (drawEnd < weekStart || it.start > weekEnd) return;
         const s = it.start > weekStart ? it.start : weekStart;
@@ -623,17 +644,29 @@
         const col = Math.round((s - weekStart) / DAY) + 1;
         const colEnd = Math.round((e - weekStart) / DAY) + 2;
         const cls = ["cal-bar"];
+        if (it.type === "launch") cls.push("cal-launch", "ends");
         if (wishlist.has(it)) cls.push('wish-match');
         if (it.start >= weekStart) cls.push("starts");
         if (it.unknownEnd) cls.push("unknown-end");
-        else if (it.end <= weekEnd) cls.push("ends");
-        html += `<div class="${cls.join(" ")}" data-i="${idx}" ` +
+        else if (it.end && it.end <= weekEnd) cls.push("ends");
+        const label = it.type === "launch" ? `◆ ${it.name}` :
+          `${wishlist.has(it) ? "★ " : ""}${it.unknownEnd ? "↝ " : ""}${it.approx ? "~" : ""}${it.title}`;
+        const detail = it.type === "launch" ? `${it.title} · ${it.date} · All day` : it.title;
+        html += `<div class="${cls.join(" ")}" data-i="${idx}" tabindex="0" aria-label="${esc(detail)}" ` +
           `style="grid-row:${row++};grid-column:${col}/${colEnd};background:${it.accent};color:${textOn(it.accent)}">` +
-          `${wishlist.has(it) ? "★ " : ""}${it.unknownEnd ? "↝ " : ""}${it.approx ? "~" : ""}${it.title}</div>`;
+          `${esc(label)}</div>`;
       });
       html += `</div>`;
     }
     weeksEl.innerHTML = html;
+    const launches = calItems.filter(it => it.type === "launch" && calendarVisible(it) &&
+      it.start >= first && it.start <= last).sort((a, b) => a.start - b.start);
+    launchesEl.hidden = launches.length === 0;
+    launchesEl.innerHTML = launches.length
+      ? `<h4>◆ Launches this month</h4><ul>${launches.map(it =>
+        `<li><time datetime="${esc(it.date)}">${esc(fmtD(it.start))}</time><span><strong>${esc(it.name)}</strong><small>${esc(it.region)} release · All day</small></span></li>`
+      ).join("")}</ul>` : "";
+    document.getElementById("cal-tooltip").style.display = "none";
   }
   renderCal();
   // Lock the weeks area to the current month's height so flipping to a
@@ -651,28 +684,33 @@
     calY = today.getFullYear(); calM = today.getMonth(); renderCal();
   });
 
-  // Hover tooltip with the bar's full details
+  // Full details are available on hover and keyboard focus.
   const tooltip = document.getElementById("cal-tooltip");
-  weeksEl.addEventListener("mouseover", e => {
+  const showCalendarTooltip = e => {
     const bar = e.target.closest(".cal-bar");
     if (!bar) { tooltip.style.display = "none"; return; }
     const it = calItems[+bar.dataset.i];
-    const dates = it.unknownEnd
+    const dates = it.type === "launch"
+      ? `${it.start.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })} · All-day launch`
+      : it.unknownEnd
       ? `${it.approx ? "~" : ""}${fmtD(it.start)} → End date unknown`
       : `${it.approx ? "~" : ""}${fmtD(it.start)} → ${fmtD(it.end)} · ${Math.round((it.end - it.start) / DAY) + 1} days`;
     tooltip.innerHTML =
       `<div class="tt-date">${dates}</div>` +
       `<div class="tt-row"><span class="cal-dot" style="background:${it.accent}"></span>` +
-      `<span><strong>${it.name}</strong> · ${it.title}</span></div>`;
+      `<span><strong>${esc(it.name)}</strong> · ${esc(it.type === "launch" ? `${it.region} release` : it.title)}</span></div>`;
     tooltip.style.display = "block";
     const r = bar.getBoundingClientRect();
-    let x = e.clientX - tooltip.offsetWidth / 2;
+    let x = (e.clientX ?? (r.left + r.width / 2)) - tooltip.offsetWidth / 2;
     x = Math.max(8, Math.min(x, window.innerWidth - tooltip.offsetWidth - 8));
     let y = r.top - tooltip.offsetHeight - 8;
     if (y < 8) y = r.bottom + 8;
     tooltip.style.left = x + "px";
     tooltip.style.top = y + "px";
-  });
+  };
+  weeksEl.addEventListener("mouseover", showCalendarTooltip);
+  weeksEl.addEventListener("focusin", showCalendarTooltip);
+  weeksEl.addEventListener("focusout", () => { tooltip.style.display = "none"; });
   weeksEl.addEventListener("mouseleave", () => { tooltip.style.display = "none"; });
 
   function refreshWishlist() {
