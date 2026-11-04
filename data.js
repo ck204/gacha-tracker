@@ -3,19 +3,19 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-11-02",
+  "lastUpdated": "2026-11-04",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
       "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier","gi:furina":"Furina","gi:zibai":"Zibai","gi:linnea":"Linnea"},
-      "version": "7.1 — Phase 2",
+      "version": "7.2 — Phase 1",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1792760556/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-04",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -24,13 +24,12 @@ window.GACHA_DATA =
         { "title": "Tsaritsa (Anastasya) + Danica", "characterIds": ["gi:tsaritsa","gi:danica"], "version": "7.3", "confidence": "low", "confidenceReason": "Recent deep-beta and kit reports continue to pair both new characters in Version 7.3, but the evidence remains unofficial, indirect, and earlier than the public beta cycle.", "sourceUrl": "https://gamesandchill.com/en/leaks/genshin-impact-7x-character-release-leaks-reveal-alleged-roadmap-from-mitya-to-dainsleif/", "checkedAt": "2026-10-03" }
       ],
       "banners": [
-        { "title": "v7.1 Phase 2 — Skirk + Escoffier reruns", "characterIds": ["gi:skirk","gi:escoffier"], "start": "2026-10-13", "end": "2026-11-03" }
+        { "title": "v7.2 Phase 1 — Mitya (new 5★) + Furina rerun; Valeriy rate-up", "characterIds": ["gi:mitya","gi:furina","gi:valeriy"], "start": "2026-11-04", "end": "2026-11-24" }
       ],
       "upcoming": [
-        { "title": "v7.2 Phase 1 — Mitya (new 5★) + Furina rerun; Valeriy rate-up", "characterIds": ["gi:mitya","gi:furina","gi:valeriy"], "date": "2026-11-04", "endDate": "2026-11-24" },
         { "title": "v7.2 Phase 2 — Zibai + Linnea reruns", "characterIds": ["gi:zibai","gi:linnea"], "date": "2026-11-24", "endDate": "2026-12-15" }
       ],
-      "notes": "Version 7.1 Phase 2 remains live Oct 13–Nov 3 with Skirk + Escoffier reruns. The Oct 23 Version 7.2 Special Program confirmed Hour of Ruin for Nov 4: Phase 1 features Mitya + Furina with Valeriy rate-up through Nov 24, followed by Zibai + Linnea reruns through Dec 15. The Version 7.3 Tsaritsa + Danica pairing remains a low-confidence leak.",
+      "notes": "Version 7.2 Phase 1 is live Nov 4–24 with Mitya + Furina and Valeriy rate-up, followed by Zibai + Linnea reruns through Dec 15. The Version 7.3 Tsaritsa + Danica pairing remains a low-confidence leak.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -46,7 +45,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1793362944/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-04",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -79,7 +78,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-04",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -108,7 +107,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-04",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
@@ -136,7 +135,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1793244120/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-04",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
