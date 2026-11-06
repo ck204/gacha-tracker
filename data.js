@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-11-04",
+  "lastUpdated": "2026-11-06",
   "games": [
     {
       "name": "Genshin Impact",
@@ -13,9 +13,9 @@ window.GACHA_DATA =
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1792760556/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1793760023/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-11-04",
+        "checkedAt": "2026-11-06",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -78,7 +78,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-11-04",
+        "checkedAt": "2026-11-06",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -113,13 +113,11 @@ window.GACHA_DATA =
         "mobilePosition": "38% center"
       },
       "banners": [
-        { "title": "v1.6 — Rejuvenation — Si (new 6★ Cryo Supporter)", "characterIds": ["ake:si"], "start": "2026-10-15", "end": "2026-11-05" },
-        { "title": "v1.6 — Ancestral Spring Flows Anew RE-Factor Headhunting #1 — Tangtang rerun", "characterIds": ["ake:tangtang"], "start": "2026-10-29", "end": "2026-11-19" }
+        { "title": "v1.6 — Ancestral Spring Flows Anew RE-Factor Headhunting #1 — Tangtang rerun", "characterIds": ["ake:tangtang"], "start": "2026-10-29", "end": "2026-11-19" },
+        { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "start": "2026-11-05", "end": null }
       ],
-      "upcoming": [
-        { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "date": "2026-11-05" }
-      ],
-      "notes": "Sanctuary of Ink is live after the Oct 15 Asia-server update. Si remains featured on Rejuvenation through Nov 5, while Tangtang is now active on Ancestral Spring Flows Anew from Oct 29 through Nov 19. Argent Flow begins on The Hearth Fire Beckons the Starry Flow Nov 5 at 12:00 until the next version maintenance; no exact banner end is assumed.",
+      "upcoming": [],
+      "notes": "Sanctuary of Ink remains live. Tangtang is active on Ancestral Spring Flows Anew through Nov 19, and Argent Flow is active on The Hearth Fire Beckons the Starry Flow from Nov 5 until the next version maintenance; no exact Argent Flow end date is assumed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
