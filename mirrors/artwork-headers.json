@@ -1,16 +1,16 @@
 {
   "version": 1,
   "provider": "FxEmbed public profile API",
-  "generatedAt": "2026-11-06T19:55:19.426Z",
+  "generatedAt": "2026-11-07T17:59:26.371Z",
   "games": {
     "GI": {
       "sourceUrl": "https://x.com/GenshinImpact",
       "providerUrl": "https://api.fxtwitter.com/2/profile/GenshinImpact",
-      "attemptedAt": "2026-11-06T19:55:17.275Z",
+      "attemptedAt": "2026-11-07T17:59:25.041Z",
       "status": "ok",
       "accountId": "1072404907230060544",
       "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1793760023/1500x500",
-      "verifiedAt": "2026-11-06T19:55:17.645Z",
+      "verifiedAt": "2026-11-07T17:59:25.366Z",
       "imageSha256": "86998e43aa2b5e2af0e521e491689e5cc4eb5a132283a1a2c292841a7985417e",
       "image": {
         "height": 500,
@@ -22,11 +22,11 @@
     "HSR": {
       "sourceUrl": "https://x.com/honkaistarrail",
       "providerUrl": "https://api.fxtwitter.com/2/profile/honkaistarrail",
-      "attemptedAt": "2026-11-06T19:55:17.646Z",
+      "attemptedAt": "2026-11-07T17:59:25.367Z",
       "status": "ok",
       "accountId": "1412998764701249542",
       "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1793362944/1500x500",
-      "verifiedAt": "2026-11-06T19:55:17.891Z",
+      "verifiedAt": "2026-11-07T17:59:25.515Z",
       "imageSha256": "999f83f2882bea1600805139204fafc1abbe2642284c17e8572951b1effb2c25",
       "image": {
         "height": 500,
@@ -38,11 +38,11 @@
     "ZZZ": {
       "sourceUrl": "https://x.com/ZZZ_EN",
       "providerUrl": "https://api.fxtwitter.com/2/profile/ZZZ_EN",
-      "attemptedAt": "2026-11-06T19:55:17.891Z",
+      "attemptedAt": "2026-11-07T17:59:25.516Z",
       "status": "ok",
       "accountId": "1508387670208270343",
       "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
-      "verifiedAt": "2026-11-06T19:55:18.220Z",
+      "verifiedAt": "2026-11-07T17:59:25.688Z",
       "imageSha256": "02fbd14a38a306e7c37b1d40a049363cc46b03f8bfe3bf1314f6ea6076cc8bb6",
       "image": {
         "height": 500,
@@ -54,11 +54,11 @@
     "AKE": {
       "sourceUrl": "https://x.com/AKEndfield",
       "providerUrl": "https://api.fxtwitter.com/2/profile/AKEndfield",
-      "attemptedAt": "2026-11-06T19:55:18.221Z",
+      "attemptedAt": "2026-11-07T17:59:25.689Z",
       "status": "ok",
       "accountId": "1501126821727059969",
       "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
-      "verifiedAt": "2026-11-06T19:55:19.024Z",
+      "verifiedAt": "2026-11-07T17:59:26.247Z",
       "imageSha256": "1ff8a2c93bf259fd7a052527352fca67ab758dc6a8018b9d7be181cdf9bec7a8",
       "image": {
         "height": 500,
@@ -70,11 +70,11 @@
     "GFL2": {
       "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
       "providerUrl": "https://api.fxtwitter.com/2/profile/GFL2EXILIUM_EN",
-      "attemptedAt": "2026-11-06T19:55:19.024Z",
+      "attemptedAt": "2026-11-07T17:59:26.247Z",
       "status": "ok",
       "accountId": "1801169021758517248",
       "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1793244120/1500x500",
-      "verifiedAt": "2026-11-06T19:55:19.426Z",
+      "verifiedAt": "2026-11-07T17:59:26.370Z",
       "imageSha256": "5d33c9bee2b191c9f4f2f1d4ee19b9be462d179bf5fc44b7cb29dd5d12416e6e",
       "image": {
         "height": 500,
