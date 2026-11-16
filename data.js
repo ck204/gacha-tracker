@@ -3,19 +3,19 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-11-13",
+  "lastUpdated": "2026-11-16",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
-      "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier","gi:furina":"Furina","gi:zibai":"Zibai","gi:linnea":"Linnea"},
+      "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier","gi:furina":"Furina","gi:zibai":"Zibai","gi:linnea":"Linnea","gi:varesa":"Varesa","gi:chasca":"Chasca","gi:xilonen":"Xilonen","gi:mualani":"Mualani","gi:kinich":"Kinich"},
       "version": "7.2 — Phase 1",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1793760023/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-11-13",
+        "checkedAt": "2026-11-16",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -25,9 +25,10 @@ window.GACHA_DATA =
       ],
       "upcoming": [
         { "title": "v7.2 Phase 2 — Zibai + Linnea reruns", "characterIds": ["gi:zibai","gi:linnea"], "date": "2026-11-24", "endDate": "2026-12-15" },
+        { "title": "v7.2 Phase 2 — Natlan Chronicled Wish: Varesa + Chasca + Xilonen + Mualani + Kinich", "characterIds": ["gi:varesa","gi:chasca","gi:xilonen","gi:mualani","gi:kinich"], "date": "2026-11-24", "endDate": "2026-12-15" },
         { "title": "Anastasya (Tsaritsa) + Danica — officially introduced playable characters", "characterIds": ["gi:tsaritsa","gi:danica"], "date": null }
       ],
-      "notes": "Version 7.2 Phase 1 is live Nov 4–24 with Mitya + Furina and Valeriy rate-up, followed by Zibai + Linnea reruns through Dec 15. Anastasya and Danica have official playable-character introductions; their version, phase, and banner dates remain unconfirmed.",
+      "notes": "Version 7.2 Phase 1 is live Nov 4–24 with Mitya + Furina and Valeriy rate-up, followed by Zibai + Linnea reruns and the Natlan Chronicled Wish (Varesa, Chasca, Xilonen, Mualani, Kinich) through Dec 15. Anastasya and Danica have official playable-character introductions; their version, phase, and banner dates remain unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -41,9 +42,9 @@ window.GACHA_DATA =
       "accent": "#b39ddb",
       "icon": "icons/hsr.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1793362944/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1794362654/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-16",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -102,7 +103,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-16",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
