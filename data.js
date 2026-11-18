@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-11-16",
+  "lastUpdated": "2026-11-18",
   "games": [
     {
       "name": "Genshin Impact",
@@ -75,7 +75,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-11-13",
+        "checkedAt": "2026-11-18",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -122,14 +122,14 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih","gfl2:faelynn":"Faelynn","gfl2:welrod":"Welrod","gfl2:sextans":"Sextans","gfl2:phaetusa":"Phaetusa"},
+      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih","gfl2:faelynn":"Faelynn","gfl2:welrod":"Welrod","gfl2:sextans":"Sextans","gfl2:phaetusa":"Phaetusa","gfl2:koleda":"Koleda","gfl2:nikketa":"Nikketa"},
       "version": "Amber Reel of Moonlight",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1793244120/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-11-13",
+        "checkedAt": "2026-11-18",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
@@ -137,8 +137,10 @@ window.GACHA_DATA =
       "banners": [
         { "title": "Faelynn + Welrod + Sextans + Phaetusa", "characterIds": ["gfl2:faelynn","gfl2:welrod","gfl2:sextans","gfl2:phaetusa"], "start": "2026-10-29", "end": "2026-11-18" }
       ],
-      "upcoming": [],
-      "notes": "The healthy Oct 29 gfl2.help Global mirror confirms Faelynn + Welrod + Sextans + Phaetusa are now live Oct 29–Nov 18. The official Oct 28 Steam digest independently lists new Dolls Faelynn and Welrod. No later Global lineup is verified, and no CN ordering or dates were used.",
+      "upcoming": [
+        { "title": "Koleda + OTs-14 + Nikketa", "characterIds": ["gfl2:koleda","gfl2:ots-14","gfl2:nikketa"], "date": "2026-11-19", "endDate": "2026-12-09" }
+      ],
+      "notes": "Fresh healthy Global mirrors and the official Nov 19 Steam update confirm Koleda + OTs-14 + Nikketa for Nov 19–Dec 9. Faelynn + Welrod + Sextans + Phaetusa remain current through Nov 18. A Dec 10 lineup names Asteria and Soppo but leaves a third Doll unresolved in the compact digest, so it is not published here; no CN ordering or dates were used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
