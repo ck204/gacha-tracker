@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-11-18",
+  "lastUpdated": "2026-11-19",
   "games": [
     {
       "name": "Genshin Impact",
@@ -113,7 +113,7 @@ window.GACHA_DATA =
         { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "start": "2026-11-05", "end": null }
       ],
       "upcoming": [],
-      "notes": "Sanctuary of Ink remains live. Tangtang is active on Ancestral Spring Flows Anew through Nov 19, and Argent Flow is active on The Hearth Fire Beckons the Starry Flow from Nov 5 until the next version maintenance; no exact Argent Flow end date is assumed.",
+      "notes": "Sanctuary of Ink remains live. The Tangtang rerun ends Nov 19 at 11:59 Asia server time (UTC+8). Argent Flow runs from Nov 5 until the next version maintenance; Gryphline has not confirmed the calendar date. The next version reveal airs Nov 21; the next Headhunting lineup has not been announced.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -148,17 +148,19 @@ window.GACHA_DATA =
     {
       "name": "Fate/Grand Order (NA)",
       "short": "FGO",
-      "characters": {"fgo:kazuradrop":"Kazuradrop","fgo:tutankhamun":"Tutankhamun","fgo:louhi":"Louhi","fgo:phantasmoon":"Phantasmoon"},
+      "characters": {"fgo:kazuradrop":"Kazuradrop","fgo:tutankhamun":"Tutankhamun","fgo:louhi":"Louhi","fgo:phantasmoon":"Phantasmoon","fgo:biscione":"Biscione","fgo:kurohime":"Kurohime"},
       "version": "NA / Global",
       "accent": "#c0a062",
       "icon": "icons/fgo.jpg",
-      "banners": [],
-      "upcoming": [
-        { "title": "Tutankhamun", "characterIds": ["fgo:tutankhamun"], "date": "2026-11-13", "approx": true },
-        { "title": "Louhi", "characterIds": ["fgo:louhi"], "date": "2026-12-11", "approx": true },
-        { "title": "Phantasmoon", "characterIds": ["fgo:phantasmoon"], "date": "2026-12-25", "approx": true }
+      "banners": [
+        { "title": "Smash! Mystery House Crafters — Tutankhamun", "characterIds": ["fgo:tutankhamun"], "start": "2026-11-13", "end": "2026-12-03" }
       ],
-      "notes": "NA server; new-Servant debuts only (reruns/support hidden). Kazuradrop ended Oct 15; the current GUDAGUDA revival features previously released Servants, so no current debut banner is listed. The next three predicted debuts are Tutankhamun (roughly mid-November), Louhi (roughly mid-December), and Phantasmoon (roughly late December), based on GamePress's current NA release-month estimates and JP debut order. Calendar dates are approximate anchors using the JP day of month, not confirmed NA starts; end dates remain unknown. Checked Oct 18, 2026.",
+      "upcoming": [
+        { "title": "Louhi", "characterIds": ["fgo:louhi"], "date": "2026-12-11", "approx": true },
+        { "title": "Phantasmoon", "characterIds": ["fgo:phantasmoon"], "date": "2026-12-25", "approx": true },
+        { "title": "Biscione & Kurohime", "characterIds": ["fgo:biscione", "fgo:kurohime"], "date": "2027-01-15", "approx": true }
+      ],
+      "notes": "NA server; new-Servant debuts only. Tutankhamun's first NA Pickup runs Nov 13–Dec 3 (PST). The next three predicted debut banners feature Louhi, Phantasmoon, and Biscione with Kurohime; dates are approximate JP-schedule anchors. Richard I already debuted on NA in February 2026. Checked Nov 19, 2026.",
       "links": [
         { "label": "GamePress NA campaigns", "url": "https://grandorder.gamepress.gg/p/campaign-list" },
         { "label": "Official NA site", "url": "https://fate-go.us/" }
