@@ -3,12 +3,15 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const {setTimeout: delay} = require('node:timers/promises');
 const ACCOUNTS = {
   GI: 'GenshinImpact', HSR: 'honkaistarrail', ZZZ: 'ZZZ_EN',
   AKE: 'AKEndfield', GFL2: 'GFL2EXILIUM_EN'
 };
 const HEADER_URL = /^https:\/\/pbs\.twimg\.com\/profile_banners\/(\d+)\/(\d+)(?:\/1500x500)?$/;
 const USER_AGENT = 'gacha-tracker-artwork-mirror (https://github.com/ck204/gacha-tracker)';
+const PROFILE_API = 'https://api.fxtwitter.com/2/profile/';
+const RETRY_DELAY_MS = 3000;
 
 function candidateUrl(artwork, handle, payload) {
   const current = HEADER_URL.exec(artwork.url || '');
@@ -47,11 +50,29 @@ function imageDimensions(bytes) {
   throw new Error('Header image dimensions unavailable');
 }
 
-async function getBytes(url, maxBytes, request, accept) {
-  const response = await request(url, {
-    headers: {'User-Agent': USER_AGENT, Accept: accept}, signal: AbortSignal.timeout(15000)
-  });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+class RequestError extends Error {
+  constructor(stage, url, detail, status) {
+    super(`${stage} ${url}: ${detail}`);
+    this.status = status;
+  }
+}
+
+function isTransient(error) {
+  if (!(error instanceof RequestError)) return false;
+  const status = error.status;
+  return status === undefined || status === 408 || status === 429 || (status >= 500 && status < 600);
+}
+
+async function getBytes(url, maxBytes, request, accept, stage) {
+  let response;
+  try {
+    response = await request(url, {
+      headers: {'User-Agent': USER_AGENT, Accept: accept}, signal: AbortSignal.timeout(15000)
+    });
+  } catch (error) {
+    throw new RequestError(stage, url, error.message);
+  }
+  if (!response.ok) throw new RequestError(stage, url, `HTTP ${response.status}`, response.status);
   if (response.url && new URL(response.url).hostname !== new URL(url).hostname) throw new Error('Unexpected response host');
   if (Number(response.headers.get('content-length')) > maxBytes) throw new Error('Response exceeds size limit');
   const chunks = [];
@@ -64,20 +85,54 @@ async function getBytes(url, maxBytes, request, accept) {
   return {bytes: Buffer.concat(chunks), contentType: (response.headers.get('content-type') || '').split(';')[0]};
 }
 
-async function buildMirror(data, previous = {}, request = fetch, clock = () => new Date()) {
+async function lookupHeader(artwork, handle, providerUrl, request, wait) {
+  const readProfile = url => getBytes(url, 1024 * 1024, request, 'application/json', 'FxEmbed profile lookup');
+  const byHandle = async () => {
+    try {
+      return await readProfile(providerUrl);
+    } catch (error) {
+      if (!isTransient(error)) throw error;
+      await wait(RETRY_DELAY_MS);
+      return readProfile(providerUrl);
+    }
+  };
+  let profile;
+  try {
+    profile = await byHandle();
+  } catch (error) {
+    const accountId = HEADER_URL.exec(artwork.url || '')?.[1];
+    if (error.status !== 404 || !accountId) throw error;
+    await wait(RETRY_DELAY_MS);
+    profile = await readProfile(PROFILE_API + 'id:' + accountId);
+  }
+  return candidateUrl(artwork, handle, JSON.parse(profile.bytes.toString('utf8')));
+}
+
+async function downloadHeader(artwork, handle, providerUrl, request, wait) {
+  const readImage = url => getBytes(url, 2 * 1024 * 1024, request, 'image/jpeg,image/png', 'X CDN image download');
+  let url = await lookupHeader(artwork, handle, providerUrl, request, wait);
+  try {
+    return {url, image: await readImage(url)};
+  } catch (error) {
+    if (error.status !== 404 && !isTransient(error)) throw error;
+    await wait(RETRY_DELAY_MS);
+    if (error.status === 404) url = await lookupHeader(artwork, handle, providerUrl, request, wait);
+    return {url, image: await readImage(url)};
+  }
+}
+
+async function buildMirror(data, previous = {}, request = fetch, clock = () => new Date(), wait = delay) {
   const games = {};
   for (const [short, handle] of Object.entries(ACCOUNTS)) {
     const game = data.games.find(item => item.short === short);
     if (!game?.artwork) continue;
-    const providerUrl = 'https://api.fxtwitter.com/2/profile/' + handle;
+    const providerUrl = PROFILE_API + handle;
     const sourceUrl = 'https://x.com/' + handle;
     const prior = previous.games?.[short];
     const record = prior?.sourceUrl === sourceUrl && prior?.providerUrl === providerUrl ? {...prior} : {};
     Object.assign(record, {sourceUrl, providerUrl, attemptedAt: clock().toISOString()});
     try {
-      const profile = await getBytes(providerUrl, 1024 * 1024, request, 'application/json');
-      const url = candidateUrl(game.artwork, handle, JSON.parse(profile.bytes.toString('utf8')));
-      const image = await getBytes(url, 2 * 1024 * 1024, request, 'image/jpeg,image/png');
+      const {url, image} = await downloadHeader(game.artwork, handle, providerUrl, request, wait);
       if (!['image/jpeg','image/png'].includes(image.contentType)) throw new Error('Response is not a supported image');
       const dimensions = imageDimensions(image.bytes);
       if (dimensions.width !== 1500 || dimensions.height !== 500) throw new Error('Header must be 1500x500');
