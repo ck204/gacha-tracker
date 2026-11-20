@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-11-19",
+  "lastUpdated": "2026-11-20",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,7 +15,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1793760023/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-11-16",
+        "checkedAt": "2026-11-20",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -44,7 +44,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1794362654/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-11-16",
+        "checkedAt": "2026-11-20",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -68,14 +68,14 @@ window.GACHA_DATA =
     {
       "name": "Zenless Zone Zero",
       "short": "ZZZ",
-      "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia","zzz:velina":"Velina","zzz:norma":"Norma","zzz:robin":"Robin","zzz:kafka":"Kafka"},
+      "characters": {"zzz:severian":"Severian Lowell","zzz:pheony":"Phoenix Reffaella","zzz:claret-flint":"Claret Flint","zzz:nangong-yu":"Nangong Yu","zzz:roxy-ifrita-pryce":"Roxy Ifrita Pryce","zzz:promeia":"Promeia","zzz:velina":"Velina","zzz:norma":"Norma","zzz:robin":"Robin","zzz:kafka":"Kafka","zzz:sunbringer":"Sunbringer"},
       "version": "3.3 — Phase 2",
       "accent": "#f57c00",
       "icon": "icons/zzz.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-11-18",
+        "checkedAt": "2026-11-20",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -84,10 +84,11 @@ window.GACHA_DATA =
         { "title": "v3.3 Phase 2 — Severian Lowell + Norma rerun", "characterIds": ["zzz:severian","zzz:norma"], "start": "2026-11-11", "end": "2026-12-01" }
       ],
       "upcoming": [
-        { "title": "v3.4 — Robin (announced Honkai: Star Rail collaboration character)", "characterIds": ["zzz:robin"], "date": null },
-        { "title": "v3.4 — Kafka (announced Honkai: Star Rail collaboration character)", "characterIds": ["zzz:kafka"], "date": null }
+        { "title": "v3.4 — Sunbringer (new Void Hunter; Signal Search)", "characterIds": ["zzz:sunbringer"], "date": "2026-12-02" },
+        { "title": "v3.4 — Robin (Honkai: Star Rail collaboration; free login reward and Signal Search)", "characterIds": ["zzz:robin"], "collab": true, "date": "2026-12-02" },
+        { "title": "v3.4 — Kafka (Honkai: Star Rail collaboration; limited Signal Search after Jan 1)", "characterIds": ["zzz:kafka"], "collab": true, "date": null }
       ],
-      "notes": "Version 3.3 Phase 2 is live Nov 11–Dec 1 with Severian Lowell + Norma rerun. Phoenix retains her existing character ID (previously leaked as Pheony). Robin and Kafka are announced playable collaboration characters for Version 3.4; exact dates, banner availability, and acquisition methods remain unconfirmed.",
+      "notes": "Version 3.3 Phase 2 is live Nov 11–Dec 1 with Severian Lowell + Norma rerun. Phoenix retains her existing character ID (previously leaked as Pheony). Version 3.4, The Finality of the Day, launches Dec 2: Sunbringer and Robin become available from launch, with Robin also granted as a login reward. Kafka joins the limited Signal Search after Jan 1; her exact start date remains unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Zenless-Zone-Zero/archives/435687" },
         { "label": "Official news", "url": "https://zenless.hoyoverse.com/m/en-us/news" }
@@ -103,17 +104,16 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-11-16",
+        "checkedAt": "2026-11-20",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
       },
       "banners": [
-        { "title": "v1.6 — Ancestral Spring Flows Anew RE-Factor Headhunting #1 — Tangtang rerun", "characterIds": ["ake:tangtang"], "start": "2026-10-29", "end": "2026-11-19" },
         { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "start": "2026-11-05", "end": null }
       ],
       "upcoming": [],
-      "notes": "Sanctuary of Ink remains live. The Tangtang rerun ends Nov 19 at 11:59 Asia server time (UTC+8). Argent Flow runs from Nov 5 until the next version maintenance; Gryphline has not confirmed the calendar date. The next version reveal airs Nov 21; the next Headhunting lineup has not been announced.",
+      "notes": "Sanctuary of Ink remains live. The Tangtang rerun ended Nov 19. Argent Flow runs from Nov 5 until the next version maintenance; Gryphline has not confirmed the calendar date. The next version reveal airs Nov 21; the next Headhunting lineup has not been announced.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -122,25 +122,25 @@ window.GACHA_DATA =
     {
       "name": "Girls' Frontline 2: Exilium",
       "short": "GFL2",
-      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih","gfl2:faelynn":"Faelynn","gfl2:welrod":"Welrod","gfl2:sextans":"Sextans","gfl2:phaetusa":"Phaetusa","gfl2:koleda":"Koleda","gfl2:nikketa":"Nikketa"},
-      "version": "Amber Reel of Moonlight",
+      "characters": {"gfl2:ots-14":"OTs-14","gfl2:basti":"Basti","gfl2:voymastina":"Voymastina","gfl2:soppo":"Soppo","gfl2:loreley":"Loreley","gfl2:alva":"Alva","gfl2:mityl":"Mityl","gfl2:cheyanne":"Cheyanne","gfl2:liushih":"Liushih","gfl2:faelynn":"Faelynn","gfl2:welrod":"Welrod","gfl2:sextans":"Sextans","gfl2:phaetusa":"Phaetusa","gfl2:koleda":"Koleda","gfl2:nikketa":"Nikketa","gfl2:asteria":"Asteria"},
+      "version": "ILIAD",
       "accent": "#90a4ae",
       "icon": "icons/gfl2.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1793244120/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1795091494/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-11-18",
+        "checkedAt": "2026-11-20",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
       },
       "banners": [
-        { "title": "Faelynn + Welrod + Sextans + Phaetusa", "characterIds": ["gfl2:faelynn","gfl2:welrod","gfl2:sextans","gfl2:phaetusa"], "start": "2026-10-29", "end": "2026-11-18" }
+        { "title": "Koleda + OTs-14 + Nikketa", "characterIds": ["gfl2:koleda","gfl2:ots-14","gfl2:nikketa"], "start": "2026-11-19", "end": "2026-12-09" }
       ],
       "upcoming": [
-        { "title": "Koleda + OTs-14 + Nikketa", "characterIds": ["gfl2:koleda","gfl2:ots-14","gfl2:nikketa"], "date": "2026-11-19", "endDate": "2026-12-09" }
+        { "title": "Asteria + Soppo + third rate-up Doll TBA", "characterIds": ["gfl2:asteria","gfl2:soppo"], "date": "2026-12-10", "endDate": "2026-12-30" }
       ],
-      "notes": "Fresh healthy Global mirrors and the official Nov 19 Steam update confirm Koleda + OTs-14 + Nikketa for Nov 19–Dec 9. Faelynn + Welrod + Sextans + Phaetusa remain current through Nov 18. A Dec 10 lineup names Asteria and Soppo but leaves a third Doll unresolved in the compact digest, so it is not published here; no CN ordering or dates were used.",
+      "notes": "The healthy Global mirror and official Nov 19 Steam update confirm Koleda + OTs-14 + Nikketa are live Nov 19–Dec 9 in the ILIAD update. The mirror lists Asteria + Soppo + an unresolved third rate-up Doll for Dec 10–30; only the two named Dolls are recorded, and no CN ordering or identities were used.",
       "links": [
         { "label": "GFL2.help banners", "url": "https://gfl2.help/en/banners" }
       ]
