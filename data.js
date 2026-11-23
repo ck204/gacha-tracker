@@ -3,7 +3,7 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-11-20",
+  "lastUpdated": "2026-11-23",
   "games": [
     {
       "name": "Genshin Impact",
@@ -15,7 +15,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1793760023/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-11-20",
+        "checkedAt": "2026-11-23",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
@@ -44,7 +44,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1794362654/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-11-20",
+        "checkedAt": "2026-11-23",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -75,7 +75,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-11-20",
+        "checkedAt": "2026-11-23",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -97,23 +97,27 @@ window.GACHA_DATA =
     {
       "name": "Arknights: Endfield",
       "short": "AKE",
-      "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:argent-flow":"Argent Flow","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne","ake:tangtang":"Tangtang"},
+      "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:argent-flow":"Argent Flow","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne","ake:tangtang":"Tangtang","ake:kay":"Kay","ake:gilberta":"Gilberta","ake:rossi":"Rossi"},
       "version": "Sanctuary of Ink",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "artwork": {
-        "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1791286608/1500x500",
+        "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1795260910/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-11-20",
+        "checkedAt": "2026-11-23",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
       },
       "banners": [
-        { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "start": "2026-11-05", "end": null }
+        { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "start": "2026-11-05", "end": "2026-11-25" }
       ],
-      "upcoming": [],
-      "notes": "Sanctuary of Ink remains live. The Tangtang rerun ended Nov 19. Argent Flow runs from Nov 5 until the next version maintenance; Gryphline has not confirmed the calendar date. The next version reveal airs Nov 21; the next Headhunting lineup has not been announced.",
+      "upcoming": [
+        { "title": "Meeting You in the World o'Shrooms — Anvil, Backpack, Plus A Pot o'Honey — Kay (new 6★ Nature Vanguard)", "characterIds": ["ake:kay"], "date": "2026-11-25", "endDate": "2026-12-23" },
+        { "title": "Meeting You in the World o'Shrooms — To Every Wish Adrift RE-Factor #1 — Gilberta rerun", "characterIds": ["ake:gilberta"], "date": "2026-11-25", "endDate": "2026-12-16" },
+        { "title": "Meeting You in the World o'Shrooms — Precious Scarlet RE-Factor #1 — Rossi rerun", "characterIds": ["ake:rossi"], "date": "2026-12-16", "endDate": "2027-01-07" }
+      ],
+      "notes": "Sanctuary of Ink remains live through the Nov 25 version maintenance, when Argent Flow ends. Meeting You in the World o'Shrooms launches Nov 25 with Kay and a Gilberta rerun; Rossi's rerun begins Dec 16. Kay runs through Dec 23, Gilberta through Dec 16, and Rossi through Jan 7. Mimino is a free event reward rather than a Headhunting banner.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -129,7 +133,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1795091494/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-11-20",
+        "checkedAt": "2026-11-23",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
