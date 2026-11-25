@@ -3,32 +3,31 @@
 // so external tooling can parse this file without a JS engine.
 window.GACHA_DATA =
 {
-  "lastUpdated": "2026-11-23",
+  "lastUpdated": "2026-11-25",
   "games": [
     {
       "name": "Genshin Impact",
       "short": "GI",
       "characters": {"gi:mitya":"Mitya","gi:valeriy":"Valeriy","gi:tsaritsa":"Tsaritsa (Anastasya)","gi:danica":"Danica","gi:flins":"Flins","gi:ineffa":"Ineffa","gi:vesna":"Vesna","gi:vodyanitsa":"Vodyanitsa","gi:skirk":"Skirk","gi:escoffier":"Escoffier","gi:furina":"Furina","gi:zibai":"Zibai","gi:linnea":"Linnea","gi:varesa":"Varesa","gi:chasca":"Chasca","gi:xilonen":"Xilonen","gi:mualani":"Mualani","gi:kinich":"Kinich"},
-      "version": "7.2 — Phase 1",
+      "version": "7.2 — Phase 2",
       "accent": "#4fc3f7",
       "icon": "icons/gi.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1072404907230060544/1793760023/1500x500",
         "sourceUrl": "https://x.com/GenshinImpact",
-        "checkedAt": "2026-11-23",
+        "checkedAt": "2026-11-25",
         "fallback": "assets/splash/genshin-impact.jpg",
         "position": "right center",
         "mobilePosition": "68% center"
       },
       "banners": [
-        { "title": "v7.2 Phase 1 — Mitya (new 5★) + Furina rerun; Valeriy rate-up", "characterIds": ["gi:mitya","gi:furina","gi:valeriy"], "start": "2026-11-04", "end": "2026-11-24" }
+        { "title": "v7.2 Phase 2 — Zibai + Linnea reruns", "characterIds": ["gi:zibai","gi:linnea"], "start": "2026-11-24", "end": "2026-12-15" },
+        { "title": "v7.2 Phase 2 — Natlan Chronicled Wish: Varesa + Chasca + Xilonen + Mualani + Kinich", "characterIds": ["gi:varesa","gi:chasca","gi:xilonen","gi:mualani","gi:kinich"], "start": "2026-11-24", "end": "2026-12-15" }
       ],
       "upcoming": [
-        { "title": "v7.2 Phase 2 — Zibai + Linnea reruns", "characterIds": ["gi:zibai","gi:linnea"], "date": "2026-11-24", "endDate": "2026-12-15" },
-        { "title": "v7.2 Phase 2 — Natlan Chronicled Wish: Varesa + Chasca + Xilonen + Mualani + Kinich", "characterIds": ["gi:varesa","gi:chasca","gi:xilonen","gi:mualani","gi:kinich"], "date": "2026-11-24", "endDate": "2026-12-15" },
         { "title": "Anastasya (Tsaritsa) + Danica — officially introduced playable characters", "characterIds": ["gi:tsaritsa","gi:danica"], "date": null }
       ],
-      "notes": "Version 7.2 Phase 1 is live Nov 4–24 with Mitya + Furina and Valeriy rate-up, followed by Zibai + Linnea reruns and the Natlan Chronicled Wish (Varesa, Chasca, Xilonen, Mualani, Kinich) through Dec 15. Anastasya and Danica have official playable-character introductions; their version, phase, and banner dates remain unconfirmed.",
+      "notes": "Version 7.2 Phase 2 is live Nov 24–Dec 15 with Zibai + Linnea reruns and the Natlan Chronicled Wish (Varesa, Chasca, Xilonen, Mualani, Kinich). Anastasya and Danica have official playable-character introductions; their version, phase, and banner dates remain unconfirmed.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Genshin-Impact/archives/305012" },
         { "label": "Official news", "url": "https://genshin.hoyoverse.com/en/news" }
@@ -44,7 +43,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1412998764701249542/1794362654/1500x500",
         "sourceUrl": "https://x.com/honkaistarrail",
-        "checkedAt": "2026-11-23",
+        "checkedAt": "2026-11-25",
         "fallback": "assets/splash/honkai-star-rail.jpg",
         "position": "right center",
         "mobilePosition": "52% center"
@@ -75,7 +74,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1508387670208270343/1792546330/1500x500",
         "sourceUrl": "https://x.com/ZZZ_EN",
-        "checkedAt": "2026-11-23",
+        "checkedAt": "2026-11-25",
         "fallback": "assets/splash/zenless-zone-zero.jpg",
         "position": "right center",
         "mobilePosition": "72% center"
@@ -98,26 +97,25 @@ window.GACHA_DATA =
       "name": "Arknights: Endfield",
       "short": "AKE",
       "characters": {"ake:si":"Si","ake:ye-minghui":"Ye Minghui","ake:argent-flow":"Argent Flow","ake:typhoeus":"Typhoeus","ake:yvonne":"Yvonne","ake:tangtang":"Tangtang","ake:kay":"Kay","ake:gilberta":"Gilberta","ake:rossi":"Rossi"},
-      "version": "Sanctuary of Ink",
+      "version": "Meeting You in the World o'Shrooms",
       "accent": "#ffd54f",
       "icon": "icons/ake.jpg",
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1501126821727059969/1795260910/1500x500",
         "sourceUrl": "https://x.com/AKEndfield",
-        "checkedAt": "2026-11-23",
+        "checkedAt": "2026-11-25",
         "fallback": "assets/splash/arknights-endfield.jpg",
         "position": "right center",
         "mobilePosition": "38% center"
       },
       "banners": [
-        { "title": "v1.6 — The Hearth Fire Beckons the Starry Flow — Argent Flow (new 6★ Electric Guard)", "characterIds": ["ake:argent-flow"], "start": "2026-11-05", "end": "2026-11-25" }
+        { "title": "Meeting You in the World o'Shrooms — Anvil, Backpack, Plus A Pot o'Honey — Kay (new 6★ Nature Vanguard)", "characterIds": ["ake:kay"], "start": "2026-11-25", "end": "2026-12-23" },
+        { "title": "Meeting You in the World o'Shrooms — To Every Wish Adrift RE-Factor #1 — Gilberta rerun", "characterIds": ["ake:gilberta"], "start": "2026-11-25", "end": "2026-12-16" }
       ],
       "upcoming": [
-        { "title": "Meeting You in the World o'Shrooms — Anvil, Backpack, Plus A Pot o'Honey — Kay (new 6★ Nature Vanguard)", "characterIds": ["ake:kay"], "date": "2026-11-25", "endDate": "2026-12-23" },
-        { "title": "Meeting You in the World o'Shrooms — To Every Wish Adrift RE-Factor #1 — Gilberta rerun", "characterIds": ["ake:gilberta"], "date": "2026-11-25", "endDate": "2026-12-16" },
         { "title": "Meeting You in the World o'Shrooms — Precious Scarlet RE-Factor #1 — Rossi rerun", "characterIds": ["ake:rossi"], "date": "2026-12-16", "endDate": "2027-01-07" }
       ],
-      "notes": "Sanctuary of Ink remains live through the Nov 25 version maintenance, when Argent Flow ends. Meeting You in the World o'Shrooms launches Nov 25 with Kay and a Gilberta rerun; Rossi's rerun begins Dec 16. Kay runs through Dec 23, Gilberta through Dec 16, and Rossi through Jan 7. Mimino is a free event reward rather than a Headhunting banner.",
+      "notes": "Meeting You in the World o'Shrooms is live from Nov 25 with Kay and a Gilberta rerun; Rossi's rerun begins Dec 16. Kay runs through Dec 23, Gilberta through Dec 16, and Rossi through Jan 7. Mimino is a free event reward rather than a Headhunting banner.",
       "links": [
         { "label": "Game8 banners", "url": "https://game8.co/games/Arknights-Endfield/archives/524215" },
         { "label": "Official site", "url": "https://endfield.gryphline.com/" }
@@ -133,7 +131,7 @@ window.GACHA_DATA =
       "artwork": {
         "url": "https://pbs.twimg.com/profile_banners/1801169021758517248/1795091494/1500x500",
         "sourceUrl": "https://x.com/GFL2EXILIUM_EN",
-        "checkedAt": "2026-11-23",
+        "checkedAt": "2026-11-25",
         "fallback": "assets/splash/girls-frontline-2.jpg",
         "position": "right center",
         "mobilePosition": "62% center"
